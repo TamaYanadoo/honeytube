@@ -1,0 +1,14 @@
+img {
+	max-width: 100%;
+	vertical-align: top;
+}
+button {
+	padding: 0;
+	border: 0;
+	outline: 0;
+	cursor: pointer;
+	background-color: transparent;
+}
+a:link { color: #000; text-decoration: none;}
+a:visited { color: #000; text-decoration: none;}
+a:hover { color: #000; text-decoration: underline;}

@@ -1,0 +1,33 @@
+.user-info-area {
+	display: flex;
+	display: -webkit-box;
+	-webkit-box-align: center;
+	align-items: center;
+	padding: 1.7rem;
+}
+.user-info-area .user-thumb {
+	flex: 0 0 auto;
+	width: 6rem;
+	height: 6rem;
+	background:url(../images/bg_thumbnail.png) 50% 50% / 100% auto no-repeat;
+}
+.user-info-area .user-desc {
+	flex: 1 1 auto;
+	margin-left: 1rem;
+	font-size: 1.5rem;
+}
+.user-info-area .user-desc .user-tit {
+	display: block;
+}
+.user-info-area .user-desc .btn-user-modify {
+	margin-top: .5rem;
+	font-size: 1.1rem;
+	color: #A0A0B6;
+}
+
+.nav-col {
+	position: fixed;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}

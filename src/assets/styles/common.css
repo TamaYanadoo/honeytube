@@ -1,32 +1,67 @@
 @font-face {
- font-family: 'NanumSquare';
- font-weight: 400;
- src: url(/src/assetes/fonts/NanumSquareR.eot);
- src: url(/src/assetes/fonts/NanumSquareR.eot?#iefix) format('embedded-opentype'),
+  font-family: 'NanumSquare';
+  font-weight: 400;
+  src: url(/src/assetes/fonts/NanumSquareR.eot);
+  src: url(/src/assetes/fonts/NanumSquareR.eot?#iefix) format('embedded-opentype'),
       url(/src/assetes/fonts/NanumSquareR.woff) format('woff'),
       url(/src/assetes/fonts/NanumSquareR.ttf) format('truetype');
 }
 @font-face {
- font-family: 'NanumSquare';
- font-weight: 700;
- src: url(/src/assetes/fonts/NanumSquareB.eot);
- src: url(/src/assetes/fonts/NanumSquareB.eot?#iefix) format('embedded-opentype'),
+  font-family: 'NanumSquare';
+  font-weight: 700;
+  src: url(/src/assetes/fonts/NanumSquareB.eot);
+  src: url(/src/assetes/fonts/NanumSquareB.eot?#iefix) format('embedded-opentype'),
       url(/src/assetes/fonts/NanumSquareB.woff) format('woff'),
       url(/src/assetes/fonts/NanumSquareB.ttf) format('truetype');
 }
 @font-face {
- font-family: 'NanumSquare';
- font-weight: 800;
- src: url(/src/assetes/fonts/NanumSquareEB.eot);
- src: url(/src/assetes/fonts/NanumSquareEB.eot?#iefix) format('embedded-opentype'),
+  font-family: 'NanumSquare';
+  font-weight: 800;
+  src: url(/src/assetes/fonts/NanumSquareEB.eot);
+  src: url(/src/assetes/fonts/NanumSquareEB.eot?#iefix) format('embedded-opentype'),
       url(/src/assetes/fonts/NanumSquareEB.woff) format('woff'),
       url(/src/assetes/fonts/NanumSquareEB.ttf) format('truetype');
 }
 @font-face {
- font-family: 'NanumSquare';
- font-weight: 300;
- src: url(/src/assetes/fonts/NanumSquareL.eot);
- src: url(/src/assetes/fonts/NanumSquareL.eot?#iefix) format('embedded-opentype'),
+  font-family: 'NanumSquare';
+  font-weight: 300;
+  src: url(/src/assetes/fonts/NanumSquareL.eot);
+  src: url(/src/assetes/fonts/NanumSquareL.eot?#iefix) format('embedded-opentype'),
       url(/src/assetes/fonts/NanumSquareL.woff) format('woff'),
       url(/src/assetes/fonts/NanumSquareL.ttf) format('truetype');
+}
+
+html {
+  font-size: 10px;
+}
+.blind {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+}
+.landing * {
+	box-sizing: border-box;
+	font-family: 'NanumSquare', sans-serif;
+}
+.landing .inner-col {
+	max-width: 750px;
+	margin: 0 auto;
+}
+.header-col {
+	padding: 1rem;
+	text-align: center;
+}
+.header-col .logo {
+	display: inline-block;
+	width: 5.3rem;
+	height: 2.2rem;
+}
+
+@media screen and (min-width: 750px){
+	html {
+		font-size: 14px;
+	}
 }
