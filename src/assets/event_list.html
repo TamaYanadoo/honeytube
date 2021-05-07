@@ -11,30 +11,34 @@
 	<link rel="stylesheet" href="../assets/styles/common.css">
 	<link rel="stylesheet" href="../assets/styles/myhome.css">
     <link rel="stylesheet" href="../assets/styles/notice.css">
+
+    <script src="dist/scripts/jquery-3.6.0.min.js"></script>
 </head>
 <body>
     <div class="landing">
         <div class="inner">
             <section class="title-col">
                 <div class="inner-col">
-                    <button type="button" class="ico-btn ico-btn--back">뒤로가기</button>
+                    <button type="button" class="ico-btn ico-btn-back">뒤로가기</button>
                     <p>이벤트</p>
                 </div>
             </section>
             <section class="list-tab-col">
                 <div class="inner-col">
                     <ul>
-                        <li class="tab-item"><a href="#;">진행중 이벤트</a></li>
-                        <li class="tab-item active"><a href="#;">종료된 이벤트</a></li>
+                        <li class="tab-item active" data-tab="tab1"><a href="#;">진행중 이벤트</a></li>
+                        <li class="tab-item" data-tab="tab2"><a href="#;">종료된 이벤트</a></li>
+                        <li class="tab-item active" data-tab="tab1"><a href="#;">진행중 이벤트</a></li>
+                        <li class="tab-item" data-tab="tab2"><a href="#;">종료된 이벤트</a></li>
                     </ul>
                 </div>
             </section>
             <section class="list-col">
                 <div class="inner-col">
                     <div class="tab-content-box">
-                        <ul class="tab-content active">
+                        <ul id="tab1" class="tab-content active">
                             <li>
-                                <a href="#;">
+                                <a href="event_detail.html">
                                     <p>
                                         <span>진행중 이벤트</span>
                                         <em>2021. 05. 04</em>
@@ -114,7 +118,7 @@
                                 </a>
                             </li>
                         </ul>
-                        <ul class="tab-content">
+                        <ul id="tab2" class="tab-content">
                             <li>
                                 <a href="#;">
                                     <p>
@@ -197,10 +201,40 @@
                             </li>
                         </ul>
                     </div>
-                    <button type="button" class="btn ico-btn--more">더보기</button>
+                    <button type="button" class="btn btn-more">더보기</button>
                 </div>
             </section>
         </div>
     </div>
+    <script>
+        const tabItem = document.querySelectorAll('.tab-item');
+        const tabContent = document.querySelectorAll('.tab-content');
+
+        tabItem.forEach(e => {
+            e.addEventListener('click', tabEvent);
+        })
+
+        function tabEvent(e) {
+            const tabTarget = e.currentTarget;
+            const tabData = tabTarget.dataset.tab;
+
+            tabItem.forEach(e => {
+                e.classList.remove('active');
+            })
+            
+            tabContent.forEach(e => {
+                e.classList.remove('active');
+            })
+
+            tabTarget.classList.add('active');
+            document.querySelector('#' + tabData).classList.add('active');
+
+        }
+
+
+
+        
+    </script>
+
 </body>
 </html>
