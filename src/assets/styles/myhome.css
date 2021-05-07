@@ -88,7 +88,6 @@
 	left: 0;
 	right: 0;
 	z-index: 5;
-	/* bottom: 0; */
   bottom: calc(constant(safe-area-inset-bottom) + 0px);
   bottom: calc(env(safe-area-inset-bottom) + 0px);
 	display: -webkit-box;
@@ -99,7 +98,6 @@
 	align-items: center;
 	background-color: #fff;
 	box-shadow: 0 -.5rem .6rem rgba(250, 250, 250, 0.75);
-	/* box-shadow: 0px -15px red; */
 }
 .nav-col a {
 	display: -webkit-box;
@@ -154,4 +152,10 @@
 }
 .nav-col a.active .nav-txt.my {
 	background-image: url(../images/ico_my_54x54b.png);
+}
+
+@media screen and (min-width: 750px){
+  .nav-col {
+    bottom: 0;
+  }
 }
