@@ -9,16 +9,21 @@ section{position:relative; width:100%; max-width:750px; margin:0 auto; color:#00
 .title-col p{font-size:1.4rem;}
 .title-col + section{margin-top:5.1rem;}
 
-.notice-col ul li{position:relative; border-bottom:1px solid #e5e5e5;}
-.notice-col ul li a{display:block; padding:2.8rem 2.5rem; color:#000;}
-.notice-col p{font-size:1.4rem;}
-.notice-col p > span{display:block; padding-right:4rem; text-overflow:ellipsis; white-space:nowrap; overflow:hidden;}
-.notice-col p > em{display:block; margin-top:1.3rem; font-size:1.1rem; color:#a0a0b6;}
-.notice-col li:after{content:''; display:block; position:absolute; top:0; right:1.9rem; bottom:0; width:3rem; height:3rem; margin:auto; background:url(../images/ico_btn_right_arrow_90x90.png) no-repeat 50% 0; background-size:100%; text-indent:-9999px;}
-.notice-col li.new-notice:after{content:'N'; right:2.2rem; width:2.4rem; height:2.4rem; font-size:1.2rem; line-height:2.2; color:#fff; background:#ff5647; border-radius:50%; text-indent:initial; text-align:center;}
-.notice-col .ico-btn--more{display:block; position:relative; width:31rem; margin:2.35rem auto; padding:1.6rem 0; font-size:1.3rem; color:#a0a0b6; background-color:#fff; border:1px solid #cfcfda;}
-.notice-col .ico-btn--more:before{content:''; position:absolute; top:0; bottom:0; left:50%; width:1.4rem; height:1.4rem; margin:auto; background:url(../images/ico_btn_plus_42x42.png) no-repeat 50% 0; background-size:100%; transform:translateX(-3.7rem);}
+.list-col ul li{position:relative; border-bottom:1px solid #e5e5e5;}
+.list-col ul li a{display:block; padding:2.8rem 2.5rem; color:#000;}
+.list-col p{font-size:1.4rem;}
+.list-col p > span{display:block; padding-right:4rem; text-overflow:ellipsis; white-space:nowrap; overflow:hidden;}
+.list-col p > em{display:block; margin-top:1.3rem; font-size:1.1rem; color:#a0a0b6;}
+.list-col .ico-btn--more:before{content:''; position:absolute; top:0; bottom:0; left:50%; width:1.4rem; height:1.4rem; margin:auto; background:url(../images/ico_btn_plus_42x42.png) no-repeat 50% 0; background-size:100%; transform:translateX(-3.7rem);}
+.list-col li:after{content:''; display:block; position:absolute; top:0; right:1.9rem; bottom:0; width:3rem; height:3rem; margin:auto; background:url(../images/ico_btn_right_arrow_90x90.png) no-repeat 50% 0; background-size:100%; text-indent:-9999px;}
+.list-col li.new-notice:after{content:'N'; right:2.2rem; width:2.4rem; height:2.4rem; font-size:1.2rem; line-height:2.2; color:#fff; background:#ff5647; border-radius:50%; text-indent:0; text-align:center;}
+.list-col .ico-btn--more{display:block; position:relative; width:31rem; margin:2.35rem auto; padding:1.6rem 0; font-size:1.3rem; color:#a0a0b6; background-color:#fff; border:1px solid #cfcfda;}
 
 .notice-detail-col dt{padding:2.9rem 2.5rem; font-size:1.9rem; border-bottom:1px solid #e5e5e5;}
 .notice-detail-col dt span{display:block; margin-bottom:1.1rem; font-size:1.1rem; color:#a0a0b6;}
 .notice-detail-col dd{padding:2.55rem 2.5rem; font-size:1.3rem;}
+
+.list-tab-col ul{display:flex; justify-content:space-between; width:100%; overflow:hidden;}
+.list-tab-col ul li{display:inline-block; width:50%; background-color:#f7f7fc;}
+.list-tab-col ul li a{display:block; padding:1.45rem 0; font-size:1.3rem; color:#a0a0b6; text-align:center;}
+.list-tab-col ul li.active a{font-weight:800; color:#000; background-color:#fff;}
