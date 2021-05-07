@@ -1,4 +1,4 @@
-@font-face {
+@import url(https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@1.0/nanumsquare.css);@font-face {
   font-family: 'NanumSquare';
   font-weight: 400;
   src: url(/src/assetes/fonts/NanumSquareR.eot);
@@ -70,8 +70,16 @@ html {
   text-indent: -9999rem;
 }
 
+.modal{display:flex; position:fixed; top:0; right:0; bottom:0; left:0; background:rgba(0, 0, 0, .5); justify-content:center; align-items:center; text-align:center; z-index:101;}
+.modal-content{width:31rem; padding:6.8rem 2.5rem 2.5rem; font-size:1.8rem; line-height:2.4rem; background-color:#fff; border-radius:1rem; box-sizing:border-box;}
+.modal-content p{word-break:keep-all;}
+.modal .btn-group{margin-top:5rem; font-size:1.3rem;}
+.modal .btn-group button{background-color:#FFB914; border:1px solid #FFB914; width:100%; padding:1.6rem; border-radius:10rem;}
+.modal.modal-confirm .btn-group button{width:45%; background-color:#fff; border-color:#CFCFDA;}
+.modal.modal-confirm .btn-group button + button{margin-left:1.2rem; background-color:#FFB914; border-color:#FFB914;}
+
 @media screen and (min-width: 750px){
 	html {
-		font-size: 15px;
+		font-size: 12px;
 	}
 }
