@@ -30,10 +30,26 @@
       url(/src/assetes/fonts/NanumSquareL.woff) format('woff'),
       url(/src/assetes/fonts/NanumSquareL.ttf) format('truetype');
 }
-
+body {
+  line-height: 1.2;
+}
 html {
   font-size: 10px;
 }
+img {
+	max-width: 100%;
+	vertical-align: top;
+}
+button {
+	padding: 0;
+	border: 0;
+	outline: 0;
+	cursor: pointer;
+	background-color: transparent;
+}
+a:link { color: #000; text-decoration: none;}
+a:visited { color: #000; text-decoration: none;}
+a:hover { color: #000; text-decoration: none;}
 .blind {
   position: absolute;
   clip: rect(0 0 0 0);
@@ -42,16 +58,26 @@ html {
   margin: -1px;
   overflow: hidden;
 }
-.landing * {
+.ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.ellipsis.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  white-space: normal;
+}
+main * {
 	box-sizing: border-box;
 	font-family: 'NanumSquare', sans-serif;
 }
-.landing.nav {
-  /* padding-bottom: 6rem; */
+main.nav {
   padding-bottom: calc(constant(safe-area-inset-bottom) + 6rem);
   padding-bottom: calc(env(safe-area-inset-bottom) + 6rem);
 }
-.landing .inner-col {
+main .inner-col {
 	max-width: 750px;
 	margin: 0 auto;
 }

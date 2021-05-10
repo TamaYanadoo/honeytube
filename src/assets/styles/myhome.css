@@ -82,7 +82,7 @@
 	line-height: 1.2;
 }
 
-.nav-col {
+nav {
 	position: fixed;
 	left: 0;
 	right: 0;
@@ -92,7 +92,7 @@
 	background-color: #fff;
 	box-shadow: 0 -.5rem .6rem rgba(250, 250, 250, 0.75);
 }
-.nav-col .inner-col {
+nav .inner-col {
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
@@ -100,7 +100,7 @@
 	-webkit-box-align: center;
 	align-items: center;
 }
-.nav-col a {
+nav a {
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
@@ -115,7 +115,7 @@
 	justify-content: center;
 	height: 6rem;
 }
-.nav-col a .nav-txt {
+nav a .nav-txt {
 	display: inline-block;
 	-webkit-box-flex: 0;
 	-ms-flex: 0 1 auto;
@@ -127,7 +127,7 @@
 	text-align: center;
 	white-space: nowrap;
 }
-.nav-col a .nav-txt::before {
+nav a .nav-txt::before {
 	content: '';
 	display: block;
 	width: 1.8rem;
@@ -137,38 +137,38 @@
 	background-position: 50% 0;
 	background-size: 100% auto;
 }
-.nav-col a .nav-txt.home::before {
+nav a .nav-txt.home::before {
 	content: '';
 	background-image: url(../images/ico_home_54x54g.png);
 }
-.nav-col a .nav-txt.ad::before {
+nav a .nav-txt.ad::before {
 	background-image: url(../images/ico_youtube_54x54g.png);
 }
-.nav-col a .nav-txt.ranking::before {
+nav a .nav-txt.ranking::before {
 	background-image: url(../images/ico_ranking_54x54g.png);
 }
-.nav-col a .nav-txt.my::before {
+nav a .nav-txt.my::before {
 	background-image: url(../images/ico_my_54x54g.png);
 }
-.nav-col a.active .nav-txt {
+nav a.active .nav-txt {
 	font-weight: 700;
 	color: #000;
 }
-.nav-col a.active .nav-txt.home::before {
+nav a.active .nav-txt.home::before {
 	background-image: url(../images/ico_home_54x54b.png);
 }
-.nav-col a.active .nav-txt.ad::before {
+nav a.active .nav-txt.ad::before {
 	background-image: url(../images/ico_youtube_54x54b.png);
 }
-.nav-col a.active .nav-txt.ranking::before {
+nav a.active .nav-txt.ranking::before {
 	background-image: url(../images/ico_ranking_54x54b.png);
 }
-.nav-col a.active .nav-txt.my::before {
+nav a.active .nav-txt.my::before {
 	background-image: url(../images/ico_my_54x54b.png);
 }
 
 @media screen and (min-width: 750px){
-  .nav-col {
+  nav {
     bottom: 0;
   }
 }
