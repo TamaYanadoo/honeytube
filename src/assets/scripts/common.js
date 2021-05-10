@@ -1,10 +1,10 @@
-/* Update 2021-05-07 */
+/* Update 2021-05-10 */
 
 // Tab
 const tabItem = document.querySelectorAll('.tab-item');
 const tabContent = document.querySelectorAll('.tab-content');
 
-tabItem.forEach(e => {
+Array.prototype.forEach.call(tabItem, e => {
     e.addEventListener('click', tabEvent);
 })
 
@@ -12,11 +12,11 @@ function tabEvent(e) {
     const tabTarget = e.currentTarget.parentNode;
     const tabData = tabTarget.dataset.tab;
 
-    tabItem.forEach(e => {
+    Array.prototype.forEach.call(tabItem, e => {
         e.parentNode.classList.remove('active');
     })
     
-    tabContent.forEach(e => {
+    Array.prototype.forEach.call(tabContent, e => {
         e.classList.remove('active');
     })
 
@@ -24,4 +24,3 @@ function tabEvent(e) {
     document.querySelector('#' + tabData).classList.add('active');
 
 }
-
