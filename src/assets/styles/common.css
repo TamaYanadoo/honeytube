@@ -69,6 +69,33 @@ a:hover { color: #000; text-decoration: none;}
   -webkit-line-clamp: 2;
   white-space: normal;
 }
+/* default btn */
+.btn {
+  position: relative;
+  width: 100%;
+  padding: 1.9rem 4rem 1.5rem;
+  font-weight: 800;
+  font-size: 1.3rem;
+  color: #fff;
+  background-color: #fff;
+  border-width: 1px;
+  border-radius: 0;
+  border-color: transparent;
+  text-align: center;
+}
+.btn.positive {
+  color: #3B3B4D;
+  background-color: #3B3B4D;
+}
+.btn.disabled {
+  background-color: #CFCFDA;
+}
+.btn.active {
+  background-color: #FFB914;
+}
+.btn span {
+  position: relative;
+}
 main * {
 	box-sizing: border-box;
 	font-family: 'NanumSquare', sans-serif;
