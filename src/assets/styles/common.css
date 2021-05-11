@@ -76,21 +76,27 @@ a:hover { color: #000; text-decoration: none;}
   padding: 1.9rem 4rem 1.5rem;
   font-weight: 800;
   font-size: 1.3rem;
-  color: #fff;
+  color: #3B3B4D;
   background-color: #fff;
   border-width: 1px;
   border-radius: 0;
-  border-color: transparent;
+  border-style: solid;
+  border-color: #CFCFDA;
   text-align: center;
 }
 .btn.positive {
-  color: #3B3B4D;
+  color: #fff;
+  border-color: #3B3B4D;
   background-color: #3B3B4D;
 }
 .btn.disabled {
+  color: #fff;
+  border-color: #CFCFDA;
   background-color: #CFCFDA;
 }
 .btn.active {
+  color: #fff;
+  border-color: #FFB914;
   background-color: #FFB914;
 }
 .btn span {

@@ -27,15 +27,28 @@
 	font-size: 1.5rem;
 }
 .user-info-area .user-desc .user-tit {
+	display: none;
+	font-weight: 800;
+	color: #3B3B4D;
+}
+.user-info-area .user-desc .btn-login{
 	display: block;
 	font-weight: 800;
 	color: #3B3B4D;
 }
 .user-info-area .user-desc .btn-user-modify {
+	display: none;
 	margin-top: .8rem;
 	font-weight: 400;
 	font-size: 1.1rem;
 	color: #A0A0B6;
+}
+.user-info-area.login .btn-login {
+	display: none;
+}
+.user-info-area.login .user-tit,
+.user-info-area.login .btn-user-modify{
+	display: block;
 }
 
 .myhome-lists li + li {
@@ -165,6 +178,10 @@ nav a.active .nav-txt.ranking::before {
 }
 nav a.active .nav-txt.my::before {
 	background-image: url(../images/ico_my_54x54b.png);
+}
+
+.advertise-col {
+	
 }
 
 @media screen and (min-width: 750px){
