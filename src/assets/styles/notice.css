@@ -2,6 +2,8 @@
 .btn-more{display:block; position:relative; width:31rem; margin:2.35rem auto; padding:1.6rem 0; font-weight:700; font-size:1.3rem; color:#a0a0b6; background-color:#fff; border:1px solid #cfcfda;}
 .btn-more:before{content:''; position:absolute; top:0; bottom:0; left:50%; width:1.4rem; height:1.4rem; margin:auto; background:url(/src/assets/images/ico_btn_plus_42x42.png) no-repeat 50% 0; background-size:100%; transform:translateX(-3.7rem);}
 
+input::placeholder{color:#b7b7c8;}
+input:-ms-input-placeholder{color:#b7b7c8;}
 
 .title-col{position:fixed; top:0; right:0; left:0; width:100%; max-width:750px; margin:0 auto; padding:1.8rem 0; background-color:#fff; border-bottom:1px solid #e5e5e5; text-align:center; z-index:100;}
 .title-col .ico-btn-back{position:absolute; top:0; bottom:0; left:1.7rem; width:3.6rem; height:3.6rem; margin:auto; background-image:url(/src/assets/images/ico_btn_back_108x108.png);}
@@ -29,20 +31,27 @@
 .list-detail-col dd{padding:2.55rem 2.5rem; font-size:1.3rem;}
 .list-detail-col dd pre{line-height:2rem; white-space:pre-wrap;}
 
-.recommend-code-col .code-box{padding:3.5rem 2.5rem 0; border:1px solid red;}
-.recommend-code-col .code-box dt{display:-webkit-box; display:flex; -webkit-box-align:center; align-items:center; width:100%; margin-bottom:2.4rem;}
-.recommend-code-col .code-box p{display:-webkit-box; display:flex; -webkit-box-flex:1; flex:1; font-weight:300; font-size:1.2rem;}
-.recommend-code-col .code-box ul{display:-webkit-box; display:flex;}
-.recommend-code-col .code-box ul li + li{margin-left:1.6rem;}
-.ico-btn-copy{width:14px; height:17px; background-image:url(/src/assets/images/ico_copy_42x51.png);}
-.ico-btn-share{width:16px; height:17px; background-image:url(/src/assets/images/ico_share_48x51.png);}
+.friend-col .code-box{padding:3.5rem 2.5rem 0;}
+.friend-col .code-box dt{display:-webkit-box; display:flex; -webkit-box-align:center; align-items:center; width:100%; margin-bottom:2.4rem;}
+.friend-col .code-box dt p{-webkit-box-flex:1; flex:1; font-weight:300; font-size:1.2rem;}
+.friend-col .code-box ul{flex:0 0 auto;}
+.friend-col .code-box ul li{display:inline-block;}
+/* .friend-col .code-box ul li + li{margin-left:1.6rem;} */
+.friend-col .code-box ul li a{display:block;}
+.friend-col .code-box .ico-btn-copy{width:2.8rem; height:3.4rem; background-image:url(/src/assets/images/ico_copy_42x51.png); background-position:50% 50%; background-size:1.4rem;}
+.friend-col .code-box .ico-btn-share{width:3.2rem; height:3.4rem; background-image:url(/src/assets/images/ico_share_48x51.png); background-position:50% 50%; background-size:1.6rem;}
 
-.recommend-code-col .code-box .default-code{font-size:2.4rem;}
-.recommend-code-col .code-box .change-code{border:1px solid blue;}
+.friend-col .code-box .default-code{font-size:2.4rem;}
+.friend-col .code-box .default-code > span{display:block; margin-top:1.4rem; color:#717188;}
+.friend-col .code-box .change-code{display:-webkit-box; display:flex; -webkit-box-align:center; align-items:center; border-bottom:1px solid #e5e5e5;}
+.friend-col .change-code .code-input-box{flex:1; font-size:1.4rem;}
+.friend-col .change-code .code-input-box input[type="text"]{width:100%; padding:1rem 0; border:none; outline:none;}
+.friend-col .change-code button{flex:0 0 auto; padding:1.5rem 0 1.5rem 2rem; font-size:1rem; color:#000;}
+.friend-col .change-code button.disabled{color:#b7b7c8;}
 
-.recommend-list-box{width:100%; background-color:#fff;}
-.recommend-list-box ul li{display:-webkit-box; display:flex; -webkit-box-align:center; align-items:center; width:100%; padding:1.25rem 2.5rem; border-bottom:1px solid #ececf6;}
-.recommend-list-box .friend-thumb{flex:0 0 auto; width:5.2rem; height:5.2rem; background-color:#d5e1e8; border-radius:50%; overflow:hidden;}
-.recommend-list-box .friend-name{flex:1; margin-left:1rem; font-weight:700; font-size:1.3rem;}
-.recommend-list-box .friend-count{flex:0 0 auto; font-size:1.2rem; color:#a0a0b6;}
-.recommend-list-box .btn-more{padding:0; border:none;}
+.friend-col .recommend-list-box{width:100%; background-color:#fff;}
+.friend-col .recommend-list-box ul li{display:-webkit-box; display:flex; -webkit-box-align:center; align-items:center; width:100%; padding:1.25rem 2.5rem; border-bottom:1px solid #ececf6;}
+.friend-col .recommend-list-box .friend-thumb{flex:0 0 auto; width:5.2rem; height:5.2rem; background-color:#d5e1e8; border-radius:50%; overflow:hidden;}
+.friend-col .recommend-list-box .friend-name{flex:1; margin-left:1rem; font-weight:700; font-size:1.3rem;}
+.friend-col .recommend-list-box .friend-count{flex:0 0 auto; font-size:1.2rem; color:#a0a0b6;}
+.friend-col .recommend-list-box .btn-more{padding:0; border:none;}
