@@ -180,8 +180,150 @@ nav a.active .nav-txt.my::before {
 	background-image: url(../images/ico_my_54x54b.png);
 }
 
-.advertise-col {
+.advertise-col .inner-col{
+	padding: 5.1rem 2.5rem;
+}
+.advertise-col .tit-area {
+	text-align: left;
+}
+.advertise-col .tit-area strong {
+	display: block;
+	font-weight: 400;
+	font-size: 2.4rem;
+	line-height: 1.33;
+}
+.advertise-col .tit-area p {
+	margin-top: 1.3rem;
+	font-weight: 300;
+	font-size: 1.2rem;
+	color: #3B3B4D;
+	letter-spacing: 0.02rem;
+}
+.advertise-col .btn.guide {
+	background-image: url(../images/ico_question_47x47.png);
+	background-repeat: no-repeat;
+	background-position: 93% 50%;
+	background-size: 1.6rem auto;
+	image-rendering: -webkit-optimize-contrast;
+	image-rendering: -ms-optimize-contrast;
+}
+.advertise-col .btn.download {
+	background-image: url(../images/ico_down_43x43w.png);
+	background-repeat: no-repeat;
+	background-position: 92.5% 50%;
+	background-size: 1.4rem auto;
+	image-rendering: -webkit-optimize-contrast;
+	image-rendering: -ms-optimize-contrast;
+}
+.advertise-col .step-col {
+	margin-top: 4rem;
+}
+.step-lists {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-box-align: center;
+	-webkit-box-align: center;
+	align-items: center;
+	-webkit-box-pack: justify; 
+	-ms-flex-pack: justify; 
+	justify-content: space-between;
+	text-align: center;
+}
+.step-lists li {
+	position: relative;
+}
+.step-lists li i {
+	display: inline-block;
+	position: relative;
+	width: 1rem;
+	height: 1rem;
+	border: 1px solid #CFCFDA;
+	border-radius: 50%;
+}
+.step-lists li span {
+	display: block;
+	margin-top: 1rem;
+}
+.step-lists li + li::before {
+	/* content: '';
+	position: absolute;
+	top: 50%;
+	left: -100%;
+	height: 1px;
+	background-color: #DFDFEA; */
+}
+.advertise-col .comment {
+	margin-top: 5rem;
+	padding: 2rem 3.5rem 2rem 1.5rem;
+	border: 1px solid #CFCFDA;
+}
+.advertise-col .comment pre {
+	font-weight: 400;
+	font-size: 1.1rem;
+	line-height: 1.45;
+	white-space: pre-wrap;
+}
+
+.advertise-reason-col .inner-col {
+	padding: 2.8rem 2.5rem 3rem 2.4rem;
+	border-top: 1px solid #DFDFEA;
+}
+.advertise-reason-col .reason-title {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-box-align: center;
+	-webkit-box-align: center;
+	align-items: center;
+	-webkit-box-pack: justify; 
+	-ms-flex-pack: justify; 
+	justify-content: space-between;
+	text-align: center;
+}
+.advertise-reason-col .reason-title strong {
+	font-weight: 400;
+	font-size: 1.3rem;
+	color: #3B3B4D;
+}
+.advertise-reason-col .reason-title button {
+	padding: .4rem 1rem .2rem;
+	border: 1px solid #CFCFDA;
+	border-radius: 9.9rem;
+}
+.advertise-reason-col .reason-title button span {
+	position: relative;
+	font-weight: 700;
+	font-size: 1.2rem;
+	color: #717188;
+}
+.advertise-reason-col ul {
+	margin-top: 1rem;
+}
+.advertise-reason-col ul li {
+	font-weight: 400;
+	font-size: 1.2rem;
+	color: #A0A0B6;
+	line-height: 1.7;
+}
+
+.advertise-input-col {
 	
+}
+.advertise-input-col .inner-col {
+	padding: 2.8rem 2.5rem;
+	box-shadow: .1rem .1rem .7rem 0px rgba(0, 0, 0, 0.17);
+}
+.advertise-input-col input {
+	display: block;
+	width: 100%;
+	font-weight: 400;
+	font-size: 1.6rem;
+	color: #000;
+	line-height: 1.3;
+}
+.advertise-input-col input::placeholder {
+	color: #B7B7C8;
 }
 
 @media screen and (min-width: 750px){
