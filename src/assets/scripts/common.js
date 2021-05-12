@@ -27,9 +27,9 @@ function tabEvent(e) {
 
 // Nav
 let lastScrollTop = 0;
-let delta = 5;
-let fixBox = document.querySelector('nav');
-let fixBoxHeight = fixBox.offsetHeight;
+const delta = 5;
+const fixBox = document.querySelector('nav');
+const fixBoxHeight = fixBox.offsetHeight;
 let didScroll;
 window.onscroll = function(e) {
     didScroll = true;
@@ -43,7 +43,7 @@ setInterval(function(){
 }, 250);
 
 function hasScrolled(){
-    var nowScrollTop = window.scrollY;
+    let nowScrollTop = window.scrollY;
     if(Math.abs(lastScrollTop - nowScrollTop) <= delta){
         return;
     }
