@@ -1,4 +1,4 @@
-/* Update 2021-05-10 */
+/* Update 2021-05-12 */
 
 // Tab
 const tabItem = document.querySelectorAll('.tab-item');
@@ -23,4 +23,38 @@ function tabEvent(e) {
     tabTarget.classList.add('active');
     document.querySelector('#' + tabData).classList.add('active');
 
+}
+
+// Nav
+let lastScrollTop = 0;
+let delta = 5;
+let fixBox = document.querySelector('nav');
+let fixBoxHeight = fixBox.offsetHeight;
+let didScroll;
+window.onscroll = function(e) {
+    didScroll = true;
+};
+
+setInterval(function(){
+    if(didScroll){
+        hasScrolled();
+        didScroll = false;
+    }
+}, 250);
+
+function hasScrolled(){
+    var nowScrollTop = window.scrollY;
+    if(Math.abs(lastScrollTop - nowScrollTop) <= delta){
+        return;
+    }
+    if(nowScrollTop > lastScrollTop && nowScrollTop > fixBoxHeight){
+        //Scroll down
+        fixBox.classList.remove('active');
+    } else {
+        if(nowScrollTop + window.innerHeight < document.body.offsetHeight){
+            //Scroll up
+            fixBox.classList.add('active');
+        }
+    }
+    lastScrollTop = nowScrollTop;
 }

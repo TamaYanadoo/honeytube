@@ -100,10 +100,13 @@ nav {
 	left: 0;
 	right: 0;
 	z-index: 5;
-  bottom: calc(constant(safe-area-inset-bottom) + 0px);
-  bottom: calc(env(safe-area-inset-bottom) + 0px);
+	bottom: -6rem;
 	background-color: #fff;
 	box-shadow: 0 -.5rem .6rem rgba(250, 250, 250, 0.75);
+}
+nav.active {
+  bottom: calc(constant(safe-area-inset-bottom) + 0px);
+  bottom: calc(env(safe-area-inset-bottom) + 0px);
 }
 nav .inner-col {
 	display: -webkit-box;
