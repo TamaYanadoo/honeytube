@@ -68,7 +68,7 @@ input:-ms-input-placeholder{color:#b7b7c8;}
 .my-advertise-col .advertise-box{width:100%; padding:3rem 1.5rem;}
 .my-advertise-col .advertise-box h3{margin:4rem 0 1.5rem; font-weight:700; font-size:1.5rem;}
 .my-advertise-col .advertise-box ul li{width:100%; background-color:#fff;}
-.my-advertise-col .advertise-box ul li a{display:block; padding:2.9rem 1.4rem;}
+.my-advertise-col .advertise-box ul li a{display:block; padding:1.9rem 1.4rem;}
 .advertise-box ul li + li{margin-top:1rem;}
 .advertise-box ul li dl{display:-webkit-box; display:flex; align-items:flex-end; width:100%;}
 .advertise-box ul li dt{display:-webkit-box; display:inline-flex; -webkit-box-align:center; align-items:center; flex:1;}
