@@ -326,7 +326,7 @@ nav a.active .nav-txt.my::before {
 	color: #B7B7C8;
 }
 
-@media screen and (min-width: 750px){
+@media screen and (min-width: 720px){
   nav {
     bottom: 0;
   }
