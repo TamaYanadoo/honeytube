@@ -10,7 +10,27 @@
 	flex: 0 0 auto;
 	width: 6rem;
 	height: 6rem;
-	background:url(../images/bg_thumbnail.png) 50% 50% / 100% auto no-repeat;
+	/* background:url(../images/bg_thumbnail.png) 50% 50% / 100% auto no-repeat; */
+	background-color: #fff;
+	background-image: url(https://bennettfeely.com/clippy/pics/pittsburgh.jpg);
+	background-size: cover;
+	background-position: 50% 50%;
+	/* clip-path: polygon(50% 0, 100% 33%, 100% 66%, 50% 100%, 0 66%, 0 33%); */
+	clip-path: polygon(50% 0, 100% 22%, 100% 78%, 50% 100%, 0 78%, 0 22%);
+
+
+}
+.triangle {
+  padding: 0;
+  background-image: url(https://assets.codepen.io/222579/beagle400.jpg);
+  background-size: cover;
+  width:100px;
+  height: 100px;
+  -webkit-clip-path: url(#clip);
+  clip-path: url(#clip);
+}
+.shadow {
+  filter: drop-shadow(1px 6px 3px rgba(50, 50, 0, .4));
 }
 .user-info-area .user-thumb::before {
 	content: '';
@@ -20,6 +40,8 @@
 	width: 2.7rem;
 	height: 2.7rem;
 	background: url(../images/ico_pencil_81X81.png) 50% 50% / 100% auto no-repeat;
+	image-rendering: -webkit-optimize-contrast;
+	image-rendering: -ms-optimize-contrast;
 }
 .user-info-area .user-desc {
 	flex: 1 1 auto;
@@ -232,7 +254,16 @@ nav a.active .nav-txt.my::before {
 	-webkit-box-pack: justify; 
 	-ms-flex-pack: justify; 
 	justify-content: space-between;
+	position: relative;
 	text-align: center;
+}
+.step-lists::before {
+	content: '';
+	position: absolute;
+	top: 13%;
+	height: 1px;
+	width: 100%;
+	background-color: #DFDFEA;
 }
 .step-lists li {
 	position: relative;
@@ -242,8 +273,68 @@ nav a.active .nav-txt.my::before {
 	position: relative;
 	width: 1rem;
 	height: 1rem;
+	background-color: #fff;
 	border: 1px solid #CFCFDA;
 	border-radius: 50%;
+}
+.step-lists li i::before {
+	display: none;
+	content: '';
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 2.2rem;
+	height: 2.2rem;
+	/* transform: translate(-50%,-50%); */
+	margin-top: -1.1rem;
+	margin-left: -1.1rem;
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+	background-color: #3B3B4D;
+	border-radius: inherit;
+	image-rendering: -webkit-optimize-contrast;
+	image-rendering: -ms-optimize-contrast;
+}
+.step-lists li i.active::before {
+	display: block;
+}
+.step-lists li i.ico-waiting::before {
+	background-image: url(../images/ico_waiting.png);
+	background-size: auto 1.2rem;
+}
+.step-lists li i.ico-video::before {
+	background-image: url(../images/ico_video.png);
+	background-size: auto .86rem;
+}
+.step-lists li i.ico-checking::before {
+	background-image: url(../images/ico_checking.png);
+	background-size: auto 1rem;
+}
+.step-lists li i.ico-advertise::before {
+	background-image: url(../images/ico_advertise.png);
+	background-size: auto .86rem;
+}
+.step-lists li i.reject::before{
+	display: block;
+	background-image: url(../images/ico_x_24x23w.png);
+	background-size: auto .8rem;
+	background-color: #FF5647;
+}
+.step-lists li:first-child {
+	text-align: left;
+}
+.step-lists li:first-child i::before {
+	left: -1px;
+	margin-left: 0;
+}
+.step-lists li:last-child {
+	text-align: right;
+}
+.step-lists li:last-child i::before {
+	left: initial;
+	right: -1px;
+	/* transform: translate(0,-50%); */
+	margin-left: 0;
 }
 .step-lists li span {
 	display: block;

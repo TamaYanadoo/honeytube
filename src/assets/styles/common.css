@@ -78,6 +78,15 @@ input {
   -webkit-line-clamp: 2;
   white-space: normal;
 }
+.stamp {
+  -webkit-animation: effect-opacity .3s .5s infinite linear alternate;
+  -moz-animation: effect-opacity 2s 1s infinite linear alternate;
+  animation: effect-opacity 1s infinite linear alternate;
+}
+@keyframes effect-opacity{
+  0%{opacity:1;}
+  100%{opacity:.2;}
+}
 /* default btn */
 .btn {
   position: relative;
@@ -120,6 +129,7 @@ main.nav {
   padding-bottom: calc(env(safe-area-inset-bottom) + 6rem);
 }
 main .inner-col {
+  position: relative;
 	max-width: 750px;
 	margin: 0 auto;
 }
@@ -132,6 +142,8 @@ main .inner-col {
 	width: 5.3rem;
 	height: 2.2rem;
   background: url(../images/logo_honeytube_159x66.png) 50% 50% / 100% auto no-repeat;
+	image-rendering: -webkit-optimize-contrast;
+	image-rendering: -ms-optimize-contrast;
 }
 .header-col .logo span {
   display: block;
@@ -154,6 +166,6 @@ main .inner-col {
 
 @media screen and (min-width: 750px){
 	html {
-		font-size: 14px;
+		font-size: 15px;
 	}
 }
