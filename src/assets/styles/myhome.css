@@ -225,19 +225,31 @@ nav a.active .nav-txt.my::before {
 	color: #3B3B4D;
 	letter-spacing: 0.02rem;
 }
-.advertise-col .btn.guide {
+.advertise-col .btn.guide span::before {
+	content: '';
+	display: inline-block;
+	width: 1.6rem;
+	height: 1.6rem;
+	margin: -0.05rem .5rem 0 0;
+	vertical-align: top;
 	background-image: url(../images/ico_question_47x47.png);
 	background-repeat: no-repeat;
-	background-position: 93% 50%;
-	background-size: 1.6rem auto;
+	background-position: 50% 50%;
+	background-size: 100% auto;
 	image-rendering: -webkit-optimize-contrast;
 	image-rendering: -ms-optimize-contrast;
 }
-.advertise-col .btn.download {
+.advertise-col .btn.download span::before {
+	content: '';
+	display: inline-block;
+	width: 1.4rem;
+	height: 1.4rem;
+	margin: -0.05rem .5rem 0 0;
+	vertical-align: top;
 	background-image: url(../images/ico_down_43x43w.png);
 	background-repeat: no-repeat;
-	background-position: 92.5% 50%;
-	background-size: 1.4rem auto;
+	background-position: 50% 50%;
+	background-size: 100% auto;
 	image-rendering: -webkit-optimize-contrast;
 	image-rendering: -ms-optimize-contrast;
 }
@@ -405,7 +417,7 @@ nav a.active .nav-txt.my::before {
 .advertise-input-col {
 	
 }
-.advertise-input-col .inner-col {
+.advertise-input-col .input-form {
 	padding: 2.8rem 2.5rem;
 	box-shadow: .1rem .1rem .7rem 0px rgba(0, 0, 0, 0.17);
 }
@@ -420,9 +432,19 @@ nav a.active .nav-txt.my::before {
 .advertise-input-col input::placeholder {
 	color: #B7B7C8;
 }
+.advertise-btn-col .btn {
+	padding: 2.3rem 4rem 1.9rem;
+	font-size: 1.4rem;
+}
 
 @media screen and (min-width: 720px){
   nav {
     bottom: 0;
   }
+	.advertise-input-col .inner-col{
+		padding: 0 1.6rem;
+	}
+	.advertise-btn-col {
+		margin-top: 1.7rem;
+	}
 }
