@@ -1,229 +1,236 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>이벤트 리스트</title>
-	<link rel="stylesheet" href="./src/assets/dist/styles/normalize.css">
-	<link rel="stylesheet" href="./src/assets/dist/styles/reset.css">
-	<link rel="stylesheet" href="./src/assets/styles/common.css">
-	<link rel="stylesheet" href="./src/assets/styles/myhome.css">
-    <link rel="stylesheet" href="./src/assets/styles/notice.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>이벤트 리스트</title>
+    <link rel="stylesheet" href="./src/assets/dist/styles/normalize.css" />
+    <link rel="stylesheet" href="./src/assets/dist/styles/reset.css" />
+    <link rel="stylesheet" href="./src/assets/styles/common.css" />
+    <link rel="stylesheet" href="./src/assets/styles/myhome.css" />
+    <link rel="stylesheet" href="./src/assets/styles/notice.css" />
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.js"></script>
     <!-- <script defer src="../assets/scripts/common.js" ></script> -->
-</head>
-<body>
+  </head>
+  <body>
     <main>
-        <section class="title-col">
-            <div class="inner-col">
-                <button type="button" class="ico-btn ico-btn-back"><span class="blind">뒤로가기</span></button>
-                <p>이벤트</p>
-            </div>
-        </section>
-        <section class="list-col">
-            <div class="inner-col">
-                <div class="tab-list-box">
-                    <ul>
-                        <li class="active" data-tab="tab1"><a href="#;" class="tab-item">진행중 이벤트</a></li>
-                        <li data-tab="tab2"><a href="#;" class="tab-item">종료된 이벤트</a></li>
-                    </ul>
-                </div>
-                <div class="list-content-box tab-content-box">
-                    <ul id="tab1" class="tab-content active">
-                        <li>
-                            <a href="event_detail.html">
-                                <p>
-                                    <span class="ellipsis">진행중 이벤트</span>
-                                    <em>2021. 05. 04</em>
-                                </p>               
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#;">
-                                <p>
-                                    <span class="ellipsis">4월 특별 친구 추천 프로모션4월 특별 친구 추천 프로모션4월 특별 친구 추천 프로모션</span>
-                                    <em>2021. 05. 04</em>
-                                </p>            
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#;">
-                                <p>
-                                    <span class="ellipsis">꿀튜브 홍보 챌린지 조회수 추가 보상</span>
-                                    <em>2021. 05. 04</em>
-                                </p>                  
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#;">
-                                <p>
-                                    <span class="ellipsis">쏠쏠한 선책 추가 보상</span>
-                                    <em>2021. 05. 04</em>
-                                </p>            
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#;">
-                                <p>
-                                    <span class="ellipsis">4월 특별 친구 추천 프로모션</span>
-                                    <em>2021. 05. 04</em>
-                                </p>            
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#;">
-                                <p>
-                                    <span class="ellipsis">꿀튜브 홍보 챌린지 조회수 추가 보상</span>
-                                    <em>2021. 05. 04</em>
-                                </p>                  
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#;">
-                                <p>
-                                    <span class="ellipsis">쏠쏠한 선책 추가 보상</span>
-                                    <em>2021. 05. 04</em>
-                                </p>            
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#;">
-                                <p>
-                                    <span class="ellipsis">4월 특별 친구 추천 프로모션</span>
-                                    <em>2021. 05. 04</em>
-                                </p>            
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#;">
-                                <p>
-                                    <span class="ellipsis">꿀튜브 홍보 챌린지 조회수 추가 보상</span>
-                                    <em>2021. 05. 04</em>
-                                </p>                  
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#;">
-                                <p>
-                                    <span class="ellipsis">쏠쏠한 선책 추가 보상</span>
-                                    <em>2021. 05. 04</em>
-                                </p>            
-                            </a>
-                        </li>
-                    </ul>
-                    <ul id="tab2" class="tab-content">
-                        <li>
-                            <a href="#;">
-                                <p>
-                                    <span class="ellipsis">종료된 이벤트</span>
-                                    <em>2021. 05. 04</em>
-                                </p>               
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#;">
-                                <p>
-                                    <span class="ellipsis">4월 특별 친구 추천 프로모션</span>
-                                    <em>2021. 05. 04</em>
-                                </p>            
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#;">
-                                <p>
-                                    <span class="ellipsis">꿀튜브 홍보 챌린지 조회수 추가 보상</span>
-                                    <em>2021. 05. 04</em>
-                                </p>                  
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#;">
-                                <p>
-                                    <span class="ellipsis">쏠쏠한 선책 추가 보상</span>
-                                    <em>2021. 05. 04</em>
-                                </p>            
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#;">
-                                <p>
-                                    <span class="ellipsis">4월 특별 친구 추천 프로모션</span>
-                                    <em>2021. 05. 04</em>
-                                </p>            
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#;">
-                                <p>
-                                    <span class="ellipsis">꿀튜브 홍보 챌린지 조회수 추가 보상</span>
-                                    <em>2021. 05. 04</em>
-                                </p>                  
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#;">
-                                <p>
-                                    <span class="ellipsis">쏠쏠한 선책 추가 보상</span>
-                                    <em>2021. 05. 04</em>
-                                </p>            
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#;">
-                                <p>
-                                    <span class="ellipsis">4월 특별 친구 추천 프로모션</span>
-                                    <em>2021. 05. 04</em>
-                                </p>            
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#;">
-                                <p>
-                                    <span class="ellipsis">꿀튜브 홍보 챌린지 조회수 추가 보상</span>
-                                    <em>2021. 05. 04</em>
-                                </p>                  
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#;">
-                                <p>
-                                    <span class="ellipsis">쏠쏠한 선책 추가 보상</span>
-                                    <em>2021. 05. 04</em>
-                                </p>            
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                <button type="button" class="btn btn-more"><span>더보기</span></button>
-            </div>
-        </section>
+      <section class="title-col">
+        <div class="inner-col">
+          <button type="button" class="ico-btn ico-btn-back">
+            <span class="blind">뒤로가기</span>
+          </button>
+          <p>이벤트</p>
+        </div>
+      </section>
+      <section class="list-col">
+        <div class="inner-col">
+          <div class="tab-list-box">
+            <ul>
+              <li class="active" data-tab="tab1">
+                <a href="#;" class="tab-item">진행중 이벤트</a>
+              </li>
+              <li data-tab="tab2">
+                <a href="#;" class="tab-item">종료된 이벤트</a>
+              </li>
+            </ul>
+          </div>
+          <div class="list-content-box tab-content-box">
+            <ul id="tab1" class="tab-content active">
+              <li>
+                <a href="event_detail.html">
+                  <p>
+                    <span class="ellipsis">진행중 이벤트</span>
+                    <em>2021. 05. 04</em>
+                  </p>
+                </a>
+              </li>
+              <li>
+                <a href="#;">
+                  <p>
+                    <span class="ellipsis">4월 특별 친구 추천 프로모션4월 특별 친구 추천 프로모션4월 특별 친구 추천 프로모션</span>
+                    <em>2021. 05. 04</em>
+                  </p>
+                </a>
+              </li>
+              <li>
+                <a href="#;">
+                  <p>
+                    <span class="ellipsis">꿀튜브 홍보 챌린지 조회수 추가 보상</span>
+                    <em>2021. 05. 04</em>
+                  </p>
+                </a>
+              </li>
+              <li>
+                <a href="#;">
+                  <p>
+                    <span class="ellipsis">쏠쏠한 선책 추가 보상</span>
+                    <em>2021. 05. 04</em>
+                  </p>
+                </a>
+              </li>
+              <li>
+                <a href="#;">
+                  <p>
+                    <span class="ellipsis">4월 특별 친구 추천 프로모션</span>
+                    <em>2021. 05. 04</em>
+                  </p>
+                </a>
+              </li>
+              <li>
+                <a href="#;">
+                  <p>
+                    <span class="ellipsis">꿀튜브 홍보 챌린지 조회수 추가 보상</span>
+                    <em>2021. 05. 04</em>
+                  </p>
+                </a>
+              </li>
+              <li>
+                <a href="#;">
+                  <p>
+                    <span class="ellipsis">쏠쏠한 선책 추가 보상</span>
+                    <em>2021. 05. 04</em>
+                  </p>
+                </a>
+              </li>
+              <li>
+                <a href="#;">
+                  <p>
+                    <span class="ellipsis">4월 특별 친구 추천 프로모션</span>
+                    <em>2021. 05. 04</em>
+                  </p>
+                </a>
+              </li>
+              <li>
+                <a href="#;">
+                  <p>
+                    <span class="ellipsis">꿀튜브 홍보 챌린지 조회수 추가 보상</span>
+                    <em>2021. 05. 04</em>
+                  </p>
+                </a>
+              </li>
+              <li>
+                <a href="#;">
+                  <p>
+                    <span class="ellipsis">쏠쏠한 선책 추가 보상</span>
+                    <em>2021. 05. 04</em>
+                  </p>
+                </a>
+              </li>
+            </ul>
+            <ul id="tab2" class="tab-content">
+              <li>
+                <a href="#;">
+                  <p>
+                    <span class="ellipsis">종료된 이벤트</span>
+                    <em>2021. 05. 04</em>
+                  </p>
+                </a>
+              </li>
+              <li>
+                <a href="#;">
+                  <p>
+                    <span class="ellipsis">4월 특별 친구 추천 프로모션</span>
+                    <em>2021. 05. 04</em>
+                  </p>
+                </a>
+              </li>
+              <li>
+                <a href="#;">
+                  <p>
+                    <span class="ellipsis">꿀튜브 홍보 챌린지 조회수 추가 보상</span>
+                    <em>2021. 05. 04</em>
+                  </p>
+                </a>
+              </li>
+              <li>
+                <a href="#;">
+                  <p>
+                    <span class="ellipsis">쏠쏠한 선책 추가 보상</span>
+                    <em>2021. 05. 04</em>
+                  </p>
+                </a>
+              </li>
+              <li>
+                <a href="#;">
+                  <p>
+                    <span class="ellipsis">4월 특별 친구 추천 프로모션</span>
+                    <em>2021. 05. 04</em>
+                  </p>
+                </a>
+              </li>
+              <li>
+                <a href="#;">
+                  <p>
+                    <span class="ellipsis">꿀튜브 홍보 챌린지 조회수 추가 보상</span>
+                    <em>2021. 05. 04</em>
+                  </p>
+                </a>
+              </li>
+              <li>
+                <a href="#;">
+                  <p>
+                    <span class="ellipsis">쏠쏠한 선책 추가 보상</span>
+                    <em>2021. 05. 04</em>
+                  </p>
+                </a>
+              </li>
+              <li>
+                <a href="#;">
+                  <p>
+                    <span class="ellipsis">4월 특별 친구 추천 프로모션</span>
+                    <em>2021. 05. 04</em>
+                  </p>
+                </a>
+              </li>
+              <li>
+                <a href="#;">
+                  <p>
+                    <span class="ellipsis">꿀튜브 홍보 챌린지 조회수 추가 보상</span>
+                    <em>2021. 05. 04</em>
+                  </p>
+                </a>
+              </li>
+              <li>
+                <a href="#;">
+                  <p>
+                    <span class="ellipsis">쏠쏠한 선책 추가 보상</span>
+                    <em>2021. 05. 04</em>
+                  </p>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <button type="button" class="btn btn-more">
+            <span>더보기</span>
+          </button>
+        </div>
+      </section>
     </main>
     <script type="text/babel">
-        const tabItem = document.querySelectorAll('.tab-item');
-        const tabContent = document.querySelectorAll('.tab-content');
+      const tabItem = document.querySelectorAll('.tab-item');
+      const tabContent = document.querySelectorAll('.tab-content');
 
-        Array.prototype.forEach.call(tabItem, e => {
-            e.addEventListener('click', tabEvent);
-        })
+      Array.prototype.forEach.call(tabItem, (e) => {
+        e.addEventListener('click', tabEvent);
+      });
 
-        function tabEvent(e) {
-            const tabTarget = e.currentTarget.parentNode;
-            const tabData = tabTarget.dataset.tab;
+      function tabEvent(e) {
+        const tabTarget = e.currentTarget.parentNode;
+        const tabData = tabTarget.dataset.tab;
 
-            Array.prototype.forEach.call(tabItem, e => {
-                e.parentNode.classList.remove('active');
-            })
-            
-            Array.prototype.forEach.call(tabContent, e => {
-                e.classList.remove('active');
-            })
+        Array.prototype.forEach.call(tabItem, (e) => {
+          e.parentNode.classList.remove('active');
+        });
 
-            tabTarget.classList.add('active');
-            document.querySelector('#' + tabData).classList.add('active');
+        Array.prototype.forEach.call(tabContent, (e) => {
+          e.classList.remove('active');
+        });
 
-        }   
+        tabTarget.classList.add('active');
+        document.querySelector('#' + tabData).classList.add('active');
+      }
     </script>
-</body>
+  </body>
 </html>

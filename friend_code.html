@@ -1,65 +1,75 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>친구 추천 코드</title>
-	<link rel="stylesheet" href="./src/assets/dist/styles/normalize.css">
-	<link rel="stylesheet" href="./src/assets/dist/styles/reset.css">
-	<link rel="stylesheet" href="./src/assets/styles/common.css">
-	<link rel="stylesheet" href="./src/assets/styles/myhome.css">
-    <link rel="stylesheet" href="./src/assets/styles/notice.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>친구 추천 코드</title>
+    <link rel="stylesheet" href="./src/assets/dist/styles/normalize.css" />
+    <link rel="stylesheet" href="./src/assets/dist/styles/reset.css" />
+    <link rel="stylesheet" href="./src/assets/styles/common.css" />
+    <link rel="stylesheet" href="./src/assets/styles/myhome.css" />
+    <link rel="stylesheet" href="./src/assets/styles/notice.css" />
+  </head>
+  <body>
     <main>
-        <section class="title-col">
-            <div class="inner-col">
-                <button type="button" class="ico-btn ico-btn-back"><span class="blind">뒤로가기</span></button>
-                <p>친구 추천 코드</p>
-            </div>
-        </section>
-        <section class="friend-col">
-            <div class="inner-col">
-                <div class="code-box">
-                    <dl>
-                        <dt>
-                            <p>꿀튜브 친구 추천 코드</p>
-                            <!-- 구 추천 코드 페이지일때 노출 / 추천 코드 변경 페이지일대 비노출 -->
-                            <ul>
-                                <li><a href="#;" class="ico-btn ico-btn-copy"><span class="blind">복사하기</span></a></li>
-                                <li><a href="#;" class="ico-btn ico-btn-share"><span class="blind">공유하기</span></a></li>
-                            </ul>
-                        </dt>
-                        <dd>
-                            <!-- 친구 추천 코드 -->
-                            <p class="default-code">FR567324<span>(꿈꾸는 알파카)</span></p>
-                            <!-- 추천 코드 변경 -->
-                            <div class="change-code">
-                                <div class="code-input-box">
-                                    <input type="text" placeholder="10글자 내외의 한글 코드를 입력하세요" />
-                                </div>
-                                <!-- TODO : 인풋에 텍스트 입력시 중복확인 버튼 컬러 변경 -->
-                                <button type="button" class="disabled"><span>중복 확인</span></button>
-                            </div>
-                        </dd>
-                    </dl>
+      <section class="title-col">
+        <div class="inner-col">
+          <button type="button" class="ico-btn ico-btn-back">
+            <span class="blind">뒤로가기</span>
+          </button>
+          <p>친구 추천 코드</p>
+        </div>
+      </section>
+      <section class="friend-col">
+        <div class="inner-col">
+          <div class="code-box">
+            <dl>
+              <dt>
+                <p>꿀튜브 친구 추천 코드</p>
+                <!-- 구 추천 코드 페이지일때 노출 / 추천 코드 변경 페이지일대 비노출 -->
+                <ul>
+                  <li>
+                    <a href="#;" class="ico-btn ico-btn-copy"><span class="blind">복사하기</span></a>
+                  </li>
+                  <li>
+                    <a href="#;" class="ico-btn ico-btn-share"><span class="blind">공유하기</span></a>
+                  </li>
+                </ul>
+              </dt>
+              <dd>
+                <!-- 친구 추천 코드 -->
+                <p class="default-code">FR567324<span>(꿈꾸는 알파카)</span></p>
+                <!-- 추천 코드 변경 -->
+                <div class="change-code">
+                  <div class="code-input-box">
+                    <input type="text" placeholder="10글자 내외의 한글 코드를 입력하세요" />
+                  </div>
+                  <!-- TODO : 인풋에 텍스트 입력시 중복확인 버튼 컬러 변경 -->
+                  <button type="button" class="disabled">
+                    <span>중복 확인</span>
+                  </button>
                 </div>
-                <!-- TODO : 인풋에 텍스트 입력시 버튼 컬러 변경 -->
-                <div class="btn-area btn-floating">
-                    <button type="button" class="btn disabled"><span>코드명 바꾸기</span></button>
-                </div>
-               
-            </div>
-        </section>
-        <div class="modal" style="display:none;">
-            <div class="modal-content">
-                <!-- <p>이미 사용중인 코드입니다</p> -->
-                <p>사용 가능한 코드입니다</p>
-                <div class="btn-group">
-                    <button type="button">확인</button>
-                </div>
-            </div>
+              </dd>
+            </dl>
+          </div>
+          <!-- TODO : 인풋에 텍스트 입력시 버튼 컬러 변경 -->
+          <div class="btn-area btn-floating">
+            <button type="button" class="btn disabled">
+              <span>코드명 바꾸기</span>
+            </button>
+          </div>
+        </div>
+      </section>
+      <div class="modal" style="display: none">
+        <div class="modal-content">
+          <!-- <p>이미 사용중인 코드입니다</p> -->
+          <p>사용 가능한 코드입니다</p>
+          <div class="btn-group">
+            <button type="button">확인</button>
+          </div>
+        </div>
+      </div>
     </main>
-</body>
+  </body>
 </html>

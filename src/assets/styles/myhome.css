@@ -5,40 +5,18 @@
 	align-items: center;
 	padding: 1.7rem 2rem 2.2rem 2.1rem;
 }
-.user-info-area .user-thumb {
-	position: relative;
+.user-info-area .thumb-hexagon {
 	flex: 0 0 auto;
 	width: 6rem;
 	height: 6rem;
-	/* background:url(../images/bg_thumbnail.png) 50% 50% / 100% auto no-repeat; */
-	background-color: #fff;
-	background-image: url(https://bennettfeely.com/clippy/pics/pittsburgh.jpg);
-	background-size: cover;
-	background-position: 50% 50%;
-	/* clip-path: polygon(50% 0, 100% 33%, 100% 66%, 50% 100%, 0 66%, 0 33%); */
-	clip-path: polygon(50% 0, 100% 22%, 100% 78%, 50% 100%, 0 78%, 0 22%);
-
-
 }
-.triangle {
-  padding: 0;
-  background-image: url(https://assets.codepen.io/222579/beagle400.jpg);
-  background-size: cover;
-  width:100px;
-  height: 100px;
-  -webkit-clip-path: url(#clip);
-  clip-path: url(#clip);
-}
-.shadow {
-  filter: drop-shadow(1px 6px 3px rgba(50, 50, 0, .4));
-}
-.user-info-area .user-thumb::before {
+.user-info-area .thumb-hexagon::before {
 	content: '';
 	position: absolute;
 	bottom: 0;
 	right: 0;
-	width: 2.7rem;
-	height: 2.7rem;
+	width: 2.8rem;
+	height: 2.8rem;
 	background: url(../images/ico_pencil_81X81.png) 50% 50% / 100% auto no-repeat;
 	image-rendering: -webkit-optimize-contrast;
 	image-rendering: -ms-optimize-contrast;
