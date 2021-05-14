@@ -3,27 +3,38 @@
 	display: -webkit-box;
 	-webkit-box-align: center;
 	align-items: center;
-	padding: 1.7rem 2rem 2.2rem 2.1rem;
+	padding: 1.4rem 2rem 2.2rem 1.8rem;
 }
-.user-info-area .thumb-hexagon {
-	flex: 0 0 auto;
-	width: 6rem;
-	height: 6rem;
+.user-info-area .user-thumb {
+	position: relative;
 }
-.user-info-area .thumb-hexagon::before {
+.user-info-area .user-thumb::before{
 	content: '';
+	display: none;
 	position: absolute;
-	bottom: 0;
-	right: 0;
+	bottom: -.3rem;
+	right: -.3rem;
+	z-index: 1;
 	width: 2.8rem;
 	height: 2.8rem;
 	background: url(../images/ico_pencil_81X81.png) 50% 50% / 100% auto no-repeat;
 	image-rendering: -webkit-optimize-contrast;
 	image-rendering: -ms-optimize-contrast;
 }
+.user-info-area .user-thumb.active::before {
+	display: block;
+}
+.user-info-area .user-thumb + .user-desc {
+	margin-left: 1rem;
+}
+
+.user-info-area .thumb-hexagon {
+	flex: 0 0 auto;
+	width: 6.3rem;
+	height: 6.3rem;
+}
 .user-info-area .user-desc {
 	flex: 1 1 auto;
-	margin-left: 1rem;
 	font-size: 1.5rem;
 }
 .user-info-area .user-desc .user-tit {
