@@ -176,6 +176,7 @@ main .inner-col {
 .btn-group .btn-floating.active{background-color:#ffb914;} */
 .login-wrap {
   height: calc(var(--vh, 1vh) * 100);
+  height: 100vh\9;
 }
 .login-wrap .inner-col{
   display: -webkit-box;
