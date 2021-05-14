@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>로그인</title>
+    <link rel="stylesheet" href="./src/assets/dist/styles/normalize.css" />
+    <link rel="stylesheet" href="./src/assets/dist/styles/reset.css" />
+    <link rel="stylesheet" href="./src/assets/styles/common.css" />
+    <link rel="stylesheet" href="./src/assets/styles/myhome.css" />
+  </head>
+  <body>
+    <main>
+			<section class="login-wrap">
+				<div class="inner-col">
+					<div class="login-tit">
+						<h1>
+							<a href="#;">
+								<span class="blind">꿀튜브</span>
+							</a>
+						</h1>
+						<p>한마디로 <b>꿀</b>떨어지는 수익</p>
+					</div>
+					<div class="login-btn-area">
+						<a href="#;" class="btn btn-kakao"><span>카카오톡으로 시작하기</span></a>
+						<a href="#;" class="btn btn-naver"><span>네이버로 시작하기</span></a>
+						<a href="#;" class="btn btn-google"><span>구글로 시작하기</span></a>
+						<a href="#;" class="btn btn-apple"><span>Apple ID로 시작하기</span></a>
+						<a href="#;" class="btn default"><span>기존 회원 로그인</span></a>
+					</div>
+				</div>
+			</section>
+    </main>
+  </body>
+	<script>
+		let vh = window.innerHeight * 0.01;
+		document.documentElement.style.setProperty("--vh", `${vh}px`);
+
+		window.addEventListener("resize", () => {
+			console.log("resize");
+			let vh = window.innerHeight * 0.01;
+			document.documentElement.style.setProperty("--vh", `${vh}px`);
+		});
+	</script>
+</html>
