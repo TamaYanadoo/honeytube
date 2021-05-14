@@ -245,4 +245,7 @@ main .inner-col {
 	html {
 		font-size: 15px;
 	}
+  .login-wrap {
+    height: 100vh;
+  }
 }
