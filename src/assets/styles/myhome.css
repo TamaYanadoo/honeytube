@@ -321,6 +321,11 @@ nav a.active .nav-txt.my::before {
 	background-size: auto .8rem;
 	background-color: #FF5647;
 }
+.step-lists li i.complete{
+	background-image: url(../images/ico_checked.png);
+	background-size: auto 1rem;
+	border: none;
+}
 .step-lists li:first-child {
 	text-align: left;
 }
