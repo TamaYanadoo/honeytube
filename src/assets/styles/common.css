@@ -58,6 +58,9 @@ input {
   -webkit-box-shadow: none;
   box-shadow: none;
   outline: none;
+  -webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
 }
 input::placeholder{color:#b7b7c8;}
 input:-ms-input-placeholder{color:#b7b7c8;}
@@ -129,6 +132,9 @@ main * {
 main.nav {
   padding-bottom: calc(constant(safe-area-inset-bottom) + 6rem);
   padding-bottom: calc(env(safe-area-inset-bottom) + 6rem);
+}
+_:-ms-fullscreen, :root main.nav {
+  padding-bottom: 6rem;
 }
 main .inner-col {
   position: relative;
