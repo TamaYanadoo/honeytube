@@ -196,7 +196,7 @@ nav a.active .nav-txt.my::before {
 }
 
 .advertise-col .inner-col{
-	padding: 5.1rem 2.5rem;
+	padding: 5.7rem 2.5rem;
 }
 .advertise-col .tit-area {
 	text-align: left;
@@ -205,7 +205,7 @@ nav a.active .nav-txt.my::before {
 	display: block;
 	font-weight: 400;
 	font-size: 2.4rem;
-	line-height: 1.33;
+	line-height: 1.35;
 }
 .advertise-col .tit-area p {
 	margin-top: 1.3rem;
@@ -244,7 +244,7 @@ nav a.active .nav-txt.my::before {
 }
 .advertise-col .step-col {
 	position: relative;
-	margin-top: 4rem;
+	margin: 5.6rem .6rem 0;
 }
 .step-lists {
 	display: -webkit-box;
@@ -344,18 +344,10 @@ nav a.active .nav-txt.my::before {
 }
 .step-lists li span {
 	display: block;
-	margin-top: 1rem;
-}
-.step-lists li + li::before {
-	/* content: '';
-	position: absolute;
-	top: 50%;
-	left: -100%;
-	height: 1px;
-	background-color: #DFDFEA; */
+	margin-top: .6rem;
 }
 .advertise-col .comment {
-	margin-top: 5rem;
+	margin-top: 5.5rem;
 	padding: 2rem 3.5rem 2rem 1.5rem;
 	border: 1px solid #CFCFDA;
 }
@@ -407,11 +399,14 @@ nav a.active .nav-txt.my::before {
 	color: #A0A0B6;
 	line-height: 1.7;
 }
+.advertise-reason-col ul li + li {
+	margin-top: 0.3rem;
+}
 
 .advertise-input-col input {
 	display: block;
 	width: 100%;
-	padding: 2.8rem 2.5rem;
+	padding: 2.9rem 2.6rem;
 	font-weight: 400;
 	font-size: 1.6rem;
 	line-height: 1.3;

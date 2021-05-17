@@ -201,13 +201,13 @@ _:-ms-fullscreen, :root .login-wrap {
   padding: 8.4rem 2.5rem 2.5rem;
 }
 .login-wrap .login-tit h1{
-  width: 15.4rem;
-  height: 6.2rem;
+  width: 15.8rem;
+  height: 6.6rem;
   margin: auto;
   background: url(../images/logo_honeytube_large.png) 50% 50% / 100% auto no-repeat;
 }
 .login-wrap .login-tit p {
-  margin-top: 1.3rem;
+  margin-top: 1.8rem;
   font-weight: 300;
   font-size: 1.6rem;
 }
@@ -241,7 +241,7 @@ _:-ms-fullscreen, :root .login-wrap {
   border-color: #333;
 }
 .login-wrap .login-btn-area .btn.default {
-  margin-top: 1.7rem;
+  margin-top: 2.4rem;
   font-weight: 400;
   font-size: 1.2rem;
   color: #717188;
