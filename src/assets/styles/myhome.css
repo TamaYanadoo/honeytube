@@ -3,7 +3,7 @@
 	display: -webkit-box;
 	-webkit-box-align: center;
 	align-items: center;
-	padding: 1.4rem 2rem 2.2rem 1.8rem;
+	padding: 1.6rem 2rem 2.2rem 2.1rem;
 }
 .user-info-area .user-thumb {
 	position: relative;
@@ -44,6 +44,7 @@
 }
 .user-info-area .user-desc .btn-login{
 	display: block;
+	padding: 1rem 1rem 1rem 0;
 	font-weight: 800;
 	color: #3B3B4D;
 }
@@ -75,7 +76,7 @@
 	display: block;
 	position: relative;
 	min-height: 6.2rem;
-	padding: 2.4rem 5rem 2.3rem 2.4rem;
+	padding: 2.5rem 5rem 2.4rem 2.6rem;
 	font-weight: 700;
 	font-size: 1.3rem;
 }
@@ -356,6 +357,7 @@ nav a.active .nav-txt.my::before {
 	font-size: 1.1rem;
 	line-height: 1.45;
 	white-space: pre-wrap;
+	word-break: break-word;
 }
 
 .advertise-reason-col .inner-col {
@@ -394,10 +396,18 @@ nav a.active .nav-txt.my::before {
 	margin-top: 1rem;
 }
 .advertise-reason-col ul li {
+	position: relative;
+	padding-left: 1rem;
 	font-weight: 400;
 	font-size: 1.2rem;
 	color: #A0A0B6;
 	line-height: 1.7;
+}
+.advertise-reason-col ul li::before {
+	content: '*';
+	position: absolute;
+	left: 0;
+	top: .2rem;
 }
 .advertise-reason-col ul li + li {
 	margin-top: 0.3rem;

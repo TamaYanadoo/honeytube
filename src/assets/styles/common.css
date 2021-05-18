@@ -142,14 +142,15 @@ main .inner-col {
 	margin: 0 auto;
 }
 .header-col {
-	padding: 2rem 0 1rem;
+	padding-top: 1rem;
 	text-align: center;
 }
 .header-col .logo {
 	display: inline-block;
 	width: 5.3rem;
 	height: 2.2rem;
-  background: url(../images/logo_honeytube_159x66.png) 50% 50% / 100% auto no-repeat;
+  padding: 1rem;
+  background: url(../images/logo_honeytube_159x66.png) 50% 50% / 5.3rem 2.2rem no-repeat;
 	image-rendering: -webkit-optimize-contrast;
 	image-rendering: -ms-optimize-contrast;
 }
@@ -160,7 +161,7 @@ main .inner-col {
 
 .thumb-hexagon {
   position: relative;
-  background-color: #fff;
+  background-color: #D5E1E8;
   background-image: url(https://bennettfeely.com/clippy/pics/pittsburgh.jpg);
   background-size: cover;
   background-position: 50% 50%;
