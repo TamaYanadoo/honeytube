@@ -10,8 +10,6 @@
     <link rel="stylesheet" href="./src/assets/styles/common.css" />
     <link rel="stylesheet" href="./src/assets/styles/myhome.css" />
     <link rel="stylesheet" href="./src/assets/styles/notice.css" />
-
-    <script defer src="./src/assets/scripts/common.js"></script>
   </head>
   <body>
     <main>
@@ -27,89 +25,19 @@
         <div class="inner-col">
           <div class="list-content-box notice">
             <!-- 고정 공지사항 -->
-            <ul class="important-notice">
-              <li>
-                <a href="notice_detail.html">
-                  <p>
-                    <span class="ellipsis">스케줄러 인증 이벤트 2탄 당첨자 발표스케줄러 인증 이벤트 2탄 당첨자 발표스케줄러 인증 이벤트 2탄 당첨자 발표</span>
-                    <em>2021. 05. 04</em>
-                  </p>
-                </a>
-              </li>
-            </ul>
-            <ul>
-              <li>
-                <a href="notice_detail.html">
-                  <p>
-                    <span class="ellipsis">스케줄러 인증 이벤트 2탄 당첨자 발표스케줄러 인증 이벤트 2탄 당첨자 발표스케줄러 인증 이벤트 2탄 당첨자 발표</span>
-                    <em>2021. 05. 04</em>
-                  </p>
-                </a>
-              </li>
-              <li class="new-notice">
-                <a href="#;">
-                  <p>
-                    <span class="ellipsis">스케줄러 인증 이벤트 1탄 당첨자 발표</span>
-                    <em>2021. 05. 04</em>
-                  </p>
-                </a>
-              </li>
-              <li>
-                <a href="#;">
-                  <p>
-                    <span class="ellipsis">스케줄러 인증 이벤트 2탄 당첨자 발표</span>
-                    <em>2021. 05. 04</em>
-                  </p>
-                </a>
-              </li>
-              <li class="new-notice">
-                <a href="#;">
-                  <p>
-                    <span class="ellipsis">스케줄러 인증 이벤트 3탄 당첨자 발표</span>
-                    <em>2021. 05. 04</em>
-                  </p>
-                </a>
-              </li>
-              <li>
-                <a href="#;">
-                  <p>
-                    <span class="ellipsis">스케줄러 인증 이벤트 4탄 당첨자 발표</span>
-                    <em>2021. 05. 04</em>
-                  </p>
-                </a>
-              </li>
-              <li class="new-notice">
-                <a href="#;">
-                  <p>
-                    <span class="ellipsis">스케줄러 인증 이벤트 5탄 당첨자 발표</span>
-                    <em>2021. 05. 04</em>
-                  </p>
-                </a>
-              </li>
-              <li>
-                <a href="#;">
-                  <p>
-                    <span class="ellipsis">스케줄러 인증 이벤트 2탄 당첨자 발표</span>
-                    <em>2021. 05. 04</em>
-                  </p>
-                </a>
-              </li>
-              <li class="new-notice">
-                <a href="#;">
-                  <p>
-                    <span class="ellipsis">스케줄러 인증 이벤트 2탄 당첨자 발표</span>
-                    <em>2021. 05. 04</em>
-                  </p>
-                </a>
-              </li>
-              <li>
-                <a href="#;">
-                  <p>
-                    <span class="ellipsis">스케줄러 인증 이벤트 2탄 당첨자 발표</span>
-                    <em>2021. 05. 04</em>
-                  </p>
-                </a>
-              </li>
+            <div class="important-notice">
+              <ul class="">
+                <li>
+                  <a href="notice_detail.html">
+                    <p>
+                      <span class="ellipsis">스케줄러 인증 이벤트 2탄 당첨자 발표스케줄러 인증 이벤트 2탄 당첨자 발표스케줄러 인증 이벤트 2탄 당첨자 발표</span>
+                      <em>2021. 05. 04</em>
+                    </p>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <ul class="notice-list">
             </ul>
             <button type="button" class="btn btn-more">
               <span>더보기</span>
@@ -129,6 +57,20 @@
           listFix.classList.remove('fixed');
         }
       });
+
+
+      const noticeList = document.querySelector('.notice-list');
+      let listCont;
+      for (let i = 0; i < 10; ++i) {
+        listCont = `<a href="notice_detail.html">
+                      <p>
+                        <span class="ellipsis">테스트 공지사항입니다</span>
+                        <em>2021. 05. 04</em>
+                      </p>
+                    </a>`;
+        noticeList.innerHTML += '<li>' + listCont + '</li>'
+      }
+      
     </script>
   </body>
 </html>
