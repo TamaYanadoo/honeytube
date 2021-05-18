@@ -10,6 +10,9 @@
     <link rel="stylesheet" href="./src/assets/styles/common.css" />
     <link rel="stylesheet" href="./src/assets/styles/myhome.css" />
     <link rel="stylesheet" href="./src/assets/styles/notice.css" />
+    <link rel="stylesheet" href="./src/assets/dist/odometer/odometer-theme-default.css" />
+
+
   </head>
   <body>
     <main>
@@ -23,10 +26,10 @@
       </section>
       <section class="my-revenue-col">
         <div class="inner-col">
-          <!-- TODO : 숫자 룰렛 모션 필요(기획서) -->
+          <!-- TODO : 숫자 룰렛 모션 odometer -->
           <p>
             나의 누적 수익금
-            <strong>490,000</strong>
+            <strong class="odometer">0</strong>
           </p>
         </div>
       </section>
@@ -35,6 +38,75 @@
           <div class="advertise-box">
             <!-- 광고 목록 : .my-list -->
             <ul class="my-list">
+              <!-- class="notice" 추가시 코멘트 display:block 및 텍스트 컬러변경 -->
+              <li class="notice">
+                <a href="./advertise_detail.html">
+                  <dl>
+                    <dt>
+                      <span class="advertise-thumb">
+                        <img src="" data-youtube-id="Gh4djoUvfmQ" id="youtubeThumb1" alt="유튜브 썸네일"/>
+                      </span>
+                      <div class="advertise-desc-box">
+                        <p class="advertise-title">
+                          <strong class="ellipsis">꿀튜브 5초 배너 꿀튜브 5초 배너 꿀튜브 5초 배너 꿀튜브 5초 배너</strong>
+                          100,000원
+                        </p>
+                        <p>
+                          <span class="advertise-date">05.11</span>
+                          <span class="advertise-comment info">URL을 제출해주세요</span>
+                        </p>
+                      </div>
+                    </dt>
+                    <dd>
+                      <span class="advertise-state">영상제출</span>
+                    </dd>
+                  </dl>
+                </a>
+              </li>
+              <li class="notice">
+                <a href="./advertise_detail.html">
+                  <dl>
+                    <dt>
+                      <span class="advertise-thumb" style="background-image:url(https://english.yanadoocdn.com/upload/2021/05/1_GNB_pc1_1620795424416.png);"></span>
+                      <div class="advertise-desc-box">
+                        <p class="advertise-title">
+                          <strong class="ellipsis">꿀튜브 5초 배너 꿀튜브 5초 배너 꿀튜브 5초 배너 꿀튜브 5초 배너</strong>
+                          100,000원
+                        </p>
+                        <p>
+                          <span class="advertise-date">05.11</span>
+                          <span class="advertise-comment info">URL을 제출해주세요</span>
+                        </p>
+                      </div>
+                    </dt>
+                    <dd>
+                      <span class="advertise-state">수정요청</span>
+                    </dd>
+                  </dl>
+                </a>
+              </li>
+              <li class="notice">
+                <a href="./advertise_detail.html">
+                  <dl>
+                    <dt>
+                      <span class="advertise-thumb" style="background-image:url(https://english.yanadoocdn.com/upload/2021/05/1_GNB_pc1_1620795424416.png);"></span>
+                      <div class="advertise-desc-box">
+                        <p class="advertise-title">
+                          <strong class="ellipsis">꿀튜브 5초 배너 꿀튜브 5초 배너 꿀튜브 5초 배너 꿀튜브 5초 배너</strong>
+                          100,000원
+                        </p>
+                        <p>
+                          <span class="advertise-date">05.11</span>
+                          <span class="advertise-comment info">URL을 제출해주세요</span>
+                        </p>
+                      </div>
+                    </dt>
+                    <dd>
+                      <span class="advertise-state">자랑하기</span>
+                    </dd>
+                  </dl>
+                </a>
+              </li>
               <li>
                 <a href="./advertise_detail.html">
                   <dl>
@@ -47,12 +119,12 @@
                         </p>
                         <p>
                           <span class="advertise-date">05.11</span>
-                          <span class="advertise-comment info">URL을 제출해주세요</span>
+                          <span class="advertise-comment">수정된 URL을 제출해주세요</span>
                         </p>
                       </div>
                     </dt>
                     <dd>
-                      <span class="advertise-state complete">영상제출</span>
+                      <span class="advertise-state">승인대기</span>
                     </dd>
                   </dl>
                 </a>
@@ -75,6 +147,28 @@
                     </dt>
                     <dd>
                       <span class="advertise-state">검수중</span>
+                    </dd>
+                  </dl>
+                </a>
+              </li>
+              <li>
+                <a href="./advertise_detail.html">
+                  <dl>
+                    <dt>
+                      <span class="advertise-thumb" style="background-image:url(https://english.yanadoocdn.com/upload/2021/05/1_GNB_pc1_1620795424416.png);"></span>
+                      <div class="advertise-desc-box">
+                        <p class="advertise-title">
+                          <strong>꿀튜브 5초 배너</strong>
+                          100,000원
+                        </p>
+                        <p>
+                          <span class="advertise-date">05.11</span>
+                          <span class="advertise-comment">수정된 URL을 제출해주세요</span>
+                        </p>
+                      </div>
+                    </dt>
+                    <dd>
+                      <span class="advertise-state">승인거절</span>
                     </dd>
                   </dl>
                 </a>
@@ -126,7 +220,7 @@
                       </div>
                     </dt>
                     <dd>
-                      <span class="advertise-state complete">D-12</span>
+                      <span class="advertise-state">D-12</span>
                     </dd>
                   </dl>
                 </a>
@@ -136,5 +230,16 @@
         </div>
       </section>
     </main>
+    <script src="./src/assets/dist/scripts/jquery-3.6.0.min.js"></script>
+    <script src="./src/assets/dist/scripts/jquery.youtubecoverphoto.js"></script>
+    <script src="./src/assets/dist/odometer/odometer.js"></script>
+    <script>
+      $('#youtubeThumb1').youtubeCoverPhoto();
+      
+      $(document).ready(function(){
+        $('.odometer').html(479000)
+      })
+
+    </script>
   </body>
 </html>
