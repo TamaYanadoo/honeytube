@@ -270,6 +270,10 @@ nav a.active .nav-txt.my::before {
 	margin-top: -.8rem;
 	background-color: #DFDFEA;
 }
+
+_:-ms-fullscreen, :root .step-col::before {
+  margin-top: -1.1rem;
+}
 .step-lists li {
 	position: relative;
 	z-index: 1;
