@@ -84,8 +84,8 @@ input:-ms-input-placeholder{color:#b7b7c8;}
   white-space: normal;
 }
 .stamp {
-  -webkit-animation: effect-opacity .3s .5s infinite linear alternate;
-  -moz-animation: effect-opacity 2s 1s infinite linear alternate;
+  -webkit-animation: effect-opacity 1s infinite linear alternate;
+  -moz-animation: effect-opacity 1s infinite linear alternate;
   animation: effect-opacity 1s infinite linear alternate;
 }
 @keyframes effect-opacity{

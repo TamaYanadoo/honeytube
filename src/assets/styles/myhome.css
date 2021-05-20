@@ -245,7 +245,7 @@ nav a.active .nav-txt.my::before {
 }
 .advertise-col .step-col {
 	position: relative;
-	margin: 5.6rem .6rem 0;
+	margin: 4.8rem .6rem 0;
 }
 .step-lists {
 	display: -webkit-box;
@@ -259,18 +259,41 @@ nav a.active .nav-txt.my::before {
 	justify-content: space-between;
 	position: relative;
 	text-align: center;
+	min-height: 4.3rem;
 }
 .step-col::before {
 	content: '';
 	position: absolute;
-	top: 13%;
-	height: 1px;
+	top: 50%;
 	width: 100%;
+	height: 1px;
+	margin-top: -.8rem;
 	background-color: #DFDFEA;
 }
 .step-lists li {
 	position: relative;
 	z-index: 1;
+}
+.step-lists li .ico-item {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-box-align: center;
+	-webkit-box-align: center;
+	align-items: center;
+	-webkit-box-pack: center; -ms-flex-pack: center; justify-content: center;
+	width: 2.2rem;
+	height: 2.2rem;
+	margin: auto;
+}
+.step-lists li:first-child .ico-item {
+	-webkit-box-pack: start; -ms-flex-pack: start; justify-content: flex-start;
+	margin: 0 auto 0 0;
+}
+
+.step-lists li:last-child .ico-item {
+	-webkit-box-pack: end; -ms-flex-pack: end; justify-content: flex-end;
+	margin: 0 0 0 auto;
 }
 .step-lists li i {
 	display: inline-block;
@@ -284,22 +307,25 @@ nav a.active .nav-txt.my::before {
 .step-lists li i::before {
 	display: none;
 	content: '';
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	width: 2.2rem;
-	height: 2.2rem;
-	margin-top: -1.1rem;
-	margin-left: -1.1rem;
+	width: 100%;
+	height: 100%;
 	background-position: 50% 50%;
 	background-repeat: no-repeat;
-	background-color: #3B3B4D;
 	border-radius: inherit;
 	image-rendering: -webkit-optimize-contrast;
 	image-rendering: -ms-optimize-contrast;
 }
+.step-lists li i.active {
+	width: 2.2rem;
+	height: 2.2rem;
+	background-color: #3B3B4D;
+	border: none;
+}
 .step-lists li i.active::before {
 	display: block;
+  -webkit-animation: effect-opacity 1s infinite linear alternate;
+  -moz-animation: effect-opacity 1s infinite linear alternate;
+  animation: effect-opacity 1s infinite linear alternate;
 }
 .step-lists li i.ico-waiting::before {
 	background-image: url(../images/ico_waiting.png);
@@ -317,38 +343,28 @@ nav a.active .nav-txt.my::before {
 	background-image: url(../images/ico_advertise.png);
 	background-size: auto .86rem;
 }
+.step-lists li i.reject{
+	width: 2.2rem;
+	height: 2.2rem;
+	background-color: #FF5647;
+	border: none;
+}
 .step-lists li i.reject::before{
 	display: block;
 	background-image: url(../images/ico_x_24x23w.png);
 	background-size: auto .8rem;
-	background-color: #FF5647;
 }
 .step-lists li i.complete{
 	background-image: url(../images/ico_checked.png);
 	background-size: auto 1rem;
 	border: none;
 }
-.step-lists li:first-child {
-	text-align: left;
-}
-.step-lists li:first-child i::before {
-	left: -1px;
-	margin-left: 0;
-}
-.step-lists li:last-child {
-	text-align: right;
-}
-.step-lists li:last-child i::before {
-	left: auto;
-	right: -1px;
-	margin-left: 0;
-}
-.step-lists li span {
+.step-lists li .ico-item + span {
 	display: block;
-	margin-top: .6rem;
+	margin-top: .3rem;
 }
 .advertise-col .comment {
-	margin-top: 5.5rem;
+	margin-top: 5rem;
 	padding: 2rem 3.5rem 2rem 1.5rem;
 	border: 1px solid #CFCFDA;
 }
