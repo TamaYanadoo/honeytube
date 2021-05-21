@@ -26,8 +26,7 @@
       </section>
       <section class="my-revenue-col">
         <div class="inner-col">
-          <!-- TODO : 숫자 룰렛 모션 odometer -->
-          <p>
+          <p class="odometer-motion-box">
             나의 누적 수익금
             <strong class="odometer">0</strong>
           </p>
@@ -174,7 +173,7 @@
                 </a>
               </li>
             </ul>
-            <!-- 광고중 목록 : .my-onair -->
+            <!-- 광고중 목록 : .my-onair (코멘트 숨김처리) -->
             <h3>광고중</h3>
             <ul class="my-onair">
               <li>
@@ -234,10 +233,25 @@
     <script src="./src/assets/dist/scripts/jquery.youtubecoverphoto.js"></script>
     <script src="./src/assets/dist/odometer/odometer.js"></script>
     <script>
+
+      // line motion 
+      window.addEventListener('load', function(event){
+        let motionBox = document.querySelector('.odometer');
+        let activeBox = document.querySelector('.odometer-motion-box');
+
+        let lineMotion = setInterval(function(){
+          if(motionBox.classList.contains('odometer-animating')){
+          }else{
+            clearInterval(lineMotion);
+            activeBox.classList.add('active');
+          }
+        }, 0)
+      });
+
       $(document).ready(function(){
         $('#youtubeThumb1').youtubeCoverPhoto();
-        $('.odometer').html(479000)
-      })
+        $('.odometer').html(479000);
+      });
 
     </script>
   </body>

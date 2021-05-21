@@ -58,18 +58,23 @@
         }
       });
 
+      function getNoticeList(){
+        const noticeList = document.querySelector('.notice-list');
+        let listCont = "";
 
-      const noticeList = document.querySelector('.notice-list');
-      let listCont;
-      for (let i = 0; i < 10; ++i) {
-        listCont = `<a href="notice_detail.html">
-                      <p>
-                        <span class="ellipsis">테스트 공지사항입니다</span>
-                        <em>2021. 05. 04</em>
-                      </p>
-                    </a>`;
-        noticeList.innerHTML += '<li>' + listCont + '</li>'
+        for(let i = 0; i < 10; i++) {
+          listCont += `<li> 
+                        <a href="notice_detail.html">
+                          <p>
+                            <span class="ellipsis">테스트 공지사항입니다</span>
+                            <em>2021. 05. 04</em>
+                          </p>
+                        </a>
+                      </li>`;
+        }
+        noticeList.innerHTML = listCont;
       }
+      getNoticeList();
       
     </script>
   </body>
