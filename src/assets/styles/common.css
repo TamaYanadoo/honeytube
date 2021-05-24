@@ -125,6 +125,9 @@ input:-ms-input-placeholder{color:#b7b7c8;}
 .btn span {
   position: relative;
 }
+
+.fixed-btn-col{position:fixed; bottom:0; left:0; width:100%;}
+
 main * {
 	box-sizing: border-box;
 	font-family: 'NanumSquare', sans-serif;
@@ -252,7 +255,7 @@ _:-ms-fullscreen, :root .login-wrap {
 
 .title-col{position:fixed; top:0; right:0; left:0; width:100%; margin:0 auto; padding:1.8rem 0; background-color:#fff; border-bottom:1px solid #e5e5e5; text-align:center; z-index:100;}
 .title-col .ico-btn-back{position:absolute; top:0; bottom:0; left:1.7rem; width:3.6rem; height:3.6rem; margin:auto; background-image:url(../images/ico_btn_back_108x108.png);}
-.title-col p{font-weight:700; font-size:1.4rem;}
+.title-col p{width:36%; margin:0 auto; font-weight:700; font-size:1.4rem;}
 .title-col + section{margin-top:5.3rem;}
 
 @media screen and (min-width: 750px){
