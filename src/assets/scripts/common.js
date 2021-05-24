@@ -1,4 +1,4 @@
-/* Update 2021-05-18 */
+/* Update 2021-05-24 */
 
 // Tab
 const tabItem = document.querySelectorAll('.tab-item');
@@ -56,4 +56,16 @@ function hasScrolled() {
     }
   }
   lastScrollTop = nowScrollTop;
+}
+
+const $navItem = document.querySelectorAll('nav a')
+Array.prototype.forEach.call($navItem, function(e){
+  e.addEventListener('click', navClickEvent);
+});
+
+function navClickEvent(e){
+  Array.prototype.forEach.call($navItem, function(e) {
+    e.classList.remove('active');
+  });
+  e.currentTarget.classList.add('active')
 }
