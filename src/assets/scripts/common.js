@@ -23,3 +23,13 @@ function tabEvent(e) {
   tabTarget.classList.add('active');
   document.querySelector('#' + tabData).classList.add('active');
 }
+
+// FAQ List
+const toggleArea = document.querySelectorAll('.toggle-area');
+
+Array.prototype.forEach.call(toggleArea, function(e){
+  e.addEventListener('click', function(e){
+    const targetBox = e.currentTarget.parentNode;
+    targetBox.classList.toggle('active');
+  });
+});

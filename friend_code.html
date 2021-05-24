@@ -30,7 +30,7 @@
                 <!-- 구 추천 코드 페이지일때 노출 / 추천 코드 변경 페이지일대 비노출 -->
                 <ul>
                   <li>
-                    <a href="#;" class="ico-btn ico-btn-copy"><span class="blind">복사하기</span></a>
+                    <a href="#;" class="ico-btn ico-btn-copy" onclick="test();"><span class="blind">복사하기</span></a>
                   </li>
                   <li>
                     <a href="#;" class="ico-btn ico-btn-share"><span class="blind">공유하기</span></a>
@@ -39,11 +39,14 @@
               </dt>
               <dd>
                 <!-- 친구 추천 코드 -->
-                <p class="default-code">FR567324<span>(꿈꾸는 알파카)</span></p>
+                <!-- <p class="default-code">FR567324<span>(꿈꾸는 알파카)</span></p> -->
+                <div>
+                  <input type="text" id="test" class="default-code" value="꿈꾸는 루피" readonly/>
+                </div>
                 <!-- 추천 코드 변경 -->
                 <div class="change-code">
                   <div class="code-input-box">
-                    <input type="text" placeholder="10글자 내외의 한글 코드를 입력하세요" />
+                    <input type="text" placeholder="10글자 내외의 한글 코드를 입력하세요" maxlength="50"/>
                   </div>
                   <!-- TODO : 인풋에 텍스트 입력시 중복확인 버튼 컬러 변경 -->
                   <button type="button" class="disabled">
@@ -55,7 +58,7 @@
           </div>
         </div>
       </section>
-      <section class="friend-btn-col">
+      <section class="fixed-btn-col">
         <div class="inner-col">
           <!-- TODO : 인풋에 텍스트 입력시 버튼 컬러 변경 -->
           <button type="button" class="btn disabled">
@@ -73,5 +76,17 @@
         </div>
       </div>
     </main>
+    <script>
+      function test(){
+        let obj = document.getElementById('test');
+
+        obj.select();
+
+        document.execCommand('copy');
+        obj.setSelectionRange(0, 9999);
+
+        alert('복사하기 완료!')
+      }
+    </script>
   </body>
 </html>

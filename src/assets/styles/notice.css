@@ -3,6 +3,14 @@
 .btn-more{display:block; position:relative; width:31rem; margin:2.35rem auto; padding:1.6rem 0; font-weight:700; font-size:1.3rem; color:#a0a0b6; background-color:#fff; border:1px solid #cfcfda;}
 .btn-more:before{content:''; position:absolute; top:0; bottom:0; left:50%; width:1.4rem; height:1.4rem; margin:auto; background:url(../images/ico_btn_plus_42x42.png) no-repeat 50% 0; background-size:100%; transform:translateX(-3.7rem);}
 
+.youtube-list-col .list-box{width:100%; background-color:#fff;}
+.youtube-list-col .list-box ul li{display:-webkit-box; display:flex; -webkit-box-align:center; align-items:center; width:100%; padding:1.25rem 2.5rem; border-bottom:1px solid #ececf6;}
+.youtube-list-col .list-box .thumb-hexagon{flex:0 0 auto; width:5.3rem; height:5.3rem;}
+.youtube-list-col .list-box .friend-name{flex:1; margin-left:1rem; padding-right:2em; font-weight:700; font-size:1.3rem;}
+.youtube-list-col .list-box .friend-count{flex:0 0 auto; font-size:1.2rem; color:#a0a0b6;}
+.youtube-list-col .list-box .btn-more{padding:0; border:none;}
+
+
 /* list */
 .list-col .inner-col{max-width:100%;}
 /* .list-col .list-content-box{max-width:750px; margin:0 auto;} */
@@ -51,13 +59,9 @@
 .friend-col .change-code .code-input-box input[type="text"]{width:100%; padding:1rem 0; border:none; outline:none;}
 .friend-col .change-code button{flex:0 0 auto; padding:1.5rem 0 1.5rem 2rem; font-size:1rem; color:#000;}
 .friend-col .change-code button.disabled{color:#b7b7c8;}
-.friend-col .recommend-list-box{width:100%; background-color:#fff;}
-.friend-col .recommend-list-box ul li{display:-webkit-box; display:flex; -webkit-box-align:center; align-items:center; width:100%; padding:1.25rem 2.5rem; border-bottom:1px solid #ececf6;}
-.friend-col .recommend-list-box .thumb-hexagon{flex:0 0 auto; width:5.3rem; height:5.3rem;}
-.friend-col .recommend-list-box .friend-name{flex:1; margin-left:1rem; font-weight:700; font-size:1.3rem;}
-.friend-col .recommend-list-box .friend-count{flex:0 0 auto; font-size:1.2rem; color:#a0a0b6;}
-.friend-col .recommend-list-box .btn-more{padding:0; border:none;}
-.friend-btn-col{position:fixed; bottom:0; width:100%;}
+
+
+
 
 /* my_advertise */
 .my-revenue-col{width:100%; padding:4.7rem 0; text-align:center;}
@@ -97,3 +101,31 @@
 .advertise-box ul li.notice .advertise-comment{display:inline-block;}
 .advertise-box ul li.notice .advertise-state{color:#ff5647;}
 
+
+/* 광고상세 - 기타 */
+.advertise-menu-col .inner-col{max-width:100%;}
+.advertise-menu-col ul{display:-webkit-box; display:flex; -webkit-box-align:center; align-items:center; justify-content:space-between; padding:0 2.5rem; border-bottom:1px solid #dfdfea;}
+.advertise-menu-col ul li{flex:0 0 auto; font-size:1.4rem;}
+.advertise-menu-col ul li.active{border-bottom:.2rem solid #fdef52;}
+.advertise-menu-col ul li a{display:block; padding:1.7rem .5rem; font-weight:700; color:#a0a0b6;}
+.advertise-menu-col ul li.active a{color:#3b3b4d;}
+
+.toggle-list-col ul{width:100%; }
+.toggle-list-col ul li{font-size:1.4rem; border-bottom:1px solid #e5e5e5;}
+.toggle-list-col ul li a{position:relative; display:block; padding:2.8rem 6rem 2.8rem 2.5rem;}
+.toggle-list-col ul li p{line-height:2rem; word-break:keep-all;}
+.toggle-list-col ul li a:after{content:''; display:block; position:absolute; top:2.1rem; right:1.9rem; width:3rem; height:3rem; margin:auto; background:url(../images/ico_btn_right_arrow_90x90.png) no-repeat 50% 0; background-size:100%; transform:rotate(90deg);}
+.toggle-list-col ul li .reply-box{display:none; margin-top:1.5rem; font-weight:300;}
+.toggle-list-col ul li .reply-box p{font-size:1.3rem;}
+.toggle-list-col ul li.active .reply-box{display:block;}
+.toggle-list-col ul li.active a:after{transform:rotate(-90deg);}
+.modal-advertise-count .count-box{margin-top:.4em; font-size:1.4rem; color:#717188;}
+.modal-advertise-count .count-box .current-count{font-weight:800; color:#333443;}
+
+.advertise-info-col{width:100%; padding:2.2rem 0; background-color:#f7f7fc;}
+.advertise-info-col .info-box{display:-webkit-box; display:flex; -webkit-box-align:center; align-items:center; justify-content:space-between; padding:0 1.6rem;}
+.advertise-info-col dl{flex:1; width:44%; padding:2.1rem 2rem; background-color:#fff; border-radius:1.2rem; box-shadow: .1rem .1rem 2.7rem 0 rgba(0, 0, 0, .04);}
+.advertise-info-col dl + dl{margin-left:1.3rem;}
+.advertise-info-col dl dt{font-size:1.3rem;}
+.advertise-info-col dl dd{margin-top:5.5rem; font-size:1.1rem; line-height:1.8rem; color:#a0a0b6; text-align:right;}
+.advertise-info-col dl dd strong{display:block; font-weight:800; font-size:1.6rem; color:#000;}

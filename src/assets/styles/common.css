@@ -145,6 +145,7 @@ input:-ms-input-placeholder{color:#b7b7c8;}
 }
 
 .fixed-btn-col{position:fixed; bottom:0; left:0; width:100%;}
+.fixed-btn-col .btn{padding:2.1rem 0; font-size:1.4rem;}
 
 main * {
 	box-sizing: border-box;
