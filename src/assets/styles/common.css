@@ -101,6 +101,7 @@ input:-ms-input-placeholder{color:#b7b7c8;}
   font-size: 1.3rem;
   color: #3B3B4D;
   background-color: #fff;
+  background-repeat: no-repeat;
   border-width: 1px;
   border-radius: 0;
   border-style: solid;
@@ -124,6 +125,23 @@ input:-ms-input-placeholder{color:#b7b7c8;}
 }
 .btn span {
   position: relative;
+}
+.btn.heart {
+  border-color: #fff;
+  border-top-color: #eee;
+  background-color: #fff;
+}
+.btn.heart span {
+  display: inline-block;
+  width: 1.7rem;
+  height: 1.4rem;
+  background-repeat: no-repeat;
+  background-image: url(../images/ico_heart_48x39.png);
+  background-size: 100% auto; 
+  text-indent: -9999rem;
+}
+.btn.heart.active span {
+  background-image: url(../images/ico_heart_51x42red.png);
 }
 
 .fixed-btn-col{position:fixed; bottom:0; left:0; width:100%;}

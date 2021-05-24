@@ -447,6 +447,71 @@ _:-ms-fullscreen, :root .step-col::before {
 	font-size: 1.4rem;
 }
 
+.live-content-box {
+	padding-bottom: 6rem;
+}
+.live-content-box li{}
+.live-content-box .live-content-thumb{
+	height: 21rem;
+	background-image: url(https://mobiinsidecontent.s3.ap-northeast-2.amazonaws.com/kr/wp-content/uploads/2019/11/01162420/5.jpeg);
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.live-content-box .live-content-thumb img {
+	height: 100%;
+}
+.live-content-box .live-content-desc{
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	align-items: center;
+	padding: 1.7rem 2rem 2.4rem 2rem;
+}
+.live-content-box .live-content-desc .thumb-hexagon{
+	width: 3.8rem;
+	height: 3.8rem;
+}
+.live-content-box .live-content-desc .live-content-info{
+	flex:1 1 auto;
+	margin-left: 0.5rem;
+	max-width: calc(100% - 5rem);
+}
+.live-content-box .live-content-desc .live-content-info strong{
+	display: block;
+	font-weight: 800;
+	font-size: 1.3rem;
+	line-height: 1.55;
+}
+.live-content-box .live-content-desc .live-content-info p{
+	margin-top: 0.1rem;
+	font-weight: 400;
+	font-size: 1rem;
+	color: #717188;
+}
+
+.btn-flex-form {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	align-items: center;
+}
+.btn-flex-form .btn {
+	-webkit-box-flex: 1;
+	-ms-flex: 1 0 auto;
+	flex: 1 0 auto;
+	width: auto;
+	padding: 2.2rem 4rem 2rem;
+	font-size: 1.4rem;
+}
+.btn-flex-form .btn.heart {
+	-webkit-box-flex: 0;
+	-ms-flex: 0 0 auto;
+	flex: 0 0 auto;
+  width: 6rem;
+  padding: 2.2rem 0 2rem;
+}
 @media screen and (min-width: 720px){
   nav {
     bottom: 0;

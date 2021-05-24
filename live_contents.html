@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>실시간 콘텐츠</title>
+    <link rel="stylesheet" href="./src/assets/dist/styles/normalize.css" />
+    <link rel="stylesheet" href="./src/assets/dist/styles/reset.css" />
+    <link rel="stylesheet" href="./src/assets/styles/common.css" />
+    <link rel="stylesheet" href="./src/assets/styles/myhome.css" />
+    <link rel="stylesheet" href="./src/assets/styles/notice.css" />
+		
+  </head>
+  <body>
+    <main>
+      <section class="title-col">
+        <div class="inner-col">
+          <button type="button" class="ico-btn ico-btn-back">
+            <span class="blind">뒤로가기</span>
+          </button>
+          <p>야나두 브랜딩 10초</p>
+        </div>
+      </section>
+      <section class="">
+        <div class="inner-col">
+					<div class="tab-content-box live-content-box">
+						<ul class="tab-content">
+							<li>
+								<div class="live-content-thumb"><span class="blind">썸네일</span></div>
+								<div class="live-content-desc">
+									<button class="thumb-hexagon"><span class="blind">프로필 사진</span></button>
+									<div class="live-content-info">
+										<strong class="ellipsis">일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십</strong>
+										<p class="ellipsis">일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십</p>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="live-content-thumb" style="background-image: url(https://img.insight.co.kr/static/2017/11/24/700/o9dpr6st38ut3e2wci4v.jpg);"><span class="blind">썸네일</span></div>
+								<div class="live-content-desc">
+									<button class="thumb-hexagon"><span class="blind">프로필 사진</span></button>
+									<div class="live-content-info">
+										<strong class="ellipsis">일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십</strong>
+										<p class="ellipsis">일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십</p>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="live-content-thumb" style="background-image: url(https://img.insight.co.kr/static/2017/11/24/700/o9dpr6st38ut3e2wci4v.jpg);"><span class="blind">썸네일</span></div>
+								<div class="live-content-desc">
+									<button class="thumb-hexagon"><span class="blind">프로필 사진</span></button>
+									<div class="live-content-info">
+										<strong class="ellipsis">일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십</strong>
+										<p class="ellipsis">일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십</p>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+        </div>
+      </section>
+			<section class="fixed-btn-col">
+				<div class="inner-col">
+					<div class="btn-flex-form">
+						<button type="button" class="btn heart">
+							<span data-txt="즐겨찾기에 추가하기">좋아요버튼</span>
+						</button>
+						<button type="button" class="btn active">
+							<span>신청하기</span>
+						</button>
+					</div>
+				</div>
+			</section>
+    </main>
+  </body>
+	<script>
+
+		const $btnHeart = document.querySelector('.btn.heart')
+		let flag = true
+		$btnHeart.addEventListener('click',function(e){
+			let $txt = document.querySelector('.btn.heart span').dataset.txt
+			if(flag){
+				e.currentTarget.classList.add('active')
+				$txt='즐겨찾기에 추가완료'
+				flag= false
+			} else {
+				e.currentTarget.classList.remove('active')
+				$txt='즐겨찾기에 추가하기'
+				flag=true
+			}
+			console.log($txt)
+		})
+	</script>
+</html>
