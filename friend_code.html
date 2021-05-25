@@ -39,10 +39,10 @@
               </dt>
               <dd>
                 <!-- 친구 추천 코드 -->
-                <!-- <p class="default-code">FR567324<span>(꿈꾸는 알파카)</span></p> -->
-                <div>
+                <p class="default-code">FR567324<span>(꿈꾸는 알파카)</span></p>
+                <!-- <div>
                   <input type="text" id="test" class="default-code" value="꿈꾸는 루피" readonly/>
-                </div>
+                </div> -->
                 <!-- 추천 코드 변경 -->
                 <div class="change-code">
                   <div class="code-input-box">
@@ -66,16 +66,17 @@
           </button>
         </div>
       </section>
-      <div class="modal" style="display: none">
+      <div class="modal">
         <div class="modal-content">
           <!-- <p>이미 사용중인 코드입니다</p> -->
           <p>사용 가능한 코드입니다</p>
           <div class="btn-group">
-            <button type="button">확인</button>
+            <button type="button" onclick="$('.modal').hide();">확인</button>
           </div>
         </div>
       </div>
     </main>
+    <script src="src/assets/dist/scripts/jquery-3.6.0.min.js"></script>
     <script>
       function test(){
         let obj = document.getElementById('test');

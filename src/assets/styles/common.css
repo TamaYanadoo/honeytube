@@ -92,6 +92,14 @@ input:-ms-input-placeholder{color:#b7b7c8;}
   0%{opacity:1;}
   100%{opacity:.2;}
 }
+.blink {
+  -webkit-animation: effect-blink 1s step-end infinite;
+  -moz-animation: effect-blink 1s step-end infinite;
+  animation: effect-blink 1s step-end infinite;
+}
+@keyframes effect-blink{
+  50%{opacity:0;}
+}
 /* default btn */
 .btn {
   position: relative;

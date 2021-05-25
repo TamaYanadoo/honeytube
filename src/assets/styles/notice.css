@@ -112,7 +112,7 @@
 
 .toggle-list-col ul{width:100%; }
 .toggle-list-col ul li{font-size:1.4rem; border-bottom:1px solid #e5e5e5;}
-.toggle-list-col ul li a{position:relative; display:block; padding:2.8rem 6rem 2.8rem 2.5rem;}
+.toggle-list-col ul li a{position:relative; display:block; padding:2.5rem 6rem 2.5rem 2.5rem;}
 .toggle-list-col ul li p{line-height:2rem; word-break:keep-all;}
 .toggle-list-col ul li a:after{content:''; display:block; position:absolute; top:2.1rem; right:1.9rem; width:3rem; height:3rem; margin:auto; background:url(../images/ico_btn_right_arrow_90x90.png) no-repeat 50% 0; background-size:100%; transform:rotate(90deg);}
 .toggle-list-col ul li .reply-box{display:none; margin-top:1.5rem; font-weight:300;}
