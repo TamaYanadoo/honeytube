@@ -1,6 +1,4 @@
-@import url(https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@1.0/nanumsquare.css);
-
-/* @font-face {
+@import url(https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@1.0/nanumsquare.css);@font-face {
   font-family: 'NanumSquare';
   font-weight: 400;
   src: url(/src/assetes/fonts/NanumSquareR.eot);
@@ -23,7 +21,7 @@
   src: url(/src/assetes/fonts/NanumSquareEB.eot?#iefix) format('embedded-opentype'),
       url(/src/assetes/fonts/NanumSquareEB.woff) format('woff'),
       url(/src/assetes/fonts/NanumSquareEB.ttf) format('truetype');
-} */
+}
 @font-face {
   font-family: 'NanumSquare';
   font-weight: 300;
