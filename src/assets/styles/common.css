@@ -153,7 +153,28 @@ input:-ms-input-placeholder{color:#b7b7c8;}
 .btn.heart.active span {
   background-image: url(../images/ico_heart_51x42red.png);
 }
-
+.btn-flex-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+}
+.btn-flex-form .btn {
+  -webkit-box-flex: 1;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+  width: auto;
+  padding: 2.2rem 4rem 2rem;
+  font-size: 1.4rem;
+}
+.btn-flex-form .btn.heart {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: 6rem;
+  padding: 2.2rem 0 2rem;
+}
 .fixed-btn-col{position:fixed; bottom:0; left:0; width:100%;}
 .fixed-btn-col .btn{padding:2.1rem 0; font-size:1.4rem;}
 
@@ -293,5 +314,9 @@ _:-ms-fullscreen, :root .login-wrap {
 	}
   .login-wrap {
     height: 100vh;
+  }
+
+  .btn-flex-form .btn.heart {
+    border-left-color: #eee;
   }
 }
