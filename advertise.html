@@ -17,7 +17,7 @@
       .advertise-list dt img{width:100%; height:100%;}
       .advertise-list dd{margin-top:1.8rem;}
       .advertise-list dd p:first-child{height:1.2rem; text-overflow:ellipsis; overflow:hidden;}
-      .advertise-list dd p:nth-child(2){display:-webkit-box; margin:.7rem 0 1rem; height:3.2rem; text-overflow:ellipsis; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden;}
+      .advertise-list dd p:nth-child(2){display:-webkit-box; margin:.7rem 0 1rem; height:3.2rem; text-overflow:ellipsis; -webkit-line-clamp:2; -webkit-box-orient:vertical; word-break:keep-all; overflow:hidden;}
       .advertise-list dd em{font-size:1.1rem; color:#717188;}
       .advertise-list dd span{font-size:1.4rem;}
       .advertise-list dd strong{font-size:1.5rem; font-weight:bold;}
@@ -58,47 +58,7 @@
       </nav>
       <section>
         <div class="inner-col">
-          <div class="advertise-list">
-            <a href="#">
-              <dl>
-                <dt>
-                  <img src="https://english.yanadoocdn.com/upload/2020/12/3_bigbanner_mob_1609327379742.png" alt="#" />
-                  <button type="button" class="btn-like" onclick="toggleClass(this);">like it</button>
-                </dt>
-                <dd>
-                  <p><em>20:14:22</em></p>
-                  <p><span>전국민 습관 개조 플랫폼 유캔두 홍보 챌린지 지금 참여해 보세요! 이벤트 참여 시 하루 1명 추첨을 통한 스타벅스 기프티콘 발송!</span></p>
-                  <p><strong>20,000</strong></p>
-                </dd>
-              </dl>
-            </a>
-            <a href="#">
-              <dl>
-                <dt>
-                  <img src="https://english.yanadoocdn.com/upload/2021/01/mo_1611134781739.jpg" alt="#" />
-                  <button type="button" class="btn-like" onclick="toggleClass(this);">like it</button>
-                </dt>
-                <dd>
-                  <p><em>성경김</em></p>
-                  <p><span>곱창김에는 곱창이 들어가나요?</span></p>
-                  <p><strong>20,000</strong></p>
-                </dd>
-              </dl>
-            </a>
-            <a href="#">
-              <dl>
-                <dt>
-                  <img src="https://english.yanadoocdn.com/upload/2021/01/mo_1611134781739.jpg" alt="#" />
-                  <button type="button" class="btn-like" onclick="toggleClass(this);">like it</button>
-                </dt>
-                <dd>
-                  <p><em>성경김</em></p>
-                  <p><span>곱창김에는 곱창이 들어가나요? 들어갔으면 좋겠어요!!</span></p>
-                  <p><strong>20,000</strong></p>
-                </dd>
-              </dl>
-            </a>
-          </div>
+          <div class="advertise-list"></div>
         </div>
       </section>
     </main>
@@ -107,13 +67,61 @@
   <script defer src="./src/assets/scripts/nav.js"></script>
   <script defer src="./src/assets/scripts/common.js"></script>
   <script>
-    function getAdList() {
-      const adList = document.querySelector('.advertise-list').querySelectorAll('a');
-      const adItems = '';
-
-      for(let i = 0; i < 6; i++) {
-        console.log(index)
-      }
+    const adArray = [{
+      id : 1,
+      title : '더 강력해진 New 탭패키지, 단 한번의 구매로 야나두 평생소장',
+      img : 'https://english.yanadoocdn.com/upload/2020/12/3_bigbanner_mob_1609327379742.png',
+      link : 'https://m.yanadoo.co.kr/freepass/familyPackage',
+      time : '',
+      corp : '야나두',
+      price : 204110
+    },{
+      id : 2,
+      title : '외우는 영어 도대체 언제까지? 지금 무료 상담 시 에어팟 0원',
+      img : 'https://english.yanadoocdn.com/upload/2020/12/4_Bigbanner_mob2_1609217189417.jpg',
+      link : 'https://m.yanadoo.co.kr/event/yndCollect',
+      time : '06:10:26',
+      corp : '',
+      price : 109000
+    },{
+      id : 3,
+      title : '[런칭 기념 78% 할인 받기] 눈 감고 하는 신개념 공부, 야나두 오디오 영어! 듣기만해도 문장 1000개가 쏙!',
+      img : 'https://english.yanadoocdn.com/upload/2021/03/4_audoi_Bigbanner_mob_1617181027544.png',
+      link : 'https://m.yanadoo.co.kr/freepass/audio',
+      time : '',
+      corp : '야나두',
+      price : 9900
+    },
+    {id : 4,
+      title : '영어 초보탈출, 왕초보 마스터!',
+      img : 'https://english.yanadoocdn.com/upload/2020/12/4_Bigbanner_mob_1609217280671.jpg',
+      link : 'https://m.yanadoo.co.kr/freepass/package/basicMaster',
+      time : '12:00:54',
+      corp : '',
+      price : 105999
     }
+  ]
+
+  function numberFormat(num) {
+    const regexp = /\B(?=(\d{3})+(?!\d))/g;
+    return num.toString().replace(regexp, ',');
+  }
+
+  const adList = document.querySelector('.advertise-list');
+  let listItems = '';
+
+  for(let i = 0; i < adArray.length; i++){
+    if(!adArray[i].time == ''){
+    listItems += '<a href="#">' +
+                  '<dl><dt><img src="' + adArray[i].img + '" alt="#" /><button type="button" class="btn-like" onclick="toggleClass(this);">like it</button></dt>'+
+                  '<dd><p><em>' + adArray[i].time + '</em></p><p><span>'+ adArray[i].title + '</span></p><p><strong>' + numberFormat(adArray[i].price) +'</strong></p></dd></dl></a>';
+
+    } else {
+    listItems += '<a href="#">' +
+                  '<dl><dt><img src="' + adArray[i].img + '" alt="#" /><button type="button" class="btn-like" onclick="toggleClass(this);">like it</button></dt>'+
+                  '<dd><p><em>' + adArray[i].corp + '</em></p><p><span>'+ adArray[i].title + '</span></p><p><strong>' + numberFormat(adArray[i].price) +'</strong></p></dd></dl></a>';}
+  }
+  adList.innerHTML = listItems;
+    
   </script>
 </html>
