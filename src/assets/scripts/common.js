@@ -33,3 +33,11 @@ Array.prototype.forEach.call(toggleArea, function(e){
     targetBox.classList.toggle('active');
   });
 });
+
+function toggleClass(id) {
+  if(!id.classList.contains('active')){
+    id.setAttribute('class', 'active');
+  } else {
+    id.setAttribute('class', '');
+  }
+}
