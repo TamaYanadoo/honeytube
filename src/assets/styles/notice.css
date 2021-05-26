@@ -30,7 +30,7 @@
 .list-col .important-notice span:before{content:'[고정]'; display:inline-block; margin-right:.2em;}
 
 .list-col .tab-list-box ul{display:-webkit-box; display:flex; width:100%; overflow:hidden;}
-.list-col .tab-list-box ul li{-webkit-box-flex:1; flex:1; justify-content:space-between; background-color:#f7f7fc;}
+.list-col .tab-list-box ul li{-webkit-box-flex:1; flex:1; -webkit-box-pack: justify; justify-content:space-between; background-color:#f7f7fc;}
 .list-col .tab-list-box ul li a{display:block; width:100%; padding:1.35rem 0; font-weight:700; font-size:1.3rem; color:#a0a0b6; text-align:center;}
 .list-col .tab-list-box ul li.active a{font-weight:800; color:#000; background-color:#fff;}
 .list-col .tab-content-box .tab-content{display:none;}
@@ -104,7 +104,7 @@
 
 /* 광고상세 - 기타 */
 .advertise-menu-col .inner-col{max-width:100%;}
-.advertise-menu-col ul{display:-webkit-box; display:flex; -webkit-box-align:center; align-items:center; justify-content:space-between; padding:0 2.5rem; border-bottom:1px solid #dfdfea;}
+.advertise-menu-col ul{display:-webkit-box; display:flex; -webkit-box-align:center; align-items:center; -webkit-box-pack: justify; justify-content:space-between; padding:0 2.5rem; border-bottom:1px solid #dfdfea;}
 .advertise-menu-col ul li{flex:0 0 auto; font-size:1.4rem;}
 .advertise-menu-col ul li.active{border-bottom:.2rem solid #fdef52;}
 .advertise-menu-col ul li a{display:block; padding:1.7rem .5rem; font-weight:700; color:#a0a0b6;}
@@ -123,9 +123,69 @@
 .modal-advertise-count .count-box .current-count{font-weight:800; color:#333443;}
 
 .advertise-info-col{width:100%; padding:2.2rem 0; background-color:#f7f7fc;}
-.advertise-info-col .info-box{display:-webkit-box; display:flex; -webkit-box-align:center; align-items:center; justify-content:space-between; padding:0 1.6rem;}
+.advertise-info-col .info-box{display:-webkit-box; display:flex; -webkit-box-align:center; align-items:center; -webkit-box-pack: justify; justify-content:space-between; padding:0 1.6rem;}
 .advertise-info-col dl{flex:1; width:44%; padding:2.1rem 2rem; background-color:#fff; border-radius:1.2rem; box-shadow: .1rem .1rem 2.7rem 0 rgba(0, 0, 0, .04);}
 .advertise-info-col dl + dl{margin-left:1.3rem;}
 .advertise-info-col dl dt{font-size:1.3rem;}
 .advertise-info-col dl dd{margin-top:5.5rem; font-size:1.1rem; line-height:1.8rem; color:#a0a0b6; text-align:right;}
 .advertise-info-col dl dd strong{display:block; font-weight:800; font-size:1.6rem; color:#000;}
+
+
+
+
+/* main */
+.slide-col .inner-col{max-width:100%;}
+.slide-col h3{max-width:750%; margin:0 auto 2.2rem;}
+.main h3{max-width:750px; margin-bottom:2.2rem; font-weight:800; font-size:1.8rem;}
+.main h3 > span{color:#ffb914;}
+
+.main-bnr-slide .swiper-pagination{left:auto; right:2rem; width:4.6rem; padding:.6rem 0; font-size:1.1rem; color:#c8c8d4; background-color:rgba(0, 0, 0, .3); border-radius:1.5rem;}
+.main-bnr-slide .swiper-pagination .swiper-pagination-current{color:#fff;}
+
+.advertise-recommend-col{padding:4.8rem 0 4.2rem; border-bottom:.6em solid #f7f7fc;}
+.advertise-recommend-col .inner-col{padding-left:2.2rem;}
+.advertise-slide .swiper-slide{width:14.6rem; /*width:43%;*/}
+.advertise-slide dl dt{width:100%; min-height:14rem;}
+.advertise-slide dl dd{margin-top:1.3rem;}
+.advertise-slide dl dd span{display:block; font-size:1.1rem; color:#717188;}
+.advertise-slide dl dd span.time-box:before{content:''; display:inline-block; width:1.1rem; height:1.1rem; margin-right:.1rem; background:url(../images/ico_clock_33x33.png) no-repeat 50% 0; background-size:100%; vertical-align:top;}
+.advertise-slide dl dd p{margin-top:1rem; font-size:1.2rem; line-height:1.4;}
+.advertise-slide dl dd p > strong{font-weight:700; font-size:1.5rem;}
+
+.accumulated-price-col{width:100%; padding:4.2rem 2.2rem; border-bottom:.6em solid #f7f7fc;}
+.accumulated-price-col p{font-weight:800; font-size:1.6rem;}
+.accumulated-price-col p > span{color:#ff5647;}
+.accumulated-price-col p.price-box{margin-top:1rem; font-size:2.2rem;}
+.accumulated-price-col p.price-box > strong{font-size:3rem;}
+
+.ranking-col{padding:4.4rem 0 0;}
+.ranking-col .inner-col{padding-left: 2.2rem;}
+.ranking-col h3{margin-bottom:0;}
+.ranking-col .ranking-slide{padding-top:2.3rem;}
+.ranking-slide .swiper-slide{position:relative; width:30.2rem;}
+.ranking-slide dl{width:100%; min-height:14.7rem; padding-top:8.8rem; padding-left:2.4rem; color:#fff; background-repeat:no-repeat; background-position:50% 0; background-size:100%;}
+.ranking-slide .ranking{position:absolute; top:-1.7rem; right:1.4rem; width:3.4rem; padding:.65rem 0; font-weight:800; font-size:1.8rem; color:#fff; background-color:#ffb914; border-radius:50%; text-align:center;}
+.ranking-slide .ranking.first{background-color:#000; background-image:url(../images/ico_crown_48x36.png); background-repeat:no-repeat; background-position:50% 50%; background-size:auto 1.2rem; text-indent:-9999rem;}
+
+.ranking-slide dl dt{font-weight:700; font-size:1.6rem;}
+.ranking-slide dl dd{margin-top:.5rem; font-size:1.2rem;}
+
+.youtuber-col{padding:6.4rem 2.2rem 5rem;}
+.youtuber-col .youtube-box{display:-webkit-box; display:-ms-flexbox; display:flex; -webkit-box-align:center; align-items:center; padding:1.7rem 0 2.4rem;}
+.youtuber-col .youtube-box .thumb-hexagon{width:4.4rem; height:4.4rem;}
+.youtuber-col .youtube-box .youtube-info{flex:1 1 auto; margin-left:0.5rem; max-width:calc(100% - 5rem); line-height:1.5;}
+.youtuber-col .youtube-box .youtube-info > strong{display:block; font-weight:700; font-size:1.4rem; color:#000}
+.youtuber-col .youtube-box .youtube-info > p{font-weight:300; font-size:1.1rem; color:#717188;}
+
+.faq-col{width:100%; padding:7.9rem 0 4.4rem; background:#f7f7fc url(../images/ico_faq_96x96.png) no-repeat 50% 3.6rem; background-size:auto 3.2rem;  text-align:center;}
+.faq-col p{font-size:1.8rem; color:#3b3b4d;}
+.faq-col a{display:block; width:18.4rem; margin:2.1rem auto 0; padding:1.4rem 0; font-size:1.4rem; border:1px solid #3b3b4d; border-radius:9.9rem;}
+
+.friend-code-col{width:100%;}
+
+
+@media screen and (min-width: 750px){
+	.slide-col .inner-col{padding-left:0;}
+	.slide-col h3{padding-left:2.2rem;}
+}
+
