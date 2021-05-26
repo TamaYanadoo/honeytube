@@ -1,66 +1,9 @@
-.user-info-area {
-	display: flex;
-	display: -webkit-box;
-	-webkit-box-align: center;
-	align-items: center;
-	padding: 1.6rem 2rem 2.2rem 2.1rem;
-}
-.user-info-area .user-thumb {
-	position: relative;
-}
-.user-info-area .user-thumb::before{
-	content: '';
-	display: none;
-	position: absolute;
-	bottom: -.3rem;
-	right: -.3rem;
-	z-index: 1;
-	width: 2.8rem;
-	height: 2.8rem;
-	background: url(../images/ico_pencil_81X81.png) 50% 50% / 100% auto no-repeat;
-	image-rendering: -webkit-optimize-contrast;
-	image-rendering: -ms-optimize-contrast;
-}
-.user-info-area .user-thumb.active::before {
-	display: block;
-}
-.user-info-area .user-thumb + .user-desc {
-	margin-left: 1rem;
-}
-
-.user-info-area .thumb-hexagon {
-	flex: 0 0 auto;
+.user-info-col .thumb-flex-form .thumb-item {
 	width: 6.3rem;
 	height: 6.3rem;
 }
-.user-info-area .user-desc {
-	flex: 1 1 auto;
-	font-size: 1.5rem;
-}
-.user-info-area .user-desc .user-tit {
-	display: none;
-	font-weight: 800;
+.user-info-col .thumb-flex-form .thumb-info strong {
 	color: #3B3B4D;
-}
-.user-info-area .user-desc .btn-login{
-	display: block;
-	padding: 1rem 1rem 1rem 0;
-	font-weight: 800;
-	color: #3B3B4D;
-}
-.user-info-area .user-desc .btn-user-modify {
-	display: none;
-	margin-top: .8rem;
-	font-weight: 400;
-	font-size: 1.1rem;
-	color: #A0A0B6;
-}
-.user-info-area.login .btn-login {
-	display: none;
-}
-.user-info-area.login .user-tit,
-.user-info-area.login .btn-user-modify{
-	display: block;
 }
 
 .myhome-lists li + li {
@@ -459,34 +402,19 @@ _:-ms-fullscreen, :root .step-col::before {
 .live-content-box .live-content-thumb img {
 	height: 100%;
 }
-.live-content-box .live-content-desc{
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
-	-webkit-box-align: center;
-	align-items: center;
+.live-content-box .thumb-flex-form{
 	padding: 1.7rem 2rem 2.4rem 2rem;
 }
-.live-content-box .live-content-desc .thumb-hexagon{
+.live-content-box .thumb-flex-form .thumb-item{
 	width: 3.8rem;
 	height: 3.8rem;
 }
-.live-content-box .live-content-desc .live-content-info{
-	flex:1 1 auto;
+.live-content-box .thumb-flex-form .thumb-info{
 	margin-left: 0.5rem;
-	max-width: calc(100% - 5rem);
 }
-.live-content-box .live-content-desc .live-content-info strong{
-	display: block;
-	font-weight: 800;
+.live-content-box .thumb-flex-form .thumb-info strong{
 	font-size: 1.3rem;
 	line-height: 1.55;
-}
-.live-content-box .live-content-desc .live-content-info p{
-	margin-top: 0.1rem;
-	font-weight: 400;
-	font-size: 1rem;
-	color: #717188;
 }
 
 .detail-content-box {

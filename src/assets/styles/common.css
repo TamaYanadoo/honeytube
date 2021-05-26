@@ -178,6 +178,80 @@ input:-ms-input-placeholder{color:#b7b7c8;}
 .fixed-btn-col{position:fixed; bottom:0; left:0; width:100%;}
 .fixed-btn-col .btn{padding:2.1rem 0; font-size:1.4rem;}
 
+.thumb-flex-form {
+  display: -webkit-box;
+  display: flex;
+	-webkit-box-align: center;
+	align-items: center;
+	padding: 1.6rem 2rem 2.2rem 2.1rem;
+}
+.thumb-flex-form .thumb-num {
+  font-weight: 700;
+  font-size: 1rem;
+}
+.thumb-flex-form .thumb-num + .thumb-item {
+  margin-left: 0.9rem;
+}
+.thumb-flex-form .thumb-item {
+  position: relative;
+  flex: 0 0 auto;
+}
+.thumb-flex-form .thumb-item::before{
+	content: '';
+	display: none;
+	position: absolute;
+	bottom: -.3rem;
+	right: -.3rem;
+	z-index: 1;
+	width: 2.8rem;
+	height: 2.8rem;
+	background: url(../images/ico_pencil_81X81.png) 50% 50% / 100% auto no-repeat;
+	image-rendering: -webkit-optimize-contrast;
+	image-rendering: -ms-optimize-contrast;
+}
+.thumb-flex-form .thumb-item.active::before {
+  display: block;
+}
+.thumb-flex-form .thumb-item + .thumb-info {
+  margin-left: 1rem;
+}
+.thumb-flex-form .thumb-info {
+  flex: 0 1 auto;
+	font-size: 1.5rem;
+  overflow: hidden;
+}
+.thumb-flex-form .thumb-info strong {
+  display: block;
+  font-weight: 800;
+  font-size: 1.5rem;
+}
+.thumb-flex-form .thumb-info p {
+  margin-top: 0.1rem;
+  font-weight: 400;
+  font-size: 1rem;
+  color: #717188;
+}
+.thumb-flex-form .thumb-info .btn-login{
+	display: none;
+	padding: 1rem 1rem 1rem 0;
+	font-weight: 800;
+	color: #3B3B4D;
+}
+.thumb-flex-form .thumb-info .btn-modify {
+	display: block;
+	margin-top: .8rem;
+	font-weight: 400;
+	font-size: 1.1rem;
+	color: #A0A0B6;
+}
+.thumb-flex-form.logout .btn-login {
+	display: block;
+}
+.thumb-flex-form.logout .thumb-info strong,
+.thumb-flex-form.logout .thumb-info .btn-modify {
+	display: none;
+}
+
 main * {
 	box-sizing: border-box;
 	font-family: 'NanumSquare', sans-serif;
@@ -214,6 +288,8 @@ main .inner-col {
 
 .thumb-hexagon {
   position: relative;
+  width: 100%;
+  height: 100%;
   background-color: #D5E1E8;
   background-image: url(https://bennettfeely.com/clippy/pics/pittsburgh.jpg);
   background-size: cover;
