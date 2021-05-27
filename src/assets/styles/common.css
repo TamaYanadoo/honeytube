@@ -186,7 +186,12 @@ input:-ms-input-placeholder{color:#b7b7c8;}
 	padding: 1.6rem 2rem 2.2rem 2.1rem;
 }
 .thumb-flex-form .thumb-num {
+  flex: 0 0 auto;
+  min-width: 1.6rem;
   font-weight: 700;
+  font-size: 1.4rem;
+}
+.thumb-flex-form .thumb-num.sm {
   font-size: 1rem;
 }
 .thumb-flex-form .thumb-num + .thumb-item {
@@ -272,6 +277,9 @@ main .inner-col {
 	padding-top: 1rem;
 	text-align: center;
 }
+.header-col.ranking {
+	background-color: #F7F7FC;
+}
 .header-col .logo {
 	display: inline-block;
 	width: 5.3rem;
@@ -287,6 +295,7 @@ main .inner-col {
 }
 
 .thumb-hexagon {
+  display: inline-block;
   position: relative;
   width: 100%;
   height: 100%;
