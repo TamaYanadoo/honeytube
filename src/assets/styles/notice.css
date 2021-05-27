@@ -58,7 +58,7 @@
 .friend-col .change-code{display:-webkit-box; display:flex; -webkit-box-align:center; align-items:center; margin:0 2.5rem; border-bottom:1px solid #e5e5e5;}
 .friend-col .change-code .code-input-box{flex:1; font-size:1.4rem;}
 .friend-col .change-code .code-input-box input[type="text"]{width:100%; padding:1rem 0; border:none; outline:none;}
-.friend-col .change-code button{flex:0 0 auto; padding:1.5rem 0 1.5rem 2rem; font-size:1rem; color:#000;}
+.friend-col .change-code button{flex:0 0 auto; padding:1.5rem 0 1.1rem 2rem; font-size:1rem; color:#000;}
 .friend-col .change-code button.disabled{color:#b7b7c8;}
 
 /* my_advertise */
