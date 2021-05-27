@@ -18,7 +18,7 @@
           <button type="button" class="ico-btn ico-btn-back">
             <span class="blind">뒤로가기</span>
           </button>
-          <p>공지사항</p>
+          <p class="ellipsis">공지사항</p>
         </div>
       </section>
       <section class="list-col">
@@ -47,16 +47,16 @@
       </section>
     </main>
     <script>
-      const listFix = document.querySelector('.important-notice');
+      // const listFix = document.querySelector('.important-notice');
 
-      window.addEventListener('scroll', function(){
-        if(window.pageYOffset > 100){
-          listFix.classList.add('fixed')
-        }else{
+      // window.addEventListener('scroll', function(){
+      //   if(window.pageYOffset > 100){
+      //     listFix.classList.add('fixed')
+      //   }else{
           
-          listFix.classList.remove('fixed');
-        }
-      });
+      //     listFix.classList.remove('fixed');
+      //   }
+      // });
 
       function getNoticeList(){
         const noticeList = document.querySelector('.notice-list');
