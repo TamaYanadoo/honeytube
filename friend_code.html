@@ -15,7 +15,7 @@
     <main>
       <section class="title-col">
         <div class="inner-col">
-          <button type="button" class="ico-btn ico-btn-back">
+          <button type="button" class="ico-btn ico-btn-back" onclick="historyBack();">
             <span class="blind">뒤로가기</span>
           </button>
           <p class="ellipsis">친구 추천 코드</p>
@@ -72,6 +72,7 @@
       </div>
     </main>
     <script src="src/assets/dist/scripts/jquery-3.6.0.min.js"></script>
+    <script src="./src/assets/scripts/common.js" ></script>
     <script>
       function copyCode(){
         const getCode = document.querySelector('.default-code').innerText.trim();

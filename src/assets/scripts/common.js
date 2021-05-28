@@ -1,4 +1,4 @@
-/* Update 2021-05-24 */
+/* Update 2021-05-28 */
 
 // Tab
 const tabItem = document.querySelectorAll('.tab-item');
@@ -41,3 +41,9 @@ function toggleClass(id) {
     id.setAttribute('class', '');
   }
 }
+
+function historyBack() {
+  window.history.back();
+}
+
+
