@@ -38,9 +38,9 @@
           <!-- 친구 추천 코드 영역 -->
           <div class="code-box">
             <p class="korean-code">꿈꾸는 알파카</p>
-            <p class="default-code">FR123456</p>
+            <p class="default-code">        FR123456</p>
             <!-- 복사 코드 숨김 -->
-            <input type="text" id="copy-code" class="blind" value="FR567324" readonly/>
+            <input type="text" id="copy-code" class="blind" value="" readonly/>
           </div>
 
           <!-- 추천 코드 변경 영역 -->
@@ -74,8 +74,10 @@
     <script src="src/assets/dist/scripts/jquery-3.6.0.min.js"></script>
     <script>
       function copyCode(){
-        let obj = document.getElementById('copy-code');
-
+        const getCode = document.querySelector('.default-code').innerText.trim();
+        document.getElementById('copy-code').value = getCode;
+        const obj = document.getElementById('copy-code');
+        
         obj.select();
 
         document.execCommand('copy');
