@@ -138,9 +138,9 @@ _:-ms-fullscreen,:root .login-wrap{height:100vh;}
 .modal-content p{word-break:keep-all;}
 .modal .btn-group{margin-top:5rem; font-size:1.3rem;}
 .modal .btn-group button{background-color:#FFB914; border:1px solid #FFB914; width:100%; padding:1.6rem; border-radius:10rem;}
+.modal .btn-group button span{position:relative;}
 .modal.modal-confirm .btn-group button{width:45%; background-color:#fff; border-color:#CFCFDA;}
 .modal.modal-confirm .btn-group button + button{margin-left:1.2rem; background-color:#FFB914; border-color:#FFB914;}
-.modal.modal-confirm .btn-group button span{position:relative;}
 
 .ico-btn{display:block; background-repeat:no-repeat; background-position:50% 0; background-size:100%;}
 .btn-more{display:block; position:relative; width:31rem; margin:2.35rem auto; padding:1.6rem 0; font-weight:700; font-size:1.3rem; color:#a0a0b6; background-color:#fff; border:1px solid #cfcfda;}
