@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>회원가입</title>
+	<link rel="stylesheet" href="./src/assets/dist/styles/normalize.css">
+	<link rel="stylesheet" href="./src/assets/dist/styles/reset.css">
+	<link rel="stylesheet" href="./src/assets/styles/common.css">
+	<link rel="stylesheet" href="./src/assets/styles/myhome.css">
+    <link rel="stylesheet" href="./src/assets/styles/notice.css">
+</head>
+<style>
+ .hidden{display:none;}
+ .member-col{width:100%; max-width:750px; margin:0 auto; padding:0 2.6rem; font-size:1.2rem;} 
+ .member-col .signup-box{margin:11rem 0 0;}
+ .member-col input{width:100%; padding:1rem 0; border:none; border-bottom:1px solid #ccc;}
+ .member-col input:focus{border-color:#000; outline:0;}
+ .member-col dl{width:100%; margin-bottom:3.5rem;}
+ .member-col dt{margin-bottom:.5rem;}
+ .member-col dt.mark:after{content:'(필수)'; display:inline-block; margin-left:.5rem; color:#ff5647;}
+ .member-col dd{position:relative; font-size:1.4rem;}
+ .member-col dd > button{position:absolute; top:0; right:0; bottom:0; width:5rem; margin:auto 0; font-size:1rem;}
+ .member-col dd > button + button{right:5rem;}
+ .member-col dd select{width:100%; margin-top:.5rem; padding:1.2rem; border:1px solid #ccc; box-sizing:border-box; -webkit-appearance:none; appearance:none;}
+ .member-col li{position:relative;}
+ .member-col label{display:block; color:#717188;}
+ .member-col label input{display:inline-block; width:0; height:0; border:0; appearance:none;}
+ .member-col label em:before{content:''; display:inline-block; width:2rem; height:2rem; margin-right:.5em; background:#ECECF6 url(./src/assets/images/ico_chk_38x30w.png) no-repeat 50% 50% / 1rem; border-radius:50%; vertical-align:middle;}
+ .member-col label input:checked + em:before{content:''; background-color:#FFB914;}
+ .member-col label + a{position:absolute; top:.5rem; right:0; color:#B7B7C8; border-bottom:1px solid #B7B7C8;}
+ .member-col #timer{position:absolute; top:0; right:11rem; bottom:0; height:1.1rem; margin:auto 0; font-size:1rem; color:#FF5647;}
+</style>
+<body>
+    <main>
+      <section class="title-col">
+        <div class="inner-col">
+          <button type="button" class="ico-btn ico-btn-back" onclick="window.history.back();">
+            <span class="blind">뒤로가기</span>
+          </button>
+          <p>회원가입</p>
+        </div>
+      </section>
+        <section class="member-col">
+          <div class="inner-col">
+            <form name="signupFrm" action="#">
+              <div class="signup-box">
+                <dl>
+                  <dt>유튜브 채널명 URL</dt>
+                  <dd>
+                    <input type="text" id="youtubeUrl" placeholder="본인 채널의 영상 링크를 입력해 주세요." />
+                    <button type="button">인증하기</button>
+                  </dd>
+                </dl>
+                <dl>
+                  <dt>유튜브 채널명</dt>
+                  <dd>
+                    <input type="text" id="youtubeName" placeholder="채널명을 입력해 주세요." />
+                  </dd>
+                </dl>
+                <dl>
+                  <dt class="mark">휴대폰 번호</dt>
+                  <dd>
+                    <input type="text" id="phone" placeholder="휴대폰 번호를 입력해 주세요." minlength="10" maxlength="11"  onkeyup="phoneNumChk(this);" />
+                    <button type="button" onclick="phoneChk();" >인증요청</button>
+                  </dd>
+                </dl>
+                <dl class="hidden" id="phoneChkFrm">
+                  <dt>인증 번호</dt>
+                  <dd>
+                    <input type="text" id="phoneCode" placeholder="인증 번호를 입력해 주세요." />
+                    <span id="timer">05:00</span>
+                    <button type="button" onclick="phoneCodeChk();">확인</button>
+                    <button type="button" onclick="phoneCodeRe();">재전송</button>
+                  </dd>
+                </dl>
+                <dl>
+                  <dt class="mark">꿀튜브를 알게된 곳</dt>
+                  <dd>
+                    <select>
+                      <optgroup label="꿀튜브를 알게된 곳을 선택해 주세요.">
+                        <option value="">메일로 연락</option>
+                      </optgroup>
+                    </select>
+                  </dd>
+                </dl>
+                <dl>
+                  <dt>친구추천 코드</dt>
+                  <dd>
+                    <input type="text" placeholder="채널명을 입력해 주세요." />
+                    <button type="button">코드확인</button>
+                  </dd>
+                </dl>
+                <ul class="agree-list">
+                  <li>
+                    <label for="agreeAll">
+                      <input type="checkbox" id="agreeAll" />
+                      <span>전체 필수항목 동의</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label for="agreeTerms">
+                      <input type="checkbox" id="agreeTerms" />
+                      <span>(필수) 이용약관 동의</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label for="agreePrivacy">
+                      <input type="checkbox" id="agreePrivacy" />
+                      <span>(필수) 개인정보처리방침 동의</span>
+                    </label>
+                    <a href="#">보기</a>
+                  </li>
+                  <li>
+                    <label for="agreeMarketing">
+                      <input type="checkbox" id="agreeMarketing" />
+                      <span>(선택) 마케팅 수신 정보 동의</span>
+                    </label>
+                    <a href="#">보기</a>
+                  </li>
+                </ul>
+              </div>
+            </form>
+          </div>
+        </section>
+        <section class="advertise-btn-col">
+          <div class="inner-col">
+            <button type="button" class="btn" onclick="signupFrmChk();">
+              <span>가입하기</span>
+            </button>
+          </div>
+        </section>
+    </main>
+    <script src="./src/assets/dist/scripts/jquery-3.6.0.min.js"></script>
+    <script>
+      $(function(){
+        console.log('ready');
+      });
+
+      function phoneNumChk(obj) {
+        //  const chk = /^\d{2,3}-\d{3,4}-\d{4}$/; 
+        const chk = /^[0-9]+/g;
+
+         if(!chk.test(obj.value)){
+           console.log('not phone number');
+          //  alert('숫자만 입력해 주세요.');
+           console.log(obj.value);
+          //  obj.value = '';
+           return false;
+         }
+      }
+
+      if (window.NodeList && !NodeList.prototype.forEach) {
+        NodeList.prototype.forEach = Array.prototype.forEach;
+      }
+
+      function phoneChk() {
+        const target = document.querySelector('#phoneChkFrm');
+
+        if(document.getElementById('phone').value){
+          target.classList.remove('hidden');
+          if(target.classList.remove('hidden')) {
+            target.style.disply = 'block';
+          }
+        } else { 
+          alert('휴대폰 번호를 입력해 주세요.');
+          document.getElementById('phone').focus();
+          return false;
+        }
+        
+        timeView = setInterval('timeCount()', 1000);
+      }
+
+
+      function phoneCodeChk() {
+        const phoneCode = document.getElementById('phoneCode');
+        if(phoneCode.value == '123'){
+          phoneCode.setAttribute('disabled', 'disabled');
+          document.getElementById('phone').setAttribute('disabled', 'disabled');
+          document.getElementById('timer').remove();
+          // phoneCode.nextSibling('button').innerHTML = 'aaa';
+          alert('인증 완료되었습니다.')
+          clearInterval(timeView);
+
+        } else if(!phoneCode.value || phoneCode.value != '123') {
+          alert('질못된 인증 번호 입니다. 인증 번호를 확인해 주세요.');
+          phoneCode.focus();
+          return false;
+        }
+      }
+
+        const agreeList = document.querySelector('.agree-list').querySelectorAll('li');
+        const fragment = document.createDocumentFragment();
+        
+        agreeList.forEach(function(e){
+          const tag = document.createElement('em');
+          const parent = e.querySelector('span');
+          parent.appendChild(tag);
+          // parent.insertBefore(tag, parent.firstChild);
+          console.log(e, parent.firstChild);
+        })
+
+// const str = document.querySelector('.sign-box').querySelector('input');
+// function keyup() {
+//     console.log('over');
+//   if(document.querySelector('input').value.length >= 3) {
+//     console.log('over');
+//   }
+// }
+
+let SetTime = 300;
+function timeCount() {
+  let min = '';
+  let sec = '';
+
+    min = Math.floor(SetTime / 60);
+    sec = Math.floor(SetTime % 60);
+    min = min < 10 ? '0' + min : min;
+    sec = sec < 10 ? '0' + sec : sec;
+
+    const msg = min + ':' + sec;
+    document.all.timer.innerHTML = msg;
+    SetTime--;
+    
+    if(SetTime < 0) {
+      clearInterval(timeView);
+      console.log('the end');
+    }
+}
+
+function signupFrmChk() {
+  console.log('signup');
+
+  const youtubeUrl = document.getElementById('youtubeUrl');
+  const youtubeName = document.getElementById('youtubeName');
+  const phone = document.getElementById('phone');
+  const phoneCode = document.getElementById('phoneCode');
+  const agreeAll = document.getElementById('agreeAll');
+  const agreeTerms = document.getElementById('agreeTerms');
+  const agreePrivacy = document.getElementById('agreePrivacy');
+
+  if(!youtubeUrl.value) {
+    alert('유튜브 주소를 입력해 주세요.');
+    youtubeUrl.focus();
+    return false;
+  }
+
+  if(!youtubeName.value) {
+    alert('유튜브 주소를 입력해 주세요.');
+    youtubeName.focus();
+    return false;
+  }
+
+  if(!phone.value) {
+    alert('휴대폰 번호를 입력해 주세요.');
+    phone.focus();
+    return false;
+  }
+
+  if(!phoneCode.value) {
+    alert('인증 번호를 입력해 주세요.');
+    phoneCode.focus();
+    return false;
+  }
+
+  if(!agreeAll.value.checked || (agreeTerms.value.checked && agreeTerms.value.checked)) {
+    alert('약관을 확인해 주세요.');
+    agreeAll.focus();
+    return false;
+  }
+
+  // document.signupFrm.submit();
+}
+window.onload = function () {
+};
+    </script>
+</body>
+</html>
