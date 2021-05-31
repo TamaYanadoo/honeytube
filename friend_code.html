@@ -8,8 +8,7 @@
     <link rel="stylesheet" href="./src/assets/dist/styles/normalize.css" />
     <link rel="stylesheet" href="./src/assets/dist/styles/reset.css" />
     <link rel="stylesheet" href="./src/assets/styles/common.css" />
-    <link rel="stylesheet" href="./src/assets/styles/myhome.css" />
-    <link rel="stylesheet" href="./src/assets/styles/notice.css" />
+    <link rel="stylesheet" href="./src/assets/styles/sub.css" />
   </head>
   <body>
     <main>
@@ -61,12 +60,12 @@
           </button>
         </div>
       </section>
-      <div class="modal" style="display:none;">
+      <div class="modal">
         <div class="modal-content">
           <!-- <p>이미 사용중인 코드입니다</p> -->
           <p>사용 가능한 코드입니다</p>
           <div class="btn-group">
-            <button type="button" onclick="$('.modal').hide();">확인</button>
+            <button type="button" onclick="modalClose();">확인</button>
           </div>
         </div>
       </div>

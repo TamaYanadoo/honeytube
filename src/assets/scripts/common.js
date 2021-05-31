@@ -46,4 +46,9 @@ function historyBack() {
   window.history.back();
 }
 
+function modalClose() {
+  const modal = document.querySelector('.modal');
+  modal.style.display = 'none';
+}
+
 
