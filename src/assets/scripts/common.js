@@ -1,4 +1,4 @@
-/* Update 2021-05-31 */
+/* Update 2021-06-01 */
 
 // Tab
 const tabItem = document.querySelectorAll('.tab-item');
@@ -51,4 +51,15 @@ function modalClose() {
   modal.style.display = 'none';
 }
 
+const body = document.querySelector('body');
+const footer = document.querySelector('.footer-col');
+window.addEventListener('load', function(){
+  if (body.clientHeight > screen.height) {
+    body.style.position = 'relative';
+    footer.classList.remove('scroll');
+  }else{
+    body.style.position = 'static';
+    footer.classList.add('scroll')
+  }
+});
 

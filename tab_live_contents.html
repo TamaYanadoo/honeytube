@@ -81,7 +81,7 @@
 					</div>
         </div>
       </section>
-			<section class="fixed-btn-col">
+			<section class="floating-btn-col">
 				<div class="inner-col">
 					<div class="btn-flex-form">
 						<button type="button" class="btn heart">
@@ -94,6 +94,16 @@
 				</div>
 			</section>
     </main>
+		<footer class="footer-col">
+      <div class="inner-col">
+        <ul>
+          <li><a href="./login.html">로그인</a></li>
+          <li><a href="#;">1:1 문의</a></li>
+          <li><a href="#;">개인정보처리방침</a></li>
+          <li><a href="#;">이용약관</a></li>
+        </ul>
+      </div>
+    </footer>
   </body>
 	<script src="./src/assets/scripts/common.js" ></script>
 	<script>
@@ -112,5 +122,16 @@
 				flag=true
 			}
 		})
+
+		const btnHide = document.querySelector('.floating-btn-col');
+		window.addEventListener('scroll', function(){
+			const scrollT = window.scrollY;
+			const scrollB = document.documentElement.scrollHeight - window.innerHeight; 
+			if(scrollT >= scrollB - 50) {
+				btnHide.classList.add('hide');
+			}else{
+				btnHide.classList.remove('hide');
+			}
+		});
 	</script>
 </html>
