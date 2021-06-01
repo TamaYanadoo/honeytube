@@ -15,6 +15,7 @@
  .hidden{display:none;}
  .member-col{width:100%; max-width:750px; margin:0 auto; padding:0 2.6rem; font-size:1.2rem;} 
  .member-col .signup-box{margin:11rem 0 0;}
+ .toast-col + .member-col .signup-box{margin:0;}
  .member-col input{width:100%; padding:1rem 0; border:none; border-bottom:1px solid #ccc;}
  .member-col input:focus{border-color:#000; outline:0;}
  .member-col dl{width:100%; margin-bottom:3.5rem;}
@@ -23,7 +24,7 @@
  .member-col dd{position:relative; font-size:1.4rem;}
  .member-col dd > button{position:absolute; top:0; right:0; bottom:0; width:5rem; margin:auto 0; font-size:1rem;}
  .member-col dd > button + button{right:5rem;}
- .member-col dd select{width:100%; margin-top:.5rem; padding:1.2rem; border:1px solid #ccc; box-sizing:border-box; -webkit-appearance:none; appearance:none;}
+ .member-col dd select{width:100%; margin-top:.5rem; padding:1.2rem; background:url(./src/assets/images/ico_arrow_botton_28x16.png) no-repeat 95% 50% / 1rem; border:1px solid #ccc; box-sizing:border-box; -webkit-appearance:none; appearance:none;}
  .member-col li{position:relative;}
  .member-col label{display:block; color:#717188;}
  .member-col label input{display:inline-block; width:0; height:0; border:0; appearance:none;}
@@ -31,6 +32,12 @@
  .member-col label input:checked + em:before{content:''; background-color:#FFB914;}
  .member-col label + a{position:absolute; top:.5rem; right:0; color:#B7B7C8; border-bottom:1px solid #B7B7C8;}
  .member-col #timer{position:absolute; top:0; right:11rem; bottom:0; height:1.1rem; margin:auto 0; font-size:1rem; color:#FF5647;}
+ .member-col form + button{margin:2.6rem 0 0; padding:.5rem 1rem; border:1px solid #cfcfda; border-radius:1.5rem;}
+ .toast-col{width:100%; background-color:#f7f7fc;}
+ .toast-col .inner-col{margin-bottom:2.1rem; padding:2.1rem 4.4rem; background:url(./src/assets/images/ico_info_30x30.png) no-repeat 2.5rem 2.35rem / 1rem; line-height:1.5;}
+ .signup-btn-col{margin-top:4.2rem;}
+ .signup-btn-col button{color:#fff; background-color:#CFCFDA;}
+ .signup-btn-col button.active{background-color:#FFB914;}
 </style>
 <body>
     <main>
@@ -40,6 +47,15 @@
             <span class="blind">뒤로가기</span>
           </button>
           <p>회원가입</p>
+        </div>
+      </section>
+      <section class="toast-col">
+        <div>
+          <div class="inner-col">
+            <p>채널명이 변경되셨나요?</p>
+            <p>광고를 최소 1회 이상 진행할 경우 채널 변경이 불가합니다.</p>
+            <p>채널톡으로 문의해 주세요.</p>
+          </div>
         </div>
       </section>
         <section class="member-col">
@@ -96,18 +112,21 @@
                   <li>
                     <label for="agreeAll">
                       <input type="checkbox" id="agreeAll" />
+                      <em></em>
                       <span>전체 필수항목 동의</span>
                     </label>
                   </li>
                   <li>
                     <label for="agreeTerms">
                       <input type="checkbox" id="agreeTerms" />
+                      <em></em>
                       <span>(필수) 이용약관 동의</span>
                     </label>
                   </li>
                   <li>
                     <label for="agreePrivacy">
                       <input type="checkbox" id="agreePrivacy" />
+                      <em></em>
                       <span>(필수) 개인정보처리방침 동의</span>
                     </label>
                     <a href="#">보기</a>
@@ -115,6 +134,7 @@
                   <li>
                     <label for="agreeMarketing">
                       <input type="checkbox" id="agreeMarketing" />
+                      <em></em>
                       <span>(선택) 마케팅 수신 정보 동의</span>
                     </label>
                     <a href="#">보기</a>
@@ -122,9 +142,10 @@
                 </ul>
               </div>
             </form>
+            <button><span>회원 탈퇴</span></button>
           </div>
         </section>
-        <section class="advertise-btn-col">
+        <section class="signup-btn-col">
           <div class="inner-col">
             <button type="button" class="btn" onclick="signupFrmChk();">
               <span>가입하기</span>
@@ -179,7 +200,6 @@
           phoneCode.setAttribute('disabled', 'disabled');
           document.getElementById('phone').setAttribute('disabled', 'disabled');
           document.getElementById('timer').remove();
-          // phoneCode.nextSibling('button').innerHTML = 'aaa';
           alert('인증 완료되었습니다.')
           clearInterval(timeView);
 
@@ -189,25 +209,6 @@
           return false;
         }
       }
-
-        const agreeList = document.querySelector('.agree-list').querySelectorAll('li');
-        const fragment = document.createDocumentFragment();
-        
-        agreeList.forEach(function(e){
-          const tag = document.createElement('em');
-          const parent = e.querySelector('span');
-          parent.appendChild(tag);
-          // parent.insertBefore(tag, parent.firstChild);
-          console.log(e, parent.firstChild);
-        })
-
-// const str = document.querySelector('.sign-box').querySelector('input');
-// function keyup() {
-//     console.log('over');
-//   if(document.querySelector('input').value.length >= 3) {
-//     console.log('over');
-//   }
-// }
 
 let SetTime = 300;
 function timeCount() {
