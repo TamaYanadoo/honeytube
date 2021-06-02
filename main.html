@@ -315,48 +315,51 @@
           <p class="price-box"><strong class="odometer">0</strong>원</p>
         </div>
       </section>
-      <section class="ranking-col slide-col">
+      <section class="ranking-col">
         <div class="inner-col">
           <h3><em>꿀튜버 실시간 랭킹</em></h3>
-          <div class="swiper-container ranking-slide">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide">
-                <span class="ranking first">1</span>
-                <dl style="background-image:url(./src/assets/images/img_bnr_ranking.png)">
-                  <dt>ch 더메이션</dt>
-                  <dd>
-                    <p>누적 수익금 <span>2,500,000</span></p>
-                  </dd>
-                </dl>
-              </div>
-              <div class="swiper-slide">
-                <span class="ranking">2</span>
-                <dl style="background-image:url(./src/assets/images/img_bnr_ranking.png)">
-                  <dt>ch 더메이션</dt>
-                  <dd>
-                    <p>누적 수익금 <span>2,500,000</span></p>
-                  </dd>
-                </dl>
-              </div>
-              <div class="swiper-slide">
-                <span class="ranking">3</span>
-                <dl style="background-image:url(./src/assets/images/img_bnr_ranking.png)">
-                  <dt>ch 더메이션</dt>
-                  <dd>
-                    <p>누적 수익금 <span>2,500,000</span></p>
-                  </dd>
-                </dl>
-              </div>
-              <div class="swiper-slide">
-                <span class="ranking">4</span>
-                <dl style="background-image:url(./src/assets/images/img_bnr_ranking.png)">
-                  <dt>ch 더메이션</dt>
-                  <dd>
-                    <p>누적 수익금 <span>2,500,000</span></p>
-                  </dd>
-                </dl>
+          <div class="slide-box">
+            <div class="swiper-container ranking-slide">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <span class="ranking first">1</span>
+                  <dl style="background-image:url(./src/assets/images/img_bnr_ranking.png)">
+                    <dt>ch 더메이션</dt>
+                    <dd>
+                      <p>누적 수익금 <span>2,500,000</span></p>
+                    </dd>
+                  </dl>
+                </div>
+                <div class="swiper-slide">
+                  <span class="ranking">2</span>
+                  <dl style="background-image:url(./src/assets/images/img_bnr_ranking.png)">
+                    <dt>ch 더메이션</dt>
+                    <dd>
+                      <p>누적 수익금 <span>2,500,000</span></p>
+                    </dd>
+                  </dl>
+                </div>
+                <div class="swiper-slide">
+                  <span class="ranking">3</span>
+                  <dl style="background-image:url(./src/assets/images/img_bnr_ranking.png)">
+                    <dt>ch 더메이션</dt>
+                    <dd>
+                      <p>누적 수익금 <span>2,500,000</span></p>
+                    </dd>
+                  </dl>
+                </div>
+                <div class="swiper-slide">
+                  <span class="ranking">4</span>
+                  <dl style="background-image:url(./src/assets/images/img_bnr_ranking.png)">
+                    <dt>ch 더메이션</dt>
+                    <dd>
+                      <p>누적 수익금 <span>2,500,000</span></p>
+                    </dd>
+                  </dl>
+                </div>
               </div>
             </div>
+          </div>
         </div>
       </section>
       <section class="youtuber-col">
@@ -422,8 +425,6 @@
                   </div>
                 </div>
               </div>
-            
-            
             </div>
           </div>
         </div>
@@ -499,7 +500,6 @@
        const rankingSlide = new Swiper('.ranking-slide', {
         slidesPerView: 'auto',
         spaceBetween: 20,
-        centeredSlides: true,
         breakpoints: {
           750: {
             slidesPerView: 'auto',

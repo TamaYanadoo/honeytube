@@ -50,16 +50,3 @@ function modalClose() {
   const modal = document.querySelector('.modal');
   modal.style.display = 'none';
 }
-
-const body = document.querySelector('body');
-const footer = document.querySelector('.footer-col');
-window.addEventListener('load', function(){
-  if (body.clientHeight > screen.height) {
-    body.style.position = 'relative';
-    footer.classList.remove('scroll');
-  }else{
-    body.style.position = 'static';
-    footer.classList.add('scroll')
-  }
-});
-

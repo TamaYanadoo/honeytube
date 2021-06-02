@@ -104,7 +104,7 @@
     if(!adArray[i].time == ''){
     listItems += '<a href="./tab_ad_detail.html">' +
                   '<dl><dt><img src="' + adArray[i].img + '" alt="#" /><button type="button" class="btn-like" onclick="toggleClass(this);">like it</button></dt>'+
-                  '<dd><p><em>' + adArray[i].time + '</em></p><p><span>'+ adArray[i].title + '</span></p><p><strong>' + numberFormat(adArray[i].price) +'</strong></p></dd></dl></a>';
+                  '<dd><p><em class="time-box">' + adArray[i].time + '</em></p><p><span>'+ adArray[i].title + '</span></p><p><strong>' + numberFormat(adArray[i].price) +'</strong></p></dd></dl></a>';
 
     } else {
     listItems += '<a href="./tab_ad_detail.html">' +
