@@ -126,7 +126,7 @@
 .my-advertise-col .advertise-box{width:100%; padding:3rem 1.5rem;}
 .my-advertise-col .advertise-box h3{margin:4rem 0 1.5rem; font-weight:700; font-size:1.5rem;}
 .my-advertise-col .advertise-box ul li{width:100%; background-color:#fff;}
-.my-advertise-col .advertise-box ul li a{display:flex; align-items:flex-end; padding:1.9rem 1.4rem;}
+.my-advertise-col .advertise-box ul li a{display:flex; align-items:start; padding:1.9rem 1.4rem;}
 .advertise-box ul li + li{margin-top:1rem;}
 .advertise-box .advertise-thumb{flex:0 0 auto; width:6.2rem; height:6.2rem; background-color:#fff; background-repeat:no-repeat; background-position:50% 50%; background-size:auto 100%; vertical-align:middle;}
 .advertise-box .advertise-thumb img{width:100%;}
