@@ -20,6 +20,7 @@
 .main h3{max-width:750px; margin-bottom:2.2rem; padding:0 2.2rem 0 2.2rem; font-weight:800; font-size:1.8rem;}
 .main h3 > span{color:#ffb914;}
 .main .slide-box{padding:0 2.2rem;}
+.main .advertise-recommend-col .swiper-slide:last-child, .main .ranking-col .swiper-slide:last-child{margin-right:2.2rem;}
 
 .main-bnr-slide .swiper-pagination{left:auto; right:2rem; width:4.6rem; padding:.6rem 0; font-size:1.1rem; color:#c8c8d4; background-color:rgba(0, 0, 0, .3); border-radius:1.5rem;}
 .main-bnr-slide .swiper-pagination .swiper-pagination-current{color:#fff;}
@@ -349,6 +350,11 @@ _:-ms-fullscreen,:root .step-col::before{margin-top:-1.1rem;}
 .honeytube-guide-col .guide-txt p + p{margin-top:2.6rem;}
 .honeytube-guide-col .guide-txt p > strong, .honeytube-guide-col .guide-txt p > em{font-weight:800;}
 
+.public-col{font-size:1.6rem; text-align:center;}
+.public-col p{width:90%; margin:15rem auto 20rem; padding:10rem 0 0; color:#717188; line-height:1.5;}
+.public-col button{width:86%; padding:2rem 0; font-size:1.4rem; color:#fff; background-color:#3B3B4D;}
+.public-col .item-01{background:url(./src/assets/images/ico_404_239x134.png) no-repeat 54% 2.5rem / 12rem;}
+.public-col .item-02{background:url(./src/assets/images/ico_500_239x134.png) no-repeat 54% 2.5rem / 12rem;}
 
 @media screen and (min-width: 750px){
 	.slide-col .inner-col{max-width:100%; padding-left:0;}
