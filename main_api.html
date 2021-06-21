@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>main</title>
+    <link rel="stylesheet" href="./src/assets/dist/styles/normalize.css" />
+    <link rel="stylesheet" href="./src/assets/dist/styles/reset.css" />
+    <link rel="stylesheet" href="./src/assets/styles/common.css" />
+    <link rel="stylesheet" href="./src/assets/styles/sub.css" />
+    <link rel="stylesheet" href="./src/assets/dist/swiper/swiper.min.css" />
+    <link rel="stylesheet" href="./src/assets/dist/odometer/odometer-theme-default.css" />
+    <script>
+      let apiUrl = "";
+      if(window.location.hostname == "ec2-13-209-10-92.ap-northeast-2.compute.amazonaws.com") {
+          apiUrl = "http://ec2-52-79-49-251.ap-northeast-2.compute.amazonaws.com:8407";
+      } else {
+          apiUrl = "http://" + window.location.hostname + ":8407";
+      }
+    </script>
+  </head>
+  <body>
+    <header class="header-col">
+      <div class="inner-col">
+        <h1>
+          <a href="./main.html" class="logo"><span class="blind">꿀튜브</span></a>
+        </h1>
+      </div>
+    </header>
+    <main class="main nav">
+      <nav class="active">
+        <div class="inner-col">
+          <!-- [D] 메뉴 클릭 시 class="active" 추가 -->
+          <a href="./main.html" class="active">
+            <span class="nav-txt home">홈</span>
+          </a>
+          <a href="./advertise.html" class="">
+            <span class="nav-txt ad">광고</span>
+          </a>
+          <a href="./ranking.html" class="">
+            <span class="nav-txt ranking">랭킹</span>
+          </a>
+          <a href="./myhome.html" class="">
+            <span class="nav-txt my">My</span>
+          </a>
+        </div>
+      </nav>
+      <section class="main-bnr-col">
+        <div class="inner-col">
+          <div class="swiper-container main-bnr-slide">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <a href="#;">
+                  <img src="./src/assets/images/img_bnr_test.png" alt="배너1" />
+                </a>
+              </div>
+              <div class="swiper-slide">
+                <a href="#;">
+                  <img src="./src/assets/images/img_bnr_test.png" alt="배너2" />
+                </a>
+              </div>
+              <div class="swiper-slide">
+                <a href="#;">
+                  <img src="./src/assets/images/img_bnr_test.png" alt="배너3" />
+                </a>
+              </div>
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+      </section>    
+      <section class="advertise-recommend-col slide-col">
+        <div class="inner-col">
+          <!-- <h3>신청 가능한 광고</h3> -->
+          <h3><span>알파카</span>님을 위한 꿀튜브의 추천</h3>
+          <div class="slide-box">
+            <div class="swiper-container advertise-slide">
+                <div class="swiper-wrapper product-bnr">
+                </div>
+            </div>
+        </div>
+        </div>
+      </section>
+      <section class="accumulated-price-col">
+        <div class="inner-col">
+          <p><span>6개월간</span> 누적 수익금</p>
+          <p class="price-box"><strong class="odometer">0</strong>원</p>
+        </div>
+      </section>
+      <section class="ranking-col">
+        <div class="inner-col">
+          <h3><em>꿀튜버 실시간 랭킹</em></h3>
+          <div class="slide-box">
+            <!-- START: 0621수정 - 랭킹 슬라이드 마크업 및 옵션값 수정 -->
+            <div class="swiper-container ranking-slide">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <dl>
+                    <dt style="background-image:url(./src/assets/images/img_bnr_ranking.png)">
+                      <span class="ranking first">1</span>
+                      <span class="blind">ch 더메이션</span>
+                    </dt>
+                    <dd>
+                      <p class="ellipsis">닥터 구구 테스트닥터 구구 테스트</p>
+                    </dd>
+                  </dl>
+                </div>
+                <div class="swiper-slide">
+                  <dl>
+                    <dt style="background-image:url(./src/assets/images/img_bnr_ranking.png)">
+                      <span class="ranking">2</span>
+                      <span class="blind">ch 더메이션</span>
+                    </dt>
+                    <dd>
+                      <p class="ellipsis">ch 더메이션ch 더메이션ch 더메이션</p>
+                    </dd>
+                  </dl>
+                </div><div class="swiper-slide">
+                  <dl>
+                    <dt style="background-image:url(./src/assets/images/img_bnr_ranking.png)">
+                      <span class="ranking">3</span>
+                      <span class="blind">ch 더메이션</span>
+                    </dt>
+                    <dd>
+                      <p class="ellipsis">ch 더메이션</p>
+                    </dd>
+                  </dl>
+                </div><div class="swiper-slide">
+                  <dl>
+                    <dt style="background-image:url(./src/assets/images/img_bnr_ranking.png)">
+                      <span class="ranking">4</span>
+                      <span class="blind">ch 더메이션</span>
+                    </dt>
+                    <dd>
+                      <p class="ellipsis">ch 더메이션</p>
+                    </dd>
+                  </dl>
+                </div><div class="swiper-slide">
+                  <dl>
+                    <dt style="background-image:url(./src/assets/images/img_bnr_ranking.png)">
+                      <span class="ranking">5</span>
+                      <span class="blind">ch 더메이션</span>
+                    </dt>
+                    <dd>
+                      <p class="ellipsis">ch 더메이션</p>
+                    </dd>
+                  </dl>
+                </div>
+              </div>
+            </div>
+            <!-- END: 0621수정 - 랭킹 슬라이드 마크업 및 옵션값 수정 -->
+          </div>
+        </div>
+      </section>
+      <section class="youtuber-col">
+        <div class="inner-col">
+          <h3>다른 유튜버들은 이렇게 제작했어요</h3>
+          <div class="slide-box">
+            <div class="swiper-container youtuber-slide">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="youtube-thumb">
+                    <img src="" data-youtube-id="Gh4djoUvfmQ" class="youtubeThumb1" alt="유튜브 썸네일" />
+                  </div>
+                  <div class="thumb-flex-form">
+                    <div class="thumb-item">
+                      <button class="thumb-hexagon"><span class="blind">프로필 사진</span></button>
+                    </div>
+                    <div class="thumb-info">
+                      <strong class="ellipsis">일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십</strong>
+                      <p class="ellipsis">일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="youtube-thumb">
+                    <img src="" data-youtube-id="Gh4djoUvfmQ" class="youtubeThumb1" alt="유튜브 썸네일" />
+                  </div>
+                  <div class="thumb-flex-form">
+                    <div class="thumb-item">
+                      <button class="thumb-hexagon"><span class="blind">프로필 사진</span></button>
+                    </div>
+                    <div class="thumb-info">
+                      <strong class="ellipsis">일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십</strong>
+                      <p class="ellipsis">일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="youtube-thumb">
+                    <img src="" data-youtube-id="Gh4djoUvfmQ" class="youtubeThumb1" alt="유튜브 썸네일" />
+                  </div>
+                  <div class="thumb-flex-form">
+                    <div class="thumb-item">
+                      <button class="thumb-hexagon"><span class="blind">프로필 사진</span></button>
+                    </div>
+                    <div class="thumb-info">
+                      <strong class="ellipsis">일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십</strong>
+                      <p class="ellipsis">일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="youtube-thumb">
+                    <img src="" data-youtube-id="Gh4djoUvfmQ" class="youtubeThumb1" alt="유튜브 썸네일" />
+                  </div>
+                  <div class="thumb-flex-form">
+                    <div class="thumb-item">
+                      <button class="thumb-hexagon"><span class="blind">프로필 사진</span></button>
+                    </div>
+                    <div class="thumb-info">
+                      <strong class="ellipsis">일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십</strong>
+                      <p class="ellipsis">일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="faq-col">
+        <div class="inner-col">
+          <p>구독자가 1천명뿐인데 광고비,<br/>받을 수 있나요?</p>
+          <a href="./honeytube_guide.html">꿀튜브가 궁금하다면?</a>
+        </div>
+      </section>
+      <section class="friend-code-col">
+        <div class="inner-col">
+          <a href="./friend_code.html">
+            <img src="src/assets/images/img_bnr_friend_code_v2.png" alt="유튜버 친구와 함께 돈버는 법!"/>
+            <p class="blind">유튜버 친구와 함께 돈버는 법! <span>친구 추천 코드 확인</span></p>
+          </a>
+        </div>
+      </section>
+    </main>
+    <footer class="footer-col">
+      <div class="inner-col">
+        <ul>
+          <li><a href="./login.html">로그인</a></li>
+          <li><a href="#;">1:1 문의</a></li>
+          <li><a href="#;">개인정보처리방침</a></li>
+          <li><a href="#;">이용약관</a></li>
+        </ul>
+      </div>
+    </footer>
+
+    <script src="./src/assets/dist/scripts/jquery-3.6.0.min.js"></script>
+    <script src="./src/assets/scripts/common.js"></script>
+    <script src="./src/assets/scripts/nav.js"></script>
+    <script src="./src/assets/dist/swiper/swiper.min.js"></script>
+    <script src="./src/assets/dist/scripts/jquery.youtubecoverphoto.js"></script>
+    <script src="./src/assets/dist/odometer/odometer.js"></script>
+    <script>
+      window.addEventListener('scroll', function(){
+        let sct = document.documentElement.scrollTop;
+        const target = document.querySelector('.accumulated-price-col');
+        const odometerTarget = document.querySelector('.odometer');
+
+        if(sct > target.offsetTop - 300){
+          odometerTarget.innerHTML = 162000000;
+        }
+
+      });
+
+      const mainSlide = new Swiper('.main-bnr-slide', {
+        pagination: {
+          el: '.swiper-pagination',
+          type: 'fraction',
+        },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+      });
+
+      // START: 0621수정 - 메인 페이지 광고상품 옵션값 수정 및 데이터가 필요한 슬라이드 스크립트 선언 순서 수정
+      function loadMainProduct() {
+        fetch("http://192.168.10.47:5500/list.json", {
+            method: "GET",
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json;charset=UTF-8'
+            }
+        })
+          .then(res => res.json())
+          .then(res => {
+              let authors = res;
+              let products = "";
+              return authors.map(function (author) {
+                  products = "<div class=\"swiper-slide\">\n" +
+                      "                        <a href=\"/product/detail/" + author.product.productId + "\">\n" +
+                      "                            <dl>\n" +
+                      "                                <dt style=\"background-image:url(" + author.product.thumbnailUrl + ")\">\n" +
+                      // "                                    <img src=\"" + author.product.thumbnailUrl + "\" alt=\"" + author.product.productName + "\" />\n" +
+                      "                                    <button type=\"button\" class=\"btn-like\" onclick=\"toggleClass(this);\"><span class=\"blind\">like it</span></button>\n" +
+                      "                                </dt>\n" +
+                      "                                <dd>\n" +
+                      "                                    <p><em>" + author.product.productName + "</em></p>\n" +
+                      "                                    <p><span>" + author.product.adText + "</span></p>\n" +
+                      "                                    <p><strong>" + author.product.adCost + "</strong></p>\n" +
+                      "                                </dd>\n" +
+                      "                            </dl>\n" +
+                      "                        </a>\n" +
+                      "                    </div>";
+                  $(".product-bnr").append(products);
+              })
+          })
+          .then(res => {
+            const advertiseSlide = new Swiper('.advertise-slide', {
+              slidesPerView: 'auto',
+              spaceBetween: 10,
+            });
+          })
+      }
+      // END: 0621수정 - 메인 페이지 광고상품 옵션값 수정 및 데이터가 필요한 슬라이드 스크립트 선언 순서 수정
+
+      
+
+      $(document).ready(function(){
+        $('.youtubeThumb1').youtubeCoverPhoto();
+        loadMainProduct();
+
+        // START: 0621수정 - 랭킹 슬라이드 마크업 및 옵션값 수정(.advertise-slide와 동일하게 스크립트 순서 변경 필요)
+          const rankingSlide = new Swiper('.ranking-slide', {
+            slidesPerView: 'auto',
+            spaceBetween: 21
+          });
+        // END: 0621수정 - 랭킹 슬라이드 마크업 및 옵션값 수정
+
+        // START: 0621수정 - 슬라이드 옵션값 수정 필요(.advertise-slide와 동일하게 스크립트 순서 변경 필요)
+          const youtuberSlide = new Swiper('.youtuber-slide', {
+            slidesPerView: 'auto',
+            spaceBetween: 10,
+            centeredSlides : true,
+            
+          });
+        // END: 0621수정 - 슬라이드 옵션값 수정 필요
+
+      })
+    </script>
+  </body>
+</html>
