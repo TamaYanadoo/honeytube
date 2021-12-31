@@ -111,7 +111,7 @@ _:-ms-fullscreen,:root .login-wrap{height:100vh;}
 .login-wrap .login-btn-area .btn.default{margin-top:2.4rem; font-weight:400; font-size:1.2rem; color:#717188; background:transparent; border-color:transparent;}
 
 .btn{position:relative; width:100%; padding:1.9rem 4rem 1.5rem; font-weight:800; font-size:1.3rem; color:#3B3B4D; background-color:#fff; background-repeat:no-repeat; border-width:1px; border-radius:0; border-style:solid; border-color:#CFCFDA; text-align:center;}
-.btn.positive{color:#fff; border-color:#3B3B4D; background-color:#3B3B4D;}
+.btn.positive{color:#3B3B4D; border-color:#DFDFEA; background-color:#fff;}
 .btn.disabled{color:#fff; border-color:#CFCFDA; background-color:#CFCFDA;}
 .btn.active{color:#fff; border-color:#FFB914; background-color:#FFB914;}
 .btn span{position:relative;}

@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>휴면계정 안내</title>
+	<link rel="stylesheet" href="./src/assets/dist/styles/normalize.css">
+	<link rel="stylesheet" href="./src/assets/dist/styles/reset.css">
+	<link rel="stylesheet" href="./src/assets/styles/common.css">
+	<link rel="stylesheet" href="./src/assets/styles/myhome.css">
+    <link rel="stylesheet" href="./src/assets/styles/notice.css">
+</head>
+<style>
+    .cb,.cb::after,.cb::before{ clear: both; display: block; content:""; }
+    .dormant-col{}
+    .dormant-col .textbox{margin: 11rem 0 0;padding: 0 2.2rem;}
+    .dormant-col .textbox strong{display: block;margin-bottom: 3rem;font-size: 1.8rem;font-weight: 700;}
+    .dormant-col .textbox p{margin-bottom: 1em;font-size: 1.4rem;line-height: 1.5;}
+    .dormant-col .textbox p a{font-weight: bold;color: #269CFF;}
+
+
+    .member-col{width:100%; max-width:750px; margin:0 auto;margin-top: 5rem; padding:0 2.2rem; font-size:1.2rem;} 
+    .member-col input{width:100%; padding:1rem 0; border:none; border-bottom:1px solid #ccc;}
+    .member-col input:focus{border-color:#000; outline:0;}
+    .member-col dl{width:100%; margin-bottom:3.5rem;}
+    .member-col dt{margin-bottom:.5rem;}
+    .member-col dt.mark:after{content:'(필수)'; display:inline-block; margin-left:.5rem; color:#ff5647;}
+    .member-col dd{position:relative; font-size:1.4rem;}
+    .member-col dd .toast-pop{display: none;position: absolute;z-index: 2;top: 0;left: 0;}
+    .member-col dd .toast-pop.on{display: block;}
+    .member-col dd > button{position:absolute; top:0; right:0; bottom:0; width:5rem; margin:auto 0; font-size:1rem;}
+    .member-col dd > button + button{right:5rem;}
+    .member-col dd select{width:100%; margin-top:.5rem; padding:1.2rem;color: #B7B7C8; background:url(./src/assets/images/ico_arrow_botton_28x16.png) no-repeat 95% 50% / 1rem; border:1px solid #ccc; box-sizing:border-box; -webkit-appearance:none; appearance:none;}
+    
+    .member-col dt span{color: #ff5647;}
+  
+    .member-col .self-certi dd:first-of-type{background: #f7f7fc; margin-top: 1.2rem;padding: 2.2rem;border-radius: .7rem;}
+    .member-col .self-certi dd.notice{margin-top: 1.4em; font-size: 1em;color: #717188;}
+    .member-col .self-certi dt{display: inline-block;position: relative;background: #fff;z-index: 1;margin-left: 1em;}
+    .member-col .self-certi dd:first-of-type{background: #f7f7fc; margin-top: 1.2rem;padding: 2.2rem;border-radius: .7rem;}
+ .member-col .self-certi dd.notice{margin-top: 1.4em; font-size: 1em;color: #717188;}
+ .member-col .self-certi dt{display: inline-block;background: #fff;z-index: 1;margin-left: 1em;}
+ 
+ .member-col .self-certi dd .toast-pop{display: none; position: absolute;z-index: 2;top: 0;right: 0;width: 100%; padding: 2rem 2.7rem; background: #717188;border-radius: .4rem;}
+ 
+ .member-col .self-certi dd .toast-pop::after{content: "";position: absolute;top: -12px;left: 8.5rem; width: 0;height: 0;border-top: 12px solid none;border-bottom: 12px solid #717188;border-right: 12px solid transparent;border-left: 12px solid transparent;}
+ .member-col .self-certi dd .toast-pop.fir::after{left: 12rem;}
+
+ .member-col .self-certi dd .toast-pop.on{display: block;}
+ .member-col .self-certi dd .toast-pop ul{}
+ .member-col .self-certi dd .toast-pop ul li{margin-bottom: .6rem; font-size: 1.2rem;color: #fff;}
+ .member-col .self-certi dd .toast-pop ul li::before{content: "";position: absolute;top: 0.4rem;left: -1rem; width: 0.3rem;height: 0.3rem;background: #fff;border-radius: 50%;}
+ .member-col .self-certi dd .toast-pop ul li:last-of-type{margin-bottom: 0;}
+ .member-col .self-certi dd .toast-pop .close_btn{position: absolute;right: 1rem;top: 1.5rem;width: 1.3rem;height: 1.3rem;cursor: pointer;}
+ .member-col .self-certi dd .toast-pop .close_btn span{display: inline-block;position: absolute;top: 0; right: 0; height: 0.14rem;width: 1.29rem; background: #fff;transform: rotate(45deg);border-radius: 2rem;}
+ .member-col .self-certi dd .toast-pop .close_btn span:last-of-type{ transform: rotate(-45deg);}
+
+
+    .member-col .self-certi dt span{color: #ff5647;}
+    .member-col dt img{width: 1.2em;}
+    .member-col dd .textbox{display: inline-block;width: 21rem; line-height: 1.5;}
+    .member-col dd .textbox strong{font-size: 1.4rem;font-weight: 700;}
+    .member-col dd .textbox p{font-size: .8em; word-break: keep-all;}
+    .member-col dd .textbox a{position: absolute;top: 50%; right: 2rem;padding:.6rem 2rem;background: #3B3B4D;border-radius: 10rem;color: #fff;transform: translateY(-50%);}
+
+
+    .member-col .eMail dd{}
+    .member-col .eMail input{display: inline-block; width: 19rem;border: 1px solid #ccc;}
+    .member-col .eMail select{display: inline-block;width: calc(100% - 19.5rem);padding: 1rem;}
+    .member-col .friendCode dt span{color: #CEBFBF;}
+
+    .signup-btn-col{margin-top:4.2rem;}
+    .signup-btn-col button{color:#fff; background-color:#CFCFDA;}
+    .signup-btn-col button.active{background-color:#FFB914;}
+
+
+    .pop-col{position: fixed;top: 0;left: 0;width: 100%;height: 100vh; background: rgba(0,0,0,0.8);z-index: 200;}
+    .pop-col .inner-col{position: absolute;top: 50%;left: 50%;width: 90%;padding: 5.7em 2.5em 1.9em 2.5em;  background: #fff;border-radius: 1em;box-shadow: 0 .4em .4em rgba(0,0,0,0.25);text-align: center;transform: translate(-50%,-50%);}
+    .pop-col p{font-size: 1.6em;margin-bottom: 2.4em;}
+    .pop-col a{display: inline-block;width: 100%; padding: 1.8em 6em;background: #FFB914;font-size: 1.4em;border-radius: 10em;}
+</style>
+<body>
+    <main>
+        <section class="title-col">
+            <div class="inner-col">
+              <button type="button" class="ico-btn ico-btn-back" onclick="window.history.back();">
+                <span class="blind">휴면계정 안내</span>
+              </button>
+              <p>휴면계정 안내</p>
+            </div>
+        </section>
+        <section class="dormant-col">
+            <div class="inner-col">
+                <div class="textbox">
+                    <strong>
+                        안녕하세요, 회원님 <br>
+                        꿀튜브 재방문을 환영합니다.
+                    </strong>
+                    <p>
+                        회원님은 꿀튜브 계정에 1년 이상 로그인하지 않아<br>
+                        <a href="">관련법령</a>에 따라 휴면상태로 전환되었습니다.
+                    </p>
+                    <p>
+                        꿀튜브 전체 서비스를 다시 이용하고 싶은 경우에는,<br>
+                        아래 휴면 해제 절차 확인 후  휴면계정 해제 버튼을 <br>
+                        클릭해 주세요.
+                    </p>
+                </div>
+            </div>
+        </section>
+        <section class="member-col">
+            <div class="inner-col">
+                <form name="dorMant" action="#">
+                    <div class="certi-box">
+                        <dl class="self-certi">
+                            <dt>본인인증<span>(필수)</span>
+                                <img src="src/assets/images/ico_excla_mark_28x28.png" alt="" class="pop-btn" onmouseover="toastPop();">
+                            </dt>
+                            <dd>
+                                <div class="toast-pop fir">
+                                    <ul>
+                                      <li>법인폰 사용자는 법인폰 개인인증 서비스 신청 후 <br /> 휴대폰 인증을 하실 수 있습니다.</li>
+                                      <li>본인인증이 잘 되지 않으시면 본인인증기관 고객<br /> 문의 해주세요.</li>
+                                      <li>NICE평가정보(주) 고객센터 : 1600-1522</li>
+                                    </ul>
+                                    <div class="close_btn" onclick="toastPop();">
+                                      <span></span>
+                                      <span></span>
+                                    </div>
+                                  </div>
+                              <div class="textbox">
+                                  <strong>휴대폰</strong>
+                                  <p>본인 명의로 된 휴대폰으로<br> 인증번호를 전송받아 인증하기</p>
+                                  <a href="#">인증</a>
+                              </div>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt class="mark">본인인증</dt>
+                            <dd>
+                                <input type="text" id="selfCerti" placeholder="" />
+                            </dd>
+                        </dl>
+                        <dl class="eMail">
+                            <dt class="mark">이메일 주소</dt>
+                            <dd>
+                                <input type="text" placeholder="" / id="eMail">
+                                <select>
+                                    <optgroup label="이메일주소">
+                                      <option value="">직접입력</option>
+                                      <option value="">naver.com</option>
+                                      <option value="">gmail.com</option>
+                                      <option value="">daum.net</option>
+                                    </optgroup>
+                                </select>
+                                  
+                            </dd>
+                        </dl>
+                    </div>
+                </form>
+            </div>
+        </section>
+        <section class="signup-btn-col">
+            <div class="inner-col">
+              <button type="button" class="btn" onclick="dorFrmChk();">
+                <span>휴면계정 해제</span>
+              </button>
+            </div>
+        </section>
+        <!-- 완료 팝업 -->
+        <section class="undormant-pop-col pop-col">
+            <div class="inner-col">
+                <p>회원님의 휴면상태가 해제되었습니다.</p>
+                <a href="/main.html">확인</a>
+            </div>
+        </section>
+    </main>
+    <script>
+        function dorFrmChk() {
+            console.log('dormant');
+
+            const email = document.getElementById('eMail');
+            const selfCerti = document.getElementById('selfCerti');
+
+            if(!email.value) {
+                alert('이메일 주소를 입력해 주세요.');
+                email.focus();
+                return false;
+            }
+            if(!selfCerti.value) {
+                alert('본인 인증을 완료해 주세요.');
+                selfCerti.focus();
+                return false;
+            }
+        }   
+
+        
+        function toastPop() {
+            const toastImg = document.querySelector('.toast-pop');
+
+            document.querySelector('.pop-btn').addEventListener('click', function(){
+                toastImg.classList.add('on');
+            })
+            document.querySelector('.close_btn').addEventListener('click', function(){
+                toastImg.classList.remove('on');
+            })
+        };
+
+        window.onload = function () {
+        };
+    
+    </script>
+</body>
+</html>

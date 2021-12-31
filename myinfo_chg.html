@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>내 정보 수정</title>
+	<link rel="stylesheet" href="./src/assets/dist/styles/normalize.css">
+	<link rel="stylesheet" href="./src/assets/dist/styles/reset.css">
+	<link rel="stylesheet" href="./src/assets/styles/common.css">
+	<link rel="stylesheet" href="./src/assets/styles/myhome.css">
+    <link rel="stylesheet" href="./src/assets/styles/notice.css">
+</head>
+<style>
+ .hidden{display:none;}
+ .member-col{width:100%; max-width:750px; margin:0 auto; padding:0 2.6rem; font-size:1.2rem;} 
+ .member-col .signup-box{margin:11rem 0 0;}
+ .toast-col + .member-col .signup-box{margin:0;}
+ .member-col input{width:100%; padding:1rem 0; border:none; border-bottom:1px solid #ccc;}
+ .member-col input:focus{border-color:#000; outline:0;}
+ .member-col dl{width:100%; margin-bottom:3.5rem;}
+ .member-col dt{margin-bottom:.5rem;}
+ .member-col dt p{color: #b7b7c8;margin-top: 1em;}
+ .member-col dt span{color: #ff5647;}
+ .member-col dt.mark:after{content:'(필수)'; display:inline-block; margin-left:.5rem; color:#ff5647;}
+ .member-col dd{position:relative; font-size:1.4rem;}
+ .member-col dd > button{position:absolute; top:0; right:0; bottom:0;  margin:auto 0; ;margin: 1em 0;font-size:1rem;border-radius: 10em;line-height: 1}
+ .member-col dd > button + button{right:5rem;}
+ .member-col dd p{margin: 1.9em 0;  }
+ .member-col label{display:block; color:#717188;}
+ .member-col label input{display:inline-block; width:0; height:0; border:0; appearance:none;}
+ .member-col label em:before{content:''; display:inline-block; width:2rem; height:2rem; margin-right:.5em; background:#ECECF6 url(./src/assets/images/ico_chk_38x30w.png) no-repeat 50% 50% / 1rem; border-radius:50%; vertical-align:middle;}
+    .member-col label input:checked + em:before{content:''; background-color:#FFB914;}
+ .member-col label + a{position:absolute; top:.5rem; right:0; color:#B7B7C8; border-bottom:1px solid #B7B7C8;}
+
+ .member-col form + button{margin:2.6rem 0 0; padding:.5rem 1rem; border:1px solid #cfcfda; border-radius:1.5rem;}
+ .toast-col{width:100%; background-color:#f7f7fc;}
+ .toast-col .inner-col{margin-bottom:2.1rem; padding:2.1rem 4.4rem; background:url(./src/assets/images/ico_info_30x30.png) no-repeat 2.5rem 2.35rem / 1rem; line-height:1.5;}
+ .signup-btn-col{margin-top:4.2rem;}
+ .signup-btn-col button{color:#fff; background-color:#CFCFDA;}
+ .signup-btn-col button.active{background-color:#FFB914;}
+
+  .member-col .eMail input{display: inline-block; width: 19rem;border: 1px solid #ccc;border-radius: .4rem;}
+  .member-col .eMail select{display: inline-block;width: calc(100% - 19.5rem);padding: 1rem;border:1px solid #ccc;border-radius: .4rem;}
+
+
+
+.email-pop-col{position: fixed;top: 0;left: 0;width: 100%;height: 100vh;background: rgba(196,196,196,0.53);z-index: 101;}
+.email-pop-col .inner-col{position: absolute;top: 50%;left: 50%;width: 90%;background: #fff;padding: 3.5em 2.5em;border-radius: 1em; transform: translate(-50%,-50%);}
+.email-pop-col h5{font-size: 1.2em;}
+.email-pop-col input{width: 100%;padding: 1em 0;font-size: 1.4em;border-bottom: 1px solid #e7e7f0;}
+.email-pop-col button{display: block;width: 100%;margin-top: 3.3em;padding: 1.6em; font-size: 1.3em;background: #FFB914;border-radius: 10em;}
+
+.sms-agree-col{display: none; position: fixed;top: 0;left: 0;width: 100%;height: 100vh;background: rgba(196,196,196,0.53);z-index: 101;}
+.sms-agree-col .inner-col{position: absolute;top: 50%;left: 50%;width: 90%;background: #fff;padding: 1.5em 2.5em;border-radius: 1em; transform: translate(-50%,-50%);}
+.sms-agree-col .inner-col p{font-size: 1.5em;}
+.sms-agree-col .inner-col button{display: block;float: right;margin-top: 1em; padding: .6em 1.5em; font-size: 1.3em;background: #FFB914;border-radius: 10em;}
+
+
+
+.on{display: block;}
+</style>
+<body>
+    <main>
+      <section class="title-col">
+        <div class="inner-col">
+          <button type="button" class="ico-btn ico-btn-back" onclick="window.history.back();">
+            <span class="blind">뒤로가기</span>
+          </button>
+          <p>내 정보 수정</p>
+        </div>
+      </section>
+      <section class="toast-col">
+        <div>
+          <div class="inner-col">
+            <p>채널명이 변경되셨나요?</p>
+            <p>광고를 최소 1회 이상 진행할 경우 채널 변경이 불가합니다.</p>
+            <p>채널톡으로 문의해 주세요.</p>
+          </div>
+        </div>
+      </section>
+        <section class="member-col">
+          <div class="inner-col">
+            <form name="signupFrm" action="#">
+              <div class="signup-box">
+                <dl>
+                  <dt>유튜브 채널명 URL</dt>
+                  <dd>
+                    <input type="text" id="youtubeUrl" placeholder="본인 채널의 영상 링크를 입력해 주세요." />
+                    <button type="button">채널 변경하기</button>
+                  </dd>
+                </dl>
+                <dl>
+                  <dt>유튜브 채널명</dt>
+                  <dd>
+                    <input type="text" id="youtubeName" placeholder="채널명을 입력해 주세요." />
+                  </dd>
+                </dl>
+                <dl>
+                  <dt>휴대폰 번호 변경</dt>
+                  <dd>
+                    <input type="text" id="phone" placeholder="" minlength="10" maxlength="11"  onkeyup="" />
+                    <!-- <button type="button" onclick="" >인증미완료</button> -->
+                    <button type="button" onclick="" >인증하기</button>
+                  </dd>
+                </dl>
+                <dl class="eMail">
+                  <dt>이메일 주소 <span>(필수)</span> 
+                    <p>브랜드의 광고 협업 제안 및 다양한 광고소식을 받아볼 수 있는 <br>
+                      수신가능 한 이메일 주소를 입력해주세요</p>
+                  </dt>
+                  <dd>
+                      <input type="text" placeholder="" / id="eMail">
+                      <select>
+                          <optgroup label="이메일주소">
+                            <option value="">직접입력</option>
+                            <option value="">naver.com</option>
+                            <option value="">gmail.com</option>
+                            <option value="">daum.net</option>
+                          </optgroup>
+                      </select>
+                        
+                  </dd>
+              </dl>
+                <dl>
+                    <dt>수신설정</dt>
+                    <dd>
+                        <p>광고/이벤트 혜택(마케팅 정보 수신)</p>
+                        <label for="smsAgree">
+                            <input type="checkbox" id="smsAgree">
+                            <em></em>
+                            <span>SMS, E-mail</span>
+                        </label>
+                    </dd>
+                </dl>
+              </div>
+            </form>
+            <button><span>회원 탈퇴 안내</span></button>
+          </div>
+        </section>
+        <section class="signup-btn-col">
+          <div class="inner-col">
+            <button type="button" class="btn" onclick="signupFrmChk();">
+              <span>수정하기</span>
+            </button>
+          </div>
+        </section>
+        <!-- 이메일변경팝업 -->
+        <section class="email-pop-col pop-col">
+            <div class="inner-col">
+                <h5>이메일 주소 변경하기</h5>
+                <input type="text" placeholder="변경하실 이메일 주소를 입력해주세요.">
+                <button type="button">변경하기</button>
+            </div>
+        </section>
+        <!-- 이메일변경팝업 끝-->
+        <!-- 수신동의/거부 -->
+        <section class="sms-agree-col pop-col">
+            <div class="inner-col">
+                <p>수신동의 완료<br>수신동의 일시 : nnnn년 nn월 nn일</p>
+                <button type="button" class="close_btn" onclick="closeBtn();">닫기</button>
+            </div>
+        </section>
+        <section class="sms-agree-col pop-col">
+            <div class="inner-col">
+                <p>수신거부 완료<br>수신거부 일시 : nnnn년 nn월 nn일</p>
+                <button type="button" class="close_btn" onclick="closeBtn();">닫기</button>
+            </div>
+        </section>
+        <!-- 수신동의/거부 끝-->
+    </main>
+    <script src="./src/assets/dist/scripts/jquery-3.6.0.min.js"></script>
+    <script>
+      $(function(){
+        console.log('ready');
+      });
+
+      if (window.NodeList && !NodeList.prototype.forEach) {
+        NodeList.prototype.forEach = Array.prototype.forEach;
+      }
+
+
+function signupFrmChk() {
+  console.log('signup');
+
+  const email = document.getElementById('eMail');
+  const selfCerti = document.getElementById('selfCerti');
+  const agreeAll = document.getElementById('agreeAll');
+  const agreeTerms = document.getElementById('agreeTerms');
+  const agreePrivacy = document.getElementById('agreePrivacy');
+
+  if(!email.value) {
+    alert('이메일 주소를 입력해 주세요.');
+    email.focus();
+    return false;
+  }
+  if(!selfCerti.value) {
+    alert('본인 인증을 완료해 주세요.');
+    selfCerti.focus();
+    return false;
+  }
+
+  if(!agreeAll.value.checked || (agreeTerms.value.checked && agreeTerms.value.checked)) {
+    alert('약관을 확인해 주세요.');
+    agreeAll.focus();
+    return false;
+  }
+
+  // document.signupFrm.submit();
+}
+
+function emailPop() {
+ 
+    document.querySelector('.email-pop-col').classList.add('on')
+}
+function closeBtn() {
+    document.querySelector('.pop-col').style.display = "none";
+}
+
+window.onload = function () {
+};
+    </script>
+</body>
+</html>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>내 광고</title>
+    <link rel="stylesheet" href="./src/assets/dist/styles/normalize.css" />
+    <link rel="stylesheet" href="./src/assets/dist/styles/reset.css" />
+    <link rel="stylesheet" href="./src/assets/styles/common.css" />
+    <link rel="stylesheet" href="./src/assets/styles/sub.css" />
+    <link rel="stylesheet" href="./src/assets/dist/odometer/odometer-theme-default.css" />
+
+
+  </head>
+  <body>
+    <main>
+      <section class="title-col">
+        <div class="inner-col">
+          <button type="button" class="ico-btn ico-btn-back" onclick="historyBack();">
+            <span class="blind">뒤로가기</span>
+          </button>
+          <p class="ellipsis">내 광고</p>
+        </div>
+      </section>
+      <section class="my-revenue-col">
+        <div class="inner-col">
+          <p class="odometer-motion-box">
+            나의 누적 수익금
+            <strong class="odometer">0</strong>
+          </p>
+          <a href="">광고비 받기</a>
+        </div>
+      </section>
+      <!-- class = 'empty' 추가시 공란  -->
+      <section class="filter-col">
+        <div class="inner-col">
+          <ul class="filter">
+            <!-- class="active" 배경컬러변경 -->
+            <li class="active"><button>제출대기중</button></li>
+            <li><button>검수중</button></li>
+            <li><button>광고중</button></li>
+            <li><button>찜한 목록</button></li>
+          </ul>
+        </div>
+      </section>
+      <!-- class = 'empty' 추가시 공란  -->
+      <section class="my-advertise-col">
+        <div class="inner-col">
+          <div class="advertise-box">
+            <!-- 광고중 목록 : .my-list (코멘트 숨김처리) -->
+            <strong>
+              수정 요청
+            </strong>
+            <ul class="my-list">
+              <li>
+                <a href="./advertise_detail.html">
+                  <div class="advertise-thumb" style="background-image:url(./src/assets/images/img_advertise_slide_01.png);"ng)"></div>
+                  <div class="advertise-desc-box">
+                    <p class="advertise-title">
+                      <strong>꿀튜브 5초 배너</strong>
+                      <span>08.10</span>
+                      100,000원
+                    </p>
+                  </div>
+                </a>
+                <div class="guide-word">
+                  <p>
+                    <span>수정된 URL</span>을 제출해주세요</p>
+                </div>
+              </li>
+              <li>
+                <a href="./advertise_detail.html">
+                  <div class="advertise-thumb" style="background-image:url(./src/assets/images/img_advertise_slide_01.png);"ng)"></div>
+                  <div class="advertise-desc-box">
+                    <p class="advertise-title">
+                      <strong>꿀튜브 5초 배너</strong>
+                      <span>08.10</span>
+                      100,000원
+                    </p>
+                  </div>
+                </a>
+                <div class="guide-word">
+                  <p>
+                    <span>수정된 URL</span>을 제출해주세요</p>
+                </div>
+              </li>
+            </ul>
+            <strong>
+             영상 제출
+            </strong>
+            <ul class="my-list">
+              <li>
+                <a href="./advertise_detail.html">
+                  <div class="advertise-thumb" style="background-image:url(./src/assets/images/img_advertise_slide_01.png);"ng)"></div>
+                  <div class="advertise-desc-box">
+                    <p class="advertise-title">
+                      <strong>꿀튜브 5초 배너</strong>
+                      <span>08.10</span>
+                      100,000원
+                    </p>
+                  </div>
+                </a>
+                <div class="guide-word">
+                  <p>
+                    <span>URL</span>을 제출해주세요</p>
+                </div>
+              </li>
+              <li>
+                <a href="./advertise_detail.html">
+                  <div class="advertise-thumb" style="background-image:url(./src/assets/images/img_advertise_slide_01.png);"ng)"></div>
+                  <div class="advertise-desc-box">
+                    <p class="advertise-title">
+                      <strong>꿀튜브 5초 배너</strong>
+                      <span>08.10</span>
+                      100,000원
+                    </p>
+                  </div>
+                </a>
+                <div class="guide-word">
+                  <p>
+                    <span>URL</span>을 제출해주세요</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="empty-box">
+            <strong>
+              아직 승인된 광고가 없습니다.
+            </strong>
+            <p>조금만 기다려주세요!</p>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer-col">
+      <div class="inner-col">
+        <ul>
+          <li><a href="./login.html">로그인</a></li>
+          <li><a href="#;">1:1 문의</a></li>
+          <li><a href="#;">개인정보처리방침</a></li>
+          <li><a href="#;">이용약관</a></li>
+        </ul>
+      </div>
+    </footer>
+    
+    <script src="./src/assets/dist/scripts/jquery-3.6.0.min.js"></script>
+    <script src="./src/assets/scripts/common.js"></script>
+    <script src="./src/assets/dist/odometer/odometer.js"></script>
+    <script>
+      window.addEventListener('load', function(event){
+        let motionBox = document.querySelector('.odometer');
+        let activeBox = document.querySelector('.odometer-motion-box');
+
+        let lineMotion = setInterval(function(){
+          if(motionBox.classList.contains('odometer-animating')){
+          }else{
+            clearInterval(lineMotion);
+            activeBox.classList.add('active');
+          }
+        }, 0)
+      });
+
+      $(document).ready(function(){
+        $('.odometer').html(479000);
+      });
+
+    </script>
+  </body>
+</html>

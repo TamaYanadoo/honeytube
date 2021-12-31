@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>내 광고 상세</title>
+    <link rel="stylesheet" href="./src/assets/dist/styles/normalize.css" />
+    <link rel="stylesheet" href="./src/assets/dist/styles/reset.css" />
+    <link rel="stylesheet" href="./src/assets/styles/common.css" />
+    <link rel="stylesheet" href="./src/assets/styles/sub.css" />
+  </head>
+  <body>
+    <main>
+      <section class="title-col">
+        <div class="inner-col">
+          <button type="button" class="ico-btn ico-btn-back" onclick="historyBack();">
+            <span class="blind">뒤로가기</span>
+          </button>
+          <p class="ellipsis">꿀튜브 홍보 챌린지</p>
+        </div>
+      </section>
+      <section class="advertise-col">
+        <div class="inner-col">
+          <div class="tit-area">
+            <strong>영상에 수정이<br />필요합니다</strong>
+            <p>하단의 거절사유를 확인하세요</p>
+          </div>
+          <div class="step-col">
+            <ul class="step-lists">
+              <!-- [D]
+                거절 시 class="reject 추가
+                완료 시 class="complete" 추가
+                진행중일 시 class="active" 추가
+              -->
+              <li>
+                <span class="ico-item">
+                  <i class="ico-waiting "></i>
+                </span>
+                <span>승인대기</span>
+              </li>
+              <li>
+                <span class="ico-item">
+                  <i class="ico-video complete"></i>
+                </span>
+                <span>영상제출</span>
+              </li>
+              <li>
+                <span class="ico-item">
+                  <i class="ico-checking reject"></i>
+                </span>
+                <span>검수중</span>
+              </li>
+              <li>
+                <span class="ico-item">
+                  <i class="ico-advertise active"></i>
+                </span>
+                <span>광고중</span>
+              </li>
+            </ul>
+          </div>
+          <div class="thumb-youtube">
+            <!-- <img src="https://img.youtube.com/vi/Gh4djoUvfmQ/maxresdefault.jpg" alt="유튜브 썸네일" /> -->
+            <img src="" data-youtube-id="Gh4djoUvfmQ" id="youtubeThumb1" alt="유튜브 썸네일" />
+          </div>
+          <a href="#" class="btn positive">내 영상 확인하기</a>
+        </div>
+      </section>
+      <section class="advertise-reason-col">
+        <div class="inner-col">
+          <div class="reason-title">
+            <strong>거절사유</strong>
+            <button><span>상세보기</span></button>
+          </div>
+          <ul>
+            <li>댓글 고정을 해주세요.</li>
+            <li>배너를 영상 시작 0~5초사이 삽입해주세요.</li>
+            <li>4:10 문구를 수정해주세요.</li>
+            <li>일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십</li>
+          </ul>
+        </div>
+      </section>
+      <section class="advertise-input-col">
+        <div class="inner-col">
+          <input type="text" placeholder="일부 공개 된 유튜브 영상 URL을 입력하세요." />
+        </div>
+      </section>
+      <section class="btn-col">
+        <div class="inner-col">
+          <button type="button" class="btn active">
+            <span>영상 수정하기</span>
+          </button>
+        </div>
+      </section>
+      <!-- start: modal -->
+      <div class="modal modal-confirm" style="display:none;">
+        <div class="modal-content">
+          <p>영상을 자랑하고 조회수 추가 보상을 받으시겠습니까?</p>
+          <div class="btn-group">
+            <button type="button"><span>취소</span></button>
+            <button type="button"><span>확인</span></button>
+          </div>
+        </div>
+      </div>
+      <!--// end : modal -->
+    </main>
+    <footer class="footer-col">
+      <div class="inner-col">
+        <ul>
+          <li><a href="./login.html">로그인</a></li>
+          <li><a href="#;">1:1 문의</a></li>
+          <li><a href="#;">개인정보처리방침</a></li>
+          <li><a href="#;">이용약관</a></li>
+        </ul>
+      </div>
+    </footer>
+  </body>
+  <script src="./src/assets/dist/scripts/jquery-3.6.0.min.js"></script>
+  <script src="src/assets/scripts/common.js"></script>
+  <script src="./src/assets/dist/scripts/jquery.youtubecoverphoto.js"></script>
+  <script>
+    $(document).ready(function(){
+      $('#youtubeThumb1').youtubeCoverPhoto();
+    })
+  </script>
+</html>

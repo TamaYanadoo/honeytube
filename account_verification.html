@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>계좌 인증하기</title>
+    <link rel="stylesheet" href="./src/assets/dist/styles/normalize.css" />
+    <link rel="stylesheet" href="./src/assets/dist/styles/reset.css" />
+    <link rel="stylesheet" href="./src/assets/styles/common.css" />
+    <link rel="stylesheet" href="./src/assets/styles/sub.css" />
+    <link rel="stylesheet" href="./src/assets/dist/odometer/odometer-theme-default.css" />
+  </head>
+<body>
+    <main>
+        <section class="title-col">
+            <div class="inner-col">
+              <button type="button" class="ico-btn ico-btn-back" onclick="historyBack();">
+                <span class="blind">뒤로가기</span>
+              </button>
+              <p class="ellipsis">계좌 인증하기</p>
+            </div>
+        </section>
+        <section class="account-box-col">
+            <div class="inner-col">
+                <div class="text-box">
+                    <strong>계좌 정보를 입력해주세요.</strong>
+                    <p>꿀튜브 광고비 출금 신청 시 필요한 정보입니다. <br>꿀튜버님의 소중한 개인정보는 안전하게 보관됩니다.</p>
+                </div>
+                <ul class="account-box">
+                    <li>
+                        <label for="">예금주</label>
+                        <input type="text" placeholder="예금주를 입력해주세요."> 
+                    </li>
+                    <li>
+                        <p class="tit">은행명</p>
+                        <select>
+                            <optgroup label="선택해주세요">
+                              <option value=""></option>
+                              <option value=""></option>
+                            </optgroup>
+                        </select>
+                    </li>
+                    <li>
+                        <label for="">계좌번호</label>
+                        <input type="text" placeholder="계좌번호를 입력해주세요.">
+                        <span>예금주와 계좌번호가 일치하지 않으면 출금이 진행되지 않습니다.</span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section class="signup-btn-col">
+            <div class="inner-col">
+              <button type="button" class="btn active">
+                <span>내 계좌로 1원 보내기</span>
+              </button>
+            </div>
+          </section>
+    </main>
+
+</body>
+</html>

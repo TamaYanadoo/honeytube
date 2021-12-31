@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>월별 상세</title>
+    <link rel="stylesheet" href="./src/assets/dist/styles/normalize.css" />
+    <link rel="stylesheet" href="./src/assets/dist/styles/reset.css" />
+    <link rel="stylesheet" href="./src/assets/styles/common.css" />
+    <link rel="stylesheet" href="./src/assets/styles/sub.css" />
+    <link rel="stylesheet" href="./src/assets/dist/odometer/odometer-theme-default.css" />
+
+
+  </head>
+<body>
+    <main>
+        <section class="title-col">
+            <div class="inner-col">
+              <button type="button" class="ico-btn ico-btn-back" onclick="historyBack();">
+                <span class="blind">뒤로가기</span>
+              </button>
+              <p class="ellipsis">내 광고</p>
+            </div>
+          </section>
+          <section class="my-revenue-col monthly-col">
+            <div class="inner-col">
+              <p class="odometer-motion-box">
+                나의 누적 수익금
+                <strong class="odometer">0</strong>
+              </p>
+            </div>
+          </section>
+          <section class="monthly-detail-col">
+              <div class="inner-col">
+                  <article class="tit-box cb">
+                    <div class="calendar">
+                      <button class="date-picker"></button>
+                    </div>
+                    <ul class="date-filter">
+                        <li><button>2개월</button></li>
+                        <li><button>3개월</button></li>
+                    </ul>
+                  </article>
+                  <article class="withdraw-wate">
+                      <div class="price-date cb">
+                        <!-- p태그에 class = "com-withdraw" 추가시 지급 완료로 변경 -->
+                        <p class="date">2021 10월</p>
+                        <strong class="price">150,000원</strong>
+                      </div>
+                      <ul class="price-detail">
+                        <li>
+                            <em class="de-tit">동기부여 1등 상금</em>
+                            <strong class="de-price">20,000원</strong>
+                            <p class="de-date">10.4</p>
+                        </li>
+                        <li>
+                            <em class="de-tit">[이벤트] 야핏 5초 배너</em>
+                            <strong class="de-price">20,000원</strong>
+                            <p class="de-date">10.6</p>
+                        </li>
+                      </ul>  
+                  </article>
+                  <article class="withdraw-wate">
+                      <div class="price-date cb">
+                          <!-- p태그에 class = "com-withdraw" 추가시 지급 완료로 변경 -->
+                        <p class="date com-withdraw">2021 10월</p>
+                        <strong class="price">150,000원</strong>
+                      </div>
+                      <ul class="price-detail">
+                        <li>
+                            <em class="de-tit">꿀튜브 5초 배너</em>
+                            <strong class="de-price">20,000원</strong>
+                            <p class="de-date">9.1</p>
+                        </li>
+                        <li>
+                            <em class="de-tit">[이벤트] 야핏 5초 배너</em>
+                            <strong class="de-price">20,000원</strong>
+                            <p class="de-date">9.28</p>
+                        </li>
+                      </ul>  
+                  </article>
+              </div>
+          </section>
+          <section class="btn-col">
+            <div class="inner-col">
+              <button type="button" class="btn active">
+                <span>계좌 정보 입력하기</span>
+              </button>
+            </div>
+          </section>
+    </main>
+
+
+
+    <script src="./src/assets/dist/scripts/jquery-3.6.0.min.js"></script>
+    <script src="./src/assets/scripts/common.js"></script>
+    <script src="./src/assets/dist/odometer/odometer.js"></script>
+    <script>
+      window.addEventListener('load', function(event){
+        let motionBox = document.querySelector('.odometer');
+        let activeBox = document.querySelector('.odometer-motion-box');
+
+        let lineMotion = setInterval(function(){
+          if(motionBox.classList.contains('odometer-animating')){
+          }else{
+            clearInterval(lineMotion);
+            activeBox.classList.add('active');
+          }
+        }, 0)
+      });
+
+      $(document).ready(function(){
+        $('.odometer').html(479000);
+      });
+
+    </script>
+
+</body>
+</html>

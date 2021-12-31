@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>탈퇴 안내</title>
+	<link rel="stylesheet" href="./src/assets/dist/styles/normalize.css">
+	<link rel="stylesheet" href="./src/assets/dist/styles/reset.css">
+	<link rel="stylesheet" href="./src/assets/styles/common.css">
+	<link rel="stylesheet" href="./src/assets/styles/sub.css">
+	<link rel="stylesheet" href="./src/assets/styles/myhome.css">
+    <link rel="stylesheet" href="./src/assets/styles/notice.css">
+</head>
+<style>
+    .toast-col{width:100%;}
+    .toast-col .inner-col{line-height:1.5;font-size: 1.2em;color: #717188;}
+    .toast-col .inner-col .toast-box{ background-color:#f7f7fc; padding: 2.5rem 2rem; margin: 5.6rem 2.2rem 0; }
+    .toast-col .inner-col .toast-box p{font-size: 1.4rem;font-weight: 700; color: #3B3B4D;}
+    .toast-col ul{margin-top: 1.6rem;}
+    .toast-col ul li{margin-bottom: 2em;position: relative;padding-left: 1rem;}
+    .toast-col ul li::before{content: "";position: absolute;top: 0.8rem; left: 0; width: 0.3rem;height: 0.3rem;background: #717188;border-radius: 50%;}
+
+    .withdraw-col{padding-top: 4.4rem;}
+    .withdraw-col .reason-box{padding: 0 2.2em;}
+    .withdraw-col .reason-box strong{font-weight: bold;font-size: 1.8em;}
+    .withdraw-col .reason-box p{margin-top: 1.2em;font-size: 1.2em; color: #000;line-height: 1.5;}
+    .withdraw-col .reason-box select{width: 100%;margin-top: 1.5em;padding: 1.2rem;font-size: 1.4em; border: 1px solid #3B3B4D;border-radius: .4rem;}
+    .withdraw-col .reason-box input{width: 100%;padding: 1em;margin-top: 3.5rem;font-size: 1.4rem; border-bottom: 1px solid #e7e7f0;}
+
+    .agree-box{padding: 2rem;}
+    .agree-box label{display:block;font-size: 1.2em; color:#717188;}
+    .agree-box label input{display:inline-block; width:0; height:0; border:0; appearance:none;}
+    .agree-box label em:before{content:''; display:inline-block; width:2rem; height:2rem; margin-right:.5em; background:#ECECF6 url(./src/assets/images/ico_chk_38x30w.png) no-repeat 50% 50% / 1rem; border-radius:50%; vertical-align:middle;}
+    .agree-box label input:checked + em:before{content:''; background-color:#FFB914;}
+
+    .signup-btn-col{margin-top:4.2rem;box-shadow: 0 .1rem .7rem rgba(0,0,0,0.17);}
+    .signup-btn-col button{color:#fff; background-color:#CFCFDA;}
+    .signup-btn-col button.active{background-color:#FFB914;}
+
+    
+</style>
+<body>
+    <main>
+        <section class="title-col">
+            <div class="inner-col">
+              <button type="button" class="ico-btn ico-btn-back" onclick="window.history.back();">
+                <span class="blind">뒤로가기</span>
+              </button>
+              <p>탈퇴 안내</p>
+            </div>
+        </section>
+        <section class="withdraw-col">
+          <div class="inner-col">
+              <div class="reason-box">
+                  <strong>
+                    꿀튜버님, 너무 아쉽네요<br> 그만 하시려는 이유를 알 수 있을까요?
+                    
+                 </strong>
+                 <p>더 나은 꿀튜브 서비스를 지원하기 위해<br> 꼭 확인 부탁드립니다.</p>
+                 <select>
+                    <optgroup label="선택해주세요">
+                      <option value="">새 계정을 만들고 싶어요</option>
+                      <option value="">하고싶은 광고가 없어요</option>
+                      <option value="">이용이 어려워요</option>
+                      <option value="">광고비가 낮아서요</option>
+                      <option value="">가이드가 많아요</option>
+                      <option value="">유튜브를 그만둡니다</option>
+                      <option value="">직접입력 할게요</option>
+                    </optgroup>
+                  </select>
+                  <input type="text" placeholder="">
+              </div>
+          </div>
+      </section>
+        <section class="toast-col">
+              <div class="inner-col">
+                <div class="toast-box">
+                  <p>회원 탈퇴를 신청하기 전에<br> 안내사항을 꼭 확인해 주세요.</p>
+                  <ul>
+                      <li>사용하고 계신 아이디는 탈퇴 할 경우 복구가 불가능하며, 7일간 재가입 할 수 없습니다.</li>
+                      <li>탈퇴 후 회원정보는 개인정보처리 방침에 의거하여 
+                          이용계약 해지 시로부터 1년 동안 회원의 개인정보를
+                          보관할 수 있습니다.
+                      </li>
+                      <li> 탈퇴 후에도 꿀튜브 활동기록은 자동삭제 되지 않고 
+                              그대로 남습니다. (신청현황/실시간 콘텐츠)</li>
+                      <li>활동기록 및 회원정보 즉시삭제를 원하는 경우 채널톡
+                          으로 문의 주세요.</li>
+                  </ul>
+                </div>
+              </div>
+          </section>
+          <section class="signup-btn-col">
+            <div class="inner-col">
+              <div class="agree-box">
+                <label for="withdrawAgree">
+                    <input type="checkbox" id="withdrawAgree">
+                    <em></em>
+                    <span>안내사항을 모두 확인하였으며, 최종 탈퇴에 동의합니다.</span>
+                </label>
+              </div>
+              <button type="button" class="btn">
+                <span>탈퇴하기</span>
+              </button>
+            </div>
+          </section>
+
+          <!-- <section class="withdraw-pop-col pop-col">
+              <div class="inner-col">
+                  <p>탈퇴를 위해 다시 로그인 해주세요.</p>
+                  <a href="login.html">확인</a>
+                  <!-- <button type="button">확인</button> -->
+              <!-- </div>
+          </section> -->
+          <!-- <section class="withdraw-pop-col pop-col">
+              <div class="inner-col">
+                  <p>우리 또 만나요! 더 발전해 있을게요.</p>
+                  <p>계정탈퇴가 정상적으로 완료되었습니다.</p>
+                  <a href="main.html">확인</a>
+              </div>
+          </section> -->
+    </main>
+
+</body>
+</html>

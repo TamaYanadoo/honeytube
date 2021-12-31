@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>계좌 인증하기</title>
+    <link rel="stylesheet" href="./src/assets/dist/styles/normalize.css" />
+    <link rel="stylesheet" href="./src/assets/dist/styles/reset.css" />
+    <link rel="stylesheet" href="./src/assets/styles/common.css" />
+    <link rel="stylesheet" href="./src/assets/styles/sub.css" />
+    <link rel="stylesheet" href="./src/assets/dist/odometer/odometer-theme-default.css" />
+
+
+  </head>
+<body>
+    <main>
+        <section class="title-col">
+            <div class="inner-col">
+              <button type="button" class="ico-btn ico-btn-back" onclick="historyBack();">
+                <span class="blind">뒤로가기</span>
+              </button>
+              <p class="ellipsis">계좌 인증하기</p>
+            </div>
+        </section>
+        <section class="account-box-col account-add-col">
+            <div class="inner-col">
+                <div class="text-box">
+                    <p>계좌로 1원을 보내드렸습니다. <br />꿀튜브 뒤에 표시된 숫자를 입력해주세요.</p>
+                    <span>은행 앱 또는 텔레뱅킹을 사용해 <br />이체내역을 확인해주세요.</span>
+                    <img src="src/assets/images/img_add_one.png" alt="">
+                </div>
+                <div class="verify-box">
+                  <input type="text" placeholder="세자리 숫자를 입력해주세요.">
+                </div>
+            </div>
+        </section>
+        <section class="signup-btn-col">
+          <div class="inner-col">
+            <button type="button" class="btn active">
+              <span>인증 완료하기</span>
+            </button>
+          </div>
+        </section>
+    </main>
+
+</body>
+</html>

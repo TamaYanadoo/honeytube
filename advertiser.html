@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>입점문의</title>
+	<link rel="stylesheet" href="./src/assets/dist/styles/normalize.css">
+	<link rel="stylesheet" href="./src/assets/dist/styles/reset.css">
+	<link rel="stylesheet" href="./src/assets/styles/common.css">
+	<link rel="stylesheet" href="./src/assets/styles/myhome.css">
+    <link rel="stylesheet" href="./src/assets/styles/notice.css">
+</head>
+<style>
+    .hidden{display:none;}
+    .member-col{width:100%; max-width:750px; margin:0 auto;  font-size:1.2rem;} 
+    .member-col .signup-box{margin:11rem 0 0;}
+    .toast-col + .member-col .signup-box{margin:0;}
+    .member-col input{width:100%; padding:1rem 0; border:none; border-bottom:1px solid #E7E7F0;}
+    .member-col input:focus{border-color:#000; outline:0;}
+    .member-col dl{width:100%; margin-bottom:3.5rem;padding: 0 2.2rem;}
+    .member-col dt{margin-bottom:.5rem;}
+    .member-col dt.mark:after{content:'(필수)'; display:inline-block; margin-left:.5rem; color:#ff5647;}
+    .member-col dd{position:relative; font-size:1.4rem;}
+    .member-col dd > button{position:absolute; top:0; right:0; bottom:0; width:5rem; margin:auto 0; font-size:1rem;}
+    .member-col dd > button + button{right:5rem;}
+    .member-col dd select{width:100%; margin-top:.5rem;padding: 1rem; background:url(./src/assets/images/ico_arrow_botton_28x16.png) no-repeat 95% 50% / 1rem; border:1px solid #E7E7F0;border-radius: .4em; box-sizing:border-box; -webkit-appearance:none; appearance:none;}
+    .member-col li{position:relative;}
+    .member-col label{display:block; color:#717188;font-weight: 300;}
+    .member-col label input{display:inline-block; width:0; height:0; border:0; appearance:none;}
+    .member-col label em:before{content:''; display:inline-block; width:2rem; height:2rem; margin-right:.5em; background:#ECECF6 url(./src/assets/images/ico_chk_38x30w.png) no-repeat 50% 50% / 1rem; border-radius:50%; vertical-align:middle;}
+    .member-col label input:checked + em:before{content:''; background-color:#FFB914;}
+    .member-col label + a{position:absolute; top:.5rem; right:0; color:#B7B7C8; border-bottom:1px solid #B7B7C8;}
+    .member-col #timer{position:absolute; top:0; right:11rem; bottom:0; height:1.1rem; margin:auto 0; font-size:1rem; color:#FF5647;}
+    .member-col form + button{margin:2.6rem 0 0; padding:.5rem 1rem; border:1px solid #cfcfda; border-radius:1.5rem;}
+    .toast-col{width:100%; background-color:#f7f7fc;}
+    .toast-col .inner-col{margin-bottom:2.1rem; padding:2.1rem 4.4rem; background:url(./src/assets/images/ico_info_30x30.png) no-repeat 2.5rem 2.35rem / 1rem; line-height:1.5;}
+    .signup-btn-col{margin-top:4.2rem;}
+    .signup-btn-col button{color:#fff; background-color:#CFCFDA;}
+    .signup-btn-col button.active{background-color:#FFB914;}
+
+    .cb,.cb::after,.cb::before{ clear: both; display: block; content:""; }
+    
+
+
+    .member-col ul li{padding: 0 2.2rem;margin-bottom: 2.5rem;}
+    .member-col dl.wd50{display: inline-block;padding: 0; width:calc((100% - 2rem)/2);margin-bottom: 0;}
+    .member-col dl.wd50:nth-of-type(1){margin-right: 1rem;}
+    .member-col dl.add_btn{text-align: center;background: #F7F7FC;}
+    .member-col dl.add_btn dt{margin-bottom: 0;}
+    .member-col dl.add_btn button{position: relative;padding: 1.2rem 0; width: 100%;padding-right: 2em;color: #269CFF;font-weight: 700;font-size: 1.3rem;}
+    .member-col ul li button.cancel-btn{float: right;margin-top: 1.5rem; padding: 0.6rem 2rem;font-size: 1.3rem;border: 1px solid #E7E7F0;border-radius: .4em;}
+    
+
+   </style>
+<body>
+    <main>
+        <section class="title-col">
+            <div class="inner-col">
+              <button type="button" class="ico-btn ico-btn-back" onclick="window.history.back();">
+                <span class="blind">입점문의</span>
+              </button>
+              <p>입점문의</p>
+            </div>
+        </section>
+        <section class="member-col">
+            <div class="inner-col">
+              <form name="storeFrm" action="#">
+                <div class="signup-box cb">
+                  <dl>
+                    <dt class="mark">브랜드명</dt>
+                    <dd>
+                      <input type="text" id="brandName" placeholder="브랜드명을 입력해주세요" />
+                    </dd>
+                  </dl>
+                  <ul>
+                    <li>
+                      <dl class="wd50">
+                        <dt class="mark">광고상품 선택</dt>
+                        <dd>
+                            <select>
+                              <optgroup label="리뷰형">
+                                <option value="">리뷰형</option>
+                                <option value="">배너형</option>
+                                <option value="">쇼츠형</option>
+                              </optgroup>
+                            </select>
+                          </dd>
+                      </dl>
+                      <dl class="wd50">
+                        <dt class="mark">광고상품 선택</dt>
+                        <dd>
+                            <select>
+                              <optgroup label="광고수량">
+                                <option value="">10개</option>
+                                <option value="">20개</option>
+                                <option value="">30개</option>
+                                <option value="">40개</option>
+                                <option value="">50개</option>
+                              </optgroup>
+                            </select>
+                          </dd>
+                      </dl>
+                    </li>
+                    <li class="cb">
+                      <dl class="wd50">
+                        <dt class="mark">광고상품 선택</dt>
+                        <dd>
+                            <select>
+                              <optgroup label="리뷰형">
+                                <option value="">리뷰형</option>
+                                <option value="">배너형</option>
+                                <option value="">쇼츠형</option>
+                              </optgroup>
+                            </select>
+                          </dd>
+                      </dl>
+                      <dl class="wd50">
+                        <dt class="mark">광고상품 선택</dt>
+                        <dd>
+                            <select>
+                              <optgroup label="광고수량">
+                                <option value="">10개</option>
+                                <option value="">20개</option>
+                                <option value="">30개</option>
+                                <option value="">40개</option>
+                                <option value="">50개</option>
+                              </optgroup>
+                            </select>
+                          </dd>
+                      </dl>
+                      <button type="button" class="cancel-btn">삭제</button>
+                    </li>
+                  </ul>
+                  <dl class="add_btn">
+                      <dd><button>광고상품 추가</button></dd>
+                  </dl>
+                  <dl>
+                    <dt class="mark">브랜드 이메일</dt>
+                    <dd>
+                      <input type="text" id="brandEmail" placeholder="유튜브 광고 거품을 뺀 최저의 견적서가 전달됩니다" />
+                    </dd>
+                  </dl>
+                </div>
+              </form>
+            </div>
+          </section>
+          <section class="signup-btn-col">
+            <div class="inner-col">
+              <button type="button" class="btn" onclick="signupFrmChk();">
+                <span>견적 바로 받기</span>
+              </button>
+            </div>
+          </section>
+    </main>
+    
+
+    <script>
+        function signupFrmChk() {
+            console.log('signup');
+
+            const brandName = document.getElementById('brandName');
+            const brandEmail = document.getElementById('brandEmail');
+          
+
+            if(!brandName.value) {
+                alert('브랜드명을 입력해 주세요.');
+                brandName.focus();
+                return false;
+            }
+
+            if(!brandEmail.value) {
+                alert('브랜드 이메일 주소를 입력해 주세요.');
+                brandEmail.focus();
+                return false;
+            }
+
+        
+
+            // document.signupFrm.submit();
+            }
+
+    </script>
+</body>
+</html>

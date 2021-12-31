@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>회원가입</title>
+	<link rel="stylesheet" href="./src/assets/dist/styles/normalize.css">
+	<link rel="stylesheet" href="./src/assets/dist/styles/reset.css">
+	<link rel="stylesheet" href="./src/assets/styles/common.css">
+	<link rel="stylesheet" href="./src/assets/styles/myhome.css">
+	<link rel="stylesheet" href="./src/assets/styles/myhome.css">
+    <link rel="stylesheet" href="./src/assets/styles/notice.css">
+</head>
+<style>
+ .hidden{display:none;}
+ .member-col{width:100%; max-width:750px; margin:0 auto; padding:0 2.6rem; font-size:1.2rem;} 
+ .member-col .signup-box{margin:11rem 0 0;}
+ .toast-col + .member-col .signup-box{margin:0;}
+ .member-col input{width:100%; padding:1rem 0; border:none; border-bottom:1px solid #ccc;}
+ .member-col input:focus{border-color:#000; outline:0;}
+ .member-col dl{width:100%; margin-bottom:3.5rem;}
+ .member-col dt{margin-bottom:.5rem;}
+ .member-col dt.mark:after{content:'(필수)'; display:inline-block; margin-left:.5rem; color:#ff5647;}
+ .member-col dd{position:relative; font-size:1.4rem;}
+ .member-col dd > button{position:absolute; top:0; right:0; bottom:0; width:5rem; margin:auto 0; font-size:1rem;}
+ .member-col dd > button + button{right:5rem;}
+ .member-col dd select{width:100%; margin-top:.5rem; padding:1.2rem;color: #B7B7C8; background:url(./src/assets/images/ico_arrow_botton_28x16.png) no-repeat 95% 50% / 1rem; border:1px solid #ccc; box-sizing:border-box; -webkit-appearance:none; appearance:none;}
+ .member-col li{position:relative;}
+ .member-col label{display:block; color:#717188;}
+ .member-col label input{display:inline-block; width:0; height:0; border:0; appearance:none;}
+ .member-col label em:before{content:''; display:inline-block; width:2rem; height:2rem; margin-right:.5em; background:#ECECF6 url(./src/assets/images/ico_chk_38x30w.png) no-repeat 50% 50% / 1rem; border-radius:50%; vertical-align:middle;}
+ .member-col label input:checked + em:before{content:''; background-color:#FFB914;}
+ .member-col label + a{position:absolute; top:.5rem; right:0; color:#B7B7C8; border-bottom:1px solid #B7B7C8;}
+ .member-col #timer{position:absolute; top:0; right:11rem; bottom:0; height:1.1rem; margin:auto 0; font-size:1rem; color:#FF5647;}
+ .member-col form + button{margin:2.6rem 0 0; padding:.5rem 1rem; border:1px solid #cfcfda; border-radius:1.5rem;}
+ .toast-col{width:100%; background-color:#f7f7fc;}
+ .toast-col .inner-col{margin-bottom:2.1rem; padding:2.1rem 4.4rem; background:url(./src/assets/images/ico_info_30x30.png) no-repeat 2.5rem 2.35rem / 1rem; line-height:1.5;}
+ .signup-btn-col{margin-top:4.2rem;}
+ .signup-btn-col button{color:#fff; background-color:#CFCFDA;}
+ .signup-btn-col button.active{background-color:#FFB914;}
+
+ .member-col dd.mem-classify{text-align: center;margin-top: 3rem;}
+ .member-col dd.mem-classify button:first-child{margin-right: 1rem;}
+ .member-col dd.mem-classify > button.fourteen{position: static;width: calc((100% - 2rem)/2);padding: 1.2rem;font-size: 1.4rem; border: 1px solid #a0a0b6;border-radius: .4em;}
+ .member-col dd.mem-classify > button.active{background: #3B3B4D;color: #fff;border-color: #3B3B4D;}
+
+ .member-col .self-certi dd:first-of-type{background: #f7f7fc; margin-top: 1.2rem;padding: 2.2rem;border-radius: .7rem;}
+ .member-col .self-certi dd.notice{margin-top: 1.4em; font-size: 1em;color: #717188;}
+ .member-col .self-certi dt{display: inline-block;background: #fff;z-index: 1;margin-left: 1em;}
+ 
+ .member-col .self-certi dd .toast-pop{display: none; position: absolute;z-index: 2;top: 0;right: 0;width: 100%; padding: 2rem 2.7rem; background: #717188;border-radius: .4rem;}
+ 
+ .member-col .self-certi dd .toast-pop::after{content: "";position: absolute;top: -12px;left: 8.5rem; width: 0;height: 0;border-top: 12px solid none;border-bottom: 12px solid #717188;border-right: 12px solid transparent;border-left: 12px solid transparent;}
+ .member-col .self-certi dd .toast-pop.fir::after{left: 12rem;}
+
+ .member-col .self-certi dd .toast-pop.on{display: block;}
+ .member-col .self-certi dd .toast-pop ul{}
+ .member-col .self-certi dd .toast-pop ul li{margin-bottom: .6rem; font-size: 1.2rem;color: #fff;}
+ .member-col .self-certi dd .toast-pop ul li::before{content: "";position: absolute;top: 0.4rem;left: -1rem; width: 0.3rem;height: 0.3rem;background: #fff;border-radius: 50%;}
+ .member-col .self-certi dd .toast-pop ul li:last-of-type{margin-bottom: 0;}
+ .member-col .self-certi dd .toast-pop .close_btn{position: absolute;right: 1rem;top: 1.5rem;width: 1.3rem;height: 1.3rem;cursor: pointer;}
+ .member-col .self-certi dd .toast-pop .close_btn span{display: inline-block;position: absolute;top: 0; right: 0; height: 0.14rem;width: 1.29rem; background: #fff;transform: rotate(45deg);border-radius: 2rem;}
+ .member-col .self-certi dd .toast-pop .close_btn span:last-of-type{ transform: rotate(-45deg);}
+
+
+ .member-col .self-certi dt span{color: #ff5647;}
+ .member-col dt img{width: 1.2em;}
+ 
+.member-col dd .textbox{display: inline-block;width: 21rem; line-height: 1.5;}
+.member-col dd .textbox strong{font-size: 1.4rem;font-weight: 700;}
+.member-col dd .textbox p{font-size: .8em; word-break: keep-all;}
+.member-col dd .textbox a{position: absolute;top: 50%; right: 2rem;padding:.6rem 2rem;background: #3B3B4D;border-radius: 10rem;color: #fff;transform: translateY(-50%);}
+
+.member-col .eMail dd{}
+.member-col .eMail input{display: inline-block; width: 19em;border: 1px solid #ccc;}
+.member-col .eMail select{display: inline-block;width: calc(100% - 19.5em);padding: 1rem;}
+.member-col .friendCode dt span{color: #CEBFBF;}
+</style>
+<body>
+    <main>
+      <section class="title-col">
+        <div class="inner-col">
+          <button type="button" class="ico-btn ico-btn-back" onclick="window.history.back();">
+            <span class="blind">뒤로가기</span>
+          </button>
+          <p>회원가입</p>
+        </div>
+      </section>
+      <section class="toast-col">
+        <div>
+          <div class="inner-col">
+            <p>채널명이 변경되셨나요?</p>
+            <p>광고를 최소 1회 이상 진행할 경우 채널 변경이 불가합니다.</p>
+            <p>채널톡으로 문의해 주세요.</p>
+          </div>
+        </div>
+      </section>
+        <section class="member-col">
+          <div class="inner-col">
+            <form name="signupFrm" action="#">
+              <div class="signup-box">
+                <dl>
+                  <dt>유튜브 채널명 URL</dt>
+                  <dd>
+                    <input type="text" id="youtubeUrl" placeholder="본인 채널의 영상 링크를 입력해 주세요." />
+                    <button type="button">인증하기</button>
+                  </dd>
+                </dl>
+                <dl>
+                  <dt>유튜브 채널명</dt>
+                  <dd>
+                    <input type="text" id="youtubeName" placeholder="채널명을 입력해 주세요." />
+                  </dd>
+                </dl>
+                <!-- 추가 -->
+                <dl>
+                  <dt class="mark">유튜브 채널 카테고리</dt>
+                  <dd>
+                    <select>
+                      <optgroup label="유튜브 채널 카테고리">
+                        <option value="">취미/라이프</option>
+                      </optgroup>
+                    </select>
+                  </dd>
+                </dl>
+                <dl>
+                  <dt class="mark">회원구분</dt>
+                  <dd class="mem-classify">
+                    <button class="fourteen active" onclick="">만 14세미만</button>
+                    <button class="fourteen" onclick="">만 14세이상</button>
+                  </dd>
+                </dl>
+                <dl class="self-certi">
+                    <dt>보호자 본인인증<span>(필수)</span>
+                        <img src="src/assets/images/ico_excla_mark_28x28.png" alt="" class="pop-btn" onclick="toastPop();">
+                    </dt>
+                    <dd> 
+                      <div class="toast-pop fir">
+                        <ul>
+                          <li>법인폰 사용자는 법인폰 개인인증 서비스 신청 후 <br /> 휴대폰 인증을 하실 수 있습니다.</li>
+                          <li>본인인증이 잘 되지 않으시면 본인인증기관 고객<br /> 문의 해주세요.</li>
+                          <li>NICE평가정보(주) 고객센터 : 1600-1522</li>
+                        </ul>
+                        <div class="close_btn" onclick="toastPop();">
+                          <span></span>
+                          <span></span>
+                        </div>
+                      </div>
+                      <div class="textbox">
+                          <strong>휴대폰 인증</strong>
+                          <p>보호자 명의로 된 휴대폰으로 <br> 인증번호를 전송받아 인증하기</p>
+                          <a href="#">인증</a>
+                      </div>
+                    </dd>
+                    <dd class="notice">해외거주로 인하여 본인인증이 불가할 경우 채널톡으로
+                      문의주세요.</dd>
+                </dl>
+                <dl>
+                  <dt class="mark">보호자인증</dt>
+                  <dd>
+                      <input type="text" id="selfCerti" placeholder="" />
+                  </dd>
+              </dl>
+                <dl class="self-certi">
+                    <dt>본인인증<span>(필수)</span>
+                        <img src="src/assets/images/ico_excla_mark_28x28.png" alt="" class="pop-btn" onclick="toastPop();">
+                    </dt>
+                    <dd>
+                      <div class="toast-pop">
+                        <ul>
+                          <li>법인폰 사용자는 법인폰 개인인증 서비스 신청 후 <br /> 휴대폰 인증을 하실 수 있습니다.</li>
+                          <li>본인인증이 잘 되지 않으시면 본인인증기관 고객<br /> 문의 해주세요.</li>
+                          <li>NICE평가정보(주) 고객센터 : 1600-1522</li>
+                        </ul>
+                        <div class="close_btn" onclick="toastPop();">
+                          <span></span>
+                          <span></span>
+                        </div>
+                      </div>
+                      <div class="textbox">
+                          <strong>휴대폰</strong>
+                          <p>본인 명의로 된 휴대폰으로<br> 인증번호를 전송받아 인증하기</p>
+                          <a href="#">인증</a>
+                      </div>
+                    </dd>
+                    <dd class="notice">해외거주로 인하여 본인인증이 불가할 경우 채널톡으로
+                      문의주세요.</dd>
+                </dl>
+                <dl>
+                    <dt class="mark">본인인증</dt>
+                    <dd>
+                        <input type="text" id="selfCerti" placeholder="" />
+                    </dd>
+                </dl>
+                <dl class="eMail">
+                    <dt class="mark">이메일 주소</dt>
+                    <dd>
+                        <input type="text" placeholder="" / id="eMail">
+                        <select>
+                            <optgroup label="이메일주소">
+                              <option value="">직접입력</option>
+                              <option value="">naver.com</option>
+                              <option value="">gmail.com</option>
+                              <option value="">daum.net</option>
+                            </optgroup>
+                        </select>
+                          
+                    </dd>
+                </dl>
+                
+                 <!-- 추가 끝-->
+               
+                <dl>
+                  <dt class="mark">꿀튜브를 알게된 곳</dt>
+                  <dd>
+                    <select>
+                        <optgroup label="꿀튜브를 알게된 곳">
+                          <option value="">직접입력</option>
+                          <option value="">직접입력</option>
+                          <option value="">직접입력</option>
+                        </optgroup>
+                      </select>
+                      <input type="text" id="honeyTube" placeholder="" />
+                  </dd>
+                </dl>
+                <dl class="friendCode">
+                  <dt>친구추천 코드 <span><img src="src/assets/images/ico_excla_mark_28x28.png" alt=""> 광고비 1천원 즉시 지급</span></dt>
+                  <dd>
+                    <input type="text" placeholder="" />
+                    <button type="button">코드확인</button>
+                  </dd>
+                </dl>
+                <ul class="agree-list">
+                  <li>
+                    <label for="agreeAll">
+                      <input type="checkbox" id="agreeAll" />
+                      <em></em>
+                      <span>전체 필수항목 동의</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label for="agreeTerms">
+                      <input type="checkbox" id="agreeTerms" />
+                      <em></em>
+                      <span>(필수) 이용약관 동의</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label for="agreePrivacy">
+                      <input type="checkbox" id="agreePrivacy" />
+                      <em></em>
+                      <span>(필수) 개인정보처리방침 동의</span>
+                    </label>
+                    <a href="#">보기</a>
+                  </li>
+                  <li>
+                    <label for="agreeMarketing">
+                      <input type="checkbox" id="agreeMarketing" />
+                      <em></em>
+                      <span>(선택) 마케팅 수신 정보 동의</span>
+                    </label>
+                    <a href="#">보기</a>
+                  </li>
+                </ul>
+              </div>
+            </form>
+          </div>
+        </section>
+        <section class="signup-btn-col">
+          <div class="inner-col">
+            <button type="button" class="btn" onclick="signupFrmChk();">
+              <span>가입하기</span>
+            </button>
+          </div>
+        </section>
+    </main>
+    <script src="./src/assets/dist/scripts/jquery-3.6.0.min.js"></script>
+    <script>
+      $(function(){
+        console.log('ready');
+      });
+
+      function phoneNumChk(obj) {
+        //  const chk = /^\d{2,3}-\d{3,4}-\d{4}$/; 
+        const chk = /^[0-9]+/g;
+
+         if(!chk.test(obj.value)){
+           console.log('not phone number');
+          //  alert('숫자만 입력해 주세요.');
+           console.log(obj.value);
+          //  obj.value = '';
+           return false;
+         }
+      }
+
+      if (window.NodeList && !NodeList.prototype.forEach) {
+        NodeList.prototype.forEach = Array.prototype.forEach;
+      }
+
+      function phoneChk() {
+        const target = document.querySelector('#phoneChkFrm');
+
+        if(document.getElementById('phone').value){
+          target.classList.remove('hidden');
+          if(target.classList.remove('hidden')) {
+            target.style.disply = 'block';
+          }
+        } else { 
+          alert('휴대폰 번호를 입력해 주세요.');
+          document.getElementById('phone').focus();
+          return false;
+        }
+        
+        timeView = setInterval('timeCount()', 1000);
+      }
+
+
+      function phoneCodeChk() {
+        const phoneCode = document.getElementById('phoneCode');
+        if(phoneCode.value == '123'){
+          phoneCode.setAttribute('disabled', 'disabled');
+          document.getElementById('phone').setAttribute('disabled', 'disabled');
+          document.getElementById('timer').remove();
+          alert('인증 완료되었습니다.')
+          clearInterval(timeView);
+
+        } else if(!phoneCode.value || phoneCode.value != '123') {
+          alert('질못된 인증 번호 입니다. 인증 번호를 확인해 주세요.');
+          phoneCode.focus();
+          return false;
+        }
+      }
+
+let SetTime = 300;
+function timeCount() {
+  let min = '';
+  let sec = '';
+
+    min = Math.floor(SetTime / 60);
+    sec = Math.floor(SetTime % 60);
+    min = min < 10 ? '0' + min : min;
+    sec = sec < 10 ? '0' + sec : sec;
+
+    const msg = min + ':' + sec;
+    document.all.timer.innerHTML = msg;
+    SetTime--;
+    
+    if(SetTime < 0) {
+      clearInterval(timeView);
+      console.log('the end');
+    }
+}
+
+function signupFrmChk() {
+  console.log('signup');
+
+  const email = document.getElementById('eMail');
+  const selfCerti = document.getElementById('selfCerti');
+  const agreeAll = document.getElementById('agreeAll');
+  const agreeTerms = document.getElementById('agreeTerms');
+  const agreePrivacy = document.getElementById('agreePrivacy');
+
+  if(!email.value) {
+    alert('이메일 주소를 입력해 주세요.');
+    email.focus();
+    return false;
+  }
+  if(!selfCerti.value) {
+    alert('본인 인증을 완료해 주세요.');
+    selfCerti.focus();
+    return false;
+  }
+
+  if(!agreeAll.value.checked || (agreeTerms.value.checked && agreeTerms.value.checked)) {
+    alert('약관을 확인해 주세요.');
+    agreeAll.focus();
+    return false;
+  }
+
+  // document.signupFrm.submit();
+}
+
+function toastPop() {
+  const toastImg = document.querySelector('.toast-pop');
+
+  document.querySelector('.pop-btn').addEventListener('click', function(){
+    toastImg.classList.add('on');
+  })
+  document.querySelector('.close_btn').addEventListener('click', function(){
+    toastImg.classList.remove('on');
+  })
+};
+
+window.onload = function () {
+};
+    </script>
+</body>
+</html>

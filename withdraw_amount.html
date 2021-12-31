@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>계좌 인증하기</title>
+    <link rel="stylesheet" href="./src/assets/dist/styles/normalize.css" />
+    <link rel="stylesheet" href="./src/assets/dist/styles/reset.css" />
+    <link rel="stylesheet" href="./src/assets/styles/common.css" />
+    <link rel="stylesheet" href="./src/assets/styles/sub.css" />
+    <link rel="stylesheet" href="./src/assets/dist/odometer/odometer-theme-default.css" />
+
+
+  </head>
+  <style>
+    .my-revenue-col strong{display: block;}
+    .notice-word{display: inline-block; position: relative; padding-left: 1.8em;margin-top: 0.6em; font-size: 1.2em;font-weight: 300;color: #717188;}
+    .notice-word::after{ content: ""; position: absolute; top: 0; left: .5em; width: 1rem; height: 1rem; background: url(/src/assets/images/ico_info_30x30.png) no-repeat center center/cover; }
+  </style>
+<body>
+    <main>
+        <section class="title-col">
+            <div class="inner-col">
+              <button type="button" class="ico-btn ico-btn-back" onclick="historyBack();">
+                <span class="blind">뒤로가기</span>
+              </button>
+              <p class="ellipsis">내 광고</p>
+            </div>
+          </section>
+          <section class="my-revenue-col monthly-col">
+            <div class="inner-col">
+              <p class="odometer-motion-box">
+                <strong class="odometer">0</strong>
+              </p>
+              <strong>10월 출금 금액</strong>
+            </div>
+          </section>
+          <section class="withdraw-ammount-col">
+              <div class="inner-col">
+                <div class="tit-box cb">
+                    <p>출금 정보</p>
+                    <a href="#">수정</a>
+                </div>
+                <ul class="my-info">
+                    <li class="cb">
+                        <p>예금주</p>
+                        <strong>이예림</strong>
+                    </li>
+                    <li class="cb">
+                        <p>입금은행</p>
+                        <strong>신한은행</strong>
+                    </li>
+                    <li class="cb">
+                        <p>계좌번호</p>
+                        <strong>11-***-111</strong>
+                    </li>
+                </ul>
+                <span>
+                    예금주와 계좌번호가 일치하지 않으면<br /> 출금이 진행되지 않습니다.
+                </span>
+              </div>
+          </section>
+          <section class="btn-col">
+            <div class="inner-col">
+              <button type="button" class="btn active">
+                <span>계좌 입력 완료하기</span>
+              </button>
+            </div>
+          </section>
+    </main>
+
+
+
+    <script src="./src/assets/dist/scripts/jquery-3.6.0.min.js"></script>
+    <script src="./src/assets/scripts/common.js"></script>
+    <script src="./src/assets/dist/odometer/odometer.js"></script>
+    <script>
+      window.addEventListener('load', function(event){
+        let motionBox = document.querySelector('.odometer');
+        let activeBox = document.querySelector('.odometer-motion-box');
+
+        let lineMotion = setInterval(function(){
+          if(motionBox.classList.contains('odometer-animating')){
+          }else{
+            clearInterval(lineMotion);
+            activeBox.classList.add('active');
+          }
+        }, 0)
+      });
+
+      $(document).ready(function(){
+        $('.odometer').html(479000);
+      });
+
+    </script>
+
+</body>
+</html>
