@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>회원가입</title>
+	<link rel="stylesheet" href="./src/assets/dist/styles/normalize.css">
+	<link rel="stylesheet" href="./src/assets/dist/styles/reset.css">
+	<link rel="stylesheet" href="./src/assets/styles/common.css">
+	<link rel="stylesheet" href="./src/assets/styles/myhome.css">
+	<link rel="stylesheet" href="./src/assets/styles/myhome.css">
+    <link rel="stylesheet" href="./src/assets/styles/notice.css">
+</head>
+<style>
+ .hidden{display:none;}
+ .member-col{width:100%; max-width:750px; margin:0 auto; font-size:1.2rem;} 
+ .member-col .signup-box{margin:7rem 0 0;}
+ .member-col .signup-box strong.agree-tit{display: block;margin-bottom: 1.5rem; padding:0 2.6rem; font-size: 1.8rem;font-weight: 700;}
+ .member-col .signup-box ul.agree-list{margin-bottom: 4.8rem; padding:0 2.6rem;}
+ .toast-col + .member-col .signup-box{margin:0;}
+ .member-col input{width:100%; padding:1rem 0; border:none; border-bottom:1px solid #E7E7F0;}
+ .member-col input:focus{border-color:#000; outline:0;}
+ .member-col dl{width:100%; margin-bottom:3.5rem; padding:0 2.6rem;}
+ .member-col dt{margin-bottom:.5rem;}
+ .member-col dt.mark:after{content:'(필수)'; display:inline-block; margin-left:.5rem; color:#ff5647;}
+ .member-col dd{position:relative; font-size:1.4rem;}
+ .member-col li{position:relative;margin-bottom: 1.5rem;}
+ .member-col li:last-of-type{margin-bottom: 0;}
+ .member-col label{display:block; color:#717188;}
+ .member-col label input{display:inline-block; width:0; height:0; border:0; appearance:none;}
+ .member-col label em:before{content:''; display:inline-block; width:2rem; height:2rem; margin-right:.5em; background:#ECECF6 url(./src/assets/images/ico_chk_38x30w.png) no-repeat 50% 50% / 1rem; border-radius:50%; vertical-align:middle;}
+ .member-col label input:checked + em:before{content:''; background-color:#FFB914;}
+ .member-col label + a{position:absolute; top:.5rem; right:0; color:#B7B7C8; border-bottom:1px solid #E7E7F0;}
+ .member-col form + button{margin:2.6rem 0 0; padding:.5rem 1rem; border:1px solid #cfcfda; border-radius:1.5rem;}
+ .signup-btn-col{margin-top:4.2rem;}
+ .signup-btn-col button{color:#fff; background-color:#CFCFDA;}
+ .signup-btn-col button.active{background-color:#FFB914;}
+
+
+
+ .member-col .self-certi dd.bg_gray{background: #f7f7fc; margin-top: 1.2rem;padding: 2.2rem;border-radius: .7rem;}
+ .member-col .self-certi dd.notice{margin-top: 1.4em; font-size: 1em;color: #717188;}
+
+ 
+
+ .member-col .self-certi dt{display: inline-block;background: #fff;z-index: 1;}
+ .member-col .self-certi dt.fourteen_under{position: relative;width: 100%;}
+ .member-col .self-certi dt.fourteen_under::after{content: "인증 후, 보호자 추가인증이 필요합니다.";position: absolute;right: 0;color: #ff5647;}
+ .member-col .self-certi dt .pop-btn{display: inline-block;vertical-align: middle; width: 1.4rem;height: 1.4rem; background: url(src/assets/images/ico_excla_mark_28x28.png) no-repeat center center/contain;}
+ .member-col .self-certi dd .toast-pop{display: none; position: absolute;z-index: 2;top: 0;right: 0;width: 100%; padding: 2rem 2.7rem; background: #717188;border-radius: .4rem;}
+ 
+ .member-col .self-certi dd .toast-pop::after{content: "";position: absolute;top: -12px;left: 8.5rem; width: 0;height: 0;border-top: 12px solid none;border-bottom: 12px solid #717188;border-right: 12px solid transparent;border-left: 12px solid transparent;}
+ .member-col .self-certi dd .toast-pop.fir::after{left: 12rem;}
+
+ .member-col .self-certi dd .toast-pop ul li{margin-bottom: .6rem; font-size: 1.2rem;color: #fff;}
+ .member-col .self-certi dd .toast-pop ul li::before{content: "";position: absolute;top: 0.4rem;left: -1rem; width: 0.3rem;height: 0.3rem;background: #fff;border-radius: 50%;}
+ .member-col .self-certi dd .toast-pop ul li:last-of-type{margin-bottom: 0;}
+ .member-col .self-certi dd .toast-pop .close_btn{position: absolute;right: 1rem;top: 1.5rem;width: 1.3rem;height: 1.3rem;cursor: pointer;}
+ .member-col .self-certi dd .toast-pop .close_btn span{display: inline-block;position: absolute;top: 0; right: 0; height: 0.14rem;width: 1.29rem; background: #fff;transform: rotate(45deg);border-radius: 2rem;}
+ .member-col .self-certi dd .toast-pop .close_btn span:last-of-type{ transform: rotate(-45deg);}
+ 
+ .member-col .self-certi dt span{color: #ff5647;}
+ .member-col .self-certi dd.mem-classify{margin-top: 1.8rem;padding: 0; font-size: 0;background-color: transparent;}
+ .member-col dd.mem-classify button:first-child{margin-right: 1rem;}
+ .member-col dd.mem-classify > button.fourteen{display: inline-block; position: static;width: calc((100% - 1rem)/2);padding: 1.2rem;margin-right: 1rem;font-size: 1.4rem; border: 1px solid #a0a0b6;border-radius: .4rem;}
+ .member-col dd.mem-classify > button.fourteen:last-of-type{margin-right: 0;}
+ .member-col dd.mem-classify > button.active{background: #3B3B4D;color: #fff;border-color: #3B3B4D;}
+ .member-col dd.mem-classify > button.fourteen_over.active{}
+
+.member-col dd .textbox{display: inline-block;width: 21rem; line-height: 1.5;}
+.member-col dd .textbox strong{font-size: 1.4rem;font-weight: 700;}
+.member-col dd .textbox p{font-size: .8em; word-break: keep-all;}
+.member-col dd .textbox button{position: absolute;top: 50%; right: 2rem;padding:.6rem 2rem;background: #3B3B4D;border-radius: 10rem;color: #fff;transform: translateY(-50%);}
+.member-col dd .certi-clt{margin-top: 0.7rem; padding: 1.3rem 0; font-size: 1.4rem; background-color: #f2faf3;color: #17c624;border-radius: .7rem; text-align: center;}
+.member-col .self-certi dd.certi{display: none;}
+
+.member-col .self-certi.complete dt.fourteen_under::after{display: none;}
+.member-col .self-certi.complete dd.bg_gray{display: none;}
+.member-col .self-certi.complete dd.certi{display: block;}
+.member-col .agree-box{padding-top: 3.5rem; border-top: 10px solid #f7f7fc;}
+.member-col dl.fourteen_over_box{display: none;}
+.member-col .fourteen_under_box{display: none;}
+</style>
+<body>
+    <main>
+      <section class="title-col">
+        <div class="inner-col">
+          <button type="button" class="ico-btn ico-btn-back" onclick="window.history.back();">
+            <span class="blind">뒤로가기</span>
+          </button>
+          <p>회원가입</p>
+        </div>
+      </section>
+        <section class="member-col">
+          <div class="inner-col">
+            <form name="signupFrm" action="#">
+              <div class="signup-box">
+                <strong class="agree-tit">꿀튜브 <br/>서비스 약관에 동의해주세요.</strong>
+                <ul class="agree-list">
+                    <li>
+                      <label for="agreeAll">
+                        <input type="checkbox" id="agreeAll" />
+                        <em></em>
+                        <span>전체 필수항목 동의</span>
+                      </label>
+                    </li>
+                    <li>
+                      <label for="agreeTerms">
+                        <input type="checkbox" id="agreeTerms" />
+                        <em></em>
+                        <span>(필수) 이용약관 동의</span>
+                      </label>
+                      <a href="#">보기</a>
+                    </li>
+                    <li>
+                      <label for="agreePrivacy">
+                        <input type="checkbox" id="agreePrivacy" />
+                        <em></em>
+                        <span>(필수) 개인정보처리방침 동의</span>
+                      </label>
+                      <a href="#">보기</a>
+                    </li>
+                    <li>
+                      <label for="agreeMarketing">
+                        <input type="checkbox" id="agreeMarketing" />
+                        <em></em>
+                        <span>(선택) 마케팅 수신 정보 동의</span>
+                      </label>
+                    </li>
+                  </ul>
+                <dl class="self-certi">
+                    <dt>본인인증<span>(필수)</span>
+                        <a href="javascript:void(0)" class="pop-btn"></a>
+                      </dt>
+                  <dd class="mem-classify">
+                    <div class="toast-pop">
+                        <ul>
+                          <li>법인폰 사용자는 법인폰 개인인증 서비스 신청 후 <br /> 휴대폰 인증을 하실 수 있습니다.</li>
+                          <li>본인인증이 잘 되지 않으시면 본인인증기관 고객<br /> 문의 해주세요.</li>
+                          <li>NICE평가정보(주) 고객센터 : 1600-1522</li>
+                        </ul>
+                        <div class="close_btn">
+                          <span></span>
+                          <span></span>
+                        </div>
+                      </div>
+                    <button type="button" class="fourteen fourteen_under_btn">만 14세미만</button>
+                    <button type="button" class="fourteen fourteen_over">만 14세이상</button>
+                  </dd>
+                </dl>
+                <!-- class="complete" 추가시 본인인증 완료 문구 노출됩니다 -->
+                <!-- 14세이상 클릭시 노출되어야 하는 영역입니다 -->
+                <dl class="self-certi fourteen_over_box">
+                  <dt>본인인증<span>(필수)</span>
+                    <a href="javascript:void(0)" class="pop-btn"></a>
+                  </dt>
+                  <dd class="bg_gray">
+                    <div class="toast-pop">
+                      <ul>
+                        <li>법인폰 사용자는 법인폰 개인인증 서비스 신청 후 <br /> 휴대폰 인증을 하실 수 있습니다.</li>
+                        <li>본인인증이 잘 되지 않으시면 본인인증기관 고객<br /> 문의 해주세요.</li>
+                        <li>NICE평가정보(주) 고객센터 : 1600-1522</li>
+                      </ul>
+                      <div class="close_btn">
+                        <span></span>
+                        <span></span>
+                      </div>
+                    </div>
+                    <div class="textbox">
+                        <strong>휴대폰</strong>
+                        <p>본인 명의로 된 휴대폰으로<br> 인증번호를 전송받아 인증하기</p>
+                        <button>인증</button>
+                    </div>
+                  </dd>
+                  <dd class="certi">
+                      <div class="certi-clt">
+                          <strong>휴대폰으로 본인인증이 완료되었습니다.</strong>
+                      </div>
+                  </dd>
+                </dl>
+                <!-- 14세미만 클릭시 노출되어야 하는 영역입니다 -->
+                <div class="fourteen_under_box">
+                  <!-- class="complete" 추가시 본인인증 완료 문구 노출됩니다 -->
+                <dl class="self-certi">
+                  <dt class="fourteen_under">본인인증<span>(필수)</span>
+                    <a href="javascript:void(0)" class="pop-btn"></a>
+                  </dt>
+                  <dd class="bg_gray">
+                    <div class="toast-pop">
+                      <ul>
+                        <li>법인폰 사용자는 법인폰 개인인증 서비스 신청 후 <br /> 휴대폰 인증을 하실 수 있습니다.</li>
+                        <li>본인인증이 잘 되지 않으시면 본인인증기관 고객<br /> 문의 해주세요.</li>
+                        <li>NICE평가정보(주) 고객센터 : 1600-1522</li>
+                      </ul>
+                      <div class="close_btn">
+                        <span></span>
+                        <span></span>
+                      </div>
+                    </div>
+                    <div class="textbox">
+                        <strong>휴대폰</strong>
+                        <p>본인 명의로 된 휴대폰으로<br> 인증번호를 전송받아 인증하기</p>
+                        <button>인증</button>
+                    </div>
+                  </dd>
+                  <dd class="certi">
+                      <div class="certi-clt">
+                          <strong>휴대폰으로 본인인증이 완료되었습니다.</strong>
+                      </div>
+                  </dd>
+              </dl>
+                  <div class="agree-box">
+                    <strong class="agree-tit">만 14세 미만은 <br/>보호자 동의가 필요합니다.</strong>
+                    <ul class="agree-list">
+                      <li>
+                        <label for="agreeTerms2">
+                          <input type="checkbox" id="agreeTerms2" />
+                          <em></em>
+                          <span>(필수) 이용약관 동의</span>
+                        </label>
+                        <a href="#">보기</a>
+                      </li>
+                      <li>
+                        <label for="agreePrivacy2">
+                          <input type="checkbox" id="agreePrivacy2" />
+                          <em></em>
+                          <span>(필수) 개인정보 수집 및 이용 동의</span>
+                        </label>
+                        <a href="#">보기</a>
+                      </li>
+                    </ul>
+                    <!-- class="complete" 추가시 본인인증 완료 문구 노출됩니다 -->
+                 <!-- 14세미만 클릭시 노출되어야 하는 영역입니다 -->
+                <dl class="self-certi complete">
+                  <dt>법정대리인 본인인증<span>(필수)</span>
+                    <a href="javascript:void(0)" class="pop-btn"></a>
+                  </dt>
+                  <dd class="bg_gray"> 
+                    <div class="toast-pop fir">
+                      <ul>
+                        <li>법인폰 사용자는 법인폰 개인인증 서비스 신청 후 <br /> 휴대폰 인증을 하실 수 있습니다.</li>
+                        <li>본인인증이 잘 되지 않으시면 본인인증기관 고객<br /> 문의 해주세요.</li>
+                        <li>NICE평가정보(주) 고객센터 : 1600-1522</li>
+                      </ul>
+                      <div class="close_btn" >
+                        <span></span>
+                        <span></span>
+                      </div>
+                    </div>
+                    <div class="textbox">
+                        <strong>휴대폰 인증</strong>
+                        <p>본인 명의로 된 휴대폰으로 <br> 인증번호를 전송받아 인증하기</p>
+                        <button>인증</button>
+                    </div>
+                  </dd>
+                  <dd class="certi">
+                    <div class="certi-clt">
+                        <strong>휴대폰으로 본인인증이 완료되었습니다.</strong>
+                    </div>
+                </dd>
+                 </dl>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </section>
+        <section class="signup-btn-col">
+          <div class="inner-col">
+            <button type="button" class="btn" onclick="signupFrmChk();">
+              <span>가입하기</span>
+            </button>
+          </div>
+        </section>
+    </main>
+    <script src="./src/assets/dist/scripts/jquery-3.6.0.min.js"></script>
+    <script>
+      $(function(){
+        console.log('ready');
+      });
+
+      function phoneNumChk(obj) {
+        //  const chk = /^\d{2,3}-\d{3,4}-\d{4}$/; 
+        const chk = /^[0-9]+/g;
+
+         if(!chk.test(obj.value)){
+           console.log('not phone number');
+          //  alert('숫자만 입력해 주세요.');
+           console.log(obj.value);
+          //  obj.value = '';
+           return false;
+         }
+      }
+
+      if (window.NodeList && !NodeList.prototype.forEach) {
+        NodeList.prototype.forEach = Array.prototype.forEach;
+      }
+
+      function phoneChk() {
+        const target = document.querySelector('#phoneChkFrm');
+
+        if(document.getElementById('phone').value){
+          target.classList.remove('hidden');
+          if(target.classList.remove('hidden')) {
+            target.style.disply = 'block';
+          }
+        } else { 
+          alert('휴대폰 번호를 입력해 주세요.');
+          document.getElementById('phone').focus();
+          return false;
+        }
+        
+        timeView = setInterval('timeCount()', 1000);
+      }
+
+
+      function phoneCodeChk() {
+        const phoneCode = document.getElementById('phoneCode');
+        if(phoneCode.value == '123'){
+          phoneCode.setAttribute('disabled', 'disabled');
+          document.getElementById('phone').setAttribute('disabled', 'disabled');
+          document.getElementById('timer').remove();
+          alert('인증 완료되었습니다.')
+          clearInterval(timeView);
+
+        } else if(!phoneCode.value || phoneCode.value != '123') {
+          alert('질못된 인증 번호 입니다. 인증 번호를 확인해 주세요.');
+          phoneCode.focus();
+          return false;
+        }
+      }
+
+let SetTime = 300;
+function timeCount() {
+  let min = '';
+  let sec = '';
+
+    min = Math.floor(SetTime / 60);
+    sec = Math.floor(SetTime % 60);
+    min = min < 10 ? '0' + min : min;
+    sec = sec < 10 ? '0' + sec : sec;
+
+    const msg = min + ':' + sec;
+    document.all.timer.innerHTML = msg;
+    SetTime--;
+    
+    if(SetTime < 0) {
+      clearInterval(timeView);
+      console.log('the end');
+    }
+}
+
+function signupFrmChk() {
+  console.log('signup');
+
+  const email = document.getElementById('eMail');
+  const selfCerti = document.getElementById('selfCerti');
+  const agreeAll = document.getElementById('agreeAll');
+  const agreeTerms = document.getElementById('agreeTerms');
+  const agreePrivacy = document.getElementById('agreePrivacy');
+
+  if(!email.value) {
+    alert('이메일 주소를 입력해 주세요.');
+    email.focus();
+    return false;
+  }
+  if(!selfCerti.value) {
+    alert('본인 인증을 완료해 주세요.');
+    selfCerti.focus();
+    return false;
+  }
+
+  if(!agreeAll.value.checked || (agreeTerms.value.checked && agreeTerms.value.checked)) {
+    alert('약관을 확인해 주세요.');
+    agreeAll.focus();
+    return false;
+  }
+
+  // document.signupFrm.submit();
+}
+
+function toastPop() {
+    $('.pop-btn').click(function(){
+        $(this).parent().siblings().children('.toast-pop').show();
+    })
+    $('.close_btn').click(function(){
+        $('.toast-pop').hide();
+    })
+};
+toastPop();
+
+function fourteen(){
+  $('.fourteen').click(function(){
+    $(this).toggleClass('active').siblings().removeClass('active');
+    
+  })
+  $('.fourteen_under_btn').click(function(){
+    $('.fourteen_under_box').toggle();
+    $('dl.fourteen_over_box').hide();
+  })
+  $('.fourteen_over').click(function(){
+      $('dl.fourteen_over_box').toggle();
+      $('.fourteen_under_box').hide();
+  })
+
+
+}
+fourteen();
+
+
+window.onload = function () {
+
+};
+    </script>
+</body>
+</html>

@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>이벤트 상세</title>
+    <link rel="stylesheet" href="./src/assets/dist/styles/normalize.css" />
+    <link rel="stylesheet" href="./src/assets/dist/styles/reset.css" />
+    <link rel="stylesheet" href="./src/assets/styles/common.css" />
+    <link rel="stylesheet" href="./src/assets/styles/sub.css" />
+  </head>
+  <style>
+    @media (min-width: 750px){
+        .landing > section, .landing > div{font-size:21px;}
+        }
+    .landing {}
+    .txt-hidden{position:absolute; width:1px; height:1px; margin:-1px; text-indent:-9999px;}
+    .olympic-banner-col {}
+    .olympic-banner-col .inner-col{}
+    .olympic-banner-col img{width:100%;}
+
+    .tab-btn-col {position:sticky; top:80px; z-index: 3;}
+    .tab-btn-col .tab_btn{display:flex; padding:1.3em 0; background-color:#203671; justify-content:space-around;}
+    .tab-btn-col .tab_btn { font-size:1.3em;  line-height:1; text-align: center;}
+    .tab-btn-col .tab_btn a {position:relative; color:#4161B8; font-weight:700;}
+    .tab-btn-col .tab_btn a::after{content:""; position:absolute; top:50%; left:50%; width:5em; height:3em; background: url(https://kkultube.yanadoocdn.com/notice/2022/02/18/ico_tab_blue_141x39.png) no-repeat 50%/100%; transform: translate(-50%,-50%);}
+    .tab-btn-col .tab_btn a.on {color:#fff;}
+    .tab-btn-col .tab_btn a.on::after {background: url(https://kkultube.yanadoocdn.com/notice/2022/02/18/ico_tab_white_141x39.png) no-repeat 50%/100%;}
+
+    .awards-col .inner-col {border-bottom:2px solid #d5d8da;}
+    .awards-col.banner-col .inner-col {border:0;}
+    .awards-col .awards {padding-bottom:5em}
+    .awards-col .awards .medal {margin-top:4em;}
+    .awards-col .awards .medal .tit{text-align:center;}
+    .awards-col .awards .medal .tit span{display:block; font-weight:600; font-size:1.2em;}
+    .awards-col .awards .medal .three-people {margin-top:1.5em; justify-content:space-around; text-align:center;}
+    .awards-col .awards .medal .three-people li {display:inline-block; width: 30%; position:relative; vertical-align:top;}
+    .awards-col .awards .medal .three-people li::before {content:""; position:absolute; top:7.5em; left:.8rem; width:2.6em; height:3em; z-index:2;}
+    .awards-col .awards .medal .three-people li:first-of-type::before {background: url(https://kkultube.yanadoocdn.com/notice/2022/02/18/ico_goldmedal_57x64.png) no-repeat 50%/100%;}
+    .awards-col .awards .medal .three-people li:nth-of-type(2)::before {background: url(https://kkultube.yanadoocdn.com/notice/2022/02/18/ico_silvermedal_57x64.png) no-repeat 50%/100%;}
+    .awards-col .awards .medal .three-people li:last-of-type::before {background: url(https://kkultube.yanadoocdn.com/notice/2022/02/18/ico_bronzemedal_57x64.png) no-repeat 50%/100%;}
+    .awards-col .awards .medal .three-people li span{display:inline-block; position: relative; width:9em; height:10.5em; overflow: hidden; background-repeat:no-repeat; background-size:cover; }
+    .awards-col .awards .medal .three-people li span::after{content:""; position: absolute; top: 0;left: 0; width: 100%; height: 100%; background: url(./src/assets/images/bg_hexagon.png) no-repeat 50%/cover; z-index: 1;}
+    .awards-col .awards .medal .three-people li span img {display:block; width:100%; height: 100%;}
+    .awards-col .awards .medal .three-people li strong{display:block; margin-top:.8em; font-size:1.2em; font-weight:600;}
+
+    .gift-col {text-align:center;}
+    .gift-col .inner-col {padding:6em 0; background-color:#ECEFF3; overflow:hidden;}
+    .gift-col .gift_motion{}
+    .gift-col .gift_motion span{display:block; position:absolute;}
+    .gift-col .gift_motion .gift_1{left:-.5em; top: 12em; width: 5em; height: 5em; background: url(https://kkultube.yanadoocdn.com/notice/2022/02/18/img_gift_1.png) no-repeat center/100%; animation:giftT 2s infinite alternate linear;}
+    .gift-col .gift_motion .gift_2{left:2.5em; bottom:10em; width:3em; height: 4em; background: url(https://kkultube.yanadoocdn.com/notice/2022/02/18/img_gift_2.png) no-repeat center/100%;  animation:giftB 1s infinite alternate linear;}
+    .gift-col .gift_motion .gift_3{top:-.5em; right:3em; width:3em; height:4em; background: url(https://kkultube.yanadoocdn.com/notice/2022/02/18/img_gift_3.png) no-repeat center/100%; animation:giftT 1s infinite alternate linear;}
+    .gift-col .gift_motion .gift_4{top: 50%; right:-1em; width:5em; height: 5em; background: url(https://kkultube.yanadoocdn.com/notice/2022/02/18/img_gift_4.png) no-repeat center/100%; animation:giftB 1.5s infinite alternate linear;}
+    .gift-col .gift_motion .gift_5{bottom:-.2em; right:1.5em; width:3em; height:4em; background: url(https://kkultube.yanadoocdn.com/notice/2022/02/18/img_gift_5.png) no-repeat center/100%; animation:giftT 1.5s infinite alternate linear;}
+
+    @keyframes giftT {
+        from{transform:translateY(2rem);}
+        to{transform:translateY(0)}
+    }
+    @keyframes giftB {
+        from{transform:translateY(-2rem);}
+        to{transform:translateY(0)}
+    }
+
+    .medal-col {position:relative; text-align: center; overflow: hidden;}
+    .medal-col .inner-col {padding:5.5em 0 2em 0; background-color:#1C2231;}
+    .medal-col .medal_motion {position:absolute; left:50%; top:0; width:10em; height:6em; transform:translateX(-50%)}
+    .medal-col .medal_motion span{position:absolute; top:-100%; width:3em; height:5em;}
+    .medal-col .medal_motion .gold{left:50%; height:100%; background:url(https://kkultube.yanadoocdn.com/notice/2022/02/18/img_gold_medal.png) no-repeat 50%/100%; transform:translateX(-50%);}
+    .medal-col .medal_motion .silver{left:0; background:url(https://kkultube.yanadoocdn.com/notice/2022/02/18/img_silver_medal.png) no-repeat 50%/100%;}
+    .medal-col .medal_motion .bronze{right:0; background:url(https://kkultube.yanadoocdn.com/notice/2022/02/18/img_bronze_medal.png) no-repeat 50%/100%;}
+
+    .medal-col.on .medal_motion .gold{animation: medal .2s linear forwards;}
+    .medal-col.on .medal_motion .silver{animation: medal .2s linear forwards; animation-delay:.2s;}
+    .medal-col.on .medal_motion .bronze{animation: medal .2s linear forwards; animation-delay:.4s;}
+    @keyframes medal {
+        from {top:-100%;}
+        to {top:0;}
+    }
+
+    .medal-list-col {text-align:center;}
+    .medal-list-col .inner-col {background-color:#FFE451;}
+    .medal-list-col a{display:inline-block; width:100%; padding:1.2em 0; font-weight:800; font-size:1.4em;}
+    .medal-list-col a::after{content:""; position:absolute; right:1.4em; top:50%; width: .5em; height:1em; background:url(https://www.kkultube.co.kr/images/ico_arrow_15x24.png) no-repeat 50%/100%; transform:translateY(-50%);}
+
+    .notice-col {}
+    .notice-col .inner-col {padding:6em 0; background-color:#F3F4F4;}
+    .notice-col .inner-col h3 {margin-bottom:2rem; font-weight:800; font-size:1.4em; text-align:center;}
+    .notice-col .inner-col ul {padding: 0 1.5em;}
+    .notice-col .inner-col ul li {margin-bottom:.6em; font-weight:600; font-size:.9em; color:#565656;}
+
+    canvas{position:absolute; top:-5rem; left:0; width:100%; height:84rem; z-index: 1;}
+
+    @media screen and (max-width : 750px) {
+        .landing > section, .landing > div{font-size:2.8vw;}
+
+        .tab-btn-col {top:54px;}
+        .awards-col .awards .medal .three-people li {text-align:center;}
+        .awards-col .awards .medal .three-people li figure {display:inline-block; width:90%;}
+        .awards-col .awards .medal .three-people li::before {left:1em;}
+    }
+        
+    
+    </style>
+  <body>
+    <main>
+      <section class="title-col">
+        <div class="inner-col">
+          <button type="button" class="ico-btn ico-btn-back" onclick="historyBack();">
+            <span class="blind">뒤로가기</span>
+          </button>
+          <p class="ellipsis">이벤트</p>
+        </div>
+      </section>
+      <section class="list-detail-col">
+        <div class="inner-col">
+          <dl>
+            <dt>
+              <p>
+                <span>2022-02-18</span>
+                <strong class="ellipsis">꿀튜브 미니 올림픽</strong>
+              </p>
+            </dt>
+            <dd id="event-content">
+                <!-- 여기부터 컨텐츠 영역입니다. -->
+                <div class="landing">
+                    <section class="olympic-banner-col">
+                        <div class="inner-col">
+                            <img src="src/assets/images/img_olympic_banner.png" alt="">
+                        </div>
+                    </section>
+                    <section class="tab-btn-col">
+                        <div class="inner-col">
+                            <div class="tab_btn fix">
+                                <a href="#review" class="on">리뷰형</a>
+                                <a href="#shorts">쇼츠형</a>
+                                <a href="#banner">배너형</a>
+                            </div>
+                        </div>
+                    </section>
+                    <div class="tab-cont-col">
+                        <section class="awards-col tab1" id="review" >
+                            <div class="inner-col">
+                                <div class="review awards" >
+                                    <div class="medal">
+                                        <div class="tit">
+                                            <span>리뷰형</span>
+                                            <strong class="txt-hidden">야핏 서포터즈</strong>
+                                            <img src="src/assets/images/txt_review_tit_1.png" alt="">
+                                        </div>
+                                        <ul class="three-people">
+                                            <li>
+                                                <a href="https://youtu.be/oXTLPFVNMdo" target="_blank">
+                                                    <span style="background-image: url(https://kkultube.yanadoocdn.com/notice/2022/02/18/profile/supporters_1.jpg);">
+                                                    </span>
+                                                    <strong>KIMDALCOM김달콤</strong>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="https://youtube.com/watch?v=7rWx1xz5zSg" target="_blank">
+                                                    <span style="background-image: url(https://kkultube.yanadoocdn.com/notice/2022/02/18/profile/supporters_2.jpg);">
+                                                    </span>
+                                                    <strong>지방새[FATBIRD]</strong>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="https://youtube.com/watch?v=j-zi__ZP7Ig" target="_blank">
+                                                    <span style="background-image: url(https://kkultube.yanadoocdn.com/notice/2022/02/18/profile/supporters_3.jpg);">
+                                                    </span>
+                                                    <strong>오니오니개오니</strong>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="medal">
+                                        <div class="tit">
+                                            <span>리뷰형</span>
+                                            <strong class="txt-hidden">야핏 리액션 컨셉 광고</strong>
+                                            <img src="src/assets/images/txt_review_tit_2.png" alt="">
+                                        </div>
+                                        <ul class="three-people">
+                                            <li>
+                                                <a href="https://youtube.com/watch?v=8Z3R8e6H8n4" target="_blank">
+                                                    <span style="background-image:url(https://kkultube.yanadoocdn.com/notice/2022/02/18/profile/reaction_1.jpg);">
+                                                    </span>
+                                                    <strong>티준신Tjunshin</strong>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="https://youtube.com/watch?v=zlWIgGB-gk8" target="_blank">
+                                                    <span style="background-image:url(https://kkultube.yanadoocdn.com/notice/2022/02/18/profile/reaction_2.jpg);">
+                                                    </span>
+                                                    <strong>ALOHA SUMIN, 수민</strong>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="https://youtube.com/watch?v=I5xYHVEgKxQ" target="_blank">
+                                                    <span style="background-image:url(https://kkultube.yanadoocdn.com/notice/2022/02/18/profile/reaction_3.jpg);">
+                                                    </span>
+                                                    <strong>SeoulD Out서울다웃</strong>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="medal">
+                                        <div class="tit">
+                                            <span>리뷰형</span>
+                                            <strong class="txt-hidden">유캔두 질법다 리뷰형 광고</strong>
+                                            <img src="src/assets/images/txt_review_tit_3.png" alt="">
+                                        </div>
+                                        <ul class="three-people">
+                                            <li>
+                                                <a href="https://youtube.com/watch?v=5kin41LzcPw" target="_blank">
+                                                    <span style="background-image:url(https://kkultube.yanadoocdn.com/notice/2022/02/18/profile/youcandoo_1.jpg);">
+                                                    </span>
+                                                    <strong>이응oioio</strong>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="https://youtube.com/watch?v=avSMurb0A8I" target="_blank">
+                                                    <span style="background-image:url(https://kkultube.yanadoocdn.com/notice/2022/02/18/profile/youcandoo_2.jpg);">
+                                                    </span>
+                                                    <strong>소리가들려 SORI</strong>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="https://youtube.com/watch?v=sfcI4HxmM8Q" target="_blank">
+                                                    <span style="background-image:url(https://kkultube.yanadoocdn.com/notice/2022/02/18/profile/youcandoo3.jpg);">
+                                                    </span>
+                                                    <strong>Kfood &amp; 일상리뷰</strong>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <section class="awards-col tab2" id="shorts">
+                            <div class="inner-col">
+                                <div class="shorts awards" >
+                                    <div class="medal">
+                                        <div class="tit">
+                                            <span>쇼츠형</span>
+                                            <strong class="txt-hidden">야핏 패러디 컨셉 광고</strong>
+                                            <img src="src/assets/images/txt_shorts_tit_1.png" alt="">
+                                        </div>
+                                        <ul class="three-people">
+                                            <li>
+                                                <a href="https://youtube.com/watch?v=1BYLJVR47QE" target="_blank">
+                                                    <span style="background-image:url(https://kkultube.yanadoocdn.com/notice/2022/02/18/profile/shorts_1_1.jpg);">
+                                                    </span>
+                                                    <strong>Brish 빈</strong>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="https://youtube.com/watch?v=vxBkMpsOFDQ" target="_blank">
+                                                    <span style="background-image:url(https://kkultube.yanadoocdn.com/notice/2022/02/18/profile/shorts_1_2.jpg);">
+                                                    </span>
+                                                    <strong>아빠정영화TV</strong>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="https://youtube.com/watch?v=kHN-u5y5o74" target="_blank">
+                                                    <span style="background-image:url(https://kkultube.yanadoocdn.com/notice/2022/02/18/profile/shorts_1_3.jpg);">
+                                                    </span>
+                                                    <strong>코스포츠TV</strong>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="medal">
+                                        <div class="tit">
+                                            <span>쇼츠형</span>
+                                            <strong class="txt-hidden">야핏 패러디 컨셉 광고 - 2</strong>
+                                            <img src="src/assets/images/txt_shorts_tit_2.png" alt="">
+                                        </div>
+                                        <ul class="three-people">
+                                            <li>
+                                                <a href="https://youtube.com/watch?v=lsDXFMErISI" target="_blank">
+                                                    <span style="background-image:url(https://kkultube.yanadoocdn.com/notice/2022/02/18/profile/shorts_2_1.jpg);">
+                                                    </span>
+                                                    <strong>발레테라핏 Ballet Thera Fit</strong>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="https://youtube.com/watch?v=-IG5Vsqt62o" target="_blank">
+                                                    <span style="background-image:url(https://kkultube.yanadoocdn.com/notice/2022/02/18/profile/shorts_2_2.jpg);">
+                                                    </span>
+                                                    <strong>또디나</strong>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="https://youtube.com/watch?v=-4A_nCCAfW8" target="_blank">
+                                                    <span style="background-image:url(https://kkultube.yanadoocdn.com/notice/2022/02/18/profile/shorts_2_3.jpg);">
+                                                    </span>
+                                                    <strong>다희어리</strong>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="medal">
+                                        <div class="tit">
+                                            <span>쇼츠형</span>
+                                            <strong class="txt-hidden">야핏 패러디 컨셉 광고 - 3</strong>
+                                            <img src="src/assets/images/txt_shorts_tit_3.png" alt="">
+                                        </div>
+                                        <ul class="three-people">
+                                            <li>
+                                                <a href="https://youtube.com/watch?v=nhaEJrefYY0" target="_blank">
+                                                    <span style="background-image:url(https://kkultube.yanadoocdn.com/notice/2022/02/18/profile/shorts_3_1.jpg);">
+                                                    </span>
+                                                    <strong>레이첼 스튜디오 Rachel Kim Studio</strong>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="https://youtube.com/watch?v=2NO7jkBHq4o" target="_blank">
+                                                    <span style="background-image:url(https://kkultube.yanadoocdn.com/notice/2022/02/18/profile/shorts_3_2.jpg);">
+                                                    </span>
+                                                    <strong>라오스 한태가족</strong>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="https://youtube.com/watch?v=3s7Oy8u82cg" target="_blank">
+                                                    <span style="background-image:url(https://kkultube.yanadoocdn.com/notice/2022/02/18/profile/youcandoo3.jpg);">
+                                                    </span>
+                                                    <strong>Kfood &amp; 일상리뷰</strong>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="medal">
+                                        <div class="tit">
+                                            <span>쇼츠형</span>
+                                            <strong class="txt-hidden">야핏 챌린지 컨셉 광고</strong>
+                                            <img src="src/assets/images/txt_shorts_tit_4.png" alt="">
+                                        </div>
+                                        <ul class="three-people">
+                                            <li>
+                                                <a href="https://youtube.com/watch?v=jymWM8wVQrk" target="_blank">
+                                                    <span style="background-image:url(https://kkultube.yanadoocdn.com/notice/2022/02/18/profile/shorts_2_1.jpg);">
+                                                    </span>
+                                                    <strong>발레테라핏 Ballet Thera Fit</strong>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="https://youtube.com/watch?v=tKRWNLnoSZI" target="_blank">
+                                                    <span style="background-image:url(https://kkultube.yanadoocdn.com/notice/2022/02/18/profile/shorts_1_1.jpg);">
+                                                    </span>
+                                                    <strong>Brish 빈</strong>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="https://youtube.com/watch?v=dIzqqdjAuFI" target="_blank">
+                                                    <span style="background-image:url(https://kkultube.yanadoocdn.com/notice/2022/02/18/profile/shorts_4_3.jpg);">
+                                                    </span>
+                                                    <strong>소민쥬스</strong>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="medal">
+                                        <div class="tit">
+                                            <span>쇼츠형</span>
+                                            <strong class="txt-hidden">야핏 음원커버 컨셉 광고</strong>
+                                            <img src="src/assets/images/txt_shorts_tit_5.png" alt="">
+                                        </div>
+                                        <ul class="three-people">
+                                            <li>
+                                                <a href="https://youtube.com/watch?v=Mtq_TCEvDKc" target="_blank">
+                                                    <span style="background-image:url(https://kkultube.yanadoocdn.com/notice/2022/02/18/profile/shorts_1_3.jpg);">
+                                                    </span>
+                                                    <strong>코스포츠TV</strong>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="https://youtube.com/watch?v=oaZp4El-ITc" target="_blank">
+                                                    <span style="background-image:url(https://kkultube.yanadoocdn.com/notice/2022/02/18/profile/shorts_5_2.jpg);">
+                                                    </span>
+                                                    <strong>묘통령 Cat President</strong>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="https://youtube.com/watch?v=LoDyvKYjk2Y" target="_blank">
+                                                    <span style="background-image:url(https://kkultube.yanadoocdn.com/notice/2022/02/18/profile/shorts_2_2.jpg);">
+                                                    </span>
+                                                    <strong>또디나</strong>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="medal">
+                                        <div class="tit">
+                                            <span>쇼츠형</span>
+                                            <strong class="txt-hidden">[야핏] "프리스타일" 쇼츠형 광고</strong>
+                                            <img src="https://kkultube.yanadoocdn.com/notice/2022/02/18/txt_shorts_tit_6.png" alt="">
+                                        </div>
+                                        <ul class="three-people">
+                                            <li>
+                                                <a href="https://youtube.com/watch?v=qlaOiZX-0xQ" target="_blank">
+                                                    <span style="background-image:url(https://kkultube.yanadoocdn.com/notice/2022/02/18/profile/shorts_6_1.jpg);">
+                                                    </span>
+                                                    <strong>지쥬[Zisu]</strong>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="https://youtube.com/watch?v=AAHQPChBAtw" target="_blank">
+                                                    <span style="background-image:url(https://kkultube.yanadoocdn.com/notice/2022/02/18/profile/shorts_6_2.jpg);">
+                                                    </span>
+                                                    <strong>H남</strong>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="https://youtube.com/watch?v=hdx6dq6x1Ss" target="_blank">
+                                                    <span style="background-image:url(https://kkultube.yanadoocdn.com/notice/2022/02/18/profile/shorts_6_3.jpg);">
+                                                    </span>
+                                                    <strong>셜선생님과춤을</strong>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="medal">
+                                        <div class="tit">
+                                            <span>쇼츠형</span>
+                                            <strong class="txt-hidden">[보닥] "앱소개 컨셉" 쇼츠형 광고</strong>
+                                            <img src="https://kkultube.yanadoocdn.com/notice/2022/02/18/txt_shorts_tit_7.png" alt="">
+                                        </div>
+                                        <ul class="three-people">
+                                            <li>
+                                                <a href="https://youtube.com/watch?v=063k6b-r89I" target="_blank">
+                                                    <span style="background-image:url(https://kkultube.yanadoocdn.com/notice/2022/02/18/profile/shorts_6_2.jpg);">
+                                                    </span>
+                                                    <strong>H남</strong>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="https://youtube.com/watch?v=2zMhFLXj-Jc" target="_blank">
+                                                    <span style="background-image:url(https://kkultube.yanadoocdn.com/notice/2022/02/18/profile/shorts_2_2.jpg);">
+                                                    </span>
+                                                    <strong>또디나</strong>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="https://youtube.com/watch?v=5LN8ja8eoOg" target="_blank">
+                                                    <span style="background-image:url(https://kkultube.yanadoocdn.com/notice/2022/02/18/profile/shorts_7_3.jpg);">
+                                                    </span>
+                                                    <strong>먹방꽁여사</strong>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <section class="awards-col banner-col tab3" id="banner">
+                            <div class="inner-col">
+                                <div class="banner awards" >
+                                    <div class="medal">
+                                        <div class="tit">
+                                            <span>배너형</span>
+                                            <strong class="txt-hidden">감자유학 5초 배너</strong>
+                                            <img src="https://kkultube.yanadoocdn.com/notice/2022/02/18/txt_banner_tit_1.png" alt="">
+                                        </div>
+                                        <ul class="three-people">
+                                            <li>
+                                                <a href="https://youtube.com/watch?v=x_RqfaWJJvY" target="_blank">
+                                                    <span style="background-image:url(https://kkultube.yanadoocdn.com/notice/2022/02/18/profile/banner_1.jpg);">
+                                                    </span>
+                                                    <strong>희성 Heesung</strong>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="https://youtube.com/watch?v=n--3MYZaErA" target="_blank">
+                                                    <span style="background-image:url(https://kkultube.yanadoocdn.com/notice/2022/02/18/profile/banner_2.jpg);">
+                                                    </span>
+                                                    <strong>N잡의 소마</strong>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="https://youtu.be/gyykylLs0zg" target="_blank">
+                                                    <span style="background-image:url(https://kkultube.yanadoocdn.com/notice/2022/02/18/profile/banner_3.jpg);">
+                                                    </span>
+                                                    <strong>디지털노마드_언헤븐트</strong>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                    <section class="gift-col">
+                        <div class="inner-col">
+                            <img src="src/assets/images/img_gift.png" alt="">
+                            <div class="gift_motion">
+                                <span class="gift_1"></span>
+                                <span class="gift_2"></span>
+                                <span class="gift_3"></span>
+                                <span class="gift_4"></span>
+                                <span class="gift_5"></span>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="medal-col" id="medal">
+                        <div class="inner-col">
+                            <h3 class="txt-hidden">금메달</h3>
+                            <div class="medal_motion">
+                                <span class="silver"></span>
+                                <span class="gold"></span>
+                                <span class="bronze"></span>
+                            </div>
+                            <img src="src/assets/images/img_medal.png" alt="">
+                        </div>
+                    </section>
+                    <section class="medal-list-col">
+                        <div class="inner-col">
+                            <a href="https://www.kkultube.co.kr/product/" target="_blank">2월의 메달 리스트 되러가기</a>
+                        </div>
+                    </section>
+                    <section class="notice-col">
+                        <div class="inner-col">
+                            <h3>유의사항</h3>
+                            <ul>
+                                <li>- 당첨자 발표 후, 부정 참여로 확인되면 당첨이 취소될 수 있습니다.</li>
+                                <li>- 당첨자 선정은 내부 기준에 따라 심사될 예정입니다. 발표 이후 선정 기준에 대한 답변 및 응대는 제공하지 않음을 양해 바랍니다. </li>
+                                <li>- 잘못된 개인정보로 인해 당첨 대상에서 제외되었을 경우, 당사가 책임지지 않습니다. </li>
+                                <li>- 당첨자 발표 후 7일간 연락이 되지 않는 경우, 당첨이 취소됩니다.</li>
+                                <li>- 본 이벤트는 당사 사정에 따라 이벤트 내용 및 경품이 별도의 안내 없이 변경될 수 있습니다. </li>
+                                <li>- 개인 정보 수집 거부 시 당첨이 취소 될 수 있습니다.</li>
+                                <li>- 4만원 이상 광고비의 수취 시 3.3%의 소득세를 제하고 지급되며 증빙을 위한 신분증 제출이 필요합니다. </li>
+                                <li>- 성인 콘텐츠/특정 정치 성향을 옹호하는 콘텐츠/폭력적이거나 사회적 물의를 일으킬 수 있는 콘텐츠에 대하여 승인이 거절될 수 있습니다. </li>
+                                <li>- 영상의 필수 유지기간은 6개월 입니다. 유지 기간내 영상을 비공개 혹은 삭제할 경우 꿀튜브 이용에 제한이 있을 수 있습니다.</li>
+                            </ul>
+                        </div>
+                    </section>
+                </div>
+                <!-- 컨텐츠영역 끝 -->
+            </dd>
+          </dl>
+        </div>
+      </section>
+    </main>
+    <footer class="footer-col">
+      <div class="inner-col">
+        <ul>
+          <li><a href="./login.html">로그인</a></li>
+          <li><a href="#;">1:1 문의</a></li>
+          <li><a href="#;">개인정보처리방침</a></li>
+          <li><a href="#;">이용약관</a></li>
+        </ul>
+      </div>
+    </footer>
+    
+    <script src="./src/assets/scripts/common.js"></script>
+    <script src="./src/assets/dist/scripts/jquery-3.6.0.min.js"></script>
+    <script src="./src/assets/dist/scripts/confetti.browser.min.js"></script>
+    
+ 
+
+    <script>
+        let scrollCheck = true;
+        let myCanvas = document.createElement('canvas');
+        document.getElementById('medal').appendChild(myCanvas);
+        
+        let myConfetti = confetti.create(myCanvas, {
+            resize: true,
+            useWorker: true,
+        });
+        
+        $(document).ready(function(){
+            $('.tab-btn-col').find('a').on('click', function(){
+                var num = $(this).index();
+                $(this).addClass('on').siblings().removeClass('on');
+                $('html, body').animate({scrollTop:$('.tab' + (num+1) ).offset().top - 250},500);
+            });            
+        });
+        
+        $(window).scroll(function(){
+            if($(window).scrollTop() >= ($('.medal-col').offset().top - (window.innerHeight / 2)) && scrollCheck){
+                $('.medal-col').addClass('on');
+                myConfetti({
+                    particleCount :80,
+                    spread: 80,
+                });
+                scrollCheck = false;
+            }
+        });
+    </script>
+  </body>
+</html>

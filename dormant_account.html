@@ -20,8 +20,8 @@
     .dormant-col .textbox p a{font-weight: bold;color: #269CFF;}
 
 
-    .member-col{width:100%; max-width:750px; margin:0 auto;margin-top: 5rem; padding:0 2.2rem; font-size:1.2rem;} 
-    .member-col input{width:100%; padding:1rem 0; border:none; border-bottom:1px solid #ccc;}
+    .member-col{width:100%; max-width:750px; margin:0 auto;margin-top: 5rem; padding:2.65rem 2.2rem; font-size:1.2rem;border-top: 1px solid #E7E7F0;} 
+    .member-col input{width:100%; padding:1rem 0; border:none; border-bottom:1px solid #E7E7F0;}
     .member-col input:focus{border-color:#000; outline:0;}
     .member-col dl{width:100%; margin-bottom:3.5rem;}
     .member-col dt{margin-bottom:.5rem;}
@@ -39,22 +39,21 @@
     .member-col .self-certi dd.notice{margin-top: 1.4em; font-size: 1em;color: #717188;}
     .member-col .self-certi dt{display: inline-block;position: relative;background: #fff;z-index: 1;margin-left: 1em;}
     .member-col .self-certi dd:first-of-type{background: #f7f7fc; margin-top: 1.2rem;padding: 2.2rem;border-radius: .7rem;}
- .member-col .self-certi dd.notice{margin-top: 1.4em; font-size: 1em;color: #717188;}
- .member-col .self-certi dt{display: inline-block;background: #fff;z-index: 1;margin-left: 1em;}
+    .member-col .self-certi dd.notice{margin-top: 1.4em; font-size: 1em;color: #717188;}
+    .member-col .self-certi dt{display: inline-block;background: #fff;z-index: 1;margin-left: 1em;}
  
- .member-col .self-certi dd .toast-pop{display: none; position: absolute;z-index: 2;top: 0;right: 0;width: 100%; padding: 2rem 2.7rem; background: #717188;border-radius: .4rem;}
- 
- .member-col .self-certi dd .toast-pop::after{content: "";position: absolute;top: -12px;left: 8.5rem; width: 0;height: 0;border-top: 12px solid none;border-bottom: 12px solid #717188;border-right: 12px solid transparent;border-left: 12px solid transparent;}
- .member-col .self-certi dd .toast-pop.fir::after{left: 12rem;}
+    .member-col .self-certi dd .toast-pop{display: none; position: absolute;z-index: 2;top: 0;right: 0;width: 100%; padding: 2rem 2.7rem; background: #717188;border-radius: .4rem;}
+    .member-col .self-certi dt .pop-btn{display: inline-block;vertical-align: middle; width: 1.4rem;height: 1.4rem; background: url(src/assets/images/ico_excla_mark_28x28.png) no-repeat center center/contain;}
+    .member-col .self-certi dd .toast-pop::after{content: "";position: absolute;top: -12px;left:8.5rem; width: 0;height: 0;border-top: 12px solid none;border-bottom: 12px solid #717188;border-right: 12px solid transparent;border-left: 12px solid transparent;}
 
- .member-col .self-certi dd .toast-pop.on{display: block;}
- .member-col .self-certi dd .toast-pop ul{}
- .member-col .self-certi dd .toast-pop ul li{margin-bottom: .6rem; font-size: 1.2rem;color: #fff;}
- .member-col .self-certi dd .toast-pop ul li::before{content: "";position: absolute;top: 0.4rem;left: -1rem; width: 0.3rem;height: 0.3rem;background: #fff;border-radius: 50%;}
- .member-col .self-certi dd .toast-pop ul li:last-of-type{margin-bottom: 0;}
- .member-col .self-certi dd .toast-pop .close_btn{position: absolute;right: 1rem;top: 1.5rem;width: 1.3rem;height: 1.3rem;cursor: pointer;}
- .member-col .self-certi dd .toast-pop .close_btn span{display: inline-block;position: absolute;top: 0; right: 0; height: 0.14rem;width: 1.29rem; background: #fff;transform: rotate(45deg);border-radius: 2rem;}
- .member-col .self-certi dd .toast-pop .close_btn span:last-of-type{ transform: rotate(-45deg);}
+    .member-col .self-certi dd .toast-pop.on{display: block;}
+    .member-col .self-certi dd .toast-pop ul{}
+    .member-col .self-certi dd .toast-pop ul li{position: relative; margin-bottom: .6rem; font-size: 1.2rem;color: #fff;}
+    .member-col .self-certi dd .toast-pop ul li::before{content: "";position: absolute;top: 0.4rem;left: -1rem; width: 0.3rem;height: 0.3rem;background: #fff;border-radius: 50%;}
+    .member-col .self-certi dd .toast-pop ul li:last-of-type{margin-bottom: 0;}
+    .member-col .self-certi dd .toast-pop .close_btn{position: absolute;right: 1rem;top: 1.5rem;width: 1.3rem;height: 1.3rem;cursor: pointer;}
+    .member-col .self-certi dd .toast-pop .close_btn span{display: inline-block;position: absolute;top: 0; right: 0; height: 0.14rem;width: 1.29rem; background: #fff;transform: rotate(45deg);border-radius: 2rem;}
+    .member-col .self-certi dd .toast-pop .close_btn span:last-of-type{ transform: rotate(-45deg);}
 
 
     .member-col .self-certi dt span{color: #ff5647;}
@@ -65,16 +64,16 @@
     .member-col dd .textbox a{position: absolute;top: 50%; right: 2rem;padding:.6rem 2rem;background: #3B3B4D;border-radius: 10rem;color: #fff;transform: translateY(-50%);}
 
 
-    .member-col .eMail dd{}
-    .member-col .eMail input{display: inline-block; width: 19rem;border: 1px solid #ccc;}
-    .member-col .eMail select{display: inline-block;width: calc(100% - 19.5rem);padding: 1rem;}
+    .member-col .eMail dd{font-size: 0;}
+    .member-col .eMail input{display: inline-block; width:68%;margin-right: 2%; font-size: 1.4rem; border: 1px solid #E7E7F0;border-radius: .4rem;}
+    .member-col .eMail select{display: inline-block;width: 30%;padding: 1rem;font-size: 1.4rem;border-radius: .4rem;border-color: #E7E7F0;}
     .member-col .friendCode dt span{color: #CEBFBF;}
 
     .signup-btn-col{margin-top:4.2rem;}
     .signup-btn-col button{color:#fff; background-color:#CFCFDA;}
     .signup-btn-col button.active{background-color:#FFB914;}
 
-
+    .undormant-pop-col{display: none;}
     .pop-col{position: fixed;top: 0;left: 0;width: 100%;height: 100vh; background: rgba(0,0,0,0.8);z-index: 200;}
     .pop-col .inner-col{position: absolute;top: 50%;left: 50%;width: 90%;padding: 5.7em 2.5em 1.9em 2.5em;  background: #fff;border-radius: 1em;box-shadow: 0 .4em .4em rgba(0,0,0,0.25);text-align: center;transform: translate(-50%,-50%);}
     .pop-col p{font-size: 1.6em;margin-bottom: 2.4em;}
@@ -115,7 +114,7 @@
                     <div class="certi-box">
                         <dl class="self-certi">
                             <dt>본인인증<span>(필수)</span>
-                                <img src="src/assets/images/ico_excla_mark_28x28.png" alt="" class="pop-btn" onmouseover="toastPop();">
+                                <a href="javascript:void(0)" class="pop-btn"></a>
                             </dt>
                             <dd>
                                 <div class="toast-pop fir">
@@ -198,14 +197,17 @@
         
         function toastPop() {
             const toastImg = document.querySelector('.toast-pop');
+            const element = document.querySelector('.pop-btn')
 
-            document.querySelector('.pop-btn').addEventListener('click', function(){
+                element.addEventListener('click', function() {
                 toastImg.classList.add('on');
             })
-            document.querySelector('.close_btn').addEventListener('click', function(){
+                document.querySelector('.close_btn').addEventListener('click', function(){
                 toastImg.classList.remove('on');
             })
         };
+
+        toastPop();
 
         window.onload = function () {
         };

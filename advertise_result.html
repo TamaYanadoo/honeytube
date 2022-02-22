@@ -10,9 +10,11 @@
 	<link rel="stylesheet" href="./src/assets/styles/common.css">
 	<link rel="stylesheet" href="./src/assets/styles/myhome.css">
     <link rel="stylesheet" href="./src/assets/styles/notice.css">
+    <link rel="stylesheet" href="./src/assets/dist/odometer/odometer-theme-default.css" />
 </head>
 <style>
-   .adv-result-col{padding-top:4.5rem;background: url(/src/assets/images/bg_advertise_result.png) no-repeat center center/cover;}
+   .adv-result-col{background-color: #3B3B4D;}
+   .adv-result-col .inner-col {padding-top:4.5rem;background: url(src/assets/images/bg_advertise_result.png) no-repeat 80%/contain;}
    .adv-result-col .result-box{color: #fff;padding: 0 2.2rem;}
    .adv-result-col .result-box p{font-size: 1.8em;font-weight: 900; margin-bottom: .8rem;word-break: keep-all;}
    .adv-result-col .result-box p:last-of-type{margin-top: 2.5rem; color: #cfcfda;}
@@ -24,6 +26,11 @@
    .result-notice-col ul{padding: 2.2rem;background: rgba(0,0,0,0.12);}
    .result-notice-col ul li{position: relative;margin-bottom: 1rem;padding-left: 1rem;color: }
    .result-notice-col ul li::after{content: "";position: absolute;top: .4rem;left: 0; width: .3rem;height: .3rem;background: #757575;border-radius: 50%;}
+   .adv-result-col{}
+   .adv-result-col .result-box{}
+   .adv-result-col .result-box .result{}
+   .adv-result-col .result-box .result li{}
+   .adv-result-col .result-box .result li:first-child span.odometer{transition-delay: 5s;}
 </style>
 <body>
     <main>
@@ -40,10 +47,17 @@
                 <div class="result-box">
                     <p><span>누벨르</span>, 광고주님!</p> 
                     <strong>광고주님의 소중한 시간과 예산을<br> 꿀튜브와 함께 절약해 보세요.</strong>
-                    <ul class="result">
-                        <li><span>20일</span> 동안</li>
-                        <li><span>2,500,000원</span> 으로</li>
-                        <li><span>80개</span> 의</li>
+                    <ul class="result odometer-motion-box">
+                        <li>
+                            <span class="odometer odometer0">0</span> 
+                            <span>일</span> 동안
+                        </li>
+                        <li>
+                           <span class="odometer odometer1">0</span>
+                           <span>원</span> 으로
+                        </li>
+                        <li><span  class="odometer odometer1">0</span>
+                          <span>개</span> 의</li>
                     </ul>
                     <p><span>누벨르</span> 유튜브 콜라보 콘텐츠를<br> 확보할 수 있어요.</p>
                 </div>
@@ -57,5 +71,29 @@
         </section>
         
     </main>
+    <script src="./src/assets/dist/scripts/jquery-3.6.0.min.js"></script>
+    <script src="./src/assets/scripts/common.js"></script>
+    <script src="./src/assets/dist/odometer/odometer.js"></script>
+    <script>
+      window.addEventListener('load', function(){
+
+        document.querySelector('.odometer0').innerHTML = '20'
+        const itemList = [2500000, 80];
+        const odemeter = document.querySelectorAll('.odometer1');
+        let timing = 0;
+        
+        let odometerMotion = setInterval(function(){
+          if(timing < itemList.length){
+            odemeter[timing].innerHTML = itemList[timing];
+            timing++;
+          } else {
+            clearInterval(odometerMotion);
+          }
+        }, 1000);
+      });
+
+
+
+    </script>
 </body>
 </html>

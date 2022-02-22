@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>계좌 인증하기</title>
+    <link rel="stylesheet" href="./src/assets/dist/styles/normalize.css" />
+    <link rel="stylesheet" href="./src/assets/dist/styles/reset.css" />
+    <link rel="stylesheet" href="./src/assets/styles/common.css" />
+    <link rel="stylesheet" href="./src/assets/styles/sub.css" />
+    <link rel="stylesheet" href="./src/assets/dist/odometer/odometer-theme-default.css" />
+  </head>
+<body>
+    <main>
+        <section class="title-col">
+            <div class="inner-col">
+              <button type="button" class="ico-btn ico-btn-back" onclick="historyBack();">
+                <span class="blind">뒤로가기</span>
+              </button>
+              <p class="ellipsis">계좌 인증하기</p>
+            </div>
+        </section>
+        <section class="account-box-col">
+            <div class="inner-col">
+                <ul class="account-box">
+                    <li>
+                        <label for="">성명</label>
+                        <input type="text" placeholder="성함을 입력해주세요."> 
+                    </li>
+                    <li>
+                        <label for="">주민등록번호</label>
+                        <input type="input" id="jumin2" maxlength="14" placeholder="123456 - 7******" >
+                        <input type="hidden" id="juminE" name="inputValue" maxlength="14">
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section class="registration-col">
+            <div class="inner-col">
+              <div class="text-box">
+                <strong>고유식별정보 수집 · 이용 동의</strong>
+                <p>1. 고유식별정보의 수집·이용 목적 : 꿀튜브 광고비 지급)</p>
+                <p>2. 고유식별정보 항목 : 주민등록번호</p>
+                <p>3. 보유 및 이용기간 : 5년 (근거 : 『국세기본법 시행령』 제68조)</p>
+                <p>개인정보보호법』 제24조의2 제1항제1호에 따라 『소득세법』에 근거한 '꿀튜브 광고비 지급' 및 관련업무 처리 용도로만 처리됩니다. 이에 대한 동의를 거부할 권리가 있으며, 동의 거부 시 '꿀튜브 광고비 지급'이 제한됩니다.</p>
+              </div>
+                <div class="agree-box regi-agree">
+                    <label for="regisAgree">
+                        <input type="checkbox" id="regisAgree">
+                        <em></em>
+                        <span>네, 동의합니다.</span>
+                    </label>
+                </div>
+            </div>
+        </section>
+        <section class="signup-btn-col account-btn-col">
+            <div class="inner-col">
+              <button type="button" class="btn active" onclick="location.href='./account_verification.html'">
+                <span>계좌 정보 입력하기</span>
+              </button>
+            </div>
+          </section>
+    </main>
+    <script src="./src/assets/dist/scripts/jquery-3.6.0.min.js"></script>
+    <script>
+      $("#jumin2").on('keypress', function(e){
+            //주민번호에 넣고..
+            var jume = $("#juminE").val()+inVal;
+            $("#juminE").val(jume.replace(/[^0-9]/g,""));               
+         }).on('input',function(e){
+            $(this).val($(this).val().replace(/(?<=.{8})./gi, "*"));
+        });  
+
+    </script>
+</body>
+</html>

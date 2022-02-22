@@ -42,6 +42,70 @@
                         <li><button>3개월</button></li>
                     </ul>
                   </article>
+                  <article class="period">
+                    <ul>
+                      <li>
+                        <div class="date-select">
+                          <select>
+                            <optgroup label="연도">
+                              <option value="">2021년</option>
+                              <option value="">2020년</option>
+                              <option value="">2019년</option>
+                            </optgroup>
+                          </select>
+                          <select>
+                            <optgroup label="월">
+                              <option value="">01월</option>
+                              <option value="">02월</option>
+                              <option value="">03월</option>
+                              <option value="">04월</option>
+                              <option value="">05월</option>
+                              <option value="">06월</option>
+                              <option value="">07월</option>
+                              <option value="">08월</option>
+                              <option value="">09월</option>
+                              <option value="">10월</option>
+                              <option value="">11월</option>
+                              <option value="">112월</option>
+                            </optgroup>
+                          </select>
+                        </div>
+                        부터
+                      </li>
+                      <li>
+                        <div class="date-select">
+                          <select>
+                            <optgroup label="연도">
+                              <option value="">2021년</option>
+                              <option value="">2020년</option>
+                              <option value="">2019년</option>
+                            </optgroup>
+                          </select>
+                          <select>
+                            <optgroup label="월">
+                              <option value="">01월</option>
+                              <option value="">02월</option>
+                              <option value="">03월</option>
+                              <option value="">04월</option>
+                              <option value="">05월</option>
+                              <option value="">06월</option>
+                              <option value="">07월</option>
+                              <option value="">08월</option>
+                              <option value="">09월</option>
+                              <option value="">10월</option>
+                              <option value="">11월</option>
+                              <option value="">112월</option>
+                            </optgroup>
+                          </select>
+                        </div>
+                        까지
+                      </li>
+                      <li class="btn-box">
+                        <button class="cancel_btn">취소</button>
+                        <button class="chk_btn">조회</button>
+                      </li>
+                    </ul>
+                  </article>
                   <article class="withdraw-wate">
                       <div class="price-date cb">
                         <!-- p태그에 class = "com-withdraw" 추가시 지급 완료로 변경 -->
@@ -84,7 +148,7 @@
           </section>
           <section class="btn-col">
             <div class="inner-col">
-              <button type="button" class="btn active">
+              <button type="button" class="btn active" onclick="location.href='./account_verification.html'">
                 <span>계좌 정보 입력하기</span>
               </button>
             </div>
@@ -113,6 +177,18 @@
       $(document).ready(function(){
         $('.odometer').html(479000);
       });
+
+      function date(){
+        $('.monthly-detail-col button.date-picker').click(function(){
+           $('.monthly-detail-col .period').show();
+        })
+        $('.monthly-detail-col .period .cancel_btn').click(function(){
+          $('.monthly-detail-col .period').hide();
+        })
+      }
+      date();
+
+      
 
     </script>
 

@@ -35,7 +35,7 @@
               -->
               <li>
                 <span class="ico-item">
-                  <i class="ico-waiting "></i>
+                  <i class="ico-waiting"></i>
                 </span>
                 <span>승인대기</span>
               </li>
@@ -75,7 +75,7 @@ https://bit.ly/2CzQTn2 여기에서 유튜버라면 누구나 신청가능!!
             </pre>
           </div>
           <button class="btn copy"><span>고정 댓글 복사하기</span></button>
-          <button class="btn guide positive"><span>제작가이드 보기</span></button>
+          <button class="btn guide positive" onclick="location.href='./production_guide.html'"><span>제작가이드 보기</span></button>
           <button class="btn positive download">
             <span>소재 다운로드</span>
           </button>
@@ -85,7 +85,11 @@ https://bit.ly/2CzQTn2 여기에서 유튜버라면 누구나 신청가능!!
      
       <section class="advertise-input-col">
         <div class="inner-col">
-          <input type="text" placeholder="일부 공개 된 유튜브 영상 URL을 입력하세요." />
+          <input class="input-text" type="search" placeholder="일부 공개 된 유튜브 영상 URL을 입력하세요." />
+          <button class="del_btn" onclick="clearInput(this);">
+            <span></span>
+            <span></span>
+          </button>
         </div>
       </section>
       <section class="signup-btn-col">
@@ -122,6 +126,27 @@ https://bit.ly/2CzQTn2 여기에서 유튜버라면 누구나 신청가능!!
   <script src="src/assets/scripts/common.js"></script>
   <script src="./src/assets/dist/scripts/jquery.youtubecoverphoto.js"></script>
   <script>
+      function clearInput(){
+          var el = document.getElementsByClassName('input-text');
+
+          for(var i=0; i<el.length; i++){
+            el[i].value = '';
+          }
+         
+        }
+
+        function showBtn(){
+          $('.input-text').keyup(function(){
+            $('.del_btn').toggle(Boolean($(this).val()))
+          });
+          $('.del_btn').toggle(Boolean($('.input-text').val()));
+          $('.del_btn').click(function(){
+              $('.input-text').val('').focus();
+              $('.del_btn').hide();
+          });
+        }
+        showBtn();
+
     $(document).ready(function(){
       $('#youtubeThumb1').youtubeCoverPhoto();
     })

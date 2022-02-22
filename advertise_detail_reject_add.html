@@ -82,7 +82,11 @@
       </section>
       <section class="advertise-input-col">
         <div class="inner-col">
-          <input type="text" placeholder="일부 공개 된 유튜브 영상 URL을 입력하세요." />
+          <input class="input-text" type="text" placeholder="일부 공개 된 유튜브 영상 URL을 입력하세요." />
+          <button class="del_btn" onclick="clearInput(this);">
+            <span></span>
+            <span></span>
+          </button>
         </div>
       </section>
       <section class="btn-col">
@@ -119,6 +123,27 @@
   <script src="src/assets/scripts/common.js"></script>
   <script src="./src/assets/dist/scripts/jquery.youtubecoverphoto.js"></script>
   <script>
+    function clearInput(){
+          var el = document.getElementsByClassName('input-text');
+
+          for(var i=0; i<el.length; i++){
+            el[i].value = '';
+          }
+         
+        }
+
+        function showBtn(){
+          $('.input-text').keyup(function(){
+            $('.del_btn').toggle(Boolean($(this).val()))
+          });
+          $('.del_btn').toggle(Boolean($('.input-text').val()));
+          $('.del_btn').click(function(){
+              $('.input-text').val('').focus();
+              $('.del_btn').hide();
+          });
+        }
+        showBtn();
+
     $(document).ready(function(){
       $('#youtubeThumb1').youtubeCoverPhoto();
     })

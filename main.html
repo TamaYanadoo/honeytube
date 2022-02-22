@@ -216,7 +216,8 @@
                       </dd>
                     </dl>
                   </a>
-                </div><div class="swiper-slide">
+                </div>
+                <div class="swiper-slide">
                   <a href="./tab_ad_detail.html">
                     <dl>
                       <dt>
@@ -224,7 +225,7 @@
                         <button type="button" class="btn-like" onclick="toggleClass(this);"><span class="blind">like it</span></button>
                       </dt>
                       <dd>
-                        <p><em>성경김</em></p>
+                        <p><em>성경김..</em></p>
                         <p><span>곱창김에는 곱창이 들어가나요?</span></p>
                         <p><strong>20,000</strong></p>
                       </dd>
@@ -365,7 +366,7 @@
       <section class="youtuber-col">
         <div class="inner-col">
           <h3>다른 유튜버들은 이렇게 제작했어요</h3>
-          <!-- 메인 베스트 컨텐츠 추가 class = 'active' 추가시 밑줄-->
+          <!-- 메인 베스트 컨텐츠 추가 class = 'active' 추가시 배경색, 폰트컬러 바뀜-->
           <ul class="best-cont-btn">
             <li class="active">리뷰형</li>
             <li>쇼츠형</li>
@@ -376,7 +377,7 @@
               <div class="swiper-wrapper">
                 <div class="swiper-slide">
                   <div class="youtube-thumb">
-                    <img src="" data-youtube-id="Gh4djoUvfmQ" class="youtubeThumb1" alt="유튜브 썸네일" />
+                    <img src="" data-youtube-id="G63ouwmcUmA" class="youtubeThumb1" alt="유튜브 썸네일" />
                   </div>
                   <div class="thumb-flex-form">
                     <div class="thumb-item">
@@ -516,13 +517,22 @@
         <div class="inner-col">
           <div class="quote-box">
             <strong>광고주이신가요?</strong>
-            <p>야, 너두 유튜브 광고 대박날 수 있어! <br/> 시간절약/비용절약/효과는 최대</p>
-          <a href="#">지금바로 최소 견적 받기 <img src="src/assets/images/ico_quote_36x36.png" alt=""></a>
           </div>
-          
-          <img src="src/assets/images/img_adv_bnr_v2.png" alt="">
-          <a href="" class="intro-dwn-btn">
-            <img src="src/assets/images/img_adv_dwn_btn.png" alt="">
+          <a href="./advertiser.html" class="adv-quote-btn">
+            <!-- <img src="src/assets/images/img_adv_bnr_v2.png" alt=""> -->
+            <div class="text-box">
+              <p>비용은 줄이고 효과는 극대화!</p>
+              <strong>지금 바로 <br/>입점문의 견적 받기</strong>
+            </div>
+            <img src="src/assets/images/ico_bnr_adv_140x140.png" alt="">
+          </a>
+          <a href="" class="adv-dwn-btn">
+            <!-- <img src="src/assets/images/img_adv_dwn_btn.png" alt=""> -->
+            <div class="text-box">
+              <p>야 너도 유튜브 광고 대박날 수 있어!</p>
+              <strong>꿀튜브 소개서<br/>다운받기</strong>
+            </div>
+            <img src="src/assets/images/ico_adv_dwn_140x140.png" alt="">
           </a>
         </div>
       </section>
@@ -565,6 +575,10 @@
           nextEl: '.swiper-button-next',
           prevEl: '.swiper-button-prev',
         },
+        loop : true,
+        autoplay : true,
+        delay : 3000,
+        speed : 1500,
       });
 
       const advertiseSlide = new Swiper('.advertise-slide', {
