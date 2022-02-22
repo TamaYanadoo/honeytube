@@ -13,6 +13,18 @@
 
 
   </head>
+  <style>
+    .pop-col{display: none;}
+    .pop-col .inner-col{padding-top: 6.8rem;}
+    .pop-col p{margin-bottom: 6.8rem;font-size: 1.8rem;line-height: 2.4rem;}
+    .end-pop-col a {padding:1.7rem;}
+    .end-pop-col .inner-col{padding-top: 3.5rem;}
+    .end-pop-col img{max-width: 100%;}
+    .end-pop-col strong{display: block;margin-top: 1.6rem; margin-bottom: 1rem;font-size: 1.8rem;font-weight: 700;color: #000;}
+    .end-pop-col span{display: block;margin-bottom: 5rem; font-size: 1.4rem;color: #a0a0b6;}
+    .on{display: block;}
+
+  </style>
   <body>
     <main>
       <section class="title-col">
@@ -25,11 +37,11 @@
       </section>
       <section class="my-revenue-col">
         <div class="inner-col">
-          <p class="odometer-motion-box">
+          <p>
             나의 누적 수익금
-            <strong class="odometer">0</strong>
+            <strong >479,000</strong>
           </p>
-          <a href="">광고비 받기</a>
+          <a href="monthly_detail.html">광고비 받기</a>
         </div>
       </section>
       <!-- class = 'empty' 추가시 공란  -->
@@ -37,10 +49,10 @@
         <div class="inner-col">
           <ul class="filter">
             <!-- class="active" 배경컬러변경 -->
-            <li><button>제출대기중</button></li>
-            <li><button>검수중</button></li>
-            <li class="active"><button>광고중</button></li>
-            <li><button>찜한 목록</button></li>
+            <li><button onclick="location.href='./tab_my_list.html'">제출대기중</button></li>
+            <li><button onclick="location.href='./tab_my_inspect.html'">검수중</button></li>
+            <li class="active"><button onclick="location.href='./tab_my_onair.html'">광고중</button></li>
+            <li><button onclick="location.href='./tab_my_like.html'">찜한 목록</button></li>
           </ul>
         </div>
       </section>
@@ -49,12 +61,16 @@
         <div class="inner-col">
           <div class="advertise-box">
             <!-- 광고중 목록 : .my-onair (코멘트 숨김처리) -->
+            <div class="notice-word">
+              <p>
+                <span>심사 완료!</span> 모든 광고를 전체공개로 전환해주세요</p>
+            </div>
             <strong>
               광고중
             </strong>
             <ul class="my-onair">
               <li>
-                <a href="./advertise_detail.html">
+                <a href="./advertise_detail_add.html">
                   <div class="advertise-thumb" style="background-image:url(./src/assets/images/img_advertise_slide_01.png);"ng)"></div>
                   <div class="advertise-desc-box">
                     <p class="advertise-title">
@@ -64,13 +80,9 @@
                     </p>
                   </div>
                 </a>
-                <div class="guide-word">
-                  <p>
-                    심사 완료! 전체공개로 전환해주세요</p>
-                </div>
               </li>
               <li>
-                <a href="./advertise_detail.html">
+                <a href="./advertise_detail_add.html">
                   <div class="advertise-thumb" style="background-image:url(./src/assets/images/img_advertise_slide_01.png);"ng)"></div>
                   <div class="advertise-desc-box">
                     <p class="advertise-title">
@@ -80,10 +92,10 @@
                     </p>
                   </div>
                 </a>
-                <div class="guide-word">
+                <button type="button" class="guide-word">
                   <p>
-                    심사 완료! 전체공개로 전환해주세요</p>
-                </div>
+                    홍보 링크 생성 하기</p>
+                </button>
               </li>
             </ul>
           </div>
@@ -94,6 +106,14 @@
           </div>
         </div>
       </section>
+      <section class="end-pop-col pop-col">
+        <div class="inner-col">
+          <img src="src/assets/images/ico_withdraw_end_56x56.png" alt="">
+            <strong>홍보 링크가 복사되었습니다.</strong>
+            <span>링크를 마음껏 노출하여 <br/> 수익을 얻으세요!</span>
+            <a href="" class="close_btn">확인</a>
+        </div>
+    </section>
     </main>
     <footer class="footer-col">
       <div class="inner-col">
@@ -105,28 +125,23 @@
         </ul>
       </div>
     </footer>
-    
-    <script src="./src/assets/dist/scripts/jquery-3.6.0.min.js"></script>
-    <script src="./src/assets/scripts/common.js"></script>
-    <script src="./src/assets/dist/odometer/odometer.js"></script>
+
     <script>
-      window.addEventListener('load', function(event){
-        let motionBox = document.querySelector('.odometer');
-        let activeBox = document.querySelector('.odometer-motion-box');
+      function popUp() {
+          const toastImg = document.querySelector('.end-pop-col');
+          const element = document.querySelector('.guide-word')
 
-        let lineMotion = setInterval(function(){
-          if(motionBox.classList.contains('odometer-animating')){
-          }else{
-            clearInterval(lineMotion);
-            activeBox.classList.add('active');
-          }
-        }, 0)
-      });
+              element.addEventListener('click', function() {
+              toastImg.classList.add('on');
+          })
+              document.querySelector('.close_btn').addEventListener('click', function(){
+              toastImg.classList.remove('on');
+          })
+      };
 
-      $(document).ready(function(){
-        $('.odometer').html(479000);
-      });
+      popUp();
+  </script>
+    
 
-    </script>
   </body>
 </html>

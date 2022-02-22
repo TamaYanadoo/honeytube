@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>구매 상담 신청</title>
+    <link rel="stylesheet" href="./src/assets/dist/styles/normalize.css" />
+    <link rel="stylesheet" href="./src/assets/dist/styles/reset.css" />
+    <link rel="stylesheet" href="./src/assets/styles/common.css" />
+    <link rel="stylesheet" href="./src/assets/styles/sub.css" />
+    <link rel="stylesheet" href="./src/assets/dist/odometer/odometer-theme-default.css" />
+  </head>
+  <style>
+    .registration-col .agree-box {position:relative;}
+    .registration-col label + button {position:absolute; top:.5rem; right:0; font-size:1.2rem; color:#b7b7c8; border-bottom:1px solid #e7e7f0}
+    .pop-col {display:none;}
+    .pop-col.on {display:block;}
+    .myinfo-pop-col .inner-col {padding: 3rem;}
+    .myinfo-pop-col pre {position:relative; margin-bottom:2rem; font-size:1.2rem; height:27rem; text-align:left; white-space: pre-wrap; overflow-y: auto;}
+    .myinfo-pop-col pre::after {content:""; position:fixed; left:0; bottom:11rem; width:90%; height:6rem; background:linear-gradient(rgba(255,255,255,0), rgba(255,255,255,255))}
+    .myinfo-pop-col pre strong{font-weight:700; font-size:1.4rem;}
+    .myinfo-pop-col pre span{font-weight:700;}
+    .pop-col a {padding:1.7rem 10rem; font-weight:700;}
+  </style>
+<body>
+    <main>
+        <section class="title-col">
+            <div class="inner-col">
+              <button type="button" class="ico-btn ico-btn-back" onclick="historyBack();">
+                <span class="blind">뒤로가기</span>
+              </button>
+              <p class="ellipsis">구매 상담 신청</p>
+            </div>
+        </section>
+        <section class="account-box-col">
+            <div class="inner-col">
+                <div class="text-box">
+                    <strong>구매 상담을 위해<br/>고객님의 정보를 입력해주세요.</strong>
+                    <p>상담 후 구매시, 10만원 할인이 즉시 적용됩니다.</p>
+                </div>
+                <ul class="account-box">
+                    <li>
+                        <label for="">성명</label>
+                        <input type="text" placeholder="성함을 입력해주세요."> 
+                    </li>
+                    <li>
+                        <label for="">전화번호</label>
+                        <input type="tel" placeholder="상담 가능한 전화번호를 입력해주세요."> 
+                    </li>
+                    <li>
+                        <p class="tit">상담 가능 시간</p>
+                        <select>
+                            <optgroup label="선택해주세요">
+                              <option value="">10:00 ~ 10:30</option>
+                              <option value="">10:30 ~ 11:00</option>
+                              <option value="">11:00 ~ 11:30</option>
+                              <option value="">11:30 ~ 12:00</option>
+                              <option value="">12:00 ~ 12:30</option>
+                              <option value="">13:30 ~ 14:00</option>
+                              <option value="">14:00 ~ 14:30</option>
+                              <option value="">14:30 ~ 15:00</option>
+                              <option value="">15:00 ~ 15:30</option>
+                              <option value="">15:30 ~ 16:00</option>
+                              <option value="">16:00 ~ 16:30</option>
+                              <option value="">16:30 ~ 17:00</option>
+                              <option value="">17:00 ~ 17:30</option>
+                              <option value="">17:30 ~ 18:00</option>
+                            </optgroup>
+                        </select>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section class="registration-col">
+          <div class="inner-col">
+              <div class="agree-box regi-agree">
+                  <label for="regisAgree">
+                      <input type="checkbox" id="regisAgree">
+                      <em></em>
+                      <span>(필수)개인정보 수집 및 마케팅 활용 동의</span>
+                  </label>
+                  <button class="pop_btn">보기</butt>
+              </div>
+          </div>
+        </section>
+        <section class="signup-btn-col">
+            <div class="inner-col">
+                <button type="button" class="btn active" onclick="location.href='./account_add_one.html'">
+                <span>내 계좌로 1원 보내기</span>
+                </button>
+            </div>
+        </section>
+        <!-- class = "on" 추가시 노출 -->
+        <section class="pop-col myinfo-pop-col">
+            <div class="inner-col">
+                <pre>
+<strong>개인정보 수집 및 마케팅 활용 약관</strong> 
+
+야나두는 귀하의 이벤트 및 문의에 대한 처리 및 회신을 위하여 귀하의 개인정보를 수집 및 처리하고자 합니다. 내용을 자세히 읽으신 후 동의여부를 결정하여 주시기 바랍니다.
+
+<span>1. 개인정보 수집 이용목적</span>
+상품 안내, 이벤트 안내,
+고객문의(상담신청) 처리 및 회신
+
+<span>2. 개인정보 수집 항목</span>
+이름, 휴대전화번호
+
+<span>3. 개인정보 이용기간 및 보유기간</span>
+1년 보관 후 파기
+
+<span>4. 개인정보 취급위탁에 대한 고지</span>
+수탁자 : (주)한국고용정보
+취급위탁 업무 : 상품안내 및 마케팅 활동
+
+<span>5. 동의를 거부할 권리 및 동의 거부에 따른 불이익</span>
+귀하는 개인정보 수집 및 마케팅 활용에 대한 동의를
+거부할 권리가 있으며, 동의를 거부하는 경우
+상담신청이 불가능합니다.
+                </pre>
+                <a href="" class="close_btn">확인</a>
+            </div>
+        </section>
+        <!-- class = "on" 추가시 노출 -->
+        <section class="pop-col on">
+            <div class="inner-col">
+                <p>상담이 예약되었습니다.<br/>담당자 확인 후, 연락드리겠습니다.</p>
+                <a href="">확인</a>
+                <!-- <button type="button">확인</button> -->
+            </div>
+        </section>
+    </main>
+
+    <script>
+        function popUp() {
+            const toastImg = document.querySelector('.myinfo-pop-col');
+            const element = document.querySelector('.pop_btn')
+
+                element.addEventListener('click', function() {
+                toastImg.classList.add('on');
+            })
+                document.querySelector('.close_btn').addEventListener('click', function(){
+                toastImg.classList.remove('on');
+            })
+        };
+
+        popUp();
+    </script>
+
+</body>
+</html>

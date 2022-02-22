@@ -9,14 +9,12 @@
     <link rel="stylesheet" href="./src/assets/dist/styles/reset.css" />
     <link rel="stylesheet" href="./src/assets/styles/common.css" />
     <link rel="stylesheet" href="./src/assets/styles/sub.css" />
-    <link rel="stylesheet" href="./src/assets/dist/odometer/odometer-theme-default.css" />
-
 
   </head>
   <style>
     .my-revenue-col strong{display: block;}
     .notice-word{display: inline-block; position: relative; padding-left: 1.8em;margin-top: 0.6em; font-size: 1.2em;font-weight: 300;color: #717188;}
-    .notice-word::after{ content: ""; position: absolute; top: 0; left: .5em; width: 1rem; height: 1rem; background: url(/src/assets/images/ico_info_30x30.png) no-repeat center center/cover; }
+    .notice-word::after{ content: ""; position: absolute; top: 0; left: .5em; width: 1rem; height: 1rem; background: url(src/assets/images/ico_info_30x30.png) no-repeat center center/cover; }
   </style>
 <body>
     <main>
@@ -30,9 +28,9 @@
           </section>
           <section class="withdraw-end-col">
             <div class="inner-col">
-                <img src="/src/assets/images/ico_withdraw_end_56x56.png" alt="">
-                <strong>신청완료</strong>
-                <p>매월 15일 입금 예정입니다.</p>
+                <span class="motion-check"></span>  
+                <strong>신청 완료</strong>
+                <p>입력하신 아래의 계좌로 매월 15일 입금 예정입니다.</p>
                 <div class="withdraw-end">
                     <ul class="my-info">
                         <li class="cb">
@@ -55,7 +53,7 @@
                 </div>
                 <span>
                   예금주와 계좌번호가 일치하지 않으면<br /> 출금이 진행되지 않습니다.
-              </span>
+                </span>
             </div>
           </section>
           
@@ -72,26 +70,7 @@
 
     <script src="./src/assets/dist/scripts/jquery-3.6.0.min.js"></script>
     <script src="./src/assets/scripts/common.js"></script>
-    <script src="./src/assets/dist/odometer/odometer.js"></script>
-    <script>
-      window.addEventListener('load', function(event){
-        let motionBox = document.querySelector('.odometer');
-        let activeBox = document.querySelector('.odometer-motion-box');
-
-        let lineMotion = setInterval(function(){
-          if(motionBox.classList.contains('odometer-animating')){
-          }else{
-            clearInterval(lineMotion);
-            activeBox.classList.add('active');
-          }
-        }, 0)
-      });
-
-      $(document).ready(function(){
-        $('.odometer').html(479000);
-      });
-
-    </script>
+    
 
 </body>
 </html>

@@ -14,9 +14,24 @@
 
   </head>
   <style>
+    .my-revenue-col .inner-col{padding: 0 2.5rem;}
     .my-revenue-col strong{display: block;}
     .notice-word{display: inline-block; position: relative; padding-left: 1.8em;margin-top: 0.6em; font-size: 1.2em;font-weight: 300;color: #717188;}
-    .notice-word::after{ content: ""; position: absolute; top: 0; left: .5em; width: 1rem; height: 1rem; background: url(/src/assets/images/ico_info_30x30.png) no-repeat center center/cover; }
+    .notice-word::after{ content: ""; position: absolute; top: 0; left: .5em; width: 1rem; height: 1rem; background: url(src/assets/images/ico_info_30x30.png) no-repeat center center/cover; }
+
+    .my-revenue-col .esti_withdraw{margin-top: 2.5rem;padding: 1.3rem; background: #f7f7fc; text-align: center;border-radius: .7rem;cursor: pointer;}
+    .my-revenue-col .esti_withdraw p{display: inline-block;color: #FF5647;}
+    .my-revenue-col .esti_withdraw p::after{content: "";position: absolute;left: -1.5rem;top: .15rem; width: 1.4rem;height: 1.4rem;background: url(src/assets/images/ico_esti_28x28.png) no-repeat center center/cover;}
+    .my-revenue-col .toast-pop{display: none; position: absolute;z-index: 2;bottom: -12rem; right: 0;width: 100%;padding: 0 2.5rem;}
+    .my-revenue-col .toast-pop::after{content: "";position: absolute;top: -12px;left: 8.5rem; width: 0;height: 0;border-top: 12px solid none;border-bottom: 12px solid #717188;border-right: 12px solid transparent;border-left: 12px solid transparent;}
+    .my-revenue-col .toast-pop.fir::after{left: 12rem;}
+    .my-revenue-col .toast-pop ul{ padding: 2rem 2.7rem;background: #717188; border-radius: .4rem;text-align: left;}
+    .my-revenue-col .toast-pop ul li{position: relative; margin-bottom: .6rem; font-size: 1.2rem;color: #fff;word-break: break-all;}
+    .my-revenue-col .toast-pop ul li::before{content: "";position: absolute;top: 0.4rem;left: -1rem; width: 0.3rem;height: 0.3rem;background: #fff;border-radius: 50%;}
+    .my-revenue-col .toast-pop ul li:last-of-type{margin-bottom: 0;}
+    .my-revenue-col .toast-pop .close_btn{position: absolute;right:3.5rem;top: 1.5rem;width: 1.3rem;height: 1.3rem;cursor: pointer;}
+    .my-revenue-col .toast-pop .close_btn span{display: inline-block;position: absolute;top: 0; right: 0; height: 0.14rem;width: 1.29rem; background: #fff;transform: rotate(45deg);border-radius: 2rem;}
+    .my-revenue-col .toast-pop .close_btn span:last-of-type{ transform: rotate(-45deg);}
   </style>
 <body>
     <main>
@@ -33,7 +48,20 @@
               <p class="odometer-motion-box">
                 <strong class="odometer">0</strong>
               </p>
-              <strong>10월 출금 금액</strong>
+              <strong><span>NN월</span> 예상출금 금액</strong>
+              <div class="esti_withdraw">
+                <p>예상 출금 금액과 입금 금액은 상이할 수 있습니다.</p>
+              </div>
+              <div class="toast-pop">
+                <ul>
+                  <li>매월 1일부터 말일까지 광고중인 콘텐츠의 금액<br/>이 익월 15일에 입금됩니다.</li>
+                  <li>계좌 입력 이후 월 말일까지 추과 광고 활동을 한<br/>다면 최종 입금 받는 금액이 상이할 수 있습니다.</li>
+                </ul>
+                <div class="close_btn">
+                  <span></span>
+                  <span></span>
+                </div>
+              </div>
             </div>
           </section>
           <section class="withdraw-ammount-col">
@@ -56,14 +84,14 @@
                         <strong>11-***-111</strong>
                     </li>
                 </ul>
-                <span>
+                <!-- <span>
                     예금주와 계좌번호가 일치하지 않으면<br /> 출금이 진행되지 않습니다.
-                </span>
+                </span> -->
               </div>
           </section>
-          <section class="btn-col">
+          <section class="btn-col account-btn-col">
             <div class="inner-col">
-              <button type="button" class="btn active">
+              <button type="button" class="btn active" onclick="location.href='./withdraw_amount_end.html'">
                 <span>계좌 입력 완료하기</span>
               </button>
             </div>
@@ -90,8 +118,17 @@
       });
 
       $(document).ready(function(){
-        $('.odometer').html(479000);
+        $('.odometer').html(50000);
       });
+      function toastPop() {
+          $('.my-revenue-col .esti_withdraw').click(function(){
+              $('.toast-pop').show();
+          })
+          $('.close_btn').click(function(){
+              $('.toast-pop').hide();
+          })
+      };
+      toastPop();
 
     </script>
 
