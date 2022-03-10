@@ -532,7 +532,7 @@ _:-ms-fullscreen,:root .step-col::before{margin-top:-1.1rem;}
 
 
 /*월별 상세*/
-.monthly-detail-col{background: #f7f7fc;color: #717188; }
+.monthly-detail-col{color: #717188; }
 .monthly-detail-col .inner-col{}
 .monthly-detail-col .tit-box{ padding: 1.7em 1.3em;;}
 .monthly-detail-col .date-filter{font-size: 0;float: right;margin-right: 1.6rem;}
@@ -569,7 +569,21 @@ _:-ms-fullscreen,:root .step-col::before{margin-top:-1.1rem;}
 .monthly-detail-col .period .btn-box button{display: inline-block; width: calc((100% - 1.2rem)/2);padding: 1.6rem 0;font-weight: 700; font-size: 1.3rem;color: #000; border: 1px solid #cfcfda;border-radius: 10rem;}
 .monthly-detail-col .period .btn-box button.cancel_btn{margin-right: 1.2rem;}
 .monthly-detail-col .period .btn-box button.chk_btn{background: #ffb914; border-color: #FFB914;}
+.monthly-detail-col .tit-box {background:#f7f7fc}
 
+.my-revenue-col.m-detail-col {text-align:center;}
+.my-revenue-col.m-detail-col .pop-btn{position:absolute; right:-1.4rem; bottom:1.2rem; display:inline-block;vertical-align:middle; width:1.4rem; height:1.4rem; background:url(../images/ico_excla_mark_28x28.png) no-repeat center center/contain;}
+.my-revenue-col.m-detail-col .toast-pop{display:none; position:absolute; z-index:2; top:7.2rem; right:0;width:100%; padding:2rem 2.7rem; text-align:left; background:#717188; border-radius:.4rem;}
+.my-revenue-col.m-detail-col .toast-pop::after{content: ""; position: absolute; top:-12px; left:50%;  width:0; height:0; margin-left:7rem; border-top:12px solid none; border-bottom:12px solid #717188; border-right:12px solid transparent; border-left:12px solid transparent;}
+
+.my-revenue-col.m-detail-col .toast-pop ul li{position:relative; margin-bottom:.6rem; font-size:1.2rem;color:#fff;}
+.my-revenue-col.m-detail-col .toast-pop ul li::before{content:""; position:absolute; top:0.4rem;left:-1rem; width:0.3rem; height:0.3rem; background:#fff;border-radius:50%;}
+.my-revenue-col.m-detail-col .toast-pop ul li:last-of-type{margin-bottom:0;}
+.my-revenue-col.m-detail-col .toast-pop .close_btn{position:absolute; right:1rem; top:1.5rem; width:1.3rem; height:1.3rem; text-indent:-9999px; cursor:pointer;}
+.my-revenue-col.m-detail-col .toast-pop .close_btn::after{content:""; display:inline-block; position:absolute; top:0.6rem; right:0; height:0.14rem; width:1.29rem; background:#fff; transform:rotate(45deg); border-radius:2rem; -webkit-transform:rotate(45deg); -moz-transform:rotate(45deg); -ms-transform:rotate(45deg); -o-transform:rotate(45deg);}
+.my-revenue-col.m-detail-col .toast-pop .close_btn::before{content:""; display:inline-block; position:absolute; top:0.6rem; right:0; height:0.14rem; width:1.29rem; background:#fff; transform:rotate(45deg); border-radius:2rem; transform:rotate(-45deg); -webkit-transform:rotate(-45deg); -moz-transform:rotate(-45deg); -ms-transform:rotate(-45deg); -o-transform:rotate(-45deg);}
+.my-revenue-col.m-detail-col .guide {margin-top:2rem; padding:1.4rem 0; font-weight:700; font-size:1.2rem; text-align:center; background:#f7f7fc; border-radius:7px;}
+.my-revenue-col.m-detail-col .guide span {color:#ff5647;}
 
 
 /*계좌 인증하기*/

@@ -10,8 +10,6 @@
     <link rel="stylesheet" href="./src/assets/styles/common.css" />
     <link rel="stylesheet" href="./src/assets/styles/sub.css" />
     <link rel="stylesheet" href="./src/assets/dist/odometer/odometer-theme-default.css" />
-
-
   </head>
 <body>
     <main>
@@ -23,12 +21,23 @@
               <p class="ellipsis">내 광고</p>
             </div>
           </section>
-          <section class="my-revenue-col monthly-col">
+          <section class="my-revenue-col m-detail-col">
             <div class="inner-col">
               <p class="odometer-motion-box">
                 나의 누적 수익금
                 <strong class="odometer">0</strong>
+                <button class="pop-btn"></button>
               </p>
+              <div class="guide">
+                광고비 출금은 <span>40,000</span>원 부터 가능합니다.
+              </div>
+              <div class="toast-pop fir">
+                <ul>
+                  <li>계좌 정보 설정 시 매월 1일부터 말일까지 광고중인<br>콘텐츠의 금액이 익월 15일에 입금됩니다.</li>
+                  <li>예상 출금 금액과 입금 금액은 상이할 수 있습니다.</li>
+                </ul>
+                <button class="close_btn" onclick="toastPop();">닫기</button>
+              </div>
             </div>
           </section>
           <section class="monthly-detail-col">
@@ -153,17 +162,6 @@
               </button>
             </div>
           </section>
-
-          <!-- 작업한부분 -->
-          <div class="modal">
-            <div class="modal-content">
-                <p>영상을 자랑하고 조회수 추가 보상을 받으시겠습니까?</p>
-                <div class="btn-group">
-                    <button type="button" onclick="modalClose();"><span>확인</span></button>
-                </div>
-            </div>
-          </div>
-          <!-- //작업한부분 -->
     </main>
 
 
@@ -185,8 +183,18 @@
         }, 0)
       });
 
+      function toastPop() {
+        $('.pop-btn').click(function(){
+            $(this).parent().siblings('.toast-pop').show();
+        })
+        $('.close_btn').click(function(){
+            $('.toast-pop').hide();
+        })
+      };
+      
       $(document).ready(function(){
         $('.odometer').html(479000);
+        toastPop();
       });
 
       function date(){
@@ -198,8 +206,6 @@
         })
       }
       date();
-
-      
 
     </script>
 
