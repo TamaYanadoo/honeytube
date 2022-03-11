@@ -61,8 +61,8 @@
 .ranking-slide dl dd{margin-top:1.9rem; font-size:1.2rem; text-align:center;}
 
 .youtuber-col{padding:6.4rem 0 5rem;}
-/* .youtuber-col .slide-box{padding:0;} */
-/* .youtuber-col .swiper-slide{width:87%;} */
+.youtuber-col .slide-box{padding:0;}
+.youtuber-col .swiper-slide{width:85%;}
 .youtuber-col .youtube-thumb{position:relative; width:100%; max-width:620px; padding-bottom:55.25%;}
 .youtuber-col .youtube-thumb img{position:absolute; width:100%; height:100%; border-radius:.7rem; object-fit: cover;}
 .youtuber-col .thumb-flex-form{display:-webkit-box; display:-ms-flexbox; display:flex; -webkit-box-align:center; align-items:center; padding:1.7rem 1rem 2.4rem 0;}
