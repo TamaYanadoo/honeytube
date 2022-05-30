@@ -41,8 +41,6 @@
 
     .cb,.cb::after,.cb::before{ clear: both; display: block; content:""; }
     
-
-
     .member-col ul li{padding: 0 2.2rem;margin-bottom: 2.5rem;font-size: 0;}
     .member-col dl.wd50{display: inline-block;padding: 0; width:calc((100% - 1rem)/2);margin-bottom: 0;}
     .member-col dl.wd50:nth-of-type(1){margin-right: 1rem;}
@@ -52,7 +50,10 @@
     .member-col dl.add_btn button{position: relative;padding: 1.2rem 0; width: 100%;padding-right: 2em;color: #269CFF;font-weight: 700;font-size: 1.3rem;}
     .member-col ul li button.cancel-btn{float: right;margin-top: 1.5rem; padding: 0.6rem 2rem;font-size: 1.3rem;border: 1px solid #E7E7F0;border-radius: .4em;}
     
-
+    .member-col .agree-list input{padding:0;}
+    .member-col .agree-list label{display:inline-block; vertical-align:top;}
+    .member-col .agree-list li span{display:inline-block; margin-left:.8rem; vertical-align:middle; font-weight:400; font-size:1.4rem; color:#000;}
+    .member-col .agree-list li a{top:50%; right:2.5rem; font-size:1.4rem; transform:translateY(-50%);}
    </style>
 <body>
     <main>
@@ -142,7 +143,18 @@
                       <input type="text" id="brandEmail" placeholder="유튜브 광고 거품을 뺀 최저의 견적서가 전달됩니다" />
                     </dd>
                   </dl>
+                  <ul class="agree-list">
+                    <li>
+                      <label for="agreePrivacy">
+                        <input type="checkbox" id="agreePrivacy" />
+                        <em></em>
+                        <span>[필수] 개인정보처리방침 동의</span>
+                      </label>
+                      <a href="#">보기</a>
+                    </li>
+                  </ul>
                 </div>
+                
               </form>
             </div>
           </section>
@@ -176,7 +188,11 @@
                 return false;
             }
 
-        
+            if(!agreeAll.value.checked || (agreeTerms.value.checked && agreeTerms.value.checked)) {
+              alert('약관을 확인해 주세요.');
+              agreeAll.focus();
+              return false;
+            }
 
             // document.signupFrm.submit();
             }
