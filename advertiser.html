@@ -25,6 +25,7 @@
     .member-col dd > button{position:absolute; top:0; right:0; bottom:0; width:5rem; margin:auto 0; font-size:1rem;}
     .member-col dd > button + button{right:5rem;}
     .member-col dd select{width:100%; margin-top:.5rem;padding: 1rem; background:url(./src/assets/images/ico_arrow_botton_28x16.png) no-repeat 95% 50% / 1rem; border:1px solid #E7E7F0;border-radius: .4em; box-sizing:border-box; -webkit-appearance:none; appearance:none;}
+    .member-col .guide-txt{margin-top:1rem; font-size:1.1rem; line-height:1.6; color:#717188;}
     .member-col li{position:relative;}
     .member-col label{display:block; color:#717188;font-weight: 300;}
     .member-col label input{display:inline-block; width:0; height:0; border:0; appearance:none;}
@@ -141,6 +142,14 @@
                     <dt class="mark">브랜드 이메일</dt>
                     <dd>
                       <input type="text" id="brandEmail" placeholder="유튜브 광고 거품을 뺀 최저의 견적서가 전달됩니다" />
+                      <p class="guide-txt">* 평일 오전 10시, 오후 5시 순차적으로 발송 (공휴일 제외)</p>
+                    </dd>
+                  </dl>
+                  <dl>
+                    <dt>연락처</dt>
+                    <dd>
+                      <input type="text" id="brandEmail" placeholder="연락 가능한 전화번호를 입력해주세요." />
+                      <p class="guide-txt">* 빠른상담을 원하시면 연락처를 남겨주세요.</p>
                     </dd>
                   </dl>
                   <ul class="agree-list">
@@ -148,7 +157,7 @@
                       <label for="agreePrivacy">
                         <input type="checkbox" id="agreePrivacy" />
                         <em></em>
-                        <span>[필수] 개인정보처리방침 동의</span>
+                        <span>(필수) 개인정보 수집 및 마케팅 활용 동의</span>
                       </label>
                       <a href="#">보기</a>
                     </li>
