@@ -1,0 +1,519 @@
+spa<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>이벤트 상세</title>
+    <link rel="stylesheet" href="./src/assets/dist/styles/normalize.css" />
+    <link rel="stylesheet" href="./src/assets/dist/styles/reset.css" />
+    <link rel="stylesheet" href="./src/assets/styles/common.css" />
+    <link rel="stylesheet" href="./src/assets/styles/sub.css" />
+  </head>
+  <style>
+    @media (min-width: 750px){
+        .landing > section, .landing > div{font-size:21px;}
+    }
+    .txt-hidden{position:absolute; width:1px; height:1px; margin:-1px; text-indent:-9999px;}
+    .olympic-banner-col {background-color:#00A2E6;}
+    .olympic-banner-col img{width:100%; padding-bottom:2.3em;}
+    .olympic-banner-col .march-txt {position:absolute; bottom:4.6em; width:100%; text-align:center;}
+    .olympic-banner-col .march-txt:after {content:""; display:inline-block; width:0.5714em; height:0.5714em; margin-top:1.8em; border:solid #fff; border-width:0 0.2em 0.2em 0; transform:rotate(45deg);}
+    .olympic-banner-col .march-txt strong {font-weight:800; font-size:1.57em; color:#fff;}
+    .olympic-banner-col .march-txt strong span {color:#fffc00;}
+    .olympic-banner-col .march-txt p {margin-top:0.6em; font-weight:100; font-size:1em; color:#fff;}
+
+    .tab-btn-col {position:sticky; top:80px; z-index: 3;}
+    .tab-btn-col .tab_btn{display:flex; padding:1.42em 0; background-color:#0E6DC6; justify-content:space-around;}
+    .tab-btn-col .tab_btn { font-size:1.42em; line-height:1; text-align: center;}
+    .tab-btn-col .tab_btn a {position:relative; color:#4AA4F8; font-weight:700;}
+    .tab-btn-col .tab_btn a::after{content:""; position:absolute; top:50%; left:50%; width:5em; height:3em; background: url(src/assets/images/ico_tab_sky_141x39.png) no-repeat 50%/100%; transform: translate(-50%,-50%);}
+    .tab-btn-col .tab_btn a.on {color:#fff;}
+    .tab-btn-col .tab_btn a.on::after {background: url(https://kkultube.yanadoocdn.com/notice/2022/02/18/ico_tab_white_141x39.png) no-repeat 50%/100%;}
+
+    .awards-col .inner-col {border-bottom:2px solid #d5d8da;}
+    .awards-col:last-of-type .inner-col {border-bottom:0;}
+    .awards-col .awards {padding-bottom:5em}
+    .awards-col .awards .medal {margin-top:4em;}
+    .awards-col .awards .medal .tit{text-align:center;}
+    .awards-col .awards .medal .tit span{display:block; font-weight:600; font-size:1.2em; color:#009CDD;}
+    .awards-col .awards .medal .three-people {margin-top:1.5em; justify-content:space-around; text-align:center;}
+    .awards-col .awards .medal .three-people li {display:inline-block; width: 30%; position:relative; vertical-align:top;}
+    .awards-col .awards .medal .three-people li a::before {content:""; position:absolute; top:7.5em; left:.8rem; width:2.6em; height:3em; z-index:2;}
+    .awards-col .awards .medal .three-people li:first-of-type a::before {background: url(https://kkultube.yanadoocdn.com/notice/2022/02/18/ico_goldmedal_57x64.png) no-repeat 50%/100%;}
+    .awards-col .awards .medal .three-people li:nth-of-type(2) a::before {background: url(https://kkultube.yanadoocdn.com/notice/2022/02/18/ico_silvermedal_57x64.png) no-repeat 50%/100%;}
+    .awards-col .awards .medal .three-people li:last-of-type a::before {background: url(https://kkultube.yanadoocdn.com/notice/2022/02/18/ico_bronzemedal_57x64.png) no-repeat 50%/100%;}
+    .awards-col .awards .medal .three-people li a {display:block;}
+    .awards-col .awards .medal .three-people li span{display:inline-block; position: relative; left:-0.1em; width:10em; height:10em; overflow: hidden; background-repeat:no-repeat; background-size:100% auto; clip-path:polygon(40% 7.67949%, 43.1596% 6.20615%, 46.52704% 5.30384%, 50% 5%, 53.47296% 5.30384%, 56.8404% 6.20615%, 60% 7.67949%, 81.65064% 20.17949%, 84.50639% 22.17911%, 86.97152% 24.64425%, 88.97114% 27.5%, 90.44449% 30.6596%, 91.34679% 34.02704%, 91.65064% 37.5%, 91.65064% 62.5%, 91.34679% 65.97296%, 90.44449% 69.3404%, 88.97114% 72.5%, 86.97152% 75.35575%, 84.50639% 77.82089%, 81.65064% 79.82051%, 60% 92.32051%, 56.8404% 93.79385%, 53.47296% 94.69616%, 50% 95%, 46.52704% 94.69616%, 43.1596% 93.79385%, 40% 92.32051%, 18.34936% 79.82051%, 15.49361% 77.82089%, 13.02848% 75.35575%, 11.02886% 72.5%, 9.55551% 69.3404%, 8.65321% 65.97296%, 8.34936% 62.5%, 8.34936% 37.5%, 8.65321% 34.02704%, 9.55551% 30.6596%, 11.02886% 27.5%, 13.02848% 24.64425%, 15.49361% 22.17911%, 18.34936% 20.17949%);}
+
+    .awards-col .awards .medal .three-people li span img {display:block; width:100%; height: 100%;}
+    .awards-col .awards .medal .three-people li strong{display:block; margin-top:.8em; font-size:1.2em; font-weight:600;}
+
+    .gift-col {padding-top:3em; text-align:center; overflow:hidden;}
+    .gift-col .inner-col {padding:0 1.5em; background-color:#ECEFF3;}
+    .gift-col .gift_motion span{display:block; position:absolute;}
+    .gift-col .gift_motion .gift_1{left:-.5em; top: 12em; width: 5em; height: 5em; background: url(src/assets/images/img_gift_may_1.png) no-repeat center/100%; animation:giftT 2s infinite alternate linear;}
+    .gift-col .gift_motion .gift_2{left:2.5em; bottom:10em; width:3em; height: 4em; background: url(src/assets/images/img_gift_may_4.png) no-repeat center/100%;  animation:giftB 1s infinite alternate linear;}
+    .gift-col .gift_motion .gift_3{top:-3em; right:3em; width:3em; height:4em; background: url(src/assets/images/img_gift_may_3.png) no-repeat center/100%; animation:giftT 1s infinite alternate linear;}
+    .gift-col .gift_motion .gift_4{top: 50%; right:-1em; width:5em; height: 5em; background: url(src/assets/images/img_gift_may_2.png) no-repeat center/100%; animation:giftB 1.5s infinite alternate linear;}
+    .gift-col .gift_motion .gift_5{bottom:-.2em; right:1.5em; width:3em; height:4em; background: url(src/assets/images/img_gift_may_5.png) no-repeat center/100%; animation:giftT 1.5s infinite alternate linear;}
+
+    @keyframes giftT {
+        from{transform:translateY(2rem);}
+        to{transform:translateY(0)}
+    }
+    @keyframes giftB {
+        from{transform:translateY(-2rem);}
+        to{transform:translateY(0)}
+    }
+
+    .medal-col {position:relative; text-align: center; overflow: hidden;}
+    .medal-col .inner-col {padding:5.5em 0 2em 0; background-color:#1C2231;}
+    .medal-col .medal_motion {position:absolute; left:50%; top:0; width:10em; height:6em; transform:translateX(-50%)}
+    .medal-col .medal_motion span{position:absolute; top:-100%; width:3em; height:5em;}
+    .medal-col .medal_motion .gold{left:50%; height:100%; background:url(src/assets/images/img_gold_medal.png) no-repeat 50%/100%; transform:translateX(-50%);}
+    .medal-col .medal_motion .silver{left:0; background:url(src/assets/images/img_silver_medal.png) no-repeat 50%/100%;}
+    .medal-col .medal_motion .bronze{right:0; background:url(src/assets/images/img_bronze_medal.png) no-repeat 50%/100%;}
+
+    .medal-col.on .medal_motion .gold{animation: medal .2s linear forwards;}
+    .medal-col.on .medal_motion .silver{animation: medal .2s linear forwards; animation-delay:.2s;}
+    .medal-col.on .medal_motion .bronze{animation: medal .2s linear forwards; animation-delay:.4s;}
+    @keyframes medal {
+        from {top:-100%;}
+        to {top:0;}
+    }
+
+    .medal-list-col {text-align:center;}
+    .medal-list-col .inner-col {background-color:#009CDD;}
+    .medal-list-col a{display:inline-block; width:100%; padding:1.2em 0; font-weight:800; font-size:1.4em; color:#fff;}
+    .medal-list-col a::after{content:""; position:absolute; right:1.4em; top:50%; width: .5em; height:1em; background:url(https://www.kkultube.co.kr/images/ico_arrow_15x24.png) no-repeat 50%/100%; transform:translateY(-50%);}
+
+    .notice-col .inner-col {padding:6em 0; background-color:#F3F4F4;}
+    .notice-col .inner-col h3 {margin-bottom:2rem; font-weight:800; font-size:1.4em; text-align:center;}
+    .notice-col .inner-col ul {padding: 0 1.5em;}
+    .notice-col .inner-col ul li {padding-left:0.7em; margin-bottom:.6em; text-indent:-0.7em; font-weight:600; font-size:.9em; line-height:1.3em; color:#565656;}
+
+    canvas{position:absolute; top:-5rem; left:0; width:100%; height:84rem; z-index: 1;}
+
+    @media screen and (max-width : 750px) {
+        .landing > section, .landing > div{font-size:2.8vw;}
+        .tab-btn-col {top:54px;}
+        .awards-col .awards .medal .three-people li {text-align:center;}
+        .awards-col .awards .medal .three-people li figure {display:inline-block; width:90%;}
+        .awards-col .awards .medal .three-people li::before {left:1em;}
+    }
+    </style>
+  <body>
+    <main>
+      <section class="title-col">
+        <div class="inner-col">
+          <button type="button" class="ico-btn ico-btn-back" onclick="historyBack();">
+            <span class="blind">뒤로가기</span>
+          </button>
+          <p class="ellipsis">이벤트</p>
+        </div>
+      </section>
+      <section class="list-detail-col">
+        <div class="inner-col">
+          <dl>
+            <dt>
+              <p>
+                <span>2022-02-18</span>
+                <strong class="ellipsis">꿀튜브 미니 올림픽</strong>
+              </p>
+            </dt>
+            <dd id="event-content">
+                <!-- 여기부터 컨텐츠 영역입니다. -->
+                <div class="landing">
+                    <section class="olympic-banner-col">
+                        <div class="inner-col">
+                            <img src="src/assets/images/img_olympic_may_banner.png" alt="">
+                            <div class="march-txt">
+                                <strong><span>5월의 금메달 주인공</span>은 누구일까요?</strong>
+                                <p>(선정 기준 : 콘텐츠 기획력)</p>
+                            </div>
+
+                        </div>
+                    </section>
+                    <section class="tab-btn-col">
+                        <div class="inner-col">
+                            <div class="tab_btn fix">
+                                <a href="#review" class="on">리뷰형</a>
+                                <a href="#banner">배너형</a>
+                            </div>
+                        </div>
+                    </section>
+                    <div class="tab-cont-col">
+                        <section class="awards-col tab1" id="review">
+                            <div class="inner-col">
+                                <div class="review awards">
+                                    <div class="medal" id="review01">
+                                        <div class="tit"></div>
+                                        <ul class="three-people"></ul>
+                                    </div>
+                                    <div class="medal" id="review02">
+                                        <div class="tit"></div>
+                                        <ul class="three-people"></ul>
+                                    </div>
+                                    <div class="medal" id="review03">
+                                        <div class="tit"></div>
+                                        <ul class="three-people"></ul>
+                                    </div>
+                                    <div class="medal" id="review04">
+                                        <div class="tit"></div>
+                                        <ul class="three-people"></ul>
+                                    </div>
+                                    <div class="medal" id="review05">
+                                        <div class="tit"></div>
+                                        <ul class="three-people"></ul>
+                                    </div>
+                                    <div class="medal" id="review06">
+                                        <div class="tit"></div>
+                                        <ul class="three-people"></ul>
+                                    </div>
+                                    <div class="medal" id="review07">
+                                        <div class="tit"></div>
+                                        <ul class="three-people"></ul>
+                                    </div>
+                                    <div class="medal" id="review08">
+                                        <div class="tit"></div>
+                                        <ul class="three-people"></ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <section class="awards-col tab2" id="banner">
+                            <div class="inner-col">
+                                <div class="shots awards">
+                                    <div class="medal" id="banner01">
+                                        <div class="tit"></div>
+                                        <ul class="three-people"></ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                    <section class="gift-col">
+                        <div class="inner-col">
+                            <img src="src/assets/images/img_gift_may.png" alt="">
+                            <div class="gift_motion">
+                                <span class="gift_1"></span>
+                                <span class="gift_2"></span>
+                                <span class="gift_3"></span>
+                                <span class="gift_4"></span>
+                                <span class="gift_5"></span>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="medal-col" id="medal">
+                        <div class="inner-col">
+                            <h3 class="txt-hidden">금메달</h3>
+                            <div class="medal_motion">
+                                <span class="silver"></span>
+                                <span class="gold"></span>
+                                <span class="bronze"></span>
+                            </div>
+                            <img src="src/assets/images/img_medal.png" alt="">
+                        </div>
+                    </section>
+                    <section class="medal-list-col">
+                        <div class="inner-col">
+                            <a href="https://www.kkultube.co.kr/product/" target="_blank">6월의 메달 리스트 되러가기</a>
+                        </div>
+                    </section>
+                    <section class="notice-col">
+                        <div class="inner-col">
+                            <h3>유의사항</h3>
+                            <ul>
+                                <li>- 당첨자 발표 후, 부정 참여로 확인되면 당첨이 취소될 수 있습니다.</li>
+                                <li>- 당첨자 선정은 내부 기준에 따라 심사될 예정입니다. 발표 이후 선정 기준에 대한 답변 및 응대는 제공하지 않음을 양해 바랍니다. </li>
+                                <li>- 잘못된 개인정보로 인해 당첨 대상에서 제외되었을 경우, 당사가 책임지지 않습니다. </li>
+                                <li>- 당첨자 발표 후 7일간 연락이 되지 않는 경우, 당첨이 취소됩니다.</li>
+                                <li>- 본 이벤트는 당사 사정에 따라 이벤트 내용 및 경품이 별도의 안내 없이 변경될 수 있습니다. </li>
+                                <li>- 개인 정보 수집 거부 시 당첨이 취소 될 수 있습니다.</li>
+                                <li>- 4만원 이상 광고비의 수취 시 3.3%의 소득세를 제하고 지급되며 증빙을 위한 신분증 제출이 필요합니다. </li>
+                                <li>- 성인 콘텐츠/특정 정치 성향을 옹호하는 콘텐츠/폭력적이거나 사회적 물의를 일으킬 수 있는 콘텐츠에 대하여 승인이 거절될 수 있습니다. </li>
+                                <li>- 영상의 필수 유지기간은 6개월 입니다. 유지 기간내 영상을 비공개 혹은 삭제할 경우 꿀튜브 이용에 제한이 있을 수 있습니다.</li>
+                            </ul>
+                        </div>
+                    </section>
+                </div>
+                <!-- 컨텐츠영역 끝 -->
+            </dd>
+          </dl>
+        </div>
+      </section>
+    </main>
+    <footer class="footer-col">
+      <div class="inner-col">
+        <ul>
+          <li><a href="./login.html">로그인</a></li>
+          <li><a href="#;">1:1 문의</a></li>
+          <li><a href="#;">개인정보처리방침</a></li>
+          <li><a href="#;">이용약관</a></li>
+        </ul>
+      </div>
+    </footer>
+    
+    <script src="./src/assets/scripts/common.js"></script>
+    <script src="./src/assets/dist/scripts/jquery-3.6.0.min.js"></script>
+    <script src="./src/assets/dist/scripts/confetti.browser.min.js"></script>
+
+    <script>
+        let scrollCheck = true;
+        let myCanvas = document.createElement('canvas');
+        document.getElementById('medal').appendChild(myCanvas);
+        
+        let myConfetti = confetti.create(myCanvas, {
+            resize: true,
+            useWorker: true,
+        });
+
+        const listInfo = [
+            {
+                id: "review01", 
+                headTitle : "리뷰형", 
+                headTitleTxt : "아모레퍼시픽 [려 비건 새치 염모] 리뷰형 광고", 
+                headTitleImg : 'src/assets/images/txt_may_tit_1.png', 
+                item: [
+                    {
+                        title:"KIMDALCOM김달콤",
+                        img: "https://kkultube.yanadoocdn.com/notice/2022/02/18/profile/supporters_1.jpg",
+                        url: "https://youtu.be/oXTLPFVNMdo",
+                    },
+                    {
+                        title:"지방새[FATBIRD]",
+                        img: "https://kkultube.yanadoocdn.com/notice/2022/02/18/profile/supporters_2.jpg",
+                        url: "https://youtube.com/watch?v=7rWx1xz5zSg",
+                    },
+                    {
+                        title:"오니오니개오니",
+                        img: "https://kkultube.yanadoocdn.com/notice/2022/02/18/profile/supporters_3.jpg",
+                        url: "https://youtube.com/watch?v=j-zi__ZP7Ig",
+                    },
+                ]
+            },
+            {
+                id: "review02", 
+                headTitle : "리뷰형", 
+                headTitleTxt : "야핏[기기] 리뷰형 광고 - 4", 
+                headTitleImg : 'src/assets/images/txt_may_tit_2.png', 
+                item: [
+                    {
+                        title:"티준신Tjunshin",
+                        img: "https://kkultube.yanadoocdn.com/notice/2022/02/18/profile/reaction_1.jpg",
+                        url: "https://youtube.com/watch?v=8Z3R8e6H8n4",
+                    },
+                    {
+                        title:"ALOHA SUMIN, 수민",
+                        img: "https://kkultube.yanadoocdn.com/notice/2022/02/18/profile/reaction_2.jpg",
+                        url: "https://youtube.com/watch?v=zlWIgGB-gk8",
+                    },
+                    {
+                        title:"SeoulD Out서울다웃",
+                        img: "https://kkultube.yanadoocdn.com/notice/2022/02/18/profile/reaction_3.jpg",
+                        url: "https://youtube.com/watch?v=I5xYHVEgKxQ",
+                    },
+                ]
+            },
+            {
+                id: "review03",
+                headTitle : "리뷰형", 
+                headTitleTxt : "인테이크 [슈가로로 스파클링 음료] 리뷰형 광고", 
+                headTitleImg : 'src/assets/images/txt_may_tit_3.png', 
+                item: [
+                    {
+                        title:"이응oioio",
+                        img: "https://kkultube.yanadoocdn.com/notice/2022/02/18/profile/youcandoo_1.jpg",
+                        url: "https://youtube.com/watch?v=5kin41LzcPw",
+                    },
+                    {
+                        title:"소리가들려 SORI",
+                        img: "https://kkultube.yanadoocdn.com/notice/2022/02/18/profile/youcandoo_2.jpg",
+                        url: "https://youtube.com/watch?v=avSMurb0A8I",
+                    },
+                    {
+                        title:"Kfood &amp; 일상리뷰",
+                        img: "https://kkultube.yanadoocdn.com/notice/2022/02/18/profile/youcandoo3.jpg",
+                        url: "https://youtube.com/watch?v=sfcI4HxmM8Q",
+                    },
+                ]
+            },
+            {
+                id: "review04",
+                headTitle : "리뷰형", 
+                headTitleTxt : "어나더브릿지 [프라하 글라스] 리뷰형 광고", 
+                headTitleImg : 'src/assets/images/txt_may_tit_4.png', 
+                item: [
+                    {
+                        title:"이응oioio",
+                        img: "https://kkultube.yanadoocdn.com/notice/2022/02/18/profile/youcandoo_1.jpg",
+                        url: "https://youtube.com/watch?v=5kin41LzcPw",
+                    },
+                    {
+                        title:"소리가들려 SORI",
+                        img: "https://kkultube.yanadoocdn.com/notice/2022/02/18/profile/youcandoo_2.jpg",
+                        url: "https://youtube.com/watch?v=avSMurb0A8I",
+                    },
+                    {
+                        title:"Kfood &amp; 일상리뷰",
+                        img: "https://kkultube.yanadoocdn.com/notice/2022/02/18/profile/youcandoo3.jpg",
+                        url: "https://youtube.com/watch?v=sfcI4HxmM8Q",
+                    },
+                ]
+            },
+            {
+                id: "review05",
+                headTitle : "리뷰형", 
+                headTitleTxt : "패션더 [남성 스포츠형 언더웨어] 제품 리뷰형 광고", 
+                headTitleImg : 'src/assets/images/txt_may_tit_5.png', 
+                item: [
+                    {
+                        title:"이응oioio",
+                        img: "https://kkultube.yanadoocdn.com/notice/2022/02/18/profile/youcandoo_1.jpg",
+                        url: "https://youtube.com/watch?v=5kin41LzcPw",
+                    },
+                    {
+                        title:"소리가들려 SORI",
+                        img: "https://kkultube.yanadoocdn.com/notice/2022/02/18/profile/youcandoo_2.jpg",
+                        url: "https://youtube.com/watch?v=avSMurb0A8I",
+                    },
+                    {
+                        title:"Kfood &amp; 일상리뷰",
+                        img: "https://kkultube.yanadoocdn.com/notice/2022/02/18/profile/youcandoo3.jpg",
+                        url: "https://youtube.com/watch?v=sfcI4HxmM8Q",
+                    },
+                ]
+            },
+            {
+                id: "review06",
+                headTitle : "리뷰형", 
+                headTitleTxt : "바른생각 [바른생각 인기템] 리뷰형 광고", 
+                headTitleImg : 'src/assets/images/txt_may_tit_6.png', 
+                item: [
+                    {
+                        title:"이응oioio",
+                        img: "https://kkultube.yanadoocdn.com/notice/2022/02/18/profile/youcandoo_1.jpg",
+                        url: "https://youtube.com/watch?v=5kin41LzcPw",
+                    },
+                    {
+                        title:"소리가들려 SORI",
+                        img: "https://kkultube.yanadoocdn.com/notice/2022/02/18/profile/youcandoo_2.jpg",
+                        url: "https://youtube.com/watch?v=avSMurb0A8I",
+                    },
+                    {
+                        title:"Kfood &amp; 일상리뷰",
+                        img: "https://kkultube.yanadoocdn.com/notice/2022/02/18/profile/youcandoo3.jpg",
+                        url: "https://youtube.com/watch?v=sfcI4HxmM8Q",
+                    },
+                ]
+            },
+            {
+                id: "review07",
+                headTitle : "리뷰형", 
+                headTitleTxt : "놀토 [역사체험 놀토앰] 리뷰형 광고", 
+                headTitleImg : 'src/assets/images/txt_may_tit_7.png', 
+                item: [
+                    {
+                        title:"이응oioio",
+                        img: "https://kkultube.yanadoocdn.com/notice/2022/02/18/profile/youcandoo_1.jpg",
+                        url: "https://youtube.com/watch?v=5kin41LzcPw",
+                    },
+                    {
+                        title:"소리가들려 SORI",
+                        img: "https://kkultube.yanadoocdn.com/notice/2022/02/18/profile/youcandoo_2.jpg",
+                        url: "https://youtube.com/watch?v=avSMurb0A8I",
+                    },
+                    {
+                        title:"Kfood &amp; 일상리뷰",
+                        img: "https://kkultube.yanadoocdn.com/notice/2022/02/18/profile/youcandoo3.jpg",
+                        url: "https://youtube.com/watch?v=sfcI4HxmM8Q",
+                    },
+                ]
+            },
+            {
+                id: "review08",
+                headTitle : "리뷰형", 
+                headTitleTxt : "홀푸드스토리 [올리브오일 제품] 리뷰형 광고", 
+                headTitleImg : 'src/assets/images/txt_may_tit_8.png', 
+                item: [
+                    {
+                        title:"이응oioio",
+                        img: "https://kkultube.yanadoocdn.com/notice/2022/02/18/profile/youcandoo_1.jpg",
+                        url: "https://youtube.com/watch?v=5kin41LzcPw",
+                    },
+                    {
+                        title:"소리가들려 SORI",
+                        img: "https://kkultube.yanadoocdn.com/notice/2022/02/18/profile/youcandoo_2.jpg",
+                        url: "https://youtube.com/watch?v=avSMurb0A8I",
+                    },
+                    {
+                        title:"Kfood &amp; 일상리뷰",
+                        img: "https://kkultube.yanadoocdn.com/notice/2022/02/18/profile/youcandoo3.jpg",
+                        url: "https://youtube.com/watch?v=sfcI4HxmM8Q",
+                    },
+                ]
+            },
+            {
+                id: "banner01",
+                headTitle : "배너형", 
+                headTitleTxt : "야핏 5초 배너형 광고", 
+                headTitleImg : 'src/assets/images/txt_may_tit_9.png', 
+                item: [
+                    {
+                        title:"희성 Heesung",
+                        img: "https://kkultube.yanadoocdn.com/notice/2022/02/18/profile/banner_1.jpg",
+                        url: "https://youtube.com/watch?v=x_RqfaWJJvY",
+                    },
+                    {
+                        title:"N잡의 소마",
+                        img: "https://kkultube.yanadoocdn.com/notice/2022/02/18/profile/banner_2.jpg",
+                        url: "https://youtube.com/watch?v=n--3MYZaErA",
+                    },
+                    {
+                        title:"디지털노마드_언헤븐트",
+                        img: "https://kkultube.yanadoocdn.com/notice/2022/02/18/profile/banner_3.jpg",
+                        url: "https://youtu.be/gyykylLs0zg",
+                    },
+                ]
+            },
+        ];
+
+
+        $(document).ready(function(){
+            $('.tab-btn-col').find('a').on('click', function(){
+                var num = $(this).index();
+                $(this).addClass('on').siblings().removeClass('on');
+                $('html, body').animate({scrollTop:$('.tab' + (num+1) ).offset().top - 250},500);
+            });  
+            
+            $.each(listInfo,function(index, item) {
+                let titstr = "";
+                let liststr = "";
+
+                titstr +='<span>'+this.headTitle+'</span><strong class="txt-hidden">'+this.headTitleTxt+'</strong><img src="'+this.headTitleImg+'">';
+
+                for (var i=0;i<this.item.length;i++){
+                    liststr += '<li><a target="_blank" href="'+this.item[i].url+'"><span style="background-image:url('+this.item[i].img+')"></span><strong>'+this.item[i].title+'</strong></a></li>';
+                }
+
+                $("#"+this.id).find('.tit').append(titstr);
+                $("#"+this.id).find('.three-people').append(liststr);
+            });
+        });
+        
+        $(window).scroll(function(){
+            if($(window).scrollTop() >= ($('.medal-col').offset().top - (window.innerHeight / 2)) && scrollCheck){
+                $('.medal-col').addClass('on');
+                myConfetti({
+                    particleCount :80,
+                    spread: 80,
+                });
+                scrollCheck = false;
+            }
+        });
+
+
+    </script>
+  </body>
+</html>
