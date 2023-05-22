@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="./src/assets/styles/sub.css" />
     <link rel="stylesheet" href="./src/assets/dist/swiper/swiper.min.css" />
     <link rel="stylesheet" href="./src/assets/dist/odometer/odometer-theme-default.css" />
-    
+    <link rel="stylesheet" href="./src/assets/dist/flicking/flicking.css" />
   </head>
   <body>
     <header class="header-col">
@@ -32,7 +32,7 @@
             <span class="nav-txt ad">광고</span>
           </a>
           <a href="./ranking.html" class="">
-            <span class="nav-txt ranking">랭킹</span>
+            <span class="nav-txt ranking">추천</span>
           </a>
           <a href="./myhome.html" class="">
             <span class="nav-txt my">My</span>
@@ -45,17 +45,15 @@
             <div class="swiper-wrapper">
               <div class="swiper-slide">
                 <a href="#;">
-                  <img src="./src/assets/images/img_bnr_test.png" alt="배너1" />
+                  <img class="web" src="./src/assets/images/banner_renew_01_web.png" alt="banner"/>
+                  <img class="mo" src="./src/assets/images/banner_renew_01_mo.png" alt="banner"/>
                 </a>
               </div>
               <div class="swiper-slide">
                 <a href="#;">
-                  <img src="./src/assets/images/img_bnr_test.png" alt="배너2" />
+                  <img class="web" src="./src/assets/images/banner_renew_02_web.png" alt="banner"/>
+                  <img class="mo" src="./src/assets/images/banner_renew_02_mo.png" alt="banner"/>
                 </a>
-              </div>
-              <div class="swiper-slide">
-                <a href="#;">
-                  <img src="./src/assets/images/img_bnr_test.png" alt="배너3" />
                 </a>
               </div>
             </div>
@@ -65,8 +63,22 @@
       </section>    
       <section class="advertise-recommend-col slide-col">
         <div class="inner-col">
-          <!-- <h3>신청 가능한 광고</h3> -->
-          <h3><span>알파카</span>님을 위한 꿀튜브의 추천</h3>
+          <!-- 필터 -->
+          <div id="flick" class="flicking-viewport">
+            <ul class="flicking-camera scroll-menu">
+              <li class="active"><a href="#;">전체</a></li>
+              <li><a href="#;">패션</a></li>
+              <li><a href="#;">뷰티</a></li>
+              <li><a href="#;">헬스</a></li>
+              <li><a href="#;">앱 서비스</a></li>
+              <li><a href="#;">반려동물</a></li>
+              <li><a href="#;">푸드</a></li>
+              <li><a href="#;">라이프스타일</a></li>
+            </ul>
+          </div>
+          <!-- ./필터 -->
+
+          <h3>신청 가능한 광고</h3>
           <div class="slide-box">
             <div class="swiper-container advertise-slide">
               <div class="swiper-wrapper">
@@ -78,24 +90,24 @@
                         <button type="button" class="btn-like" onclick="toggleClass(this);"><span class="blind">like it</span></button>
                       </dt>
                       <dd>
-                        <p><em>성경김</em></p>
-                        <p><span>곱창김에는 곱창이 들어가나요? 곱창김에는 곱창이 들어가나요? 곱창김에는 곱창이 들어가나요? 곱창김에는 곱창이 들어가나요?</span></p>
-                        <p><strong>20,000</strong></p>
+                        <p><em>꿀튜브</em></p>
+                        <p><span>[이너블리] "여성 이너웨어" 이너블리 제품 리뷰형 광고</span></p>
                       </dd>
                     </dl>
                   </a>
                 </div>
                 <div class="swiper-slide">
-                  <a href="./tab_ad_detail.html">
+                  <a href="./tab_ad_detail_reporting.html">
                     <dl>
-                      <dt>
+                      <!-- 모집마감 광고 dis 클래스 추가-->
+                      <dt class="dis">
                         <img src="./src/assets/images/img_advertise_slide_02.png" alt="리뷰&언박싱 김준호 김, 재래식탁김" />
                         <button type="button" class="btn-like" onclick="toggleClass(this);"><span class="blind">like it</span></button>
+                        <span class="text">모집이 마감되어 <br>광고 심사중에 있습니다</span> 
                       </dt>
                       <dd>
-                        <p><em class="time-box">20:15:20</em></p>
-                        <p><span>곱창김에는 곱창이 들어가나요?</span></p>
-                        <p><strong>20,000</strong></p>
+                        <p><em>꿀튜브</em></p>
+                        <p><span>[이너블리] "여성 이너웨어" 제품 리뷰형 광고</span></p>
                       </dd>
                     </dl>
                   </a>
@@ -108,9 +120,8 @@
                         <button type="button" class="btn-like" onclick="toggleClass(this);"><span class="blind">like it</span></button>
                       </dt>
                       <dd>
-                        <p><em>성경김</em></p>
-                        <p><span>곱창김에는 곱창이 들어가나요?</span></p>
-                        <p><strong>20,000</strong></p>
+                        <p><em>꿀튜브</em></p>
+                        <p><span>[이너블리] "여성 이너웨어" 제품 리뷰형 광고</span></p>
                       </dd>
                     </dl>
                   </a>
@@ -123,9 +134,8 @@
                         <button type="button" class="btn-like" onclick="toggleClass(this);"><span class="blind">like it</span></button>
                       </dt>
                       <dd>
-                        <p><em class="time-box">20:15:20</em></p>
-                        <p><span>곱창김에는 곱창이 들어가나요?</span></p>
-                        <p><strong>20,000</strong></p>
+                        <p><em>꿀튜브</em></p>
+                        <p><span>[이너블리] "여성 이너웨어" 제품 리뷰형 광고</span></p>
                       </dd>
                     </dl>
                   </a>
@@ -137,9 +147,8 @@
                         <button type="button" class="btn-like" onclick="toggleClass(this);"><span class="blind">like it</span></button>
                       </dt>
                       <dd>
-                        <p><em>성경김</em></p>
-                        <p><span>곱창김에는 곱창이 들어가나요?</span></p>
-                        <p><strong>20,000</strong></p>
+                        <p><em>꿀튜브</em></p>
+                        <p><span>[이너블리] "여성 이너웨어" 제품 리뷰형 광고</span></p>
                       </dd>
                     </dl>
                   </a>
@@ -152,9 +161,8 @@
                         <button type="button" class="btn-like" onclick="toggleClass(this);"><span class="blind">like it</span></button>
                       </dt>
                       <dd>
-                        <p><em class="time-box">20:15:20</em></p>
-                        <p><span>곱창김에는 곱창이 들어가나요?</span></p>
-                        <p><strong>20,000</strong></p>
+                        <p><em>꿀튜브</em></p>
+                        <p><span>[이너블리] "여성 이너웨어" 제품 리뷰형 광고</span></p>
                       </dd>
                     </dl>
                   </a>
@@ -166,141 +174,8 @@
                         <button type="button" class="btn-like" onclick="toggleClass(this);"><span class="blind">like it</span></button>
                       </dt>
                       <dd>
-                        <p><em>성경김</em></p>
-                        <p><span>곱창김에는 곱창이 들어가나요?</span></p>
-                        <p><strong>20,000</strong></p>
-                      </dd>
-                    </dl>
-                  </a>
-                </div>
-                <div class="swiper-slide">
-                  <a href="./tab_ad_detail.html">
-                    <dl>
-                      <dt>
-                        <img src="./src/assets/images/img_advertise_slide_02.png" alt="리뷰&언박싱 김준호 김, 재래식탁김" />
-                        <button type="button" class="btn-like" onclick="toggleClass(this);"><span class="blind">like it</span></button>
-                      </dt>
-                      <dd>
-                        <p><em class="time-box">20:15:20</em></p>
-                        <p><span>곱창김에는 곱창이 들어가나요?</span></p>
-                        <p><strong>20,000</strong></p>
-                      </dd>
-                    </dl>
-                  </a>
-                </div><div class="swiper-slide">
-                  <a href="./tab_ad_detail.html">
-                    <dl>
-                      <dt>
-                        <img src="./src/assets/images/img_advertise_slide_01.png" alt="꿀튜버에게만 드리는 1만원 추가 보상 혜택!" />
-                        <button type="button" class="btn-like" onclick="toggleClass(this);"><span class="blind">like it</span></button>
-                      </dt>
-                      <dd>
-                        <p><em>성경김</em></p>
-                        <p><span>곱창김에는 곱창이 들어가나요?</span></p>
-                        <p><strong>20,000</strong></p>
-                      </dd>
-                    </dl>
-                  </a>
-                </div>
-                <div class="swiper-slide">
-                  <a href="./tab_ad_detail.html">
-                    <dl>
-                      <dt>
-                        <img src="./src/assets/images/img_advertise_slide_02.png" alt="리뷰&언박싱 김준호 김, 재래식탁김" />
-                        <button type="button" class="btn-like" onclick="toggleClass(this);"><span class="blind">like it</span></button>
-                      </dt>
-                      <dd>
-                        <p><em class="time-box">20:15:20</em></p>
-                        <p><span>곱창김에는 곱창이 들어가나요?</span></p>
-                        <p><strong>20,000</strong></p>
-                      </dd>
-                    </dl>
-                  </a>
-                </div>
-                <div class="swiper-slide">
-                  <a href="./tab_ad_detail.html">
-                    <dl>
-                      <dt>
-                        <img src="./src/assets/images/img_advertise_slide_01.png" alt="꿀튜버에게만 드리는 1만원 추가 보상 혜택!" />
-                        <button type="button" class="btn-like" onclick="toggleClass(this);"><span class="blind">like it</span></button>
-                      </dt>
-                      <dd>
-                        <p><em>성경김..</em></p>
-                        <p><span>곱창김에는 곱창이 들어가나요?</span></p>
-                        <p><strong>20,000</strong></p>
-                      </dd>
-                    </dl>
-                  </a>
-                </div>
-                <div class="swiper-slide">
-                  <a href="./tab_ad_detail.html">
-                    <dl>
-                      <dt>
-                        <img src="./src/assets/images/img_advertise_slide_02.png" alt="리뷰&언박싱 김준호 김, 재래식탁김" />
-                        <button type="button" class="btn-like" onclick="toggleClass(this);"><span class="blind">like it</span></button>
-                      </dt>
-                      <dd>
-                        <p><em class="time-box">20:15:20</em></p>
-                        <p><span>곱창김에는 곱창이 들어가나요?</span></p>
-                        <p><strong>20,000</strong></p>
-                      </dd>
-                    </dl>
-                  </a>
-                </div><div class="swiper-slide">
-                  <a href="./tab_ad_detail.html">
-                    <dl>
-                      <dt>
-                        <img src="./src/assets/images/img_advertise_slide_01.png" alt="꿀튜버에게만 드리는 1만원 추가 보상 혜택!" />
-                        <button type="button" class="btn-like" onclick="toggleClass(this);"><span class="blind">like it</span></button>
-                      </dt>
-                      <dd>
-                        <p><em>성경김</em></p>
-                        <p><span>곱창김에는 곱창이 들어가나요?</span></p>
-                        <p><strong>20,000</strong></p>
-                      </dd>
-                    </dl>
-                  </a>
-                </div>
-                <div class="swiper-slide">
-                  <a href="./tab_ad_detail.html">
-                    <dl>
-                      <dt>
-                        <img src="./src/assets/images/img_advertise_slide_02.png" alt="리뷰&언박싱 김준호 김, 재래식탁김" />
-                        <button type="button" class="btn-like" onclick="toggleClass(this);"><span class="blind">like it</span></button>
-                      </dt>
-                      <dd>
-                        <p><em class="time-box">20:15:20</em></p>
-                        <p><span>곱창김에는 곱창이 들어가나요?</span></p>
-                        <p><strong>20,000</strong></p>
-                      </dd>
-                    </dl>
-                  </a>
-                </div><div class="swiper-slide">
-                  <a href="./tab_ad_detail.html">
-                    <dl>
-                      <dt>
-                        <img src="./src/assets/images/img_advertise_slide_01.png" alt="꿀튜버에게만 드리는 1만원 추가 보상 혜택!" />
-                        <button type="button" class="btn-like" onclick="toggleClass(this);"><span class="blind">like it</span></button>
-                      </dt>
-                      <dd>
-                        <p><em>성경김</em></p>
-                        <p><span>곱창김에는 곱창이 들어가나요?</span></p>
-                        <p><strong>20,000</strong></p>
-                      </dd>
-                    </dl>
-                  </a>
-                </div>
-                <div class="swiper-slide">
-                  <a href="./tab_ad_detail.html">
-                    <dl>
-                      <dt>
-                        <img src="./src/assets/images/img_advertise_slide_02.png" alt="리뷰&언박싱 김준호 김, 재래식탁김" />
-                        <button type="button" class="btn-like" onclick="toggleClass(this);"><span class="blind">like it</span></button>
-                      </dt>
-                      <dd>
-                        <p><em class="time-box">20:15:20</em></p>
-                        <p><span>곱창김에는 곱창이 들어가나요?</span></p>
-                        <p><strong>20,000</strong></p>
+                        <p><em>꿀튜브</em></p>
+                        <p><span>[이너블리] "여성 이너웨어" 제품 리뷰형 광고</span></p>
                       </dd>
                     </dl>
                   </a>
@@ -310,62 +185,235 @@
           </div>
         </div>
       </section>
-      <section class="accumulated-price-col">
+      
+      <!-- 추천 꿀튜버 -->
+      <section class="my-like-col">
         <div class="inner-col">
-          <p><span>6개월간</span> 누적 수익금</p>
-          <p class="price-box"><strong class="odometer">0</strong>원</p>
+          <h3><a href="ranking.html">추천 전체 꿀튜버</a></h3>
+          <ul class="profit-lists">
+            <li>
+              <div class="thumb-flex-form">
+                <div class="thumb-item">
+                  <span class="thumb-img thumb-hexagon" style="background-image:url(./src/assets/images/img_advertise_slide_01.png)"><span class="blind">프로필 사진</span></span>
+                </div>
+                <div class="thumb-info">
+                  <a href="main_myinfo.html">
+                    <strong class="ellipsis">일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십님</strong>
+                    <p>구독 1.32천명 <em>조회 1,323</em></p>
+                  </a>
+                </div>
+                <div class="heart_chk_btn">
+                  <input id="chk-1" type="checkbox" name="checkbox" value="checkbox">
+                  <label for="chk-1">23</label>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="thumb-flex-form">
+                <div class="thumb-item">
+                  <span class="thumb-img thumb-hexagon" style="background-image:url(./src/assets/images/img_advertise_slide_01.png)"><span class="blind">프로필 사진</span></span>
+                </div>
+                <div class="thumb-info">
+                  <a href="main_myinfo.html">
+                    <strong class="ellipsis">일이삼사오육칠팔구</strong>
+                    <p>구독 1.32천명 <em>조회 1,323</em></p>
+                  </a>
+                </div>
+                <div class="heart_chk_btn">
+                  <input id="chk-2" type="checkbox" name="checkbox" value="checkbox">
+                  <label for="chk-2">230</label>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="thumb-flex-form">
+                <div class="thumb-item">
+                  <span class="thumb-img thumb-hexagon" style="background-image:url(./src/assets/images/img_advertise_slide_01.png)"><span class="blind">프로필 사진</span></span>
+                </div>
+                <div class="thumb-info">
+                  <a href="main_myinfo.html">
+                    <strong class="ellipsis">일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십님</strong>
+                    <p>구독 1.32천명 <em>조회 1,323</em></p>
+                    </a>
+                </div>
+                <div class="heart_chk_btn">
+                  <input id="chk-3" type="checkbox" name="checkbox" value="checkbox">
+                  <label for="chk-3">23</label>
+                </div>
+              </div>
+            </li>
+          </ul>
         </div>
       </section>
-      <section class="ranking-col">
+      <!-- ./추천 꿀튜버 -->
+
+      <!-- 꿀튜브가 궁금해요! -->
+      <section class="question-kkultube-col">
         <div class="inner-col">
-          <h3><em>꿀튜버 실시간 랭킹</em></h3>
+          <h3>꿀튜브가 궁금해요!</h3>
+          <div class="question-box">
+            <a href="landing_youtuber.html">
+              <dl>
+                <dt>YOUTUBER</dt>
+                <dd><img src="./src/assets/images/ico_que_01.png"/></dd>
+                <dd>꿀튜브로 광고비<br>얼마나 벌 수 있나요?</dd>
+              </dl>
+            </a>
+            <a href="#">
+              <dl>
+                <dt>BRAND</dt>
+                <dd><img src="./src/assets/images/ico_que_02.png"/></dd>
+                <dd>꿀튜브로 어떤 효과를<br>낼 수 있나요?</dd>
+              </dl> 
+            </a>
+          </div>
+        </div>
+      </section>
+      <!-- ./꿀튜브가 궁금해요! -->
+
+      <!-- 유튜브 광고가 쉬워지는 꿀튜브 -->
+      <section class="bar-graph-col accumulated-price-col">
+        <div class="inner-col">
+          <h3>유튜브 광고가 쉬워지는 꿀튜브</h3>
+          <p class="text">브랜드를 위한 <span class="price-box"><strong class="odometer">0</strong>명</span>의 유튜버 리얼 광고 DB를 확인해 보세요</p>
+          <div class="bar-graph-wrap">
+            <div class="bar-graph">
+            </div>
+          </div>
+
+          <!-- 버튼 -->
+          <button type="button" class="btn">내 브랜드에 핏한 유튜버 추천 받기</button>
+          <!-- 버튼 -->
+        </div>
+      </section>
+      <!-- ./유튜브 광고가 쉬워지는 꿀튜브 -->
+
+      <!-- 매일 보상 -->
+      <section class="m-conf-col">
+        <div class="inner-col">
+          <strong>매일 보상이 쏟아진다!</strong>
+          <div class="money-odometer-con">
+            <div id="odometer" class="odometer money-odometer">0</div>
+          </div>
+          <p class="text">꿀튜브를 3회 이상 공유하시면<br>300원을 드려요!</p>
+          <button type="button" class="btn reward-on" id="timer" onclick="modalClose()"> <span id="hours"></span>시간 <span id="minutes"></span>분 안에 보상받기</button>
+        </div>
+      </section>
+      <!-- ./매일 보상 -->
+
+      <!-- 꿀튜브 리얼후기 -->
+      <section class="review-col">
+        <div class="inner-col">
+          <h3>꿀튜브 리얼 후기</h3>
           <div class="slide-box">
-            <div class="swiper-container ranking-slide">
+            <div class="swiper-container review-slide">
               <div class="swiper-wrapper">
                 <div class="swiper-slide">
-                  <span class="ranking first">1</span>
-                  <dl style="background-image:url(./src/assets/images/img_bnr_ranking.png)">
-                    <dt>ch 더메이션</dt>
-                    <dd>
-                      <p>누적 수익금 <span>2,500,000</span></p>
-                    </dd>
-                  </dl>
+                  <p class="text">매달 고정적으로 부수입이 들어오니까 안정적으로 유튜버 활동을 할 수 있어요!</p>
+                  <div class="thumb-flex-form">
+                    <div class="thumb-item">
+                      <span class="thumb-img" style="background-image:url(./src/assets/images/img_advertise_slide_01.png)"><span class="blind">프로필 사진</span></span>
+                    </div>
+                    <div class="thumb-info">
+                      <strong>유튜버 A님</strong>
+                      <p class="ellipsis">30대 <span class="bullet">남성</span></p>
+                    </div>
+                  </div>
                 </div>
                 <div class="swiper-slide">
-                  <span class="ranking">2</span>
-                  <dl style="background-image:url(./src/assets/images/img_bnr_ranking.png)">
-                    <dt>ch 더메이션</dt>
-                    <dd>
-                      <p>누적 수익금 <span>2,500,000</span></p>
-                    </dd>
-                  </dl>
+                  <p class="text">브랜드 광고 어떻게 하는지 몰랐는데, 꿀튜브에서는 원하는 걸 편하게 고를 수 있어요!</p>
+                  <div class="thumb-flex-form">
+                    <div class="thumb-item">
+                      <span class="thumb-img" style="background-image:url(./src/assets/images/img_advertise_slide_01.png)"><span class="blind">프로필 사진</span></span>
+                    </div>
+                    <div class="thumb-info">
+                      <strong>유튜버 B님</strong>
+                      <p class="ellipsis">20대 <span class="bullet">여성</span></p>
+                    </div>
+                  </div>
                 </div>
                 <div class="swiper-slide">
-                  <span class="ranking">3</span>
-                  <dl style="background-image:url(./src/assets/images/img_bnr_ranking.png)">
-                    <dt>ch 더메이션</dt>
-                    <dd>
-                      <p>누적 수익금 <span>2,500,000</span></p>
-                    </dd>
-                  </dl>
+                  <p class="text">다른 유튜버들은 어떻게 하나 참고할 수 있어서 공부도 되더라구요</p>
+                  <div class="thumb-flex-form">
+                    <div class="thumb-item">
+                      <span class="thumb-img" style="background-image:url(./src/assets/images/img_advertise_slide_01.png)"><span class="blind">프로필 사진</span></span>
+                    </div>
+                    <div class="thumb-info">
+                      <strong>유튜버 C님</strong>
+                      <p class="ellipsis">10대 <span class="bullet">남성</span></p>
+                    </div>
+                  </div>
                 </div>
                 <div class="swiper-slide">
-                  <span class="ranking">4</span>
-                  <dl style="background-image:url(./src/assets/images/img_bnr_ranking.png)">
-                    <dt>ch 더메이션</dt>
-                    <dd>
-                      <p>누적 수익금 <span>2,500,000</span></p>
-                    </dd>
-                  </dl>
+                  <p class="text">광고를 처음 접하기에 좋은 플랫폼인 것 같아요</p>
+                  <div class="thumb-flex-form">
+                    <div class="thumb-item">
+                      <span class="thumb-img" style="background-image:url(./src/assets/images/img_advertise_slide_01.png)"><span class="blind">프로필 사진</span></span>
+                    </div>
+                    <div class="thumb-info">
+                      <strong>유튜버 D님</strong>
+                      <p class="ellipsis">20대 <span class="bullet">여성</span></p>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <p class="text">저렴한 가격에 높은 퀄리티의 소재를 받을 수 있어요</p>
+                  <div class="thumb-flex-form">
+                    <div class="thumb-item">
+                      <span class="thumb-img" style="background-image:url(./src/assets/images/img_advertise_slide_01.png)"><span class="blind">프로필 사진</span></span>
+                    </div>
+                    <div class="thumb-info">
+                      <strong>E브랜드 매니저</strong>
+                      <p class="ellipsis">30대 <span class="bullet">여성</span></p>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <p class="text">일일이 개별 연락할 필요가 없으니까 시간을 효율적으로 쓸 수 있더라구요</p>
+                  <div class="thumb-flex-form">
+                    <div class="thumb-item">
+                      <span class="thumb-img" style="background-image:url(./src/assets/images/img_advertise_slide_01.png)"><span class="blind">프로필 사진</span></span>
+                    </div>
+                    <div class="thumb-info">
+                      <strong>F브랜드 담당자</strong>
+                      <p class="ellipsis">40대 <span class="bullet">남성</span></p>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <p class="text">다양한 콘텐츠로 광고 소재를 확보하기에 좋은 플랫폼인 것 같아요.</p>
+                  <div class="thumb-flex-form">
+                    <div class="thumb-item">
+                      <span class="thumb-img" style="background-image:url(./src/assets/images/img_advertise_slide_01.png)"><span class="blind">프로필 사진</span></span>
+                    </div>
+                    <div class="thumb-info">
+                      <strong>G브랜드 퍼포먼스팀</strong>
+                      <p class="ellipsis">30대 <span class="bullet">여성</span></p>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <p class="text">2차 활용 기간동안 광고 소재로 활용해서 전환 수익을 많이 봤었습니다.</p>
+                  <div class="thumb-flex-form">
+                    <div class="thumb-item">
+                      <span class="thumb-img" style="background-image:url(./src/assets/images/img_advertise_slide_01.png)"><span class="blind">프로필 사진</span></span>
+                    </div>
+                    <div class="thumb-info">
+                      <strong>H브랜드 담당자</strong>
+                      <p class="ellipsis">40대 <span class="bullet">여성</span></p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </section>
+      <!-- ./꿀튜브 리얼후기 -->
+
       <section class="youtuber-col">
         <div class="inner-col">
-          <h3>다른 유튜버들은 이렇게 제작했어요</h3>
+          <h3>꿀튜브 광고 유형 둘러보기</h3>
           <!-- 메인 베스트 컨텐츠 추가 class = 'active' 추가시 배경색, 폰트컬러 바뀜-->
           <ul class="best-cont-btn">
             <li class="active">리뷰형</li>
@@ -434,109 +482,52 @@
               </div>
             </div>
           </div>
-          <!-- 메인 베스트 컨텐츠 추가 끝-->
-          <!-- <div class="slide-box">
-            <div class="swiper-container youtuber-slide">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                  <div class="youtube-thumb">
-                    <img src="" data-youtube-id="Gh4djoUvfmQ" class="youtubeThumb1" alt="유튜브 썸네일" />
-                  </div>
-                  <div class="thumb-flex-form">
-                    <div class="thumb-item">
-                      <button class="thumb-hexagon"><span class="blind">프로필 사진</span></button>
-                    </div>
-                    <div class="thumb-info">
-                      <strong class="ellipsis">일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십</strong>
-                      <p class="ellipsis">일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="swiper-slide">
-                  <div class="youtube-thumb">
-                    <img src="" data-youtube-id="Gh4djoUvfmQ" class="youtubeThumb1" alt="유튜브 썸네일" />
-                  </div>
-                  <div class="thumb-flex-form">
-                    <div class="thumb-item">
-                      <button class="thumb-hexagon"><span class="blind">프로필 사진</span></button>
-                    </div>
-                    <div class="thumb-info">
-                      <strong class="ellipsis">일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십</strong>
-                      <p class="ellipsis">일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="swiper-slide">
-                  <div class="youtube-thumb">
-                    <img src="" data-youtube-id="Gh4djoUvfmQ" class="youtubeThumb1" alt="유튜브 썸네일" />
-                  </div>
-                  <div class="thumb-flex-form">
-                    <div class="thumb-item">
-                      <button class="thumb-hexagon"><span class="blind">프로필 사진</span></button>
-                    </div>
-                    <div class="thumb-info">
-                      <strong class="ellipsis">일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십</strong>
-                      <p class="ellipsis">일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="swiper-slide">
-                  <div class="youtube-thumb">
-                    <img src="" data-youtube-id="Gh4djoUvfmQ" class="youtubeThumb1" alt="유튜브 썸네일" />
-                  </div>
-                  <div class="thumb-flex-form">
-                    <div class="thumb-item">
-                      <button class="thumb-hexagon"><span class="blind">프로필 사진</span></button>
-                    </div>
-                    <div class="thumb-info">
-                      <strong class="ellipsis">일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십</strong>
-                      <p class="ellipsis">일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div> -->
         </div>
       </section>
-      <section class="faq-col">
-        <div class="inner-col">
-          <p>구독자가 1천명뿐인데 광고비,<br/>받을 수 있나요?</p>
-          <a href="./honeytube_guide.html">꿀튜브가 궁금하다면 ></a>
-        </div>
-      </section>
-      <section class="friend-code-col">
-        <div class="inner-col">
-          <a href="./friend_code.html">
-            <img src="src/assets/images/img_bnr_friend_code_cha.png" alt="유튜버 친구와 함께 돈버는 법!"/>
-            <p class="blind">유튜버 친구와 함께 돈버는 법! <span>친구 추천 코드 확인</span></p>
-          </a>
-        </div>
-      </section>
-      <section class="advertiser-col">
-        <div class="inner-col">
-          <div class="quote-box">
-            <strong>광고주이신가요?</strong>
+      <section class="floating-banner">
+        <div class="floating-fix">
+          <div class="inner-col">
+            <a href="advertiser.html">즉시 견적 받기</a>
           </div>
-          <a href="./advertiser.html" class="adv-quote-btn">
-            <!-- <img src="src/assets/images/img_adv_bnr_v2.png" alt=""> -->
-            <div class="text-box">
-              <p>비용은 줄이고 효과는 극대화!</p>
-              <strong>지금 바로 <br/>입점문의 견적 받기</strong>
-            </div>
-            <img src="src/assets/images/ico_bnr_adv_140x140.png" alt="">
-          </a>
-          <a href="" class="adv-dwn-btn">
-            <!-- <img src="src/assets/images/img_adv_dwn_btn.png" alt=""> -->
-            <div class="text-box">
-              <p>야 너도 유튜브 광고 대박날 수 있어!</p>
-              <strong>꿀튜브 소개서<br/>다운받기</strong>
-            </div>
-            <img src="src/assets/images/ico_adv_dwn_140x140.png" alt="">
-          </a>
         </div>
-      </section>
     </main>
+
+    <!-- 보상받기 팝업 -->
+    <div class="modal" style="display: none;">
+      <div class="modal-content">
+        <div class="m-conf-col">
+          <div id="main-confetti">
+            <p>보상 지급이 완료되었습니다.<br>내광고 > 광고비받기에서<br>확인하세요</p>
+          </div>
+        </div>
+        <div class="btn-group">
+          <button type="button" class="modal-close"><span>확인</span></button>
+        </div>
+      </div>
+    </div>
+    <!-- ./보상받기 팝업 -->
+
+    <!-- 종료 팝업 -->
+    <style>
+    .modal-end {position: relative; max-width: 360px; width: 100%; padding: 0;background: none;border-radius: 0;}
+    .modal-inner {width: 100%;}
+    .main-popup-close {display: block; width: 3.5rem; height: 2.5rem; position: absolute;top: 0;right: 0; font-size: 0;}
+    .btn-popup-close {display: block; width: 50%; height: 3rem; position: absolute;bottom: 0;right: 0; font-size: 0;}
+    @media screen and (max-width : 750px) {
+      .modal-end {max-width: 100%;}
+    }
+    </style>
+    <div class="modal">
+      <div class="modal-content modal-end">
+        <div class="modal-inner">
+          <button type="button" class="main-popup-close">닫기</button>
+          <img src="src/assets/images/kkultube_popup.png" alt="종료팝업"/>
+          <button type="button" class="btn-popup-close">오늘 하루 보지 않기</button>
+        </div>
+      </div>
+    </div>
+    <!-- ./종료 팝업 -->
+
     <footer class="footer-col">
       <div class="inner-col">
         <ul>
@@ -548,75 +539,58 @@
       </div>
     </footer>
 
+    <script src="./src/assets/dist/flicking/flicking.pkgd.min.js"></script>
     <script src="./src/assets/dist/scripts/jquery-3.6.0.min.js"></script>
-    <script src="./src/assets/scripts/common.js"></script>
-    <script src="./src/assets/scripts/nav.js"></script>
     <script src="./src/assets/dist/swiper/swiper.min.js"></script>
     <script src="./src/assets/dist/scripts/jquery.youtubecoverphoto.js"></script>
     <script src="./src/assets/dist/odometer/odometer.js"></script>
+    <script src="./src/assets/scripts/main.js"></script>
+    <script src="./src/assets/scripts/common.js"></script>
+    <script src="./src/assets/scripts/nav.js"></script>
+    <script src="./src/assets/scripts/bar_graph.js"></script>
+    <script src="./src/assets/dist/scripts/confetti.browser.min.js"></script>
+
+    <!-- 종료 팝업 스크립트 -->
     <script>
-      window.addEventListener('scroll', function(){
-        let sct = document.documentElement.scrollTop;
-        const target = document.querySelector('.accumulated-price-col');
-        const odometerTarget = document.querySelector('.odometer');
-
-        if(sct > target.offsetTop - 300){
-          odometerTarget.innerHTML = 162000000;
-        }
-
-      });
-
-      const mainSlide = new Swiper('.main-bnr-slide', {
-        pagination: {
-          el: '.swiper-pagination',
-          type: 'fraction',
-        },
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
-        },
-        loop : true,
-        autoplay : true,
-        delay : 3000,
-        speed : 1500,
-      });
-
-      const advertiseSlide = new Swiper('.advertise-slide', {
-        slidesPerView: 'auto',
-        spaceBetween: 10,
-        loop: true,
-        breakpoints: {
-          750: {
-            slidesPerView: 'auto',
-            spaceBetween:10,
-            loop: false
-          },
-        }
-      });
-
-       const rankingSlide = new Swiper('.ranking-slide', {
-        slidesPerView: 'auto',
-        spaceBetween: 20,
-        breakpoints: {
-          750: {
-            slidesPerView: 'auto',
-            spaceBetween:10,
-          },
-        }
-      });
-
-      const youtuberSlide = new Swiper('.youtuber-slide', {
-        slidesPerView: 'auto',
-        spaceBetween: 10,
-        centeredSlides : true,
-      });
-
       $(document).ready(function(){
-        $('.youtubeThumb1').youtubeCoverPhoto();
-      })
-
-
-      
+        $('.btn-popup-close, .main-popup-close').click(function(){
+          $('.modal').hide();
+        });
+      });
     </script>
+    <!-- ./종료 팝업 스크립트 -->
+
+
+<!-- 
+    <script>
+      let scrollCheck = true;
+      let myCanvas = document.createElement('canvas');
+      document.getElementById('main-confetti').appendChild(myCanvas);
+      
+      let myConfetti = confetti.create(myCanvas, {
+          resize: true,
+          useWorker: true,
+      });
+  
+      $().ready(function(){
+            $('.modal').hide();
+            $('.reward-on').click(function(){
+                $('.modal').show();
+                $('.m-conf-col').addClass('on');
+                    myConfetti({
+                        particleCount :180,
+                        spread: 80,
+                    });
+                    scrollCheck = false;
+            });
+
+            
+      });
+      $('.modal-close').click(function(){
+        $('.modal').hide();
+      });
+      
+  </script> -->
+    
   </body>
 </html>
